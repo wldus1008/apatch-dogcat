@@ -256,21 +256,20 @@
             
         
 
-      
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
                     	
                     	<c:choose>
-								<c:when test="${empty loginMember}">
+								<c:when test="${empty loginMember or empty fileName}">
 
 									<img src="resources/images/hero/dog1.jpg" alt="#">
 
 								</c:when>
 								<c:otherwise>
 									
-									<img alt="프로필 사진" src="resources/fimages/${filepath }">
+									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>"/>
 
 								</c:otherwise>
 

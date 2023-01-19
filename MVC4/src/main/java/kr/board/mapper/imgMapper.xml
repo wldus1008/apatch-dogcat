@@ -9,8 +9,10 @@
  <insert id="imgupload" parameterType="kr.board.entity.Files">
       INSERT INTO files (memId, filename, fileOriName, fileurl)
     VALUES (#{memId},#{filename},#{fileOriName},#{fileurl})
-    
 </insert>
-   
+
+ 	<select id="getImg" parameterType="String" resultType="kr.board.entity.Files">
+ 	    select * from files where memId = #{id};
+   </select>
 
 </mapper>

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -22,7 +27,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import kr.board.entity.Board;
+import kr.board.entity.Files;
+import kr.board.entity.Member;
 import kr.board.mapper.BoardMapper;
+import kr.board.mapper.imgMapper;
 
 // POJO라는걸 알려주는 주석(어노테이션)
 // 전처리를 하기 위한 기호 : 주석
@@ -34,6 +42,8 @@ public class BoardController {
 
 	@Autowired
 	private BoardMapper mapper;
+	@Autowired
+	private imgMapper imgMapper;
 	
 	// url 가져오는 방식에 따라 get방식으로 넘어오면
 	// 맵핑을 get으로
@@ -70,9 +80,19 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/Home.do")
-	public String Home() {
-		
-	
+	public String Home(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("loginMember") != null) {
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			System.out.println("id : " + loginMember.getMemId());
+
+			Files img = imgMapper.getImg(loginMember.getMemId());
+			if(img != null) {
+				String fileName = img.getFilename();
+				model.addAttribute("fileName", fileName);
+			}
+			
+		}
 		
 		return "Home";
 		
