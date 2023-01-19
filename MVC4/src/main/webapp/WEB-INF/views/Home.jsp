@@ -261,7 +261,23 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-                        <img src="resources/images/hero/dog1.jpg" alt="#">
+                    	
+                    	<c:choose>
+								<c:when test="${empty loginMember}">
+
+									<img src="resources/images/hero/dog1.jpg" alt="#">
+
+								</c:when>
+								<c:otherwise>
+									
+									<img alt="프로필 사진" src="resources/fimages/${filepath }">
+
+								</c:otherwise>
+
+
+							</c:choose>
+                    	
+                        
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
