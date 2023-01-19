@@ -13,6 +13,8 @@ public interface imgMapper {
 
 	public String selectUrl(String memId);
 
+	public Files getImg(String id);
+
 
 
 	
