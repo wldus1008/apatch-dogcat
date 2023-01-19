@@ -87,8 +87,11 @@ public class BoardController {
 			System.out.println("id : " + loginMember.getMemId());
 
 			Files img = imgMapper.getImg(loginMember.getMemId());
-			String fileName = img.getFilename();
-			model.addAttribute("fileName", fileName);
+			if(img != null) {
+				String fileName = img.getFilename();
+				model.addAttribute("fileName", fileName);
+			}
+			
 		}
 		
 		return "Home";
