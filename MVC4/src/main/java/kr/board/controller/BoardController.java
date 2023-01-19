@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 import kr.board.entity.Board;
 import kr.board.mapper.BoardMapper;
@@ -81,31 +87,68 @@ public class BoardController {
 		
 	}
 	
+
+	@RequestMapping("/goService.do")
+	public String goService() {
+		
 	
-//	@GetMapping("/boardajaxList.do")
-//	public @ResponseBody List<Board> boardajaxList() {
-//		
-//		// 1. DB에서 게시글 전체 리스트를 가져옴
-//		List<Board> list = mapper.boardList();
-//		
-//		// 비동기통신이 아니었을땐 list를  model에 add해서 이용할 수 있었음
-//		// (객체 바인딩)
-//		// 새로운 jsp로 이동하는게 아니라 만들어진 데이터를 주고 받을 수 있게끔
-//		
-//		// 2. 자바객체를 json형식으로 변환
-//		// json [{key:value, key:value...},{},{}...]
-//		// api 1) Gson 라이브러리 이용 toJson()
-//		// api 2) jackson-databind 
-//		
-//		// 3. list를 보내주기 위해 (json데이터를 ajax로 응답해주기 위해)
-//		// return 타입 지정하는 자리에 @ResponseBody 붙입
-//		
-//		// WEB-INF/views/list.jsp로 인식하지 않게됨
-//		return list;
-//		
-//		
-//	}
+		
+		return "service";
+		
+	}
 	
+	@RequestMapping("/service.do")
+	public String service(Model model, @RequestParam("weight") int weight, @RequestParam("height") int height) {
+		    // 소켓을 선언한다.
+		    try (Socket client = new Socket()) {
+		      // 소켓에 접속하기 위한 접속 정보를 선언한다.
+		      InetSocketAddress ipep = new InetSocketAddress("127.0.0.1", 9999);
+		      // 소켓 접속!
+		      client.connect(ipep);
+		      // 소켓이 접속이 완료되면 inputstream과 outputstream을 받는다.
+		      
+		      try (OutputStream sender = client.getOutputStream(); InputStream receiver = client.getInputStream();) {
+		        // 메시지는 for 문을 통해 10번 메시지를 전송한다.
+		        
+		        // 전송할 메시지를 작성한다.
+		        String msg = weight + "," + height;
+		        // string을 byte배열 형식으로 변환한다.
+		        byte[] data = msg.getBytes();
+		        // ByteBuffer를 통해 데이터 길이를 byte형식으로 변환한다.
+		        ByteBuffer b = ByteBuffer.allocate(4);
+		        // byte포멧은 little 엔디언이다.
+		        b.order(ByteOrder.LITTLE_ENDIAN);
+		        b.putInt(data.length);
+		        // 데이터 길이 전송
+		        sender.write(b.array(), 0, 4);
+		        // 데이터 전송
+		        sender.write(data);
+		          
+		        data = new byte[4];
+		        // 데이터 길이를 받는다.
+		        receiver.read(data, 0, 4);
+		        // ByteBuffer를 통해 little 엔디언 형식으로 데이터 길이를 구한다.
+		        b = ByteBuffer.wrap(data);
+		        b.order(ByteOrder.LITTLE_ENDIAN);
+		        int length = b.getInt();
+		        // 데이터를 받을 버퍼를 선언한다.
+		        data = new byte[length];
+		        // 데이터를 받는다.
+		        receiver.read(data, 0, length);
+		          
+		        // byte형식의 데이터를 string형식으로 변환한다.
+		        msg = new String(data, "UTF-8");
+		        // 콘솔에 출력한다.
+		        System.out.println(msg);
+		        model.addAttribute("bmi", msg);
+		        
+		      }
+		    } catch (Throwable e) {
+		      e.printStackTrace();
+		    }
+		
+		return "serviceResult";
+	}
 	
 	
 	
