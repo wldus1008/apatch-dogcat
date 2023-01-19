@@ -111,7 +111,7 @@ public class BoardController {
 		        // 메시지는 for 문을 통해 10번 메시지를 전송한다.
 		        
 		        // 전송할 메시지를 작성한다.
-		        String msg = weight + "," + height;
+		        String msg = height + "," + weight;
 		        // string을 byte배열 형식으로 변환한다.
 		        byte[] data = msg.getBytes();
 		        // ByteBuffer를 통해 데이터 길이를 byte형식으로 변환한다.
