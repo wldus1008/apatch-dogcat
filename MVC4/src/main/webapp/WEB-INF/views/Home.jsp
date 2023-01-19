@@ -269,7 +269,7 @@
 								</c:when>
 								<c:otherwise>
 									
-									<img alt="프로필 사진" src="<c:url value='/filePath/${fileName}'/>"/>
+									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>"/>
 
 								</c:otherwise>
 
