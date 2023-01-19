@@ -59,7 +59,6 @@ public class MemberController {
 			 HttpSession session = request.getSession();
 			 // 2. 세션에 값을 setAttrubute()
 			 session.setAttribute("loginMember", loginMember);
-			 
 		 }
 		 
 		// basic.jsp로 이동
