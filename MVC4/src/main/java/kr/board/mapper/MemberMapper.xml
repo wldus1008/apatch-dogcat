@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 여러 mapper.xml이 있는 경우에 id 겹치면 혼란이 되는것을 방지  -->
+<mapper namespace="kr.board.mapper.MemberMapper">
+    
+    <insert id="memberJoin" parameterType="kr.board.entity.Member">
+  		insert into member values(#{memId}, #{memPw}, #{memName} )
+
+  	</insert>
+   
+    
+</mapper>    
