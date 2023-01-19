@@ -10,6 +10,7 @@ create table board(
 );
 
 select * from board;
+
 -- int 숫자형 타입
 -- auto_increment : 자동으로 1씩 증가하면서 들어가는 키워드
 -- (오라클에서는 시퀀스 생성)

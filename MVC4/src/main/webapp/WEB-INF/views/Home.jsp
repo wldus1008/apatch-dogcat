@@ -262,14 +262,14 @@
                     <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
                     	
                     	<c:choose>
-								<c:when test="${empty loginMember}">
+								<c:when test="${empty loginMember or empty fileName}">
 
 									<img src="resources/images/hero/dog1.jpg" alt="#">
 
 								</c:when>
 								<c:otherwise>
 									
-									<img alt="프로필 사진" src="/filePath/${fileName}">
+									<img alt="프로필 사진" src="<c:url value='/filePath/${fileName}'/>"/>
 
 								</c:otherwise>
 
