@@ -32,7 +32,7 @@ public class imgController {
 		        
 		        File destinationFile; 
 		        String destinationFileName;
-		        String fileUrl = "C:\\eGovFrame-3.10.0\\workspace.edu\\Dogcat\\src\\main\\webapp\\resources\\fimages\\";
+		        String fileUrl = "C:\\Users\\user\\git\\repository2\\MVC4\\src\\main\\webapp\\resources\\fimages\\";
 		        
 		        
 		        do { 
