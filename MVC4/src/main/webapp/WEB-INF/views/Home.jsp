@@ -105,7 +105,7 @@
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">Services</a>
                                         <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="services.html">반려견 피부질환</a>
+                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
                                         </ul>
