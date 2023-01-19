@@ -48,7 +48,7 @@ public class imgController {
 		        file.setFileurl(fileUrl+destinationFileName);
 		        mapper.imgupload(file);
 		       		        
-		        return "redirect:/imgView.do";
+		        return "redirect:/Home.do";
 		    }
 	}
 	
