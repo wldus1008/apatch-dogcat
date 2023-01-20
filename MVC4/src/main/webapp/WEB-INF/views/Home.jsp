@@ -290,7 +290,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
+                    <div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center;">
                     	
                     	<c:choose>
 								<c:when test="${empty loginMember or empty fileName}">

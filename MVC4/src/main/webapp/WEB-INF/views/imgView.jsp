@@ -69,8 +69,8 @@
                 display: none;
             } 
         }
-
-
+	
+   
     </style>
 
 
@@ -235,17 +235,53 @@
 
 				<!-- 파일 업로드  -->
 				
-					<h2>반려동물 등록</h2>
-				
-					<div class="container">
+					
+				<div class="col-12 mb-3">
+					<div class="container" >
+					
 						<form action="${cpath}/upload" method="post" enctype="multipart/form-data">
-							<input type="file" name="files"> 
+							<label for="formFile" class="form-label"><h2>반려동물 사진등록</h2></label>
+							
+							<input type="file" name="files" onchange="readURL(this);" class="form-control" id="formFile"> 
 							<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
 							<input type='hidden' name='memId' value='${loginMember.memId}'>
-							<button type="submit" class="btn btn-dark" >등록하기</button>
+							<div style="margin-top: 10px; margin-bottom: 10px">
+							<img id="preview" />
+							</div>
+						
+							<button type="submit" class="btn btn-success" >등록하기</button>
+												
+							
 						</form>
+						
 					</div>
-				</body>
+					</div>
+					<script type="text/javascript">
+					
+					function readURL(input) {
+						  if (input.files && input.files[0]) {
+						    var reader = new FileReader();
+						    reader.onload = function(e) {
+						      document.getElementById('preview').src = e.target.result;
+						    };
+						    reader.readAsDataURL(input.files[0]);
+						  } else {
+						    document.getElementById('preview').src = "";
+						  }
+						}
+					
+					
+					
+					</script>
+					
+					
+					
+					
+				
+				
+					
+					
+</body>
 
 
 

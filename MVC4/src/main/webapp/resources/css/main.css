@@ -9,6 +9,18 @@ html {
   scroll-behavior: smooth;
 }
 
+
+#formFile{
+		width : 50%
+	}
+	
+#preview{
+	max-width : 30%
+}
+
+
+
+
 body {
   font-family: "Manrope", sans-serif;
   font-weight: 600;
@@ -108,7 +120,7 @@ video {
 }
 
 img {
-  max-width: 60%;
+  max-width: 100%;
 }
 
 h1,
@@ -2308,7 +2320,10 @@ ol {
 }
 
 .hero-area.style1 .hero-image img {
-  border-radius: 30px;
+  
+  border-radius: 50%;
+  width : 400px;
+  height: 400px;
 }
 
 .hero-area.style2 {
