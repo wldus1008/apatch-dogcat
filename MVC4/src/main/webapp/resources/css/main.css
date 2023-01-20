@@ -108,7 +108,7 @@ video {
 }
 
 img {
-  max-width: 80%;
+  max-width: 60%;
 }
 
 h1,
@@ -2308,7 +2308,7 @@ ol {
 }
 
 .hero-area.style1 .hero-image img {
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .hero-area.style2 {

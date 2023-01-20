@@ -374,7 +374,7 @@
                             <h3><a href="service-details.html">커뮤니티</a></h3>
                             <p>기능설명설명</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="basic.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
