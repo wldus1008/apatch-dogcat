@@ -59,6 +59,14 @@
             color: black;
         }
 
+	 @media (min-width: 720px)
+         {
+            .HH{
+                display: none;
+            } 
+        }
+
+
     </style>
 
 </head>
@@ -100,10 +108,38 @@
                                     <li class="nav-item">
                                         <a href="Home.do" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
+                            
+                       
+                		 
+                            <c:choose>
+								<c:when test="${empty loginMember}">
+
+									 <li class="nav-item HH">
+										<a href="${cpath}/login.do" class="btn">로그인</a>
+									 </li>
+									 <li class="nav-item HH">
+										<a href="${cpath}/register.do" class="btn">회원가입</a>
+									 </li>
+
+								</c:when>
+								<c:otherwise>
+															
+									<li class="nav-item HH">
+										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
+									</li>
+
+								</c:otherwise>
+
+							</c:choose>
+                           
+                               
+                                    
+                                    
+                                    
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Services</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
                                         <ul class="sub-menu collapse" id="submenu-1-1">
                                             <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
                                             </li>
@@ -143,7 +179,7 @@
                                         <a href="contact.html" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                        <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -170,7 +206,6 @@
 									</div>
 
 								</c:otherwise>
-
 
 							</c:choose>
 
@@ -222,8 +257,8 @@
         
                      <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="동물병원찾기">
-                            <span id="nav-text">동물병원찾기</span>
+                            <img src="resources/images/icon/board.png" alt="동물병원 찾기">
+                            <span id="nav-text">동물병원 찾기</span>
                         </a>
                     </li>
         			<c:choose>
@@ -240,8 +275,8 @@
         
                         <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="커뮤니티">
-                            <span id="nav-text">커뮤니티</span>
+                            <img src="resources/images/icon/board.png" alt="반려동물 보험">
+                            <span id="nav-text">반려동물 보험</span>
                         </a>
                        </li>
                 </ul>
@@ -306,9 +341,8 @@
                 <div class="col-12">
                     <div class="section-title">
                         <h3 class="wow zoomIn" data-wow-delay=".2s">Services</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">What we offer</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">서비스 설명</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">서비스 설명설명~</p>
                     </div>
                 </div>
             </div>
@@ -320,7 +354,7 @@
                             <h3><a href="service-details.html">반려견 피부질환</a></h3>
                             <p>기능설명설명</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">Read More</a>
+                                <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
@@ -330,7 +364,7 @@
                             <h3><a href="service-details.html">반려묘 피부질환</a></h3>
                             <p>기능설명설명</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">Read More</a>
+                                <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
@@ -340,40 +374,42 @@
                             <h3><a href="service-details.html">커뮤니티</a></h3>
                             <p>기능설명설명</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">Read More</a>
+                                <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
-                            <h3><a href="service-details.html">Marketing Solutions</a></h3>
-                            <p>We dejoy working with discerning clients, people for whom qualuty, service, integrity &
-                                aesthetics.</p>
+                            <h3><a href="service-details.html">동물병원찾기</a></h3>
+                            <p>기능설명</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">Read More</a>
+                                <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <span class="serial">05</span>
-                            <h3><a href="service-details.html">Business Analytics</a></h3>
-                            <p>We dejoy working with discerning clients, people for whom qualuty, service, integrity &
-                                aesthetics.</p>
-                            <div class="button">
-                                <a href="service-details.html" class="btn">Read More</a>
-                            </div>
+                            
+                            <h3><a>반려동물 등록하기</a></h3>
+                            <p>기능설명 로그인 후 사용가능</p>
+                            <c:choose>
+                            <c:when test="${not empty loginMember}">
+                             <div class="button">
+                                <a href="service-details.html" class="btn">등록하기</a>
+                             </div>
+                            </c:when>
+					        </c:choose>   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">06</span>
-                            <h3><a href="service-details.html">UX & UI Design</a></h3>
-                            <p>We dejoy working with discerning clients, people for whom qualuty, service, integrity &
-                                aesthetics.</p>
+                            <h3><a href="service-details.html">반려동물 보험</a></h3>
+                            <p>기능 설명</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">Read More</a>
+                                <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>

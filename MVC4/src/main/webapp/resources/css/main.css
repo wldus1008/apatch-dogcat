@@ -1270,7 +1270,7 @@ ol {
   position: relative;
   z-index: 1;
   margin-right: 7px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
