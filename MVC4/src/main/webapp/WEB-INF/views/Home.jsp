@@ -121,31 +121,26 @@
                                             </li>
                                         </ul>
                                     </li>
+                                   
+                                    <c:choose>
+                                    <c:when test="${not empty loginMember}">
+                                                  
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Pages</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">반려동물등록</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="pricing.html">Pricing</a></li>
-                                            <li class="nav-item"><a href="faq.html">Faq</a></li>
-                                            <li class="nav-item"><a href="login.html">Login</a></li>
-                                            <li class="nav-item"><a href="registration.html">Registration</a></li>
-                                            <li class="nav-item"><a href="404.html">404 Error</a></li>
-                                            <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
+                                            <li class="nav-item"><a href="pricing.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
+                                            
                                         </ul>
                                     </li>
+                                 </c:when>
+						         </c:choose>    
+                                    
                                     <li class="nav-item">
-                                        <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
-                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Blog</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a>
-                                            </li>
-                                            <li class="nav-item"><a href="blog-single.html">Blog Single</a></li>
-                                            <li class="nav-item"><a href="blog-single-sidebar.html">Blog Single
-                                                    Sibebar</a></li>
-                                        </ul>
+                                        <a href="contact.html" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="contact.html" aria-label="Toggle navigation">Contact</a>
@@ -203,7 +198,7 @@
                 <div class="nav-section">
                     <ul class="icons">
                         <li class="nav-block">
-                            <a class="main-icon" href="/dog-lab/" id="dog-lab">
+                            <a class="main-icon" href="service.do" id="dog-lab">
                             <img src="resources/images/icon/dog01.png" alt="강아지 피부질환">
                                 
                             <span id="nav-text">강아지 피부질환</span>
@@ -225,29 +220,30 @@
                         </a>
                     </li>
         
-                    <li class="nav-block">
-                        <a class="main-icon" id="creators" href="https://creators.mypetlife.co.kr">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png" alt="동물툰" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png"
-                                alt="동물툰"/></noscript>
-                            <span id="nav-text">크리에이터즈</span>
+                     <li class="nav-block">
+                        <a class="main-icon"  href="basic.do" id="product-lab">
+                            <img src="resources/images/icon/board.png" alt="동물병원찾기">
+                            <span id="nav-text">동물병원찾기</span>
                         </a>
                     </li>
-        
+        			<c:choose>
+                    <c:when test="${not empty loginMember}">
                         <li class="nav-block">
-                            <a class="main-icon" id="webtoon" href="/cbh?utm_source=bemypetlife&amp;utm_medium=icon&amp;utm_campaign=icon-20210827" target="_blank">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png" alt="동물등록" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png"
-                                alt="동물등록"/></noscript>
+                            <a class="main-icon" id="webtoon" href="imgView.do" >
+                            <img src="">
                             <span id="nav-text">동물등록</span>
                             </a>
                         </li>
+        			</c:when>
+					</c:choose>   
+        		
         
                         <li class="nav-block">
-                            <a class="main-icon" id="store" href="https://store.bemypet.kr" target="_blank">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png" alt="스토어" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png"
-                                alt="스토어"/></noscript>
-                            <span id="nav-text">스토어</span>
-                            </a>
-                        </li>
+                        <a class="main-icon"  href="basic.do" id="product-lab">
+                            <img src="resources/images/icon/board.png" alt="커뮤니티">
+                            <span id="nav-text">커뮤니티</span>
+                        </a>
+                       </li>
                 </ul>
                 
                 </div>
@@ -321,9 +317,8 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">01</span>
-                            <h3><a href="service-details.html">Digital Product Development</a></h3>
-                            <p>We dejoy working with discerning clients, people for whom qualuty, service, integrity &
-                                aesthetics.</p>
+                            <h3><a href="service-details.html">반려견 피부질환</a></h3>
+                            <p>기능설명설명</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">Read More</a>
                             </div>
@@ -332,9 +327,8 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <span class="serial">02</span>
-                            <h3><a href="service-details.html">General Consulting Process</a></h3>
-                            <p>We dejoy working with discerning clients, people for whom qualuty, service, integrity &
-                                aesthetics.</p>
+                            <h3><a href="service-details.html">반려묘 피부질환</a></h3>
+                            <p>기능설명설명</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">Read More</a>
                             </div>
@@ -343,9 +337,8 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">03</span>
-                            <h3><a href="service-details.html">Web Design & development solutions</a></h3>
-                            <p>We dejoy working with discerning clients, people for whom qualuty, service, integrity &
-                                aesthetics.</p>
+                            <h3><a href="service-details.html">커뮤니티</a></h3>
+                            <p>기능설명설명</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">Read More</a>
                             </div>
@@ -390,199 +383,9 @@
     </section>
     <!-- End Services Area -->
 
-    <!-- Start About Us Area -->
-    <section id="about" class="about section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="image wow fadeInLeft" data-wow-delay=".3s">
-                        <img class="main-image" src="resources/images/about/about-image.png" alt="#">
-                        <div class="img2"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="content wow fadeInRight" data-wow-delay=".5s">
-                        <div class="heading">
-                            <h2>People choose us because of our service</h2>
-                            <p>McKinsey research has shown that 70% of buying experiences are based on how the customer
-                                feels they have been treated.</p>
-                        </div>
-                        <div class="list">
-                            <!-- Start Single List -->
-                            <div class="single-list">
-                                <i class="lni lni-bolt"></i>
-                                <h4>Infinite Features</h4>
-                                <p>We work on diverse projects for top brands as well as for cool startups.</p>
-                            </div>
-                            <!-- End Single List -->
-                            <!-- Start Single List -->
-                            <div class="single-list">
-                                <i class="lni lni-grid-alt"></i>
-                                <h4>Stunning Design</h4>
-                                <p>We work on diverse projects for top brands as well as for cool startups.</p>
-                            </div>
-                            <!-- End Single List -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End About Area -->
+    
 
-    <!-- Start Achievement Area -->
-    <section class="our-achievement section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
-                        <div class="achievement-icon">
-                            <i class="lni lni-thumbs-up"></i>
-                        </div>
-                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="100">100</span>%</h3>
-                        <p>Satisfaction</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
-                        <div class="achievement-icon">
-                            <i class="lni lni-users"></i>
-                        </div>
-                        <h3 class="counter"><span id="secondo2" class="countup" cup-end="120">120</span>K</h3>
-                        <p>Happy Clients</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                        <div class="achievement-icon">
-                            <i class="lni lni-investment"></i>
-                        </div>
-                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="500">500</span>k+</h3>
-                        <p>Investments</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                        <div class="achievement-icon">
-                            <i class="lni lni-cup"></i>
-                        </div>
-                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="50">50</span>+</h3>
-                        <p>Winning Award</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Achievement Area -->
-
-    <!-- Start Pricing Table Area -->
-    <section id="pricing" class="pricing-table section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">pricing</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pricing Plan</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".4s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Freelancer</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$24<span class="duration">/mo</span></h2>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Freelancer</a>
-                            </div>
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".6s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Startup</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$32<span class="duration">/mo</span></h2>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Startup</a>
-                            </div>
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".8s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Enterprise</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$48<span class="duration">/mo</span></h2>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Enterprise</a>
-                            </div>
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/ End Pricing Table Area -->
+   
 
     <!-- Start Call Action Area -->
     <section id="download" class="call-action style2">
@@ -702,20 +505,7 @@
             </div>
         </div>
         <!--/ End Footer Top -->
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="copyright-text">Designed and Developed by <a href="https://wpthemesgrid.com/"
-                                rel="nofollow" target="_blank">WpthemesGrid</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/ End Footer Area -->
-
+      
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top">
         <i class="lni lni-chevron-up"></i>
