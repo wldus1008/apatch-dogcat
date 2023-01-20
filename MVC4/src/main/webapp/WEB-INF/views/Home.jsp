@@ -7,9 +7,9 @@
 
 
 <head>
+    <title>Apatch DogCat</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Appmeet - Startup, App & SaaS HTML Template.</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
@@ -93,7 +93,7 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="index.html">
+                            <a class="navbar-brand style3" href="Home.do">
                                 <img src="resources/images/logo/logo.svg" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"

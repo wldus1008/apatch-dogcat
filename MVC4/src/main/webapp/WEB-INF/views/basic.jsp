@@ -305,8 +305,7 @@
    
   
   </script>
-  
-    <style>
+     <style>
         @media (min-width: 720px)
          {
             .nav-section{
@@ -327,9 +326,7 @@
             grid-row-gap: 20px;
             
         }
-        .jy{
-            margin-bottom: 50px;
-        }
+       
         
         .main-icon{
             background-color: blanchedalmond;
@@ -338,15 +335,20 @@
             color: black;
         }
 
-    </style>
+	 @media (min-width: 720px)
+         {
+            .HH{
+                display: none;
+            } 
+        }
 
+
+    </style>
+    
 </head>
 
 <body>
-    
-   
-
-    <!-- Preloader-->
+ <!-- Preloader-->
     <div id="preloader">
         <div class="appmeet-load"></div>
     </div>
@@ -359,7 +361,7 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="index.html">
+                            <a class="navbar-brand style3" href="Home.do">
                                 <img src="resources/images/logo/logo.svg" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
@@ -374,12 +376,40 @@
                                     <li class="nav-item">
                                         <a href="Home.do" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
+                            
+                       
+                		 
+                            <c:choose>
+								<c:when test="${empty loginMember}">
+
+									 <li class="nav-item HH">
+										<a href="${cpath}/login.do" class="btn">로그인</a>
+									 </li>
+									 <li class="nav-item HH">
+										<a href="${cpath}/register.do" class="btn">회원가입</a>
+									 </li>
+
+								</c:when>
+								<c:otherwise>
+															
+									<li class="nav-item HH">
+										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
+									</li>
+
+								</c:otherwise>
+
+							</c:choose>
+                           
+                               
+                                    
+                                    
+                                    
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Services</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
                                         <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="services.html">반려견 피부질환</a>
+                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
                                         </ul>
@@ -395,35 +425,29 @@
                                             </li>
                                         </ul>
                                     </li>
+                                   
+                                    <c:choose>
+                                    <c:when test="${not empty loginMember}">
+                                                  
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Pages</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">반려동물등록</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="about.html">About Us</a>
-                                            </li>
-                                            <li class="nav-item"><a href="pricing.html">Pricing</a></li>
-                                            <li class="nav-item"><a href="faq.html">Faq</a></li>
-                                            <li class="nav-item"><a href="login.html">Login</a></li>
-                                            <li class="nav-item"><a href="registration.html">Registration</a></li>
-                                            <li class="nav-item"><a href="404.html">404 Error</a></li>
-                                            <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
+                                            <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
+                                            <li class="nav-item"><a href="pricing.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
+                                            
                                         </ul>
                                     </li>
+                                 </c:when>
+						         </c:choose>    
+                                    
                                     <li class="nav-item">
-                                        <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
-                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Blog</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a>
-                                            </li>
-                                            <li class="nav-item"><a href="blog-single.html">Blog Single</a></li>
-                                            <li class="nav-item"><a href="blog-single-sidebar.html">Blog Single
-                                                    Sibebar</a></li>
-                                        </ul>
+                                        <a href="contact.html" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                        <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -451,11 +475,7 @@
 
 								</c:otherwise>
 
-
 							</c:choose>
-
-
-
 
 
 
@@ -471,66 +491,19 @@
     </header>
     <!-- End Header Area -->
 
-    <!-- Start Hero Area -->
+<!-- Start Hero Area -->
     <section id="home" class="hero-area style1">
       
-            <div class="container jy" >
-                <div class="nav-section">
-                    <ul class="icons">
-                        <li class="nav-block">
-                            <a class="main-icon" href="/dog-lab/" id="dog-lab">
-                            <img src="resources/images/icon/dog01.png" alt="강아지 피부질환">
-                                
-                            <span id="nav-text">강아지 피부질환</span>
-                            </a>
-                        </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" href="/cat-lab/" id="cat-lab">
-                            <img src="resources/images/icon/cat01.png" alt="고양이 피부질환" >
-                                
-                            <span id="nav-text">고양이 피부질환</span>
-                            </a>
-                        </li>
-        
-                    <li class="nav-block">
-                        <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="커뮤니티">
-                            <span id="nav-text">커뮤니티</span>
-                        </a>
-                    </li>
-        
-                    <li class="nav-block">
-                        <a class="main-icon" id="creators" href="https://creators.mypetlife.co.kr">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png" alt="동물툰" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png"
-                                alt="동물툰"/></noscript>
-                            <span id="nav-text">크리에이터즈</span>
-                        </a>
-                    </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" id="webtoon" href="/cbh?utm_source=bemypetlife&amp;utm_medium=icon&amp;utm_campaign=icon-20210827" target="_blank">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png" alt="동물등록" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png"
-                                alt="동물등록"/></noscript>
-                            <span id="nav-text">동물등록</span>
-                            </a>
-                        </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" id="store" href="https://store.bemypet.kr" target="_blank">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png" alt="스토어" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png"
-                                alt="스토어"/></noscript>
-                            <span id="nav-text">스토어</span>
-                            </a>
-                        </li>
-                </ul>
-                
-                </div>
-
-            </div>
+           
+   
+   
+   
+  
+  
+  
   
 <div class="container">
-  <!-- <h2>DCX분석서비스 개발자과정</h2>  -->
+  
   <div class="panel panel-default">
   
 	
