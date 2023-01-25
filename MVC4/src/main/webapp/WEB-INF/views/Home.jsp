@@ -53,10 +53,10 @@
         }
         
         .main-icon{
-            background-color: blanchedalmond;
+            background-color: #FFEB66;
             text-align: center;
             border-radius: 20px;
-            color: black;
+            color: #5034FC;
         }
 
 	 @media (min-width: 720px)
@@ -94,7 +94,7 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo.svg" alt="Logo">
+                                <img src="resources/images/logo/logo1.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

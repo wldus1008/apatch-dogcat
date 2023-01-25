@@ -73,7 +73,9 @@
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1><img src="#" alt="Logo"  width="400" height="100"  margin-left: auto; margin-right: auto;></h1>
+              <a href = Home.do>
+              <h1><img src="resources/images/logo/logo1.png" alt="Logo" width="400" height="100"></h1>
+              </a>
               <hr>
               <h2 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">로그인</h2>
 			  <h2>회원가입</h2>
@@ -119,9 +121,9 @@
                 </label>
               </div> -->
 
-              <div class="text-center">
-                <button type="submit"  class="btn btn-primary" id="submit">가입하기</button>
-                <a href="Home.do" class="btn btn-primary">홈으로</a>
+              <div class="button text-center">
+                <button type="submit"  class="btn" id="submit">가입하기</button>
+                <a href="Home.do" class="btn">홈으로</a>
               </div>
             </div>
           </form>
