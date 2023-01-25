@@ -532,8 +532,15 @@
 			  <!-- 부트스트랩은 한줄이 12 //  col-sm-10, col-sm-2 -->
 			    <div class="col-sm-offset-2  col-sm-10">
 			    <!-- button 기본 type은 submit이기 때문에 버튼으로만 사용하려면 type="button"  -->
-			      <button type="button" class="btn btn-default" onclick="insertFn()">등록</button>
-			      <button type="button" class="btn btn-default" onclick="resetFn()">취소</button>
+			      
+			      <div class="button add-list-button">
+			      <div class="btn" onclick="insertFn()">등록</div>
+			      </div>
+			      <div class="button add-list-button">
+			      <div class="btn" onclick="resetFn()">취소</div>
+			      </div>
+			    
+			     
 			    </div>
 			  </div>
 	    </form>
