@@ -561,8 +561,8 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-about">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="resources/images/logo/white-logo.svg" alt="#">
+                                <a href="Home.do">
+                                    <img src="resources/images/logo/logo2.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>

@@ -57,6 +57,7 @@
             text-align: center;
             border-radius: 20px;
             color: #5034FC;
+            font-size: 14px;
         }
 
 	 @media (min-width: 720px)
@@ -234,7 +235,7 @@
                     <ul class="icons">
                         <li class="nav-block">
                             <a class="main-icon" href="service.do" id="dog-lab">
-                            <img src="resources/images/icon/dog01.png" alt="강아지 피부질환">
+                            <img src="resources/images/icon/dog02.png" alt="강아지 피부질환">
                                 
                             <span id="nav-text">강아지 피부질환</span>
                             </a>
@@ -242,7 +243,7 @@
         
                         <li class="nav-block">
                             <a class="main-icon" href="/cat-lab/" id="cat-lab">
-                            <img src="resources/images/icon/cat01.png" alt="고양이 피부질환" >
+                            <img src="resources/images/icon/cat02.png" alt="고양이 피부질환" >
                                 
                             <span id="nav-text">고양이 피부질환</span>
                             </a>
@@ -250,14 +251,14 @@
         
                     <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="커뮤니티">
+                            <img src="resources/images/icon/board02.png"  alt="커뮤니티">
                             <span id="nav-text">커뮤니티</span>
                         </a>
                     </li>
         
                      <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="동물병원 찾기">
+                            <img src="resources/images/icon/hospital.png" alt="동물병원 찾기">
                             <span id="nav-text">동물병원 찾기</span>
                         </a>
                     </li>
@@ -265,7 +266,7 @@
                     <c:when test="${not empty loginMember}">
                         <li class="nav-block">
                             <a class="main-icon" id="webtoon" href="imgView.do" >
-                            <img src="">
+                            <img src="resources/images/icon/petcollar02.png">
                             <span id="nav-text">동물등록</span>
                             </a>
                         </li>
@@ -275,7 +276,7 @@
         
                         <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="반려동물 보험">
+                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험">
                             <span id="nav-text">반려동물 보험</span>
                         </a>
                        </li>
@@ -462,8 +463,8 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-about">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="resources/images/logo/white-logo.svg" alt="#">
+                                <a href="Home.do">
+                                    <img src="resources/images/logo/logo2.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>
