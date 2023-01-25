@@ -124,12 +124,12 @@
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
 	         if("${loginMember.memId}" == obj.memId) {
-	         	bList += "<button class='btn btn-sm btn-warning' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
-	         	bList += "<button class='btn btn-sm btn-primary' onclick='goDel(" + obj.idx + ")'>삭제</button>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></div>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
 	         }else{
-	        	 bList += "<button disabled class='btn btn-sm btn-warning' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
-		         bList += "<button disabled class='btn btn-sm btn-primary' onclick='goDel(" + obj.idx + ")'>삭제</button>";
+	        	 bList += "<button disabled class='btn btn-primary btn-lg' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
+		         bList += "<button disabled class='btn btn-primary btn-lg' onclick='goDel(" + obj.idx + ")'>삭제</button>";
 	        	 
 	         }
 	         bList += "</td>";
@@ -143,7 +143,7 @@
 	   
 	   bList +="<tr>";
 	   bList +="<td colspan='5'>";
-	   bList +="<button class ='btn btn-sm btn-info' onclick='goForm()'>글쓰기</button>";
+	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";
 	   bList +="</tr>";
 	   
@@ -361,8 +361,8 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo1.png" alt="Logo">
+                            <a class="navbar-brand style3" href="Home.do" style = "padding-bottom: 85px;">
+                                <img src="resources/images/logo/logo1.png" alt="Logo" >
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -476,10 +476,6 @@
 								</c:otherwise>
 
 							</c:choose>
-
-
-
-
 
 
 						</nav>

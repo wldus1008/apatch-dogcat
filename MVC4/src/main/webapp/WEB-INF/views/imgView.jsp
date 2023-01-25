@@ -207,10 +207,6 @@
 							</c:choose>
 
 
-
-
-
-
 						</nav>
                         <!-- End Navbar -->
                     </div>
