@@ -643,20 +643,7 @@
             </div>
         </div>
         <!--/ End Footer Top -->
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="copyright-text">Designed and Developed by <a href="https://wpthemesgrid.com/"
-                                rel="nofollow" target="_blank">WpthemesGrid</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/ End Footer Area -->
-
+      
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top">
         <i class="lni lni-chevron-up"></i>
