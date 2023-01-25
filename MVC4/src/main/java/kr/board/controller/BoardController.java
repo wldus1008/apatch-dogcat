@@ -169,6 +169,14 @@ public class BoardController {
 		return "serviceResult";
 	}
 	
+	@RequestMapping("/map.do")
+	public String map() {
+		
+	
+		
+		return "map";
+		
+	}
 	
 	
 	

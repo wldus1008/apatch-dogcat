@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="cpath" value="${pageContext.request.contextPath}" /> 
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
-
-
 <head>
-    <title>Apatch DogCat</title>
+<title>Apatch DogCat</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
@@ -27,7 +25,15 @@
     <link rel="stylesheet" href="resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="resources/css/main.css" />
 
-    <style>
+
+
+
+
+
+
+
+
+  <style>
         @media (min-width: 720px)
          {
             .nav-section{
@@ -48,16 +54,13 @@
             grid-row-gap: 20px;
             
         }
-        .jy{
-            margin-bottom: 50px;
-        }
+       
         
         .main-icon{
-            background-color: #FFEB66;
+            background-color: blanchedalmond;
             text-align: center;
             border-radius: 20px;
-            color: #5034FC;
-            font-size: 14px;
+            color: black;
         }
 
 	 @media (min-width: 720px)
@@ -66,22 +69,15 @@
                 display: none;
             } 
         }
-
-
+	
+   
     </style>
+
 
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
-
-    <!-- Preloader-->
+ <!-- Preloader-->
     <div id="preloader">
         <div class="appmeet-load"></div>
     </div>
@@ -211,249 +207,156 @@
 							</c:choose>
 
 
-
-
-
-
-
-
-
 						</nav>
                         <!-- End Navbar -->
                     </div>
                 </div>
             </div> <!-- row -->
+            
+            
+            
+            
+            
+            
         </div> <!-- container -->
     </header>
     <!-- End Header Area -->
 
-    <!-- Start Hero Area -->
+<!-- Start Hero Area -->
     <section id="home" class="hero-area style1">
       
-            <div class="container jy" >
-                <div class="nav-section">
-                    <ul class="icons">
-                        <li class="nav-block">
-                            <a class="main-icon" href="service.do" id="dog-lab">
-                            <img src="resources/images/icon/dog02.png" alt="강아지 피부질환">
-                                
-                            <span id="nav-text">강아지 피부질환</span>
-                            </a>
-                        </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" href="/cat-lab/" id="cat-lab">
-                            <img src="resources/images/icon/cat02.png" alt="고양이 피부질환" >
-                                
-                            <span id="nav-text">고양이 피부질환</span>
-                            </a>
-                        </li>
-        
-                    <li class="nav-block">
-                        <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board02.png"  alt="커뮤니티">
-                            <span id="nav-text">커뮤니티</span>
-                        </a>
-                    </li>
-        
-                     <li class="nav-block">
-                        <a class="main-icon"  href="map.do" id="product-lab">
-                            <img src="resources/images/icon/hospital.png" alt="동물병원 찾기">
-                            <span id="nav-text">동물병원 찾기</span>
-                        </a>
-                    </li>
-        			<c:choose>
-                    <c:when test="${not empty loginMember}">
-                        <li class="nav-block">
-                            <a class="main-icon" id="webtoon" href="imgView.do" >
-                            <img src="resources/images/icon/petcollar02.png">
-                            <span id="nav-text">동물등록</span>
-                            </a>
-                        </li>
-        			</c:when>
-					</c:choose>   
-        		
-        
-                        <li class="nav-block">
-                        <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험">
-                            <span id="nav-text">반려동물 보험</span>
-                        </a>
-                       </li>
-                </ul>
-                
-                </div>
+	<!-- 맵  -->
+				
+		<div class="container">
+		<div id="map" style="width:100%;height:500px;"></div>
+		</div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fb4ed50272904cd2fbcb3891b674c83&libraries=services"></script>
+		<script >
+		
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		        level: 10 // 지도의 확대 레벨 
+		    }; 
+		
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+		// 장소 검색 객체를 생성합니다
 
-            </div>
-            
-        
+		// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+		if (navigator.geolocation) {
+		    
+		    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+		    navigator.geolocation.getCurrentPosition(function(position) {
+		        var lat = position.coords.latitude, // 위도
+		            lon = position.coords.longitude; // 경도
+		        console.log(lat);
+		        console.log(lon);
+		        
+				var ps = new kakao.maps.services.Places(); 
+				// 키워드로 장소를 검색합니다
+				ps.keywordSearch('동물병원', placesSearchCB, {
+				    location: new kakao.maps.LatLng(lat, lon)
+				}); 
+		        
+		    	
+		        
+		        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+		            message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+		        
+		         // 키워드로 장소를 검색합니다
+		        // 마커와 인포윈도우를 표시합니다
+		        displayMarker(locPosition, message);
+		            
+		      });
+		    
+		} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+		    
+		    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
+		        message = 'geolocation을 사용할수 없어요..'
+		        
+		    displayMarker(locPosition, message);
+		}
+		
+		
+		
+		
+		
+		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+		function displayMarker(locPosition, message) {
+		
+		    // 마커를 생성합니다
+		    var marker = new kakao.maps.Marker({  
+		        map: map, 
+		        position: locPosition
+		    }); 
+		    
+		    var iwContent = message, // 인포윈도우에 표시할 내용
+		        iwRemoveable = true;
+		
+		    // 인포윈도우를 생성합니다
+		    var infowindow = new kakao.maps.InfoWindow({
+		        content : iwContent,
+		        removable : iwRemoveable
+		    });
+		    
+		    // 인포윈도우를 마커위에 표시합니다 
+		    infowindow.open(map, marker);
+		    
+		    // 지도 중심좌표를 접속위치로 변경합니다
+		    map.setCenter(locPosition);      
+		}    //키워드부분
+		    // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+		function placesSearchCB (data, status, pagination) {
+		    if (status === kakao.maps.services.Status.OK) {
+		
+		        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+		        // LatLngBounds 객체에 좌표를 추가합니다
+		        var bounds = new kakao.maps.LatLngBounds();
+		
+		        for (var i=0; i<data.length; i++) {
+		            displayMarker_search(data[i]);
+		            console.log(data[i]);
+		            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+		        }       
+		
+		        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+		        map.setBounds(bounds);
+		    } 
+		}
+		
+		// 지도에 마커를 표시하는 함수입니다
+		function displayMarker_search(place) {
+		    
+		    // 마커를 생성하고 지도에 표시합니다
+		    var marker = new kakao.maps.Marker({
+		        map: map,
+		        position: new kakao.maps.LatLng(place.y, place.x) 
+		    });
+		
+		    
+		    
+		    // 마커에 클릭이벤트를 등록합니다
+		    kakao.maps.event.addListener(marker, 'click', function() {
+		    	var iwContent = message, // 인포윈도우에 표시할 내용
+		        	iwRemoveable = true;
+		    	 var infowindow = new kakao.maps.InfoWindow({
+				        content : iwContent,
+				        removable : iwRemoveable
+				    });
+		        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+		        infowindow.setContent('<div style="padding:5px;font-size:12px; width:180px;">' + place.place_name +'<br>'
+		        						+place.phone+ '<br>'
+		        						+ place.road_address_name +'<br>'
+		        						+ place.address_name+'</div>');
+		        infowindow.open(map, marker);
+		    });
+		}
+		</script>
+							
+							
+		
 
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center;">
-                    	
-                    	<c:choose>
-								<c:when test="${empty loginMember or empty fileName}">
-
-									<img src="resources/images/hero/dog1.jpg" alt="#">
-
-								</c:when>
-								<c:otherwise>
-									
-									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>"/>
-
-								</c:otherwise>
-
-
-							</c:choose>
-                    	
-                        
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                        <h1>Get things done by great remote team</h1>
-                        <p>We share common trends and strategies for
-                            improving your rental income and making sure you stay in high demand.</p>
-                        <form action="#" method="get" target="_blank" class="trial-form">
-                            <input name="email" type="email" placeholder="Your email address">
-                            <div class="button">
-                                <button type="submit" class="btn">Get Started</button>
-                            </div>
-                        </form>
-                        <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                            class="glightbox video-button"><i class="lni lni-play"></i><span class="text">Watch our
-                                intro video.</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- End Hero Area -->
-
-    
-
-    <!-- Start Services Area -->
-    <section class="services style3 section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Services</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">서비스 설명</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">서비스 설명설명~</p>
-                    </div>
-                </div>
-            </div>
-            <div class="single-head">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
-                            <span class="serial">01</span>
-                            <h3><a href="service-details.html">반려견 피부질환</a></h3>
-                            <p>기능설명설명</p>
-                            <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".4s">
-                            <span class="serial">02</span>
-                            <h3><a href="service-details.html">반려묘 피부질환</a></h3>
-                            <p>기능설명설명</p>
-                            <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
-                            <span class="serial">03</span>
-                            <h3><a href="service-details.html">커뮤니티</a></h3>
-                            <p>기능설명설명</p>
-                            <div class="button">
-                                <a href="basic.do" class="btn">자세히보기</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
-                            <span class="serial">04</span>
-                            <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p>기능설명</p>
-                            <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".4s">
-                            <span class="serial">05</span>
-                            
-                            <h3><a>반려동물 등록하기</a></h3>
-                            <p>기능설명 로그인 후 사용가능</p>
-                            <c:choose>
-                            <c:when test="${not empty loginMember}">
-                             <div class="button">
-                                <a href="service-details.html" class="btn">등록하기</a>
-                             </div>
-                            </c:when>
-					        </c:choose>   
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
-                            <span class="serial">06</span>
-                            <h3><a href="service-details.html">반려동물 보험</a></h3>
-                            <p>기능 설명</p>
-                            <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Services Area -->
-
-    
-
-   
-
-    <!-- Start Call Action Area -->
-    <section id="download" class="call-action style2">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
-                    <div class="download">
-                        <div class="title">
-                            <h3>
-                                <span>Get Pro Version!</span>
-                                Currently You are using free<br>
-                                Lite version of Appmeet
-                            </h3>
-                            <p>Please, purchase full version of the template to get all pages,
-                                features and commercial license.</p>
-                        </div>
-                        <ul class="download-link">
-                            <li><a href="https://graygrids.com/templates/appmeet-startup-app-saas-html-template/"
-                                    target="_blank" style="padding:18px 40px;width: auto; text-align: center;">
-                                    <span class="main-text">Purchase Now</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Call Action Area -->
-
-    <!-- Start Footer Area -->
+<!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
@@ -602,6 +505,6 @@
         });
         cu.start();
     </script>
-</body>
 
+</body>
 </html>
