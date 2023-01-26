@@ -74,7 +74,7 @@
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
               <a href = Home.do>
-              <h1><img src="resources/images/logo/logo1.png" alt="Logo" width="400" height="100"></h1>
+              <h1><img src="resources/images/logo/logo7.png" alt="Logo" width="400" height="100"></h1>
               </a>
               <hr>
               <h2 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">로그인</h2>

@@ -15,6 +15,7 @@
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
 
     <!-- ========================= CSS here ========================= -->
@@ -24,7 +25,6 @@
     <link rel="stylesheet" href="resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="resources/css/main.css" />
-
 
 
 
@@ -91,7 +91,7 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo1.png" alt="Logo">
+                                <img src="resources/images/logo/logo7.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -161,10 +161,10 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">반려동물등록</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="pricing.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="pricing.html">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -173,7 +173,7 @@
 						         </c:choose>    
                                     
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">동물병원찾기</a>
+                                        <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
@@ -230,29 +230,56 @@
 
 
 				<!-- 파일 업로드  -->
-				
-					
-				<div class="col-12 mb-3">
-					<div class="container" >
-					
-						<form action="${cpath}/upload" method="post" enctype="multipart/form-data">
-							<label for="formFile" class="form-label"><h2>반려동물 사진등록</h2></label>
-							
-							<input type="file" name="files" onchange="readURL(this);" class="form-control" id="formFile"> 
-							<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
-							<input type='hidden' name='memId' value='${loginMember.memId}'>
-							<div style="margin-top: 10px; margin-bottom: 10px">
-							<img id="preview" />
-							</div>
-						
-							<button type="submit" class="btn btn-success" >등록하기</button>
-												
-							
-						</form>
-						
+
+	
+    <div class="container">
+
+      <div class="row mb-5 justify-content-center">
+        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
+          <form action="${cpath}/petinfo" class="form-box" method="post" name="petUpload" id="petUpload" target="1">
+          <label for="formFile" class="form-label"><h5>반려동물 정보등록</h5></label>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <input type="text" class="form-control" name="petName" placeholder="이름을 입력해 주세요." id="petName">
+              </div>
+              <div class="col-12 mb-3">
+                <input type="text" class="form-control" name="petAge" placeholder="나이를 입력해 주세요." id="petAge">
+              </div>
+              <div class="col-12 mb-3">
+                <input type="radio"  name="petgender" value="male" id="petgender">
+                <label for="male" style="margin-right: 20px">수컷</label>            
+                <input type="radio"  name="petgender" value="female" id="petgender">
+                <label for="female">암컷</label>
+              </div>
+              <input type='hidden' name='memId' value='${loginMember.memId}'>
+          
+            </div>
+          </form>
+				<!-- 반려동물 사진 등록 -->
+				<form action="${cpath}/upload" method="post"
+					enctype="multipart/form-data" name="imgUpload" target="2" id="imgUpload">
+					<label for="formFile" class="form-label"><h5>반려동물 사진등록</h5></label>
+					<input type="file" name="files" onchange="readURL(this);"
+						class="form-control" >
+					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
+					<input type='hidden' name='memId' value='${loginMember.memId}'>
+					<div style="margin-top: 10px; margin-bottom: 10px">
+						<img id="preview" />
 					</div>
+					<div class="button text-center">
+						<button type="submit" class="btn" onClick="TwoSubmit()">등록하기 </button> 
 					</div>
-					<script type="text/javascript">
+					
+				</form>
+        </div>
+      </div>
+
+      
+    </div>
+  
+				 
+
+		<script type="text/javascript">
 					
 					function readURL(input) {
 						  if (input.files && input.files[0]) {
@@ -266,9 +293,29 @@
 						  }
 						}
 					
-					
-					
-					</script>
+					/* function TwoSubmit(){
+						$('#imgUpload').submit();
+						$('#petUpload').submit();
+					} */
+				    
+			         function TwoSubmit(){
+
+			        	
+			        	var petData = $('#petUpload').serialize();
+			        	$.ajax({
+			        		url : "${cpath}/petinfo",
+			        		type : "post",
+			        		data : petData,
+			        		success : function(){
+			        			console.log(petData)
+			        		},
+			        		error : function(){
+			        			alert("펫 업로드 실패!")
+			        		}
+			        	});
+			        }
+			        	
+		</script>
 					
 					
 					
@@ -292,7 +339,7 @@
                         <div class="single-footer f-about">
                             <div class="logo">
                                 <a href="Home.do">
-                                    <img src="resources/images/logo/logo2.png" >
+                                    <img src="resources/images/logo/logo8.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>
@@ -429,7 +476,12 @@
             append: " ",
         });
         cu.start();
+        
+        
+    
+        
+        
+       
     </script>
-</body>
-
+</footer>
 </html>

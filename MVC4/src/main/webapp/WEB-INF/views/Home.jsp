@@ -53,10 +53,10 @@
         }
         
         .main-icon{
-            background-color: #FFEB66;
+            background-color: #fef4a9;
             text-align: center;
             border-radius: 20px;
-            color: #5034FC;
+            color: #286769;
             font-size: 14px;
         }
 
@@ -95,7 +95,7 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo1.png" alt="Logo">
+                                <img src="resources/images/logo/logo7.png" alt="Logo" >
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -165,10 +165,10 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">반려동물등록</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="pricing.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="pricing.html">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -394,7 +394,7 @@
                             <span class="serial">05</span>
                             
                             <h3><a>반려동물 등록하기</a></h3>
-                            <p>기능설명 로그인 후 사용가능</p>
+                            <p> 로그인 후 사용가능</p>
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
@@ -464,7 +464,7 @@
                         <div class="single-footer f-about">
                             <div class="logo">
                                 <a href="Home.do">
-                                    <img src="resources/images/logo/logo2.png" >
+                                    <img src="resources/images/logo/logo8.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>

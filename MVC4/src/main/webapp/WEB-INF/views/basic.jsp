@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Apatch DogCat</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -13,9 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
-  <title>dogcat</title>
-    
+ 
     
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
     <!-- Place favicon.ico in the root directory -->
@@ -119,7 +117,7 @@
 	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
 	         bList += "<td>내용</td>"; 
 	         bList += "<td colspan='4'>";
-	         bList += "<textarea class='form-control' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" +  obj.content + "</textarea>";
+	         bList += "<textarea class='form-control form-board' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" +  obj.content + "</textarea>";
 	         
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
@@ -362,7 +360,7 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand style3" href="Home.do" style = "padding-bottom: 85px;">
-                                <img src="resources/images/logo/logo1.png" alt="Logo" >
+                                <img src="resources/images/logo/logo7.png" alt="Logo" >
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -444,7 +442,7 @@
 						         </c:choose>    
                                     
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">동물병원찾기</a>
+                                        <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
@@ -565,7 +563,7 @@
                         <div class="single-footer f-about">
                             <div class="logo">
                                 <a href="Home.do">
-                                    <img src="resources/images/logo/logo2.png" >
+                                    <img src="resources/images/logo/logo8.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>
