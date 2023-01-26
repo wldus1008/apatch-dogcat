@@ -11,7 +11,7 @@
     <title>Appmeet - Startup, App & SaaS HTML Template.</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Place favicon.ico in the root directory -->
 
