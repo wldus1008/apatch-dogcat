@@ -10,7 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -222,12 +222,11 @@
     </header>
     <!-- End Header Area -->
 
-<!-- Start Hero Area -->
-    <section id="home" class="hero-area style1">
+
       
 	<!-- 맵  -->
 				
-		<div class="container">
+		<div class="container" style = "padding-top: 150px;">
 		<div id="map" style="width:100%;height:500px;"></div>
 		</div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fb4ed50272904cd2fbcb3891b674c83&libraries=services"></script>
@@ -356,7 +355,8 @@
 							
 		
 
-<!-- Start Footer Area -->
+
+    <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
@@ -444,7 +444,9 @@
                 </div>
             </div>
         </div>
+        </footer>
         <!--/ End Footer Top -->
+      
       
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top">

@@ -12,7 +12,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -541,6 +541,7 @@
                 </div>
             </div>
         </div>
+        </footer>
         <!--/ End Footer Top -->
       
     <!-- ========================= scroll-top ========================= -->

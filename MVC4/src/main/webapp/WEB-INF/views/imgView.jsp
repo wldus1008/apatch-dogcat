@@ -10,7 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -217,11 +217,9 @@
     <!-- End Header Area -->
 
 <!-- Start Hero Area -->
-    <section id="home" class="hero-area style1">
-      
-
-
-
+<!-- <section id="home" class="hero-area style1">
+      </section>
+ -->
 
 
 
@@ -232,7 +230,7 @@
 				<!-- 파일 업로드  -->
 
 	
-    <div class="container">
+    <div class="container" style = "padding-top: 150px;">
 
       <div class="row mb-5 justify-content-center">
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
@@ -255,6 +253,7 @@
           
             </div>
           </form>
+          <br>
 				<!-- 반려동물 사진 등록 -->
 				<form action="${cpath}/upload" method="post"
 					enctype="multipart/form-data" name="imgUpload" target="2" id="imgUpload">
@@ -328,7 +327,8 @@
 
 
 
-<!-- Start Footer Area -->
+
+    <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
@@ -416,7 +416,9 @@
                 </div>
             </div>
         </div>
+        </footer>
         <!--/ End Footer Top -->
+      
       
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top">

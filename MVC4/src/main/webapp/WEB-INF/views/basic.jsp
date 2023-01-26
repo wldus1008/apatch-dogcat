@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
  
     
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -430,10 +430,10 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">반려동물등록</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="pricing.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="pricing.html">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -485,10 +485,7 @@
     </header>
     <!-- End Header Area -->
 
-<!-- Start Hero Area -->
-    <section id="home" class="hero-area style1">
-      
-           
+
    
    
    
@@ -496,7 +493,7 @@
   
   
   
-<div class="container">
+<div class="container" style = "padding-top: 150px;">
   
   <div class="panel panel-default">
   
@@ -552,7 +549,8 @@
 </div>
 
 
- <!-- Start Footer Area -->
+
+    <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
@@ -640,7 +638,9 @@
                 </div>
             </div>
         </div>
+        </footer>
         <!--/ End Footer Top -->
+      
       
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top">
