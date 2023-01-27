@@ -17,8 +17,8 @@ public class PetController {
 	
 	@RequestMapping("petinfo")
 	public void register(Petinfo vo){
+		System.out.println("[petinfo Controller 들어옴]");
 		
-		// 회원가입 서비스 실행
 		Petinfo update = petmapper.checkId(vo.getMemId());
         if(update != null) {
         	petmapper.update(vo);
