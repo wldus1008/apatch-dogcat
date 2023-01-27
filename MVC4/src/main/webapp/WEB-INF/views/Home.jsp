@@ -59,6 +59,16 @@
             color: #286769;
             font-size: 14px;
         }
+        
+        .main-icon:hover{
+            background-color: #286769;
+            text-align: center;
+            border-radius: 20px;
+            color: #fef4a9!important;
+            font-size: 14px;
+        }
+        
+        
 
 	 @media (min-width: 720px)
          {
