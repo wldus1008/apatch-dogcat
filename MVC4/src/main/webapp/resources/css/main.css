@@ -103,6 +103,7 @@ span,
 a {
   display: inline-block;
   text-decoration: none;
+  color: #286769;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -2844,7 +2845,7 @@ ol {
   font-size: 42px;
   font-weight: 800;
   line-height: 50px;
-  color: #061E5C;
+  color: #286769;
   text-transform: capitalize;
 }
 

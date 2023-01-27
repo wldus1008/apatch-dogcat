@@ -44,7 +44,7 @@
               <h1><img src="resources/images/logo/logo7.png" alt="Logo" width="400" height="100"></h1>
               </a>
               <hr>
-              <h2 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">로그인</h2>
+              <h2 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">로그인</h2>
 
             </div>
           </div>
