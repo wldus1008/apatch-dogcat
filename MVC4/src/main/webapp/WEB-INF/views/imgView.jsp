@@ -197,7 +197,7 @@
 								</c:when>
 								<c:otherwise>
 									
-									<span>${loginMember.memName}님 환영합니다</span> 
+									<div style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</div> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>
@@ -230,10 +230,10 @@
 				<!-- 파일 업로드  -->
 
 	
-    <div class="container" style = "padding-top: 150px;">
+    <div class="container" style = "padding-top: 150px;" >
 
-      <div class="row mb-5 justify-content-center">
-        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
+      <div class="row mb-5 justify-content-center" >
+        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200"     >
           <form action="${cpath}/petinfo" class="form-box" method="post" name="petUpload" id="petUpload" target="1">
           <label for="formFile" class="form-label"><h5>반려동물 정보등록</h5></label>
             <div class="row">

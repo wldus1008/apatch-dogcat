@@ -205,7 +205,7 @@
 								</c:when>
 								<c:otherwise>
 									
-									<span>${loginMember.memName}님 환영합니다</span> 
+									<div style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</div> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>
