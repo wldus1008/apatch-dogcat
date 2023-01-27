@@ -227,7 +227,7 @@
 	<!-- 맵  -->
 				
 		<div class="container" style = "padding-top: 150px; padding-bottom: 150px;">
-		<div id="map" style="width:100%;height:500px; border: 10px solid#286769; border-radius: 70px; "></div>
+		<div id="map" style="width:100%;height:500px; border: 5px solid#286769; border-radius: 70px; "></div>
 		</div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fb4ed50272904cd2fbcb3891b674c83&libraries=services"></script>
 		<script >
