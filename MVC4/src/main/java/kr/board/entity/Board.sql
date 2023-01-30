@@ -66,6 +66,7 @@ create table board(
 
 
 
+
 create table files(
 	fno int not null auto_increment primary key,
 	filename varchar(500) not null,
