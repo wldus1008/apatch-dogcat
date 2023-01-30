@@ -32,12 +32,12 @@
     
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="${path}/resources/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="${path}/resources/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="${path}/resources/css/animate.css" />
-    <link rel="stylesheet" href="${path}/resources/css/tiny-slider.css" />
-    <link rel="stylesheet" href="${path}/resources/css/glightbox.min.css" />
-    <link rel="stylesheet" href="${path}/resources/css/main.css" />
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/resources/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/resources/css/animate.css" />
+    <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/resources/css/main.css" />
 
 
 <style>
@@ -587,10 +587,14 @@ a:hover {
 	display: flex;
 }
 .cal_size{
-	width:1200px;
+	width:80%;
 	display: gird;
 	grid-area:main;
-	place-items:center;
+	position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+ 
+  
 }
 
  </style>
@@ -746,7 +750,7 @@ a:hover {
 
 
 	<div class="cal_size">
-	<div>
+	
 	<form name="calendarFrm" id="calendarFrm" action="" method="GET" style = "padding-top: 150px; padding-bottom: 150px;" >
 		<input type="hidden" name="year" value="${today_info.search_year}" />
 		<input type="hidden" name="month" value="${today_info.search_month-1}" />
@@ -850,7 +854,7 @@ a:hover {
 
 			</table>
 	</form>
-	</div>
+	
 	
 	<div id="mask_board_move"></div>
 	<div class="normal_move_board_modal" id="addModal" style="display:none;">
@@ -960,6 +964,69 @@ a:hover {
 		</script>
 	</body>
    <!-- Start Footer Area -->
+    
+
+    <!-- ========================= JS here ========================= -->
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/wow.min.js"></script>
+    <script src="/resources/js/tiny-slider.js"></script>
+    <script src="/resources/js/glightbox.min.js"></script>
+    <script src="/resources/js/count-up.min.js"></script>
+    <script src="/resources/js/imagesloaded.min.js"></script>
+    <script src="/resources/js/isotope.min.js"></script>
+    <script src="/resources/js/main.js"></script>
+    <script type="text/javascript">
+        //======== tiny slider
+        tns({
+            container: '.client-logo-carousel',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 15,
+            nav: false,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                },
+                992: {
+                    items: 5,
+                }
+            }
+        });
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+        //====== counter up 
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
+        
+        
+    
+        
+        
+       
+    </script>
+    
     <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
@@ -1055,66 +1122,5 @@ a:hover {
     <a href="#" class="scroll-top">
         <i class="lni lni-chevron-up"></i>
     </a>
-
-    <!-- ========================= JS here ========================= -->
-    <script src="${path}/resources/js/bootstrap.min.js"></script>
-    <script src="${path}/resources/js/wow.min.js"></script>
-    <script src="${path}/resources/js/tiny-slider.js"></script>
-    <script src="${path}/resources/js/glightbox.min.js"></script>
-    <script src="${path}/resources/js/count-up.min.js"></script>
-    <script src="${path}/resources/js/imagesloaded.min.js"></script>
-    <script src="${path}/resources/js/isotope.min.js"></script>
-    <script src="${path}/resources/js/main.js"></script>
-    <script type="text/javascript">
-        //======== tiny slider
-        tns({
-            container: '.client-logo-carousel',
-            autoplay: true,
-            autoplayButtonOutput: false,
-            mouseDrag: true,
-            gutter: 15,
-            nav: false,
-            controls: false,
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                540: {
-                    items: 2,
-                },
-                768: {
-                    items: 3,
-                },
-                992: {
-                    items: 5,
-                }
-            }
-        });
-
-        //========= glightbox
-        GLightbox({
-            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-            'type': 'video',
-            'source': 'youtube', //vimeo, youtube or local
-            'width': 900,
-            'autoplayVideos': true,
-        });
-
-        //====== counter up 
-        var cu = new counterUp({
-            start: 0,
-            duration: 2000,
-            intvalues: true,
-            interval: 100,
-            append: " ",
-        });
-        cu.start();
-        
-        
-    
-        
-        
-       
-    </script>
 
 </html>

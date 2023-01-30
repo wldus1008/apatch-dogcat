@@ -20,12 +20,12 @@
     
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="resources/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="resources/css/animate.css" />
-    <link rel="stylesheet" href="resources/css/tiny-slider.css" />
-    <link rel="stylesheet" href="resources/css/glightbox.min.css" />
-    <link rel="stylesheet" href="resources/css/main.css" />
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/resources/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/resources/css/animate.css" />
+    <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/resources/css/main.css" />
 
     <style>
         @media (min-width: 720px)
@@ -554,14 +554,14 @@
     </a>
 
     <!-- ========================= JS here ========================= -->
-    <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/wow.min.js"></script>
-    <script src="resources/js/tiny-slider.js"></script>
-    <script src="resources/js/glightbox.min.js"></script>
-    <script src="resources/js/count-up.min.js"></script>
-    <script src="resources/js/imagesloaded.min.js"></script>
-    <script src="resources/js/isotope.min.js"></script>
-    <script src="resources/js/main.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/wow.min.js"></script>
+    <script src="/resources/js/tiny-slider.js"></script>
+    <script src="/resources/js/glightbox.min.js"></script>
+    <script src="/resources/js/count-up.min.js"></script>
+    <script src="/resources/js/imagesloaded.min.js"></script>
+    <script src="/resources/js/isotope.min.js"></script>
+    <script src="/resources/js/main.js"></script>
     <script type="text/javascript">
         //======== tiny slider
         tns({

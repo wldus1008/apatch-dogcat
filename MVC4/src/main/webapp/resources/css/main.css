@@ -4048,6 +4048,7 @@ ol {
 ========================================*/
 .footer {
   background-color: #3b9a9c;
+  display:grid;
   position: relative;
 }
 
