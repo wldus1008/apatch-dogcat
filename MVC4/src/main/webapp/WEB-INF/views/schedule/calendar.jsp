@@ -538,7 +538,7 @@ a:hover {
 }
 
 .normal_manage_board_modal ul li .text_subject {
-	width: 10%;
+	width: 100%;
 	height: 100%;
 	float: left;
 	font-size: 18px;
@@ -885,8 +885,8 @@ a:hover {
 							</div>
 						</li>
 						<li>
-							<div class="text_subject">공유 :</div> <input class="radio"
-							type="radio" name="schedule_share" value="1" checked="checked">공개
+							<div class="text_subject">공유 :</div> 
+							<input class="radio" type="radio" name="schedule_share" value="1" checked="checked">공개
 							<input type="radio" name="schedule_share" value="2">비공개
 						</li>
 						<li >
