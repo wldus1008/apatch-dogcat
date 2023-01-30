@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.board.entity.Files;
@@ -46,7 +47,13 @@ public class imgController {
 		        file.setFilename(destinationFileName);
 		        file.setFileOriName(sourceFileName);
 		        file.setFileurl(fileUrl+destinationFileName);
-		        mapper.imgupload(file);
+		        Files update = mapper.checkId(memId);
+		        if(update != null) {
+		        	mapper.update(file);
+		        }else {
+		        	mapper.imgupload(file);		        	
+		        }
+		        
 		       		        
 		        return "redirect:/Home.do";
 		    }

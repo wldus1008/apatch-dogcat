@@ -3,25 +3,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="description" content="" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
-  <title>dogcat</title>
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+
+<title>Apatch DogCat</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
 
     <!-- ========================= CSS here ========================= -->
@@ -31,18 +26,55 @@
     <link rel="stylesheet" href="resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="resources/css/main.css" />
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+  <style>
+        @media (min-width: 720px)
+         {
+            .nav-section{
+                display: none;
+            } 
+        }
+        
+        .nav-section {
+                max-width: 600px;
+                padding: 0px 10px;
+                margin-top: 50px;
+         }
+       
+         ul.icons {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-column-gap: 15px;
+            grid-row-gap: 20px;
+            
+        }
+       
+        
+        .main-icon{
+            background-color: blanchedalmond;
+            text-align: center;
+            border-radius: 20px;
+            color: black;
+        }
+
+	 @media (min-width: 720px)
+         {
+            .HH{
+                display: none;
+            } 
+        }
+	
+   
+    </style>
+
+
   
   <script type="text/javascript">
   // basic.jsp가 실행이 되면 목록을 보여주는 함수가 실행이 될 수 있도록
@@ -119,17 +151,17 @@
 	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
 	         bList += "<td>내용</td>"; 
 	         bList += "<td colspan='4'>";
-	         bList += "<textarea class='form-control' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" +  obj.content + "</textarea>";
+	         bList += "<textarea class='form-control form-board' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" +  obj.content + "</textarea>";
 	         
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
 	         if("${loginMember.memId}" == obj.memId) {
-	         	bList += "<button class='btn btn-sm btn-warning' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
-	         	bList += "<button class='btn btn-sm btn-primary' onclick='goDel(" + obj.idx + ")'>삭제</button>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></div>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
 	         }else{
-	        	 bList += "<button disabled class='btn btn-sm btn-warning' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
-		         bList += "<button disabled class='btn btn-sm btn-primary' onclick='goDel(" + obj.idx + ")'>삭제</button>";
+	        	 bList += "<button disabled class='btn btn-primary btn-lg' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
+		         bList += "<button disabled class='btn btn-primary btn-lg' onclick='goDel(" + obj.idx + ")'>삭제</button>";
 	        	 
 	         }
 	         bList += "</td>";
@@ -143,7 +175,7 @@
 	   
 	   bList +="<tr>";
 	   bList +="<td colspan='5'>";
-	   bList +="<button class ='btn btn-sm btn-info' onclick='goForm()'>글쓰기</button>";
+	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";
 	   bList +="</tr>";
 	   
@@ -305,48 +337,11 @@
    
   
   </script>
-  
-    <style>
-        @media (min-width: 720px)
-         {
-            .nav-section{
-                display: none;
-            } 
-        }
-        
-        .nav-section {
-                max-width: 600px;
-                padding: 0px 10px;
-                margin-top: 50px;
-         }
-       
-         ul.icons {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-column-gap: 15px;
-            grid-row-gap: 20px;
-            
-        }
-        .jy{
-            margin-bottom: 50px;
-        }
-        
-        .main-icon{
-            background-color: blanchedalmond;
-            text-align: center;
-            border-radius: 20px;
-            color: black;
-        }
-
-    </style>
-
+   
 </head>
 
 <body>
-    
-   
-
-    <!-- Preloader-->
+ <!-- Preloader-->
     <div id="preloader">
         <div class="appmeet-load"></div>
     </div>
@@ -359,8 +354,8 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="index.html">
-                                <img src="resources/images/logo/logo.svg" alt="Logo">
+                            <a class="navbar-brand style3" href="Home.do">
+                                <img src="resources/images/logo/logo7.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -374,12 +369,40 @@
                                     <li class="nav-item">
                                         <a href="Home.do" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
+                            
+                       
+                		 
+                            <c:choose>
+								<c:when test="${empty loginMember}">
+
+									 <li class="nav-item HH">
+										<a href="${cpath}/login.do" class="btn">로그인</a>
+									 </li>
+									 <li class="nav-item HH">
+										<a href="${cpath}/register.do" class="btn">회원가입</a>
+									 </li>
+
+								</c:when>
+								<c:otherwise>
+															
+									<li class="nav-item HH">
+										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
+									</li>
+
+								</c:otherwise>
+
+							</c:choose>
+                           
+                               
+                                    
+                                    
+                                    
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Services</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
                                         <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="services.html">반려견 피부질환</a>
+                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
                                         </ul>
@@ -395,35 +418,29 @@
                                             </li>
                                         </ul>
                                     </li>
+                                   
+                                    <c:choose>
+                                    <c:when test="${not empty loginMember}">
+                                                  
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Pages</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="about.html">About Us</a>
-                                            </li>
-                                            <li class="nav-item"><a href="pricing.html">Pricing</a></li>
-                                            <li class="nav-item"><a href="faq.html">Faq</a></li>
-                                            <li class="nav-item"><a href="login.html">Login</a></li>
-                                            <li class="nav-item"><a href="registration.html">Registration</a></li>
-                                            <li class="nav-item"><a href="404.html">404 Error</a></li>
-                                            <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
+                                            <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
+                                            <li class="nav-item"><a href="calendar.do">캘린더</a></li>
+                                            <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
+                                            
                                         </ul>
                                     </li>
+                                 </c:when>
+						         </c:choose>    
+                                    
                                     <li class="nav-item">
-                                        <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
-                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Blog</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="blog-grid-sidebar.html">Blog Grid Sidebar</a>
-                                            </li>
-                                            <li class="nav-item"><a href="blog-single.html">Blog Single</a></li>
-                                            <li class="nav-item"><a href="blog-single-sidebar.html">Blog Single
-                                                    Sibebar</a></li>
-                                        </ul>
+                                        <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                        <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -444,22 +461,14 @@
 								</c:when>
 								<c:otherwise>
 									
-									<span>${loginMember.memName}님 환영합니다</span> 
+									<div style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</div> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>
 
 								</c:otherwise>
 
-
 							</c:choose>
-
-
-
-
-
-
-
 
 
 						</nav>
@@ -471,66 +480,15 @@
     </header>
     <!-- End Header Area -->
 
-    <!-- Start Hero Area -->
-    <section id="home" class="hero-area style1">
-      
-            <div class="container jy" >
-                <div class="nav-section">
-                    <ul class="icons">
-                        <li class="nav-block">
-                            <a class="main-icon" href="/dog-lab/" id="dog-lab">
-                            <img src="resources/images/icon/dog01.png" alt="강아지 피부질환">
-                                
-                            <span id="nav-text">강아지 피부질환</span>
-                            </a>
-                        </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" href="/cat-lab/" id="cat-lab">
-                            <img src="resources/images/icon/cat01.png" alt="고양이 피부질환" >
-                                
-                            <span id="nav-text">고양이 피부질환</span>
-                            </a>
-                        </li>
-        
-                    <li class="nav-block">
-                        <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board.png" alt="커뮤니티">
-                            <span id="nav-text">커뮤니티</span>
-                        </a>
-                    </li>
-        
-                    <li class="nav-block">
-                        <a class="main-icon" id="creators" href="https://creators.mypetlife.co.kr">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png" alt="동물툰" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-creators.png"
-                                alt="동물툰"/></noscript>
-                            <span id="nav-text">크리에이터즈</span>
-                        </a>
-                    </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" id="webtoon" href="/cbh?utm_source=bemypetlife&amp;utm_medium=icon&amp;utm_campaign=icon-20210827" target="_blank">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png" alt="동물등록" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-cbh.png"
-                                alt="동물등록"/></noscript>
-                            <span id="nav-text">동물등록</span>
-                            </a>
-                        </li>
-        
-                        <li class="nav-block">
-                            <a class="main-icon" id="store" href="https://store.bemypet.kr" target="_blank">
-                            <img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png" alt="스토어" data-lazy-src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://mypetlife.co.kr/wp-content/themes/bemypet-life-childresources/images/front-page/icon-store.png"
-                                alt="스토어"/></noscript>
-                            <span id="nav-text">스토어</span>
-                            </a>
-                        </li>
-                </ul>
-                
-                </div>
 
-            </div>
+
+   
   
-<div class="container">
-  <!-- <h2>DCX분석서비스 개발자과정</h2>  -->
+  
+  
+  
+<div class="container" style = "padding-top: 150px;">
+  
   <div class="panel panel-default">
   
 	
@@ -563,8 +521,15 @@
 			  <!-- 부트스트랩은 한줄이 12 //  col-sm-10, col-sm-2 -->
 			    <div class="col-sm-offset-2  col-sm-10">
 			    <!-- button 기본 type은 submit이기 때문에 버튼으로만 사용하려면 type="button"  -->
-			      <button type="button" class="btn btn-default" onclick="insertFn()">등록</button>
-			      <button type="button" class="btn btn-default" onclick="resetFn()">취소</button>
+			      
+			      <div class="button add-list-button">
+			      <div class="btn" onclick="insertFn()">등록</div>
+			      </div>
+			      <div class="button add-list-button">
+			      <div class="btn" onclick="resetFn()">취소</div>
+			      </div>
+			    
+			     
 			    </div>
 			  </div>
 	    </form>
@@ -578,7 +543,8 @@
 </div>
 
 
- <!-- Start Footer Area -->
+
+    <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
@@ -588,8 +554,8 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-about">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="resources/images/logo/white-logo.svg" alt="#">
+                                <a href="Home.do">
+                                    <img src="resources/images/logo/logo8.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>
@@ -666,21 +632,10 @@
                 </div>
             </div>
         </div>
+        </footer>
         <!--/ End Footer Top -->
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="copyright-text">Designed and Developed by <a href="https://wpthemesgrid.com/"
-                                rel="nofollow" target="_blank">WpthemesGrid</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/ End Footer Area -->
-
+      
+      
     <!-- ========================= scroll-top ========================= -->
     <a href="#" class="scroll-top">
         <i class="lni lni-chevron-up"></i>

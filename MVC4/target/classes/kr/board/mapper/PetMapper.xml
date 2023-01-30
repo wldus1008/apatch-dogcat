@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 여러 mapper.xml이 있는 경우에 id 겹치면 혼란이 되는것을 방지  -->
+<mapper namespace="kr.board.mapper.PetMapper">
+    
+    
+    
+    <insert id="petJoin" parameterType="kr.board.entity.Petinfo">
+  		 INSERT INTO Petinfo (petName, petAge, petgender , memId)
+    VALUES (#{petName},#{petAge},#{petgender},#{memId})
+  	</insert>
+    
+    <select id="checkId" parameterType="kr.board.entity.Petinfo" resultType="kr.board.entity.Petinfo">
+ 	    select *
+ 	    from Petinfo
+ 	    where memId = #{memId}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="kr.board.entity.Petinfo">
+ 	    update Petinfo
+ 	    set petName=#{petName} , petAge=#{petAge}, petgender=#{petgender}
+ 	    where memId=#{memId}
+ 	    
+ 	</update>
+    
+</mapper>    

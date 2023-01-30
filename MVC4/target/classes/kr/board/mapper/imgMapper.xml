@@ -14,5 +14,18 @@
  	<select id="getImg" parameterType="String" resultType="kr.board.entity.Files">
  	    select * from files where memId = #{id};
    </select>
+   
+ 	<select id="checkId" parameterType="String" resultType="kr.board.entity.Files">
+ 	    select *
+ 	    from files
+ 	    where memId = #{memId}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="kr.board.entity.Files">
+ 	    update files
+ 	    set filename=#{filename} , fileOriName=#{fileOriName}, fileurl=#{fileurl}
+ 	    where memId=#{memId}
+ 	    
+ 	</update>
 
 </mapper>

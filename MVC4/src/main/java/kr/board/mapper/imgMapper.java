@@ -15,6 +15,10 @@ public interface imgMapper {
 
 	public Files getImg(String id);
 
+	public Files checkId(String memId);
+
+	public void update(Files file);
+
 
 
 	

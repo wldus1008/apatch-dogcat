@@ -72,8 +72,7 @@ public class BoardController {
 	@RequestMapping("/register.do")
 	public String register() {
 		
-		// 알아서 ViewResolver에 의해
-		// WEB-INF/views에 있는 basic.jsp로 이동
+	
 		
 		return "register";
 		
@@ -170,6 +169,14 @@ public class BoardController {
 		return "serviceResult";
 	}
 	
+	@RequestMapping("/map.do")
+	public String map() {
+		
+	
+		
+		return "map";
+		
+	}
 	
 	
 	

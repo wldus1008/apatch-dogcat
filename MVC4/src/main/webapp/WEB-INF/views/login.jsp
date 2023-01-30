@@ -3,16 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
+<html lang="ko">
 <html>
 
 
 <head>
+     <title>Apatch DogCat</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Appmeet - Startup, App & SaaS HTML Template.</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -28,7 +29,7 @@
     <link rel="stylesheet" href="resources/css/main.css" />
 
 
-<title>Insert title here</title>
+
 
 
 
@@ -39,10 +40,12 @@
       <div class="row align-items-center justify-content-center">
         <div class="col-12">
           <div class="row justify-content-center ">
-            <div class="col-lg-6 text-center ">
-              <h1><img src="img/로고1.png" alt="Logo"  width="400" height="100"  margin-left: auto; margin-right: auto;></h1>
+            <div class="col-lg-6 text-center">
+              <a href = Home.do>
+              <h1><img src="resources/images/logo/logo7.png" alt="Logo" width="400" height="100"></h1>
+              </a>
               <hr>
-              <h2 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">로그인</h2>
+              <h2 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">로그인</h2>
 
             </div>
           </div>
@@ -81,10 +84,16 @@
 		
 		             
 		      
-		              <div class="text-center">
-		                <input type="submit" value="로그인" class="btn btn-primary">
-		                <button class="btn btn-primary"><a href="#" style="color: white;">회원가입</a></button>
-		                <button class="btn btn-primary"><a href="#" style="color: white;">홈으로</a></button>
+		              <div class="button text-center">
+		                <input type="submit" value="로그인" class="btn">
+		               	<div class="button add-list-button">
+						<a href="${cpath}/register.do" class="btn">회원가입</a>
+						</div>
+						<div class="button add-list-button">
+						<a href="${cpath}/Home.do" class="btn">홈으로</a>
+						</div>
+						
+		              
 		              </div>
 		            </div>
 		          </form>
@@ -95,44 +104,6 @@
 		 </div>
 		
 		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
+<html lang="ko">
 <html>
 
 <head>
@@ -11,7 +12,7 @@
     <title>Appmeet - Startup, App & SaaS HTML Template.</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Place favicon.ico in the root directory -->
 
@@ -73,10 +74,12 @@
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1><img src="#" alt="Logo"  width="400" height="100"  margin-left: auto; margin-right: auto;></h1>
+              <a href = Home.do>
+              <h1><img src="resources/images/logo/logo7.png" alt="Logo" width="400" height="100"></h1>
+              </a>
               <hr>
-              <h2 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">로그인</h2>
-			  <h2>회원가입</h2>
+              <h2 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">회원가입</h2>
+			  
             </div>
           </div>
         </div>
@@ -119,9 +122,9 @@
                 </label>
               </div> -->
 
-              <div class="text-center">
-                <button type="submit"  class="btn btn-primary" id="submit">가입하기</button>
-                <a href="Home.do" class="btn btn-primary">홈으로</a>
+              <div class="button text-center">
+                <button type="submit"  class="btn" id="submit">가입하기</button>
+                <a href="Home.do" class="btn">홈으로</a>
               </div>
             </div>
           </form>
