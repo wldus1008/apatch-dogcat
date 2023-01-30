@@ -58,6 +58,8 @@
             border-radius: 20px;
             color: #286769;
             font-size: 14px;
+            width: 120px;
+            height: 145px;
         }
         
         .main-icon:hover{
@@ -68,7 +70,7 @@
             font-size: 14px;
         }
         
-        
+      
 
 	 @media (min-width: 720px)
          {
@@ -247,7 +249,7 @@
         
                         <li class="nav-block">
                             <a class="main-icon" href="/cat-lab/" id="cat-lab">
-                            <img src="resources/images/icon/cat02.png" alt="고양이 피부질환" >
+                            <img src="resources/images/icon/cat02.png" alt="고양이 피부질환"  >
                                 
                             <span id="nav-text">고양이 피부질환</span>
                             </a>
@@ -255,14 +257,14 @@
         
                     <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board02.png"  alt="커뮤니티">
+                            <img src="resources/images/icon/board02.png"  alt="커뮤니티" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
                             <span id="nav-text">커뮤니티</span>
                         </a>
                     </li>
         
                      <li class="nav-block">
                         <a class="main-icon"  href="map.do" id="product-lab">
-                            <img src="resources/images/icon/hospital.png" alt="동물병원 찾기">
+                            <img src="resources/images/icon/hospital.png" alt="동물병원 찾기" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
                             <span id="nav-text">동물병원 찾기</span>
                         </a>
                     </li>
@@ -270,7 +272,7 @@
                     <c:when test="${not empty loginMember}">
                         <li class="nav-block">
                             <a class="main-icon" id="webtoon" href="imgView.do" >
-                            <img src="resources/images/icon/petcollar02.png">
+                            <img src="resources/images/icon/petcollar02.png" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
                             <span id="nav-text">동물등록</span>
                             </a>
                         </li>
@@ -280,7 +282,7 @@
         
                         <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험">
+                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
                             <span id="nav-text">반려동물 보험</span>
                         </a>
                        </li>
