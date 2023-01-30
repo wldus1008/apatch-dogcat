@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
+<html lang="ko">
 <html>
 
 
@@ -172,7 +173,7 @@
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="pricing.html">캘린더</a></li>
+                                            <li class="nav-item"><a href="calendar.do">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
