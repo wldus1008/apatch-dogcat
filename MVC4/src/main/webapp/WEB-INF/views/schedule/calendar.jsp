@@ -685,7 +685,7 @@ a:hover {
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="caledar.do">캘린더</a></li>
+                                            <li class="nav-item"><a href="calendar.do">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -1046,14 +1046,14 @@ a:hover {
     </a>
 
     <!-- ========================= JS here ========================= -->
-    <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/wow.min.js"></script>
-    <script src="resources/js/tiny-slider.js"></script>
-    <script src="resources/js/glightbox.min.js"></script>
-    <script src="resources/js/count-up.min.js"></script>
-    <script src="resources/js/imagesloaded.min.js"></script>
-    <script src="resources/js/isotope.min.js"></script>
-    <script src="resources/js/main.js"></script>
+    <script src="${path}/resources/js/bootstrap.min.js"></script>
+    <script src="${path}/resources/js/wow.min.js"></script>
+    <script src="${path}/resources/js/tiny-slider.js"></script>
+    <script src="${path}/resources/js/glightbox.min.js"></script>
+    <script src="${path}/resources/js/count-up.min.js"></script>
+    <script src="${path}/resources/js/imagesloaded.min.js"></script>
+    <script src="${path}/resources/js/isotope.min.js"></script>
+    <script src="${path}/resources/js/main.js"></script>
     <script type="text/javascript">
         //======== tiny slider
         tns({
