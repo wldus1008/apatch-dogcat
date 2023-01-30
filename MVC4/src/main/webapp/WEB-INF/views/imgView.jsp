@@ -4,7 +4,7 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
-<html>
+
 <head>
 
  <%@ include file="Header.jsp" %>
@@ -274,5 +274,5 @@
         
        
     </script>
-</footer>
+
 </html>
