@@ -8,7 +8,7 @@
     
     
     <insert id="memberJoin" parameterType="kr.board.entity.Member">
-  		insert into member values(#{memId}, #{memPw}, #{memName} )
+  		insert into member(memid,memPw,memName) values(#{memId}, #{memPw}, #{memName} )
 
   	</insert>
    
