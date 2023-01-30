@@ -17,7 +17,9 @@ html {
 }
 
 
-
+.cal_size{
+	width: 1200px;
+}
 
 body {
   font-family: "Manrope", sans-serif;
