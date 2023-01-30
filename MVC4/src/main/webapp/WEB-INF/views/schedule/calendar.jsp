@@ -32,12 +32,12 @@
     
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="resources/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="resources/css/animate.css" />
-    <link rel="stylesheet" href="resources/css/tiny-slider.css" />
-    <link rel="stylesheet" href="resources/css/glightbox.min.css" />
-    <link rel="stylesheet" href="resources/css/main.css" />
+    <link rel="stylesheet" href="${path}/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${path}/resources/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="${path}/resources/css/animate.css" />
+    <link rel="stylesheet" href="${path}/resources/css/tiny-slider.css" />
+    <link rel="stylesheet" href="${path}/resources/css/glightbox.min.css" />
+    <link rel="stylesheet" href="${path}/resources/css/main.css" />
 
 
 <style>
@@ -586,7 +586,14 @@ a:hover {
 	margin: 0 auto;
 	display: flex;
 }
-</style>
+.cal_size{
+	width:1200px;
+	display: gird;
+	grid-area:main;
+	place-items:center;
+}
+
+ </style>
 <script>
 	var idx;
 	var num;
@@ -738,8 +745,8 @@ a:hover {
     <!-- End Header Area -->
 
 
-
-
+	<div class="cal_size">
+	<div>
 	<form name="calendarFrm" id="calendarFrm" action="" method="GET" style = "padding-top: 150px; padding-bottom: 150px;" >
 		<input type="hidden" name="year" value="${today_info.search_year}" />
 		<input type="hidden" name="month" value="${today_info.search_month-1}" />
@@ -751,7 +758,7 @@ a:hover {
 				alert(message);
 			}
 		</script>
-		<div class="calendar">
+		<div class="calendar"></div>
 
 			<!--날짜 네비게이션  -->
 			<div class="navigation">
@@ -779,7 +786,8 @@ a:hover {
 					class="buttonstyle board_move openMask_board_move pointer"
 					style="height: 30px; width: 130px;" onclick="modalClick()">Add Schedule</button>
 			</div>
-			<table class="calendar_body">
+			
+			<table class="calendar_body ">
 
 				<thead>
 					<tr bgcolor="#A0D9E2">
@@ -842,6 +850,8 @@ a:hover {
 
 			</table>
 	</form>
+	</div>
+	
 	<div id="mask_board_move"></div>
 	<div class="normal_move_board_modal" id="addModal" style="display:none;">
 		
@@ -902,7 +912,8 @@ a:hover {
 				</div>
 			</form>
 		</div>
-
+		</div> <!-- body :  cal_size 끝 -->
+	
 	</div>
 	<script>
 			function modalClick(){
@@ -947,7 +958,7 @@ a:hover {
 				schedule_add_form.submit();
 			}
 		</script>
-		
+	</body>
    <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
