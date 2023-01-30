@@ -4,18 +4,16 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
 <html lang="ko">
+
+
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Apatch DogCat</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="description" content="" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-    
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -29,6 +27,8 @@
     <link rel="stylesheet" href="resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="resources/css/main.css" />
+   
+
 
  <style>
         @media (min-width: 720px)
