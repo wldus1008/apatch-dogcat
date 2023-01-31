@@ -164,7 +164,7 @@
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="calendar.do">캘린더</a></li>
+                                            <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -269,7 +269,7 @@
               </div>
               <div class="col-12 mb-3">
               <label for="memPw">비밀번호</label>
-                <input type="password" class="form-control" placeholder="비밀번호" value="${loginMember.memPw}" >
+                <input type="password" class="form-control" placeholder="비밀번호" value="${loginMember.memPw}" readonly>
               </div>
               <div class="col-12 mb-3">
               <label for="memPw">새 비밀번호</label>
@@ -277,7 +277,7 @@
               </div>
               <div class="col-12 mb-3">
               <label for="memName">이름</label>
-                <input type="text" class="form-control" name="memName" value="${loginMember.memName}" name="memName"  id="memName">
+                <input type="text" class="form-control" name="memName" value="${loginMember.memName}" name="memName"  id="memName" >
               </div>
               </div>
               
@@ -488,7 +488,7 @@
      	  var memId = $('#memId').val();
      	  var memPw = $('#memPw').val();
      	  
-     	 var memName = $('#memPw').val();
+     	 var memName = $('#memName').val();
      	 
      	 let fData = $("#mem_Update").serialize();
      	 console.log(fData);

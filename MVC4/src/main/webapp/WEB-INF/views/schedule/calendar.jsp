@@ -31,12 +31,12 @@
     
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/resources/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="/resources/css/animate.css" />
-    <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
-    <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
-    <link rel="stylesheet" href="/resources/css/main.css" />
+    <link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../resources/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="../resources/css/animate.css" />
+    <link rel="stylesheet" href="../resources/css/tiny-slider.css" />
+    <link rel="stylesheet" href="../resources/css/glightbox.min.css" />
+    <link rel="stylesheet" href="../resources/css/main.css" />
 
 
 <style>
@@ -621,8 +621,8 @@ a:hover {
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo7.png" alt="Logo">
+                            <a class="navbar-brand style3" href="../Home.do">
+                                <img src="../resources/images/logo/logo7.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -634,7 +634,7 @@ a:hover {
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="Home.do" class="active" aria-label="Toggle navigation">Home</a>
+                                        <a href="../Home.do" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
                             
                        
@@ -669,7 +669,7 @@ a:hover {
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
                                         <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
+                                            <li class="nav-item"><a href="../goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
                                         </ul>
@@ -679,7 +679,7 @@ a:hover {
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
                                         <ul class="sub-menu collapse" id="submenu-1-2">
-                                            <li class="nav-item"><a href="basic.do">게시판1</a>
+                                            <li class="nav-item"><a href="../basic.do">게시판1</a>
                                             </li>
                                             <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
                                             </li>
@@ -694,8 +694,8 @@ a:hover {
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="calendar.do">캘린더</a></li>
+                                            <li class="nav-item"><a href="../imgView.do">반려동물등록</a></li>
+                                            <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -704,7 +704,7 @@ a:hover {
 						         </c:choose>    
                                     
                                     <li class="nav-item">
-                                        <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
+                                        <a href="../map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
@@ -966,14 +966,14 @@ a:hover {
     
 
     <!-- ========================= JS here ========================= -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/wow.min.js"></script>
-    <script src="/resources/js/tiny-slider.js"></script>
-    <script src="/resources/js/glightbox.min.js"></script>
-    <script src="/resources/js/count-up.min.js"></script>
-    <script src="/resources/js/imagesloaded.min.js"></script>
-    <script src="/resources/js/isotope.min.js"></script>
-    <script src="/resources/js/main.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
+    <script src="../resources/js/wow.min.js"></script>
+    <script src="../resources/js/tiny-slider.js"></script>
+    <script src="../resources/js/glightbox.min.js"></script>
+    <script src="../resources/js/count-up.min.js"></script>
+    <script src="../resources/js/imagesloaded.min.js"></script>
+    <script src="../resources/js/isotope.min.js"></script>
+    <script src="../resources/js/main.js"></script>
     <script type="text/javascript">
         //======== tiny slider
         tns({
@@ -1035,8 +1035,8 @@ a:hover {
                         <!-- Single Widget -->
                         <div class="single-footer f-about">
                             <div class="logo">
-                                <a href="Home.do">
-                                    <img src="resources/images/logo/logo8.png" >
+                                <a href="../Home.do">
+                                    <img src="../resources/images/logo/logo8.png" >
                                 </a>
                             </div>
                             <p>Making the world a better place through constructing elegant hierarchies.</p>
