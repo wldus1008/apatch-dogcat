@@ -4525,7 +4525,9 @@ ol {
 .footer .copyright-area .copyright-text a:hover {
   text-decoration: underline;
 }
+@media(min-width : 800px){
 .menu-left{
 	float: left!important;
 	display:flex!important;
+}
 }
