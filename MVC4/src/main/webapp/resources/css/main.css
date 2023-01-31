@@ -2211,8 +2211,8 @@ ol {
 
 .navbar-nav .nav-item .sub-menu {
   padding: 10px;
-  min-width: 300px;
-  background: #fff;
+  min-width: 400px;
+  background: rgba( 255, 255, 255, 0.5 );
   -webkit-box-shadow: 0px 5px 20px #0000001a;
           box-shadow: 0px 5px 20px #0000001a;
   position: absolute;
