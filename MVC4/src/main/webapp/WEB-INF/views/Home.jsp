@@ -186,6 +186,9 @@
                                         <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a href="map.do" aria-label="Toggle navigation">반려동물 지식정보</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
                                     </li>
                                 </ul>
