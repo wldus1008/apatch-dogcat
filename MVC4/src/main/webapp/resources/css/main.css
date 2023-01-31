@@ -2210,8 +2210,8 @@ ol {
 }
 
 .navbar-nav .nav-item .sub-menu {
-  padding: 30px;
-  min-width: 240px;
+  padding: 10px;
+  min-width: 300px;
   background: #fff;
   -webkit-box-shadow: 0px 5px 20px #0000001a;
           box-shadow: 0px 5px 20px #0000001a;
@@ -2232,7 +2232,7 @@ ol {
 
 .navbar-nav .nav-item .sub-menu .nav-item {
   width: 100%;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 .navbar-nav .nav-item .sub-menu .nav-item:last-child {
@@ -4524,4 +4524,10 @@ ol {
 
 .footer .copyright-area .copyright-text a:hover {
   text-decoration: underline;
+}
+@media(min-width : 800px){
+.menu-left{
+	float: left!important;
+	display:flex!important;
+}
 }

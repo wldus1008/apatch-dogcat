@@ -80,6 +80,7 @@
         }
 
 
+
     </style>
 
 </head>
@@ -147,8 +148,8 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-1">
+                                            <li class="nav-item"  ><a href="goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
                                         </ul>
@@ -156,8 +157,8 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                            aria-expanded="false" aria-label="Toggle navigation" >커뮤니티</a>
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-2">
                                             <li class="nav-item"><a href="basic.do">게시판1</a>
                                             </li>
                                             <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
@@ -172,7 +173,7 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
                                             <li class="nav-item"><a href="calendar.do">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
@@ -389,9 +390,9 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
                             <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p>기능설명</p>
+                            <p>현재위치 근처의 동물병원을 알려줍니다.</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="map.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
@@ -404,7 +405,7 @@
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
-                                <a href="service-details.html" class="btn">등록하기</a>
+                                <a href="imgView.do" class="btn">등록하기</a>
                              </div>
                             </c:when>
 					        </c:choose>   
