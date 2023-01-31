@@ -766,24 +766,24 @@ a:hover {
 			<!--날짜 네비게이션  -->
 			<div class="navigation">
 				<a class="before_after_year"
-					href="./calendar.do?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
 					&lt;&lt; <!-- 이전해 -->
 				</a> <a class="before_after_month"
-					href="./calendar.do?year=${today_info.before_year}&month=${today_info.before_month}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.before_year}&month=${today_info.before_month}">
 					&lt; <!-- 이전달 -->
 				</a> <span class="this_month"> &nbsp;${today_info.search_year}. <c:if
 						test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
 				</span> <a class="before_after_month"
-					href="/calendar.do?year=${today_info.after_year}&month=${today_info.after_month}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.after_year}&month=${today_info.after_month}">
 					<!-- 다음달 --> &gt;
 				</a> <a class="before_after_year"
-					href="/calendar.do?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
 					<!-- 다음해 --> &gt;&gt;
 				</a>
 			</div>
 			<div class="today_button_div">
 				<button type="button" class="buttonstyle"
-					onclick="javascript:location.href='/calendar.do'"
+					onclick="javascript:location.href='/calendar.do/${loginMember.getMemNo()}'"
 					style="height: 30px; width: 80px;">Today</button>
 				<button type="button"
 					class="buttonstyle board_move openMask_board_move pointer"
