@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 여러 mapper.xml이 있는 경우에 id 겹치면 혼란이 되는것을 방지  -->
+<mapper namespace="kr.board.mapper.imgMapper">
+  
+  <!-- 태그의 d는 mapper 인터페이스의 메소드 이름으로 한다.  -->
+ <insert id="imgupload" parameterType="kr.board.entity.Files">
+      INSERT INTO files (memId, filename, fileOriName, fileurl)
+    VALUES (#{memId},#{filename},#{fileOriName},#{fileurl})
+</insert>
+
+ 	<select id="getImg" parameterType="String" resultType="kr.board.entity.Files">
+ 	    select * from files where memId = #{id};
+   </select>
+   
+ 	<select id="checkId" parameterType="String" resultType="kr.board.entity.Files">
+ 	    select *
+ 	    from files
+ 	    where memId = #{memId}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="kr.board.entity.Files">
+ 	    update files
+ 	    set filename=#{filename} , fileOriName=#{fileOriName}, fileurl=#{fileurl}
+ 	    where memId=#{memId}
+ 	    
+ 	</update>
+
+</mapper>
