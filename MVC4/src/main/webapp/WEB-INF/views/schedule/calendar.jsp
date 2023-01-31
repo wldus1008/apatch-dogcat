@@ -8,13 +8,12 @@
 <html lang="ko">
 <head>
  
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <!-- jquery datepicker -->
 <link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+	href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"
 	type="text/css" />
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.min.js"></script>
 <!-- jquery datepicker 끝 -->
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +27,7 @@
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  
     
 
     <!-- ========================= CSS here ========================= -->
