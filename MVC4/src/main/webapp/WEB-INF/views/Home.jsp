@@ -390,9 +390,9 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
                             <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p>기능설명</p>
+                            <p>현재위치 근처의 동물병원을 알려줍니다.</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="map.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
@@ -405,7 +405,7 @@
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
-                                <a href="service-details.html" class="btn">등록하기</a>
+                                <a href="imgView.do" class="btn">등록하기</a>
                              </div>
                             </c:when>
 					        </c:choose>   
