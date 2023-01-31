@@ -15,9 +15,6 @@ public class Member {
 	// 어떤 객체가 잘 설계되었다고 말할 수 있는가?
 	// 1. 정보은닉을 했는지
 
-
-
-
 	private int memNo;
 	private String memId;
 	private String memPw;

@@ -8,13 +8,12 @@
 <html lang="ko">
 <head>
  
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <!-- jquery datepicker -->
 <link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+	href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"
 	type="text/css" />
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.min.js"></script>
 <!-- jquery datepicker 끝 -->
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +27,7 @@
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  
     
 
     <!-- ========================= CSS here ========================= -->
@@ -767,24 +766,24 @@ a:hover {
 			<!--날짜 네비게이션  -->
 			<div class="navigation">
 				<a class="before_after_year"
-					href="./calendar.do?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
 					&lt;&lt; <!-- 이전해 -->
 				</a> <a class="before_after_month"
-					href="./calendar.do?year=${today_info.before_year}&month=${today_info.before_month}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.before_year}&month=${today_info.before_month}">
 					&lt; <!-- 이전달 -->
 				</a> <span class="this_month"> &nbsp;${today_info.search_year}. <c:if
 						test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
 				</span> <a class="before_after_month"
-					href="/calendar.do?year=${today_info.after_year}&month=${today_info.after_month}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.after_year}&month=${today_info.after_month}">
 					<!-- 다음달 --> &gt;
 				</a> <a class="before_after_year"
-					href="/calendar.do?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
+					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
 					<!-- 다음해 --> &gt;&gt;
 				</a>
 			</div>
 			<div class="today_button_div">
 				<button type="button" class="buttonstyle"
-					onclick="javascript:location.href='/calendar.do'"
+					onclick="javascript:location.href='/calendar.do/${loginMember.getMemNo()}'"
 					style="height: 30px; width: 80px;">Today</button>
 				<button type="button"
 					class="buttonstyle board_move openMask_board_move pointer"
@@ -867,7 +866,7 @@ a:hover {
 		<div class="bottom">
 			<div class="info">* 순번은 해당 날짜안에서 순서대로 입력이 됩니다.(하루에 최대 4개의 스케줄만
 				등록할 수 있습니다.)</div>
-			<form name="schedule_add" action="schedule_add.do">
+			<form name="schedule_add" action="${cpath}/schedule_add.do/${loginMember.getMemNo() }">
 				<input type="hidden" name="year" value="${today_info.search_year}" />
 				<input type="hidden" name="month"
 					value="${today_info.search_month-1}" />

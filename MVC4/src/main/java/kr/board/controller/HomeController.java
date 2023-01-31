@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,9 +37,9 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	@RequestMapping(value = "calendar.do", method = RequestMethod.GET)
-	public String calendar(Model model, HttpServletRequest request, DateData dateData) {
-
+	@RequestMapping(value = "calendar.do/{memNo}", method = RequestMethod.GET)
+	public String calendar(Model model, HttpServletRequest request, DateData dateData, @PathVariable("memNo")int memNo) {
+		
 		Calendar cal = Calendar.getInstance();
 		DateData calendarData;
 		// 검색 날짜
@@ -49,7 +50,7 @@ public class HomeController {
 
 		Map<String, Integer> today_info = dateData.today_info(dateData);
 		List<DateData> dateList = new ArrayList<DateData>();
-
+		dateData.setMemNo(memNo);
 		// 검색 날짜 end
 		ArrayList<ScheduleDto> Schedule_list = dao.schedule_list(dateData);
 
@@ -118,11 +119,11 @@ public class HomeController {
 		return "schedule/calendar";
 	}
 
-	@RequestMapping(value = "schedule_add.do", method = RequestMethod.GET)
-	public String schedule_add(HttpServletRequest request, ScheduleDto scheduleDto, RedirectAttributes rttr) {
+	@RequestMapping(value = "schedule_add.do/{memNo}", method = RequestMethod.GET)
+	public String schedule_add(HttpServletRequest request, ScheduleDto scheduleDto, RedirectAttributes rttr, @PathVariable("memNo")int memNo) {
+		scheduleDto.setMemNo(memNo);
 		int count = dao.before_schedule_add_search(scheduleDto);
 		String message = "";
-		String url = "redirect:calendar.do";
 
 		if (count >= 4) {
 			message = "스케쥴은 최대 4개만 등록 가능합니다.";
@@ -132,7 +133,7 @@ public class HomeController {
 		}
 
 		rttr.addFlashAttribute("message", message);
-		return url;
+		return "redirect:/calendar.do/" + scheduleDto.getMemNo();
 	}
 
 		
@@ -142,7 +143,7 @@ public class HomeController {
 		return "/schedule/schedule_show";
 	}
 	
-	@RequestMapping(value = "modify.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/modify.do", method = RequestMethod.GET)
 	public String schedule_modify(Model model,HttpServletRequest request, ScheduleDto scheduleDto, RedirectAttributes rttr) {
 		dao.update(scheduleDto);
 		return "/schedule/modify";

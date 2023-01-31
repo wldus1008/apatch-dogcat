@@ -8,7 +8,8 @@ import lombok.ToString;
 @Data
 @ToString
 public class ScheduleDto {
-
+	
+	int memNo;
 	int schedule_idx;
 	int schedule_num;
 	String schedule_subject;
@@ -73,6 +74,12 @@ public class ScheduleDto {
 	}
 	
 	
+	public int getMemNo() {
+		return memNo;
+	}
+	public void setMemNo(int memNo) {
+		this.memNo = memNo;
+	}
 	@Override
 	public String toString() {
 		return "ScheduleDto [schedule_idx=" + schedule_idx + ", schedule_num=" + schedule_num + ", schedule_subject="

@@ -11,7 +11,8 @@ import lombok.ToString;
 @Data
 @ToString
 public class DateData {
-
+	
+	int memNo;
 	String year = "";
 	String month = "";
 	String date = "";
@@ -75,6 +76,12 @@ public class DateData {
 	}
 	
 	
+	public int getMemNo() {
+		return memNo;
+	}
+	public void setMemNo(int memNo) {
+		this.memNo = memNo;
+	}
 	// 날짜에 관련된 달력정보를 가지는 메소드
 	public Map<String, Integer> today_info(DateData dateData) {
 		// 날짜 캘린더 함수에 삽입.
