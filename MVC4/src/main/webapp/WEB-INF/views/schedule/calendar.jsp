@@ -866,7 +866,7 @@ a:hover {
 		<div class="bottom">
 			<div class="info">* 순번은 해당 날짜안에서 순서대로 입력이 됩니다.(하루에 최대 4개의 스케줄만
 				등록할 수 있습니다.)</div>
-			<form name="schedule_add" action="schedule_add.do">
+			<form name="schedule_add" action="${cpath}/schedule_add.do/${loginMember.getMemNo() }">
 				<input type="hidden" name="year" value="${today_info.search_year}" />
 				<input type="hidden" name="month"
 					value="${today_info.search_month-1}" />
