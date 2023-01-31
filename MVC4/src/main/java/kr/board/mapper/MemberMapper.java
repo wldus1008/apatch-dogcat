@@ -10,5 +10,14 @@ public interface MemberMapper {
 	
 	
 	public void memberJoin(Member Membervo);
+
+
+	public void memUpdate(Member vo);
+	
+	// 회원정보 수정
+	
+	    
+	
+
 	
 }

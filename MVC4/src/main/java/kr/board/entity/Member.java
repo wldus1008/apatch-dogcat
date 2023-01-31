@@ -1,5 +1,14 @@
 package kr.board.entity;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Member {
 
 	
@@ -56,6 +65,7 @@ public class Member {
 	public String toString() {
 		return "Member [memId=" + memId + ", memPw=" + memPw + ", memName=" + memName + "]";
 	}
+
 	
 	
 	// 4. (선택적인 사항) 생성자 메소드 만들었는지

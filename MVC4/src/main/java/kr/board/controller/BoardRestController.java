@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.board.entity.Board;
+import kr.board.entity.Member;
 import kr.board.mapper.BoardMapper;
+import kr.board.mapper.MemberMapper;
 
 // 이 컨트롤러는 그냥 POJO가 아니라
 // json 데이터 통신을, 비동기 통신을 위해서 쓰는 컨트롤러
@@ -25,6 +29,8 @@ public class BoardRestController {
 	@Autowired
 	private BoardMapper mapper;
 	
+	@Autowired
+	private MemberMapper mmapper;
 	
 	// Rest api, Restful 규약 : 데이터 전송방식
 	// 요청의 종류에 따라 전송방식을 변경해서 보내줌
@@ -87,6 +93,20 @@ public class BoardRestController {
 		
 		// 새로 +1된 조회수를 출력하기 위해서 데이터 보냄
 		return vo;
+	}
+	
+	
+	
+	@RequestMapping(value="/memUpdate", method=RequestMethod.POST)
+	//@PostMapping("/memUpdate")
+	public void memUpdate(@RequestBody Member vo) {
+		// 전에는 title,content,writer 등등 여러개 수정하는 메소드를 만듦
+		// 이제는 content만 바꾸는 메소드를 새로 만들어야함
+		System.out.println("update 컨트롤러는 들어옴");
+		mmapper.memUpdate(vo);
+		
+		
+		
 	}
 	
 	

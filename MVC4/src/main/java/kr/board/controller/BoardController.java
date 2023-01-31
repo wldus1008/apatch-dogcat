@@ -178,7 +178,29 @@ public class BoardController {
 		
 	}
 	
+	@RequestMapping("/mypage.do")
+	public String mypage(Model model, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		if(session.getAttribute("loginMember") != null) {
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			System.out.println("id : " + loginMember.getMemId());
+
+			Files img = imgMapper.getImg(loginMember.getMemId());
+			if(img != null) {
+				String fileName = img.getFilename();
+				model.addAttribute("fileName", fileName);
+			}
+			
+		}
+		
+		return "mypage";
+		
+	}
+		
+	}
 	
 	
 	
-}
+	
+

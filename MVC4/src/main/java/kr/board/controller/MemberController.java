@@ -3,6 +3,7 @@ package kr.board.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +34,6 @@ public class MemberController {
 			return "Home";
 			
 		}
-	
 	
 	
 	
@@ -72,6 +72,9 @@ public class MemberController {
 		
 		return "redirect:/Home.do";
 	}
+	
+
+	
 	
 	
 }

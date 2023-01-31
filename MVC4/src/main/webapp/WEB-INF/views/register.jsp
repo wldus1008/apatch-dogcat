@@ -114,13 +114,7 @@
               </div>
               
 
-              <!-- <div class="col-12 mb-3">
-                <label class="control control--checkbox">
-                  <span class="caption">Accept our <a href="#">terms and conditions</a></span>
-                  <input type="checkbox" checked="checked" />
-                  <div class="control__indicator"></div>
-                </label>
-              </div> -->
+           
 
               <div class="button text-center">
                 <button type="submit"  class="btn" id="submit">가입하기</button>
@@ -133,7 +127,7 @@
 
       
     </div>
-  </div> <!-- /.untree_co-section -->
+  </div> 
 		
 
 

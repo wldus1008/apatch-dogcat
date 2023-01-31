@@ -81,3 +81,9 @@ select * from files;
 
 show tables;
 
+select * from member;
+UPDATE member SET 
+		memPw = '123',
+		memName = '123'
+		WHERE memId = 'kkk'
+

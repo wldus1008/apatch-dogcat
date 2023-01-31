@@ -13,4 +13,11 @@
   	</insert>
    
     
+    <update id="memUpdate" parameterType="kr.board.entity.Member">
+		UPDATE member SET 
+		memPw = #{memPw},
+		memName = #{memName}
+		WHERE memId = #{memId}
+	</update>
+    
 </mapper>    

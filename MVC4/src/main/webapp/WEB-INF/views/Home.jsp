@@ -159,9 +159,9 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation" >커뮤니티</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
-                                            <li class="nav-item"><a href="basic.do">게시판1</a>
+                                            <li class="nav-item"><a href="basic.do">게시판</a>
                                             </li>
-                                            <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
+                                            <li class="nav-item"><a href="portfolio-details.html">반려동물 지식정보</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -186,9 +186,7 @@
                                     <li class="nav-item">
                                         <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="map.do" aria-label="Toggle navigation">반려동물 지식정보</a>
-                                    </li>
+                                    
                                     <li class="nav-item">
                                         <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
                                     </li>
@@ -211,7 +209,7 @@
 								</c:when>
 								<c:otherwise>
 									
-									<div style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</div> 
+									<a href="${cpath}/mypage.do" style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</a> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>
