@@ -401,7 +401,7 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-1">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-1">
                                             <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
@@ -411,7 +411,7 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-2">
                                             <li class="nav-item"><a href="basic.do">게시판1</a>
                                             </li>
                                             <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
@@ -426,7 +426,7 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
                                             <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
