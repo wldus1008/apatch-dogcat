@@ -54,8 +54,6 @@ public interface BoardMapper  {
 	
 	// SQL문을 관리하는 XML만들 때 주의할 점!!!
 	// mapper 인터페이스 파일의 이름과 xml의 파일 이름을 똑같이 해야한다.
-	@Update("UPDATE member SET memPw = #{memPw}, memName = #{memName} WHERE memId = #{memId}" )
-	public Member memberUpdate(Member mvo);
 	
 	
 }

@@ -43,7 +43,7 @@ public class MemberController {
 	
 	@Autowired
 	private BoardMapper mapper;
-	private imgMapper imapper;
+	
 	// private MemberMapper mmapper;
 	
 		
