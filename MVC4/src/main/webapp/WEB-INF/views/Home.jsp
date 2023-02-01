@@ -304,12 +304,12 @@
                     	<c:choose>
 								<c:when test="${empty loginMember or empty fileName}">
 
-									<img src="resources/images/hero/dog1.jpg" alt="#">
+									<img src="resources/images/hero/dog1.jpg" alt="#" style="border:5px solid #3b9a9c;">
 
 								</c:when>
 								<c:otherwise>
 									
-									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>"/>
+									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:5px solid #3b9a9c;"/>
 
 								</c:otherwise>
 

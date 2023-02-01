@@ -507,7 +507,7 @@
      	         //dataType : "", // 받는 데이터가 있으면
      	         success : function(){
      	        	 console.log("ajax실행");
-     	        	 location.href='/index.jsp'
+     	        	 location.href='Home.do'
      	         },
      	         error : function(){
      	        	 alert("회원수정 실패!!");
