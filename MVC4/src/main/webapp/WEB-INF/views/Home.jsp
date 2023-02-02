@@ -70,6 +70,22 @@
             font-size: 14px;
         }
         
+        #btnA {
+  			padding-top: 60px;
+		}
+		#btnA span {
+  			top: 0;
+		 	left: 50%;
+			width: 24px;
+		 	height: 24px;
+		  	margin-left: -12px;
+		  	border-left: 1px solid #fff;
+		  	border-bottom: 1px solid #fff;
+		  	-webkit-transform: rotate(-45deg);
+		  	transform: rotate(0deg);
+		  	box-sizing: border-box;
+	   }
+        
       
 
 	 @media (min-width: 720px)
@@ -303,14 +319,14 @@
                     	
                     	<c:choose>
 								<c:when test="${empty loginMember or empty fileName}">
-
+									
 									<img src="resources/images/hero/dog1.jpg" alt="#" style="border:5px solid #3b9a9c;">
-
+									
 								</c:when>
 								<c:otherwise>
-									
+									<a href="#" id="btnA"><span></span><span></span><span><</span></a>
 									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:5px solid #3b9a9c;"/>
-
+									<a href="#" id="btnA"><span></span><span></span><span>></span></a>
 								</c:otherwise>
 
 

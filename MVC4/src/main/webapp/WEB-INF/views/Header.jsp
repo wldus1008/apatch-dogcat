@@ -1,36 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="cpath" value="${pageContext.request.contextPath}" /> 
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
-
-
 <head>
+<title>Apatch DogCat</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Apatch DogCat</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="resources/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="resources/css/animate.css" />
-    <link rel="stylesheet" href="resources/css/tiny-slider.css" />
-    <link rel="stylesheet" href="resources/css/glightbox.min.css" />
-    <link rel="stylesheet" href="resources/css/main.css" />
-   
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/resources/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/resources/css/animate.css" />
+    <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/resources/css/main.css" />
 
 
- <style>
+
+
+
+
+
+
+  <style>
         @media (min-width: 720px)
          {
             .nav-section{
@@ -66,18 +69,15 @@
                 display: none;
             } 
         }
-
-
+	
+   
     </style>
-    
-
-
-
 
 
 </head>
+
 <body>
-<!-- Preloader-->
+ <!-- Preloader-->
     <div id="preloader">
         <div class="appmeet-load"></div>
     </div>
@@ -90,8 +90,8 @@
                     <div class="nav-inner">
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="Home.do" style = "padding-bottom: 85px;">
-                                <img src="resources/images/logo/logo7.png" alt="Logo" >
+                            <a class="navbar-brand style3" href="Home.do">
+                                <img src="resources/images/logo/logo7.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -137,7 +137,7 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-1">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-1">
                                             <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
                                             </li>
                                             <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
@@ -147,7 +147,7 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-2">
                                             <li class="nav-item"><a href="basic.do">게시판1</a>
                                             </li>
                                             <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
@@ -162,9 +162,9 @@
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                        <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="calendar.do">캘린더</a></li>
+                                            <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -197,7 +197,7 @@
 								</c:when>
 								<c:otherwise>
 									
-									<div style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</div> 
+									<a href="${cpath}/mypage.do" style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</a> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>
@@ -216,9 +216,3 @@
     </header>
     <!-- End Header Area -->
 
-
-   
-  
-</body>
-
-</html>
