@@ -16,7 +16,7 @@
 
       <div class="row mb-5 justify-content-center" >
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200"     >
-          <form action="${cpath}/petinfo" class="form-box" method="post" name="petUpload" id="petUpload" target="1" >
+          <form action="${cpath}/petinfo" class="form-box" method="post" name="petUpload" id="petUpload" >
           <label for="formFile" class="form-label"><h5>반려동물 정보등록</h5></label>
             <div class="row">
               <div class="col-12 mb-3">
@@ -38,7 +38,7 @@
           <br>
 				<!-- 반려동물 사진 등록 -->
 				<form action="${cpath}/upload" method="post"
-					enctype="multipart/form-data" name="imgUpload" target="2" id="imgUpload">
+					enctype="multipart/form-data" name="imgUpload" id="imgUpload">
 					<label for="formFile" class="form-label"><h5>반려동물 사진등록</h5></label>
 					<input type="file" name="files" onchange="readURL(this);"
 						class="form-control" >
