@@ -93,8 +93,46 @@
 	</section>
 	
 	
+	   <script type="text/javascript">
+
+
+        
+        function Update(){
+     	  
+     	  var memId = $('#memId').val();
+     	  var memPw = $('#memPw').val();
+     	  
+     	 var memName = $('#memName').val();
+     	 
+     	 
+     	
+     	 $.ajax({
+     		     anyne:true,
+     	         url : "${cpath}/memUpdate",
+     	         type : "post",
+     	         // idx, content를 보내줘야함 --> 여러개의 데이터를 보낼때
+     	         // json형식으로 보내야함 --> contentType지정, JSON.stringify()로 형식도 바꿈
+     	         contentType : "application/json;charset=utf-8",
+     	         data :JSON.stringify({
+     	        	 "memId" : memId,
+     	        	 "memPw" : memPw,
+     	        	 "memName" : memName
+     	         }), //보내주는 데이터가 있다면
+     	         //dataType : "", // 받는 데이터가 있으면
+     	         success : function(){
+     	        	 console.log("ajax실행");
+     	        	 location.href='/index.jsp'
+     	         },
+     	         error : function(){
+     	        	 alert("회원수정 실패!!");
+     	        	//console.log(param)
+     	         }
+     	         
+     	      });
+
+        }
 	
-	
+        </script>
 
 	
 				
