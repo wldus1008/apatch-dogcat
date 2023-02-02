@@ -88,8 +88,8 @@
 			        		type : "post",
 			        		data : petData,
 			        		success : function(){
+			        			console.log('데이터 전송 성공');
 			        			console.log(petData);
-			        			location.href='Home.do';
 			        		},
 			        		error : function(){
 			        			alert("펫 업로드 실패!")
