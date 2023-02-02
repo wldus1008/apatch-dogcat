@@ -26,7 +26,7 @@ public class imgController {
 	private imgMapper mapper;
 	
 	@RequestMapping("upload")
-	public String fileinsert(HttpServletRequest request, @RequestPart MultipartFile files , @RequestParam("memId")String memId) throws Exception{
+	public void fileinsert(HttpServletRequest request, @RequestPart MultipartFile files , @RequestParam("memId")String memId) throws Exception{
 		Files file = new Files();
 		String sourceFileName = files.getOriginalFilename(); 
 		        String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase(); 
@@ -53,9 +53,6 @@ public class imgController {
 		        }else {
 		        	mapper.imgupload(file);		        	
 		        }
-		        
-		       		        
-		        return "redirect:/Home.do";
 		    }
 	}
 	

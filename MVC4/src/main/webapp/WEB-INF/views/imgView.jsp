@@ -299,7 +299,8 @@
 			        		type : "post",
 			        		data : petData,
 			        		success : function(){
-			        			console.log(petData)
+			        			console.log(petData);
+			        			location.href='Home.do';
 			        		},
 			        		error : function(){
 			        			alert("펫 업로드 실패!")
