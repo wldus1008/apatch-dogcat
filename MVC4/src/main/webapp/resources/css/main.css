@@ -1658,10 +1658,11 @@ ol {
 .header {
   width: 100%;
   background: transparent;
-  position: absolute;
+  position: relative;
   width: 100%;
   left: 0;
   top: 0;
+ /*  height: 10%; */
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -4051,6 +4052,8 @@ ol {
   background-color: #3b9a9c;
   display:grid;
   position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer.style-2 {
@@ -4531,4 +4534,10 @@ ol {
 	float: left!important;
 	display:flex!important;
 }
+}
+
+.content{
+	margin-top: 100px;
+	margin-bottom: 100px;
+	
 }
