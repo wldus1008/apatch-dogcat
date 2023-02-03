@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="/resources/css/main.css" />
 	<script src="/resources/smarteditor/js/HuskyEZCreator.js" ></script>
-
+	<script type="text/javascript">
+		
+	</script>
 
 
 

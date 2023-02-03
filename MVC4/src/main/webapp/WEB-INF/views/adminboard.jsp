@@ -75,8 +75,9 @@
 		  // 자바스크립트의 호이스팅
 		  boardList();
 		  
+		
 	  });
-	  let oEditors = [];
+
   
    function boardList(){
 	   $.ajax({
@@ -178,59 +179,61 @@
 	   
    }// callBack함수 끝
 
-   function goForm(){
-	   // 글쓰기 버튼을 눌렀을때
-	   // 리스트 목록은 없애고, 글쓰기 폼은 화면에 보여주기
-	      $("#list").css("display","none");
-	      $("#wform").css("display","block");
-	      
-	      console.log("Naver SmartEditor")
-	      nhn.husky.EZCreator.createInIFrame({
-	           oAppRef: oEditors,
-	           elPlaceHolder: "content",
-	           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
-	           fCreator: "createSEditor2"
-	       });
-	     
-	   
-	   
-	   }
-   
-   
-   
-   
-   function insertFn() {
-	   oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
-		var content = document.getElementById("content").value;
-	   // 1. form태그 안에 있는 input태그에 입력한 내용들 가져오기
-	   // var title = $("#title").val(); 와 같이 일일이 가져와야하는데
-	   // .serialize() - 직렬화(값들을 한번에 정리해서 객체로)
-		var title = $('#title').val();
-		var writer = $('#writer').val();
-  	  
-  	 
-	   
-	   // 2. 그 내용들을 ajax 통신으로 보내기
-	   $.ajax({
+	function goForm(){
+		   // 글쓰기 버튼을 눌렀을때
+		   // 리스트 목록은 없애고, 글쓰기 폼은 화면에 보여주기
+		      $("#list").css("display","none");
+		      $("#wform").css("display","block");
+		   // 전역변수 
+				let oEditors = [];
+				
+				// 스마트 에디터 프레임 생성
+			      console.log("Naver SmartEditor")
+			      nhn.husky.EZCreator.createInIFrame({
+			           oAppRef: oEditors,
+			           elPlaceHolder: "content",
+			           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
+			           fCreator: "createSEditor2"
+			       }); //스마트 에디터 구현 끝
+			return oEditor;
 		   
-		   url : "${cpath}/admin",
-		   type : "post",
-		   contentType : "application/json;charset=utf-8",
-	       data :JSON.stringify({
-	        	 "title" : title,
-	        	 "writer" : writer,
-	        	 "content" : content
-	         }), //보내주는 데이터가 있다면
-		   // dataType : "", // 받는 데이터가 있으면
-		   success : boardList, 
-		   // boardList함수를 실행 - callBack에 있는 내용까지 실행
-		   // ajax에서는 함수 실행할 때 () 적지 않는 것 기억할것!
-		   error : function(){
-			  alert("글쓰기 실패~")
-			   
 		   }
-		   
-	   });//insert ajax 끝!!
+		 function insertFn() {
+				
+			   	console.log("Naver SmartEditor")
+				var content = oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+				var title = $('#title').val();
+				var writer = $('#writer').val();
+		  	  
+		  	 
+			   
+			   // 2. 그 내용들을 ajax 통신으로 보내기
+			   $.ajax({
+				   
+				   url : "${cpath}/admin",
+				   type : "post",
+				   contentType : "application/json;charset=utf-8",
+			       data :JSON.stringify({
+			        	 "title" : title,
+			        	 "writer" : writer,
+			        	 "content" : content
+			         }), //보내주는 데이터가 있다면
+				   // dataType : "", // 받는 데이터가 있으면
+				   success : boardList, 
+				   // boardList함수를 실행 - callBack에 있는 내용까지 실행
+				   // ajax에서는 함수 실행할 때 () 적지 않는 것 기억할것!
+				   error : function(){
+					  alert("글쓰기 실패~")
+					   
+				   }
+				   
+			   });//insert ajax 끝!!
+				
+   
+   
+   
+   
+  
 	 
 	   
 	   
