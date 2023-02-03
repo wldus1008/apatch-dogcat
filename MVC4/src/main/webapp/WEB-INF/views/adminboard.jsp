@@ -29,6 +29,7 @@
 			    <label class="control-label col-sm-2" for="writer">작성자:</label>
 			    <div class="col-sm-10">
 			      <input type="text" readonly="readonly" class="form-control" name="writer" id="writer" value="${loginMember.memName}" >
+			      <input type="hidden" readonly="readonly" class="form-control" name="memId" id="memId" value="${loginMember.memId}" >
 			    </div>
 			 </div>
 			  <div class="form-group">
@@ -154,8 +155,8 @@
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
 	         }else{
-	        	 bList += "<button disabled class='btn btn-primary btn-lg' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
-		         bList += "<button disabled class='btn btn-primary btn-lg' onclick='goDel(" + obj.idx + ")'>삭제</button>";
+	        	 bList += "<button disabled class='btn' onclick='goUpdate(" + obj.idx + ")'></button>";
+		         bList += "<button disabled class='btn' onclick='goDel(" + obj.idx + ")'></button>";
 	        	 
 	         }
 	         bList += "</td>";

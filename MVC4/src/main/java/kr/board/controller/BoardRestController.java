@@ -141,7 +141,7 @@ public class BoardRestController {
 	@PostMapping("/adminInsert")
 	public void adminInsert(dog vo) {
 
-		vo.setMemId("123");
+		
 		mapper.adminboardInsert(vo);
 		
 	}
