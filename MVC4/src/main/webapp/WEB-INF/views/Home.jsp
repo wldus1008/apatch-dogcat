@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
@@ -233,6 +234,9 @@
         </div> <!-- container -->
     </header>
     <!-- End Header Area -->
+=======
+<%@include file="Header.jsp" %>
+>>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
 
     <!-- Start Hero Area -->
     <section id="home" class="hero-area style1">
@@ -460,6 +464,7 @@
     </section>
     <!-- End Call Action Area -->
 
+<<<<<<< HEAD
     <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
@@ -613,3 +618,6 @@
 </body>
 
 </html>
+=======
+  <%@ include file="Footer.jsp" %>
+>>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git

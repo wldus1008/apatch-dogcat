@@ -141,7 +141,11 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
                                             <li class="nav-item"><a href="goService.do">강아지 안구질환</a>
                                             </li>
+<<<<<<< HEAD
                                             <li class="nav-item"><a href="service-details.html">고양이 안구질환</a></li>
+=======
+                                            <li class="nav-item"><a href="#">반려묘 피부질환</a></li>
+>>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -151,7 +155,11 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
                                             <li class="nav-item"><a href="basic.do">게시판</a>
                                             </li>
+<<<<<<< HEAD
                                             <li class="nav-item"><a href="adminboard.do">반려동물 지식정보</a>
+=======
+                                            <li class="nav-item"><a href="#">아직 없음</a>
+>>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
                                             </li>
                                         </ul>
                                     </li>
@@ -166,7 +174,7 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
                                             <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
-                                            <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="#">아직없음</a></li>
                                             
                                         </ul>
                                     </li>
@@ -177,7 +185,7 @@
                                         <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
+                                        <a href="#" aria-label="Toggle navigation">아직 없음</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
