@@ -97,12 +97,12 @@ body {
 
 td {
 	font-size: 9pt;
-	color: #747474;
+	color: #080700;
 }
 
 th {
 	font-size: 9pt;
-	color: #000000;
+	color: #080700;
 }
 
 select {
@@ -695,7 +695,7 @@ a:hover {
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="../imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
+                                            <li class="nav-item"><a href="${path}/calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -750,7 +750,7 @@ a:hover {
 
 	<div class="cal_size">
 	
-	<form name="calendarFrm" id="calendarFrm" action="" method="GET" style = "padding-top: 150px; padding-bottom: 150px;" >
+	<form name="calendarFrm" id="calendarFrm" action="" method="GET" style = "padding-top: 80px; padding-bottom: 130px;" >
 		<input type="hidden" name="year" value="${today_info.search_year}" />
 		<input type="hidden" name="month" value="${today_info.search_month-1}" />
 		<script>
@@ -771,7 +771,7 @@ a:hover {
 				</a> <a class="before_after_month"
 					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.before_year}&month=${today_info.before_month}">
 					&lt; <!-- 이전달 -->
-				</a> <span class="this_month"> &nbsp;${today_info.search_year}. <c:if
+				</a> <span class="this_month" style="color:#286769;"> &nbsp;${today_info.search_year}. <c:if
 						test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
 				</span> <a class="before_after_month"
 					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.after_year}&month=${today_info.after_month}">
@@ -793,13 +793,13 @@ a:hover {
 			<table class="calendar_body ">
 
 				<thead>
-					<tr bgcolor="#A0D9E2">
-						<td class="day sun">Sun</td>
-						<td class="day">Mon</td>
-						<td class="day">Tue</td>
-						<td class="day">Wed</td>
-						<td class="day">Thu</td>
-						<td class="day">Fri</td>
+					<tr bgcolor="#3b9a9c">
+						<td class="day sun" >Sun</td>
+						<td class="day" style="color:#fef4a9;">Mon</td>
+						<td class="day" style="color:#fef4a9;">Tue</td>
+						<td class="day" style="color:#fef4a9;">Wed</td>
+						<td class="day" style="color:#fef4a9;">Thu</td>
+						<td class="day" style="color:#fef4a9;">Fri</td>
 						<td class="day sat">Sat</td>
 					</tr>
 				</thead>
@@ -891,7 +891,7 @@ a:hover {
 								<input type="text" name="schedule_subject" class="text_type1" />
 							</div>
 						</li>
-						<li>
+						<li style="height:150px;">
 							<div class="text_subject">내용 :</div>
 							<div class="text_area_desc">
 								<textarea name="schedule_desc" class="textarea_type1" rows="5" ></textarea>
