@@ -34,10 +34,11 @@
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="content">내용:</label>
 			    <div class="col-sm-10">
-						<div id="smarteditor">
+						<div>
 							<textarea name="content" id="content" style="width: auto;height:auto;"
 								placeholder="내용을 입력해주세요" ></textarea>
 						</div>
+						
 					</div>
 			  </div>
 			 
@@ -184,7 +185,7 @@
 		   // 리스트 목록은 없애고, 글쓰기 폼은 화면에 보여주기
 		      $("#list").css("display","none");
 		      $("#wform").css("display","block");
-		   // 전역변수 
+		      // 전역변수 
 				let oEditors = [];
 				
 				// 스마트 에디터 프레임 생성
@@ -194,14 +195,14 @@
 			           elPlaceHolder: "content",
 			           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
 			           fCreator: "createSEditor2"
-			       }); //스마트 에디터 구현 끝
-			return oEditor;
-		   
+			       }); //스마트 에디터 구현 끝	
+			    
+			return oEditors;		   
 		   }
-		 function insertFn() {
-				
+			 function insertFn() {
+				oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+				var content = document.getElementById("content").value;
 			   	console.log("Naver SmartEditor")
-				var content = oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
 				var title = $('#title').val();
 				var writer = $('#writer').val();
 		  	  
