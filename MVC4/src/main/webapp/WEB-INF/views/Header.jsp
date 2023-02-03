@@ -31,9 +31,6 @@
 
 
 
-
-
-
    <style>
         @media (min-width: 720px)
          {
