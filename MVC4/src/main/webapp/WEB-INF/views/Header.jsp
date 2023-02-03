@@ -25,15 +25,15 @@
     <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="/resources/css/main.css" />
+	<script src="/resources/smarteditor/js/HuskyEZCreator.js" ></script>
+	<script type="text/javascript">
+		
+	</script>
 
 
 
 
-
-
-
-
-  <style>
+   <style>
         @media (min-width: 720px)
          {
             .nav-section{
@@ -54,14 +54,29 @@
             grid-row-gap: 20px;
             
         }
-       
+        .jy{
+            margin-bottom: 50px;
+        }
         
         .main-icon{
-            background-color: blanchedalmond;
+            background-color: #fff8c2;
+            text-align: center;
+            border-radius: 15px;
+            color: #286769;
+            font-size: 14px;
+            width: 120px;
+            height: 145px;
+        }
+        
+     /*    .main-icon:hover{
+            background-color: #286769;
             text-align: center;
             border-radius: 20px;
-            color: black;
+            color: #fef4a9!important;
+            font-size: 14px;
         }
+         */
+      
 
 	 @media (min-width: 720px)
          {
@@ -69,9 +84,12 @@
                 display: none;
             } 
         }
-	
-   
+
+
+
     </style>
+
+
 
 
 </head>
@@ -136,11 +154,15 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">안구질환 확인</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
-                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
+                                            <li class="nav-item"><a href="goService.do">강아지 안구질환</a>
                                             </li>
-                                            <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
+
+                                            <li class="nav-item"><a href="service-details.html">고양이 안구질환</a></li>
+
+                                            <li class="nav-item"><a href="#">반려묘 피부질환</a></li>
+
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -148,9 +170,13 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
-                                            <li class="nav-item"><a href="basic.do">게시판1</a>
+                                            <li class="nav-item"><a href="basic.do">게시판</a>
                                             </li>
-                                            <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
+
+                                            <li class="nav-item"><a href="adminboard.do">반려동물 지식정보</a>
+
+                                            <li class="nav-item"><a href="#">아직 없음</a>
+
                                             </li>
                                         </ul>
                                     </li>
@@ -165,7 +191,7 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
                                             <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
-                                            <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
+                                            <li class="nav-item"><a href="#">아직없음</a></li>
                                             
                                         </ul>
                                     </li>
@@ -176,7 +202,7 @@
                                         <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
+                                        <a href="#" aria-label="Toggle navigation">아직 없음</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->

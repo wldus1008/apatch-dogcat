@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.board.entity.Board;
 import kr.board.entity.Member;
+import kr.board.entity.dog;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.MemberMapper;
 
@@ -108,6 +108,44 @@ public class BoardRestController {
 		
 		
 	}
+	
+	@RequestMapping(value="/dog", method=RequestMethod.POST)
+	public void dog(@RequestBody dog vo ) {
+		// 전에는 title,content,writer 등등 여러개 수정하는 메소드를 만듦
+		// 이제는 content만 바꾸는 메소드를 새로 만들어야함
+		System.out.println("123 컨트롤러는 들어옴");
+		
+		mapper.dog(vo);
+		
+			
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("/admin")
+	public List<dog> adminajaxList() {
+	
+		List<dog> list = mapper.dogList();
+		return list;
+		
+		
+	}
+	
+	@PostMapping("/adminInsert")
+	public void adminInsert(dog vo) {
+
+		vo.setMemId("123");
+		mapper.adminboardInsert(vo);
+		
+	}
+	
 	
 	
 }

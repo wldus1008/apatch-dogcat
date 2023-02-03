@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Repository;
 
 import kr.board.entity.Board;
 import kr.board.entity.Member;
+import kr.board.entity.dog;
 
 // 우리가 알고 있는 DAO와 같은 기능
 // Mapper라고 하는 역할임을 알려주는 주석
@@ -37,9 +37,11 @@ public interface BoardMapper  {
 
 	public void boardContentUpdate(Board vo);
 	
+	public List<dog> dogList();
 	
+	public void dog(dog vo);
 	
-	
+	public void adminboardInsert(dog vo);
 	
 	
 	

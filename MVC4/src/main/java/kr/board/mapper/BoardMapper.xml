@@ -41,7 +41,18 @@
        select * from member where memId=#{memId} and memPw=#{memPw}
        
    </select>
-   
+
+
+	<insert id="adminboardInsert"
+		parameterType="kr.board.entity.dog">
+		insert into adminboard(title,content,writer,memId)
+		values (#{title},#{content},#{writer},#{memId})
+	</insert>
+
+	<select id="dogList" resultType="kr.board.entity.dog">
+		select * from adminboard
+	</select>
+  
    
    
 </mapper>

@@ -197,10 +197,19 @@ public class BoardController {
 		return "mypage";
 		
 	}
+	
+	@RequestMapping("/adminboard.do")
+	public String adminboard() {
+		
+	
+		
+		return "adminboard";
+		
+	}
 		
 	}
 	
-	
+
 	
 	
 
