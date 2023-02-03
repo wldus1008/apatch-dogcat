@@ -38,7 +38,6 @@
         .nav-section {
                 max-width: 600px;
                 padding: 0px 10px;
-                margin-top: 50px;
          }
        
          ul.icons {
@@ -53,22 +52,22 @@
         }
         
         .main-icon{
-            background-color: #fef4a9;
+            background-color: #fff8bf;
             text-align: center;
-            border-radius: 20px;
+            border-radius: 10px;
             color: #286769;
             font-size: 14px;
             width: 120px;
             height: 145px;
         }
         
-        .main-icon:hover{
+    /*     .main-icon:hover{
             background-color: #286769;
             text-align: center;
             border-radius: 20px;
             color: #fef4a9!important;
             font-size: 14px;
-        }
+        } */
         
       
 
@@ -147,11 +146,11 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">안구질환 확인</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
-                                            <li class="nav-item"  ><a href="goService.do">반려견 피부질환</a>
+                                            <li class="nav-item"  ><a href="goService.do">강아지 안구질환</a>
                                             </li>
-                                            <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
+                                            <li class="nav-item"><a href="service-details.html">고양이 안구질환</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -161,7 +160,7 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
                                             <li class="nav-item"><a href="basic.do">게시판</a>
                                             </li>
-                                            <li class="nav-item"><a href="portfolio-details.html">반려동물 지식정보</a>
+                                            <li class="nav-item"><a href="adminboard.do">반려동물 지식정보</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -243,30 +242,30 @@
                     <ul class="icons">
                         <li class="nav-block">
                             <a class="main-icon" href="service.do" id="dog-lab">
-                            <img src="resources/images/icon/dog02.png" alt="강아지 피부질환">
+                            <img src="resources/images/icon/dog02.png" alt="강아지 안구질환"style="max-width: 80%; margin-top: 5px; margin-bottom:2px;">
                                 
-                            <span id="nav-text">강아지 피부질환</span>
+                            <span id="nav-text">강아지 안구질환</span>
                             </a>
                         </li>
         
                         <li class="nav-block">
                             <a class="main-icon" href="/cat-lab/" id="cat-lab">
-                            <img src="resources/images/icon/cat02.png" alt="고양이 피부질환"  >
+                            <img src="resources/images/icon/cat02.png" alt="고양이 안구질환" style="max-width: 80%; margin-top: 5px; margin-bottom:2px;" >
                                 
-                            <span id="nav-text">고양이 피부질환</span>
+                            <span id="nav-text">고양이 안구질환</span>
                             </a>
                         </li>
         
                     <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board02.png"  alt="커뮤니티" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
+                            <img src="resources/images/icon/board02.png"  alt="커뮤니티" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
                             <span id="nav-text">커뮤니티</span>
                         </a>
                     </li>
         
                      <li class="nav-block">
                         <a class="main-icon"  href="map.do" id="product-lab">
-                            <img src="resources/images/icon/hospital.png" alt="동물병원 찾기" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
+                            <img src="resources/images/icon/hospital.png" alt="동물병원 찾기" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
                             <span id="nav-text">동물병원 찾기</span>
                         </a>
                     </li>
@@ -274,7 +273,7 @@
                     <c:when test="${not empty loginMember}">
                         <li class="nav-block">
                             <a class="main-icon" id="webtoon" href="imgView.do" >
-                            <img src="resources/images/icon/petcollar02.png" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
+                            <img src="resources/images/icon/petcollar02.png" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
                             <span id="nav-text">동물등록</span>
                             </a>
                         </li>
@@ -284,7 +283,7 @@
         
                         <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험" style="max-width: 70%; margin-top: 20px; margin-bottom:16px;">
+                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
                             <span id="nav-text">반려동물 보험</span>
                         </a>
                        </li>
@@ -309,7 +308,7 @@
 								</c:when>
 								<c:otherwise>
 									
-									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:5px solid #3b9a9c;"/>
+									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:3px solid #3b9a9c;"/>
 
 								</c:otherwise>
 
@@ -350,8 +349,8 @@
                 <div class="col-12">
                     <div class="section-title">
                         <h3 class="wow zoomIn" data-wow-delay=".2s">Services</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">서비스 설명</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">서비스 설명설명~</p>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -360,8 +359,8 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">01</span>
-                            <h3><a href="service-details.html">반려견 피부질환</a></h3>
-                            <p>기능설명설명</p>
+                            <h3><a href="service-details.html">강아지 안구질환</a></h3>
+                           
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -370,8 +369,8 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <span class="serial">02</span>
-                            <h3><a href="service-details.html">반려묘 피부질환</a></h3>
-                            <p>기능설명설명</p>
+                            <h3><a href="service-details.html">고양이 안구질환</a></h3>
+                            
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -381,7 +380,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">03</span>
                             <h3><a href="service-details.html">커뮤니티</a></h3>
-                            <p>기능설명설명</p>
+                            
                             <div class="button">
                                 <a href="basic.do" class="btn">자세히보기</a>
                             </div>
@@ -391,7 +390,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
                             <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p>현재위치 근처의 동물병원을 알려줍니다.</p>
+                            
                             <div class="button">
                                 <a href="map.do" class="btn">자세히보기</a>
                             </div>
@@ -416,7 +415,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">06</span>
                             <h3><a href="service-details.html">반려동물 보험</a></h3>
-                            <p>기능 설명</p>
+                            
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -475,7 +474,7 @@
                                     <img src="resources/images/logo/logo8.png" >
                                 </a>
                             </div>
-                            <p>Making the world a better place through constructing elegant hierarchies.</p>
+                            
                             <ul class="social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>

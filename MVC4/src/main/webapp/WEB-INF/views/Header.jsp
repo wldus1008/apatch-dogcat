@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="/resources/css/main.css" />
+	<script src="/resources/smarteditor/js/HuskyEZCreator.js" ></script>
 
 
 
@@ -136,11 +137,11 @@
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="#blog" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">피부질환 확인</a>
+                                            aria-expanded="false" aria-label="Toggle navigation">안구질환 확인</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
-                                            <li class="nav-item"><a href="goService.do">반려견 피부질환</a>
+                                            <li class="nav-item"><a href="goService.do">강아지 안구질환</a>
                                             </li>
-                                            <li class="nav-item"><a href="service-details.html">반려묘 피부질환</a></li>
+                                            <li class="nav-item"><a href="service-details.html">고양이 안구질환</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -148,9 +149,9 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
-                                            <li class="nav-item"><a href="basic.do">게시판1</a>
+                                            <li class="nav-item"><a href="basic.do">게시판</a>
                                             </li>
-                                            <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
+                                            <li class="nav-item"><a href="adminboard.do">반려동물 지식정보</a>
                                             </li>
                                         </ul>
                                     </li>
