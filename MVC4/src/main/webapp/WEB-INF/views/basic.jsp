@@ -37,8 +37,8 @@
 	   console.log(data);
 	   
 	   
-	   var bList = "<table class = 'table table-hover table-bordered'>";
-	   bList += "<tr>";
+	   var bList = "<table class = 'table table-hover table-bordered' style='text-align: center; table-layout:fixed;word-break:break-all;height:auto'>";
+	   bList += "<tr >";
 	   bList += "<td>번호</td>";
 	   bList += "<td>제목</td>";
 	   bList += "<td>작성자</td>";
@@ -77,18 +77,18 @@
 		   										// id=c1,c2,c3.....
 	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
 	         bList += "<td>내용</td>"; 
-	         bList += "<td colspan='4'>";
+	         bList += "<td colspan='4' >";
 	         bList += "<textarea class='form-control form-board' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" +  obj.content + "</textarea>";
 	         
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
 	         if("${loginMember.memId}" == obj.memId) {
-	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></div>";
-	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px; ' onclick='goUpdate(" + obj.idx + ")'>수정</div></div>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px; ' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
 	         }else{
-	        	 bList += "<button disabled class='btn btn-primary btn-lg' onclick='goUpdate(" + obj.idx + ")'>수정</button>";
-		         bList += "<button disabled class='btn btn-primary btn-lg' onclick='goDel(" + obj.idx + ")'>삭제</button>";
+	        	 bList += "<button disabled  class='btn'  onclick='goUpdate(" + obj.idx + ")'></button>";
+		         bList += "<button disabled  class='btn'  onclick='goDel(" + obj.idx + ")'></button>";
 	        	 
 	         }
 	         bList += "</td>";
@@ -100,8 +100,8 @@
 	   });// each 끝
 	   
 	   
-	   bList +="<tr>";
-	   bList +="<td colspan='5'>";
+	   bList +="<tr style='text-align: left;'>";
+	   bList +="<td colspan='5' >";
 	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";
 	   bList +="</tr>";
