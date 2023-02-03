@@ -73,7 +73,7 @@
                     	<c:choose>
 								<c:when test="${empty loginMember or empty fileName}">
 
-									<img src="resources/images/hero/dog1.jpg" alt="#" style="border:5px solid #3b9a9c;">
+									<img src="resources/images/hero/dog1.jpg" alt="#" style="border:3px solid #3b9a9c;">
 
 								</c:when>
 								<c:otherwise>

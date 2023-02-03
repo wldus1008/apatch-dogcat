@@ -34,7 +34,7 @@
 
 
 
-  <style>
+   <style>
         @media (min-width: 720px)
          {
             .nav-section{
@@ -55,14 +55,29 @@
             grid-row-gap: 20px;
             
         }
-       
+        .jy{
+            margin-bottom: 50px;
+        }
         
         .main-icon{
-            background-color: blanchedalmond;
+            background-color: #fff8c2;
+            text-align: center;
+            border-radius: 15px;
+            color: #286769;
+            font-size: 14px;
+            width: 120px;
+            height: 145px;
+        }
+        
+     /*    .main-icon:hover{
+            background-color: #286769;
             text-align: center;
             border-radius: 20px;
-            color: black;
+            color: #fef4a9!important;
+            font-size: 14px;
         }
+         */
+      
 
 	 @media (min-width: 720px)
          {
@@ -70,9 +85,12 @@
                 display: none;
             } 
         }
-	
-   
+
+
+
     </style>
+
+
 
 
 </head>
