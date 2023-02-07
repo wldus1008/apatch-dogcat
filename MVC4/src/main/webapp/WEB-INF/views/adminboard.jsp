@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
- <%@include file="Header.jsp"%>
+<jsp:include page="Header.jsp"/>
  
   
    
@@ -72,16 +72,15 @@
 <script type="text/javascript">
   // basic.jsp가 실행이 되면 목록을 보여주는 함수가 실행이 될 수 있도록
   					// 익명함수 실행
+  	var boolVal = false;
 	  $(document).ready(function(){
-		  // boardList라고 하는 함수 실행!
-		  // 자바스크립트의 호이스팅
 		  boardList();
-		  
-		
+
 	  });
 
   
    function boardList(){
+	   
 	   $.ajax({
 		   
 		   url : "${cpath}/admin",
@@ -103,7 +102,7 @@
    function callBack(data){
 	   //alert("데이터 통신 확인");
 	   console.log(data);
-	   
+	  
 	   
 	   var bList = "<table class = 'table table-hover table-bordered'>";
 	   bList += "<tr>";
@@ -179,11 +178,17 @@
 	   $("#list").html(bList);
 	   
 	   
+	   
+	   
    }// callBack함수 끝
-   let oEditors = [];
+   var oEditors = [];
+   var boolVal = true;
+   
 	function goForm(){
+		
 		   // 글쓰기 버튼을 눌렀을때
 		   // 리스트 목록은 없애고, 글쓰기 폼은 화면에 보여주기
+		   
 		      $("#list").css("display","none");
 		      $("#wform").css("display","block");
 		      // 전역변수 
@@ -191,24 +196,29 @@
 				
 				// 스마트 에디터 프레임 생성
 			      console.log("Naver SmartEditor")
-			      nhn.husky.EZCreator.createInIFrame({
-			           oAppRef: oEditors,
-			           elPlaceHolder: "content",
-			           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
-			           fCreator: "createSEditor2"
-			       }); //스마트 에디터 구현 끝	
+			      if(boolVal){
+			    	  nhn.husky.EZCreator.createInIFrame({
+				           oAppRef: oEditors,
+				           elPlaceHolder: "content",
+				           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
+				           fCreator: "createSEditor2"
+				       }); //스마트 에디터 구현 끝	
+				       boolVal = false;
+
+			      } 
+			      
 			    
 		   
 		   }
 			 function insertFn() {
+				 
 				oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
 				// var content = document.getElementById("content").value;
 			   	console.log("Naver SmartEditor")
 				// var title = $('#title').val();
 				// var writer = $('#writer').val();
 		  	  	var fData = $("#frm").serialize();
-		  	    
-			   
+
 			   // 2. 그 내용들을 ajax 통신으로 보내기
 			   $.ajax({
 				   
@@ -226,27 +236,18 @@
 				   }
 			  
 			   });//insert ajax 끝!!
-				
-   
-   
-   
-   
-  
-	 
-			   
 	   
 	   // 3. 잘 보내졌으면 다시 게시글 목록이 보여질 수 있도록~
 	   // ajax 끝나고 난 다음에는 여전히 css가 list는 none, wform은 block상태
+	   
 	   $("#list").css("display","block");
 	   $("#wform").css("display","none");
 	   
 	   // 4. 글쓰고 나면 form태그에 내용이 남은 상태
-	   //$("#title").val("");
-	   //$("#content").val("");
-	   //$("#writer").val("");
-	   
+	   $("#title").val("");
+		oEditors.getById["content"].exec("SET_IR", [""]);
 	   // 취소 버튼을 강제로 실행하는 js 코드
-	   /*  $("#reset").trigger("click");  */
+	   /* $("#reset").trigger("click"); */
     
    }// insertFn() 끝!!
 
