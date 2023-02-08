@@ -1,7 +1,9 @@
 package kr.board.controller;
 
-import java.util.List;
 
+
+
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
+
 import kr.board.entity.Board;
 import kr.board.entity.Member;
+
 import kr.board.entity.dog;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.MemberMapper;
@@ -145,6 +151,7 @@ public class BoardRestController {
 		mapper.adminboardInsert(vo);
 		
 	}
+	
 	
 	
 	
