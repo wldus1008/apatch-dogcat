@@ -336,7 +336,7 @@
     	
     	// upload URL
     	
-    	sUploadURL= '/multiplePhotoUpload.do'; 
+    	sUploadURL= '/multiplePhotoUpload'; 
     	
     	
     	//파일을 하나씩 보내고, 결과를 받음.
@@ -481,7 +481,7 @@
  	 */
  	function callFileUploader (){
  		oFileUploader = new jindo.FileUploader(jindo.$("uploadInputBox"),{
- 			sUrl  : '/photoUpload.do',
+ 			sUrl  : '/photoUpload',
  			
  	        sCallback : 'resources/smarteditor/sample/photo_uploader/callback.html',
  	    	sFiletype : "*.jpg;*.png;*.bmp;*.gif",						//허용할 파일의 형식. ex) "*", "*.*", "*.jpg", 구분자(;)	

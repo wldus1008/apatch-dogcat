@@ -20,7 +20,7 @@ public class EditorController {
 
 	
 	//단일파일업로드
-	@RequestMapping(value="/photoUpload.do", method=RequestMethod.POST)
+	@RequestMapping(value="/photoUpload", method=RequestMethod.POST)
 	public String photoUpload(HttpServletRequest request, Editor vo){
 	    String callback = vo.getCallback();
 	    String callback_func = vo.getCallback_func();
@@ -59,7 +59,7 @@ public class EditorController {
 	
 	
 	//다중파일업로드
-	@RequestMapping(value="/multiplePhotoUpload.do" , method=RequestMethod.POST)
+	@RequestMapping(value="/multiplePhotoUpload" , method=RequestMethod.POST)
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response){
 	    try {
 	         //파일정보
