@@ -68,7 +68,6 @@
   </div>
 </div>
 
-
 <script type="text/javascript">
   // basic.jsp가 실행이 되면 목록을 보여주는 함수가 실행이 될 수 있도록
   					// 익명함수 실행
@@ -201,7 +200,17 @@
 				           oAppRef: oEditors,
 				           elPlaceHolder: "content",
 				           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
-				           fCreator: "createSEditor2"
+				           fCreator: "createSEditor2",
+				           htParams : {
+				               bUseToolbar : true,                // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+				               bUseVerticalResizer : true,        // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+				               bUseModeChanger : true,            // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+				               bSkipXssFilter : true,        // client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
+				               //aAdditionalFontList : aAdditionalFontSet,        // 추가 글꼴 목록
+				               fOnBeforeUnload : function(){
+				                   //alert("완료!");
+				               }
+				           }
 				       }); //스마트 에디터 구현 끝	
 				       boolVal = false;
 
