@@ -11,11 +11,13 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.board.entity.Editor;
 
+@Controller
 public class EditorController {
 
 	
@@ -31,9 +33,9 @@ public class EditorController {
 	            String original_name = vo.getFiledata().getOriginalFilename();
 	            String ext = original_name.substring(original_name.lastIndexOf(".")+1);
 	            //파일 기본경로
-	            String defaultPath = request.getSession().getServletContext().getRealPath("/");
+	            String defaultPath = "C:\\Users\\user\\git\\repository2\\MVC4\\src\\main\\webapp\\";
 	            //파일 기본경로 _ 상세경로
-	            String path = defaultPath + "resource" + File.separator + "photo_upload" + File.separator;              
+	            String path = defaultPath + "resources" + File.separator + "admin_upload" + File.separator;              
 	            File file = new File(path);
 	            System.out.println("path:"+path);
 	            //디렉토리 존재하지 않을경우 디렉토리 생성
@@ -44,7 +46,7 @@ public class EditorController {
 	            String realname = UUID.randomUUID().toString() + "." + ext;
 	        ///////////////// 서버에 파일쓰기 ///////////////// 
 	            vo.getFiledata().transferTo(new File(path+realname));
-	            file_result += "&bNewLine=true&sFileName="+original_name+"&sFileURL=/resource/photo_upload/"+realname;
+	            file_result += "&bNewLine=true&sFileName="+original_name+"&sFileURL=/resources/admin_upload/"+realname;
 	        } else {
 	            file_result += "&errstr=error";
 	        }
@@ -71,9 +73,9 @@ public class EditorController {
 	         //확장자를소문자로 변경
 	         filename_ext = filename_ext.toLowerCase();
 	         //파일 기본경로
-	         String dftFilePath = request.getSession().getServletContext().getRealPath("/");
+	         String dftFilePath = "C:\\Users\\user\\git\\repository2\\MVC4\\src\\main\\webapp\\";
 	         //파일 기본경로 _ 상세경로
-	         String filePath = dftFilePath + "resource" + File.separator + "photo_upload" + File.separator;
+	         String filePath = dftFilePath + "resources" + File.separator + "admin_upload" + File.separator;
 	         File file = new File(filePath);
 	         if(!file.exists()) {
 	            file.mkdirs();
@@ -101,7 +103,7 @@ public class EditorController {
 	         sFileInfo += "&bNewLine=true";
 	         // img 태그의 title 속성을 원본파일명으로 적용시켜주기 위함
 	         sFileInfo += "&sFileName="+ filename;;
-	         sFileInfo += "&sFileURL="+"/resource/photo_upload/"+realFileNm;
+	         sFileInfo += "&sFileURL="+"/resources/admin_upload/"+realFileNm;
 	         PrintWriter print = response.getWriter();
 	         print.print(sFileInfo);
 	         print.flush();

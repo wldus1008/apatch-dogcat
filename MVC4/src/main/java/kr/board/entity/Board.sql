@@ -87,3 +87,8 @@ UPDATE member SET
 		memName = '123'
 		WHERE memId = 'kkk'
 
+create table adminimg(
+	fno int not null auto_increment primary key,
+	Filedata varchar(500) not null,
+	callback varchar(500) not null,
+	callback_func varchar(500) not null);

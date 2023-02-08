@@ -14,7 +14,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Editor {
-    //photo_uploader.html페이지의 form태그내에 존재하는 file 태그의 name명과 일치시켜줌
+    
+	private String memId;
+	//photo_uploader.html페이지의 form태그내에 존재하는 file 태그의 name명과 일치시켜줌
     private MultipartFile Filedata;
     //callback URL
     private String callback;
@@ -23,6 +25,12 @@ public class Editor {
     
     
     
+    public String getMemId() {
+    	return memId;
+    }
+    public void setMemId(String memId) {
+    	this.memId = memId;
+    }
 	public MultipartFile getFiledata() {
 		return Filedata;
 	}
