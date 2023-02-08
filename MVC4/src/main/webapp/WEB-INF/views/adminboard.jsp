@@ -145,7 +145,7 @@
 	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
 	         bList += "<td>내용</td>"; 
 	         bList += "<td colspan='4'>";
-	         bList += "<div class='form-control form-board' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" + obj.content + "</div>";
+	         bList += "<div class='form-control form-board' style='height: auto;'  row='7' id='nc" + obj.idx + "'>" + obj.content + "</div>";
 	         
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
