@@ -160,9 +160,7 @@
                                             </li>
 
                                             <li class="nav-item"><a href="service-details.html">고양이 안구질환</a></li>
-
-                                            <li class="nav-item"><a href="#">반려묘 피부질환</a></li>
-
+                                          
                                         </ul>
                                     </li>
                                     <li class="nav-item">

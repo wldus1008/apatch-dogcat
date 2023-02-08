@@ -681,7 +681,7 @@ a:hover {
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
                                             <li class="nav-item"><a href="../basic.do">게시판1</a>
                                             </li>
-                                            <li class="nav-item"><a href="portfolio-details.html">게시판2</a>
+                                            <li class="nav-item"><a href="../adminboad.do">반려동물 지식정보</a>
                                             </li>
                                         </ul>
                                     </li>

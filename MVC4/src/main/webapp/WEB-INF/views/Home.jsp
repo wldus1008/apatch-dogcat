@@ -28,7 +28,7 @@
         
                     <li class="nav-block">
                         <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/board02.png"  alt="커뮤니티" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
+                            <img src="resources/images/icon/board02.png"  alt="커뮤니티" style="max-width: 60%; margin-top: 19px; margin-bottom:12px;">
                             <span id="nav-text">커뮤니티</span>
                         </a>
                     </li>
