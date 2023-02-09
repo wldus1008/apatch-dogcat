@@ -172,7 +172,7 @@
                             <span class="serial">05</span>
                             
                             <h3><a>반려동물 등록하기</a></h3>
-                            <p> 로그인 후 사용가능</p>
+                            <p style="padding-bottom: 83px;"> 로그인 후 사용가능</p>
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
