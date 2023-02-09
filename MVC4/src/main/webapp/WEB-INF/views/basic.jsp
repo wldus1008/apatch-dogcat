@@ -43,7 +43,7 @@
 	   bList += "<td>제목</td>";
 	   bList += "<td>작성자</td>";
 	   bList += "<td>작성일</td>";
-	   bList += "<td style='width:60px;'>조회수</td>";   
+	   bList += "<td style='width:65px;'>조회수</td>";   
 	   
 	   bList += "</tr>";
 	   
