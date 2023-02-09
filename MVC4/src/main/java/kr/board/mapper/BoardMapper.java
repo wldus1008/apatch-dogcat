@@ -45,6 +45,11 @@ public interface BoardMapper  {
 	
 	public void adminDelete(int idx);
 	
+	public void adminboardUpdate(dog vo);
+	
+	public dog adminboardContent(int theIdx);
+	
+	public void adminboardContentUpdate(dog vo);
 	
 	// 만약에 sql문을 xml로 관리를 안하는 경우
 	// sql구문 종류별로 주석을 달아서 sql문 직접 입력\
@@ -53,6 +58,11 @@ public interface BoardMapper  {
 	public void updateCount(int idx);
 
 	public Member memberLogin(Member mvo);
+
+	
+	
+	@Update("update adminboard set count=count+1 where idx=#{idx}")
+	public void adminboardCount(int idx);
 
 	
 	

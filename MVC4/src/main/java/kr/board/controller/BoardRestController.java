@@ -161,6 +161,26 @@ public class BoardRestController {
 	}
 	
 	
+	@PutMapping("/dog")
+	public void adminboardUpdate(@RequestBody dog vo) {
+		// 전에는 title,content,writer 등등 여러개 수정하는 메소드를 만듦
+		// 이제는 content만 바꾸는 메소드를 새로 만들어야함
+		
+		mapper.adminboardContentUpdate(vo);
+	}
+	
+	@GetMapping("/adminboardCount/{idx}")
+	public dog adminboardCount(@PathVariable int idx) {
+		
+		mapper.adminboardCount(idx);
+		
+		// 해당 idx를 가지는 게시글 내용
+		dog vo = mapper.adminboardContent(idx);
+		
+		// 새로 +1된 조회수를 출력하기 위해서 데이터 보냄
+		return vo;
+	}
+	
 	
 	
 }

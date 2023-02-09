@@ -58,4 +58,18 @@
        
    </delete>
    
+    <select id="adminboardContent" parameterType="int" resultType="kr.board.entity.dog">
+     select * from adminboard where idx=#{idx}  
+       
+   </select>
+    
+     <update id="adminboardUpdate" parameterType="kr.board.entity.dog">
+       update adminboard set title=#{title}, content=#{content}
+       where idx=#{idx}
+       
+   </update>
+       <update id="adminboardContentUpdate" parameterType="kr.board.entity.dog">
+      update adminboard set content=#{content} where idx=#{idx}
+   </update>
+   
 </mapper>
