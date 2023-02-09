@@ -23,6 +23,7 @@
                                 <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
                             </ul>
+                                <p>Copyright &copy; 2023 ApatchDogCat All rights reserved.</p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
