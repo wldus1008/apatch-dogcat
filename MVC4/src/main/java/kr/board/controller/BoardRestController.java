@@ -153,6 +153,14 @@ public class BoardRestController {
 	}
 	
 	
+	@DeleteMapping("/admin/{idx}")
+	public void adminAjaxDelete(@PathVariable int idx) {
+		
+		mapper.adminDelete(idx);
+		
+	}
+	
+	
 	
 	
 }

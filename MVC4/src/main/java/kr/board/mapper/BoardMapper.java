@@ -43,6 +43,7 @@ public interface BoardMapper  {
 	
 	public void adminboardInsert(dog vo);
 	
+	public void adminDelete(int idx);
 	
 	
 	// 만약에 sql문을 xml로 관리를 안하는 경우
@@ -52,6 +53,7 @@ public interface BoardMapper  {
 	public void updateCount(int idx);
 
 	public Member memberLogin(Member mvo);
+
 	
 	
 	// SQL문을 관리하는 XML만들 때 주의할 점!!!

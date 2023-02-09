@@ -105,11 +105,11 @@
 	   
 	   var bList = "<table class = 'table table-hover table-bordered'>";
 	   bList += "<tr>";
-	   bList += "<td>번호</td>";
+	   bList += "<td style='width:50px;'>번호</td>";
 	   bList += "<td>제목</td>";
 	   bList += "<td>작성자</td>";
 	   bList += "<td>작성일</td>";
-	   bList += "<td>조회수</td>";   
+	   bList += "<td style='width:60px;'>조회수</td>";    
 	   
 	   bList += "</tr>";
 	   
@@ -165,18 +165,19 @@
 		   
 	   });// each 끝
 	   
-	   
 	   bList +="<tr>";
-	   bList +="<td colspan='5'>";
+	   
+	   if("${loginMember.memId}" == 'admin') {
+	   bList += "<td colspan='5'>";
 	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";
 	   bList +="</tr>";
+	   }
 	   
 	   bList += "</table>";
-	   
 	   $("#list").html(bList);
 	   
-	   
+	  
 	   
 	   
    }// callBack함수 끝
@@ -312,7 +313,7 @@
 	   if(real){
 		   	   
 		   $.ajax({
-		         url : "${cpath}/board/"+idx, // PathVariable로 넘기기
+		         url : "${cpath}/admin/"+idx, // PathVariable로 넘기기
 		         type : "delete",
 		         // 보내주는 데이터 1개이면 직접 객체로 묶어서 보내줄 수 있음
 		         		// "idx" : parameter name값 --> idx=2

@@ -53,6 +53,9 @@
 		select * from adminboard
 	</select>
   
-   
+    <delete id="adminDelete" parameterType="int">
+       delete from adminboard where idx=#{idx}
+       
+   </delete>
    
 </mapper>
