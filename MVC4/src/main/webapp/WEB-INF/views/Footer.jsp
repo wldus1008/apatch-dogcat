@@ -12,7 +12,7 @@
                         <div class="single-footer f-about">
                             <div class="logo">
                                 <a href="Home.do">
-                                    <img src="resources/images/logo/logo8.png" >
+                                    <img src="resources/images/logo/logo8.png" style="margin-left: 38px;" >
                                 </a>
                             </div>
                             
@@ -23,7 +23,7 @@
                                 <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
                             </ul>
-                                <p>Copyright &copy; 2023 ApatchDogCat All rights reserved.</p>
+                                <p style="padding-left: 13px;">Copyright &copy; 2023 ApatchDogCat All rights reserved.</p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
