@@ -279,7 +279,7 @@
         // 만약에 c1이 table-row이면~ none
         // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
               $.ajax({
-                 url : "${cpath}/updateCount/"+idx, //PathVariable
+                 url : "${cpath}/adminboardCount/"+idx, //PathVariable
                  type : "get",
                  //data : {"idx:idx"}, //보내주는 데이터가 있다면
                  //dataType : "", // 받는 데이터가 있으면

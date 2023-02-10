@@ -1913,8 +1913,8 @@ ol {
 }
 
 .header.sticky .button .btn:hover {
-  background-color: #061E5C;
-  color: #fff;
+  background-color: #286769 !impotant;
+  color: #fef4a9;
 }
 
 .sticky {

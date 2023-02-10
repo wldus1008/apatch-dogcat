@@ -161,25 +161,25 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
                             <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p> 현재위치를 확인하고 근처 동물병원을 알려줍니다.</p>
+                            <p> 현재위치를 확인 후 근처 동물병원을 알려줍니다.</p>
                             <div class="button">
                                 <a href="map.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-service wow fadeInUp" data-wow-delay=".4s">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".4s" style="height:351.6px!important;">
                             <span class="serial">05</span>
                             
-                            <h3><a>반려동물 등록하기</a></h3>
-                            <p style="padding-bottom: 83px;"> 로그인 후 사용가능</p>
+                            <h3><a>반려동물 등록하기</a></h3>	
+                            <p > 로그인 후 사용가능</p>
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
                                 <a href="imgView.do" class="btn">등록하기</a>
                              </div>
                             </c:when>
-					        </c:choose>   
+                         	</c:choose>   
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
