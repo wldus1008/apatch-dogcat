@@ -10,7 +10,6 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -208,21 +207,25 @@ public class BoardController {
 		return "adminboard";
 		
 	}
-		
-	@RequestMapping("/adminboardview/{idx}")
-	   public String adminboardview(Model model ,@PathVariable int idx) {
-	      dog vo =  mapper.adminboardContent(idx);
-	      if(vo != null) {
-	         model.addAttribute("vo", vo);
-	      }
-	      return "adminboardview";
-	  }
-	
 
 	
 	
-	
-	
+	@RequestMapping("/adminboardview/{idx}")
+	public String adminboardview(Model model ,@PathVariable int idx) {
+		dog vo =  mapper.adminboardContent(idx);
+		if(vo != null) {
+			model.addAttribute("vo", vo);
+		}
+		return "adminboardview";
+	}
+	@RequestMapping("/adminUpdate.do/{idx}")
+	public String adminUpdate(Model model ,@PathVariable int idx) {
+		dog vo =  mapper.adminboardContent(idx);
+		if(vo != null) {
+			model.addAttribute("vo", vo);
+		}
+		return "adminUpdate";
+	}
 	
 	
 }
