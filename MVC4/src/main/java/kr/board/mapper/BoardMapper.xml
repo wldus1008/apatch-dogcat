@@ -69,7 +69,7 @@
        
    </update>
        <update id="adminboardContentUpdate" parameterType="kr.board.entity.dog">
-      update adminboard set title=#{title} content=#{content} where idx=#{idx}
+      update adminboard set title=#{title}, content=#{content} where idx=#{idx}
    </update>
   
 </mapper>

@@ -176,6 +176,12 @@ public class BoardRestController {
 		return vo;
 	}
 	
-
+	@RequestMapping(value="/adminboardUpdate" ,method=RequestMethod.POST)
+	public void adminboardUpdate(dog vo) {
+		
+		mapper.adminboardContentUpdate(vo);
+		
+		
+	}
 	
 }

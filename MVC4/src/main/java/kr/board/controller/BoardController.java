@@ -226,14 +226,7 @@ public class BoardController {
 		return "adminUpdate";
 	}
 	
-	@RequestMapping("/adminboardUpdate.do")
-	public String adminboardUpdate(dog vo) {
-		
-		mapper.adminboardContentUpdate(vo);
-		
-		
-		return "adminboardview";
-	}
+	
 	
 	
 	
