@@ -15,7 +15,6 @@
   
 	
 	
-	<h5 style = "text-align: center;">반려동물 지식정보</h5>
     <div class="panel-body" id="list" style="display:block">Panel Content</div>
     <div class="panel-body" id="wform" style="display:none">
          <form class="form-horizontal"  id="frm">
