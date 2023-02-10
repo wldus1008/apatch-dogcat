@@ -15,7 +15,7 @@
   
 	
 	
-	
+	<h5 style = "text-align: center;">반려동물 지식정보</h5>
     <div class="panel-body" id="list" style="display:block">Panel Content</div>
     <div class="panel-body" id="wform" style="display:none">
          <form class="form-horizontal"  id="frm">
@@ -105,11 +105,11 @@
 	   
 	   var bList = "<table class = 'table table-hover table-bordered'>";
 	   bList += "<tr>";
-	   bList += "<td>번호</td>";
+	   bList += "<td style='width:50px;'>번호</td>";
 	   bList += "<td>제목</td>";
 	   bList += "<td>작성자</td>";
 	   bList += "<td>작성일</td>";
-	   bList += "<td>조회수</td>";   
+	   bList += "<td style='width:65px;'>조회수</td>";    
 	   
 	   bList += "</tr>";
 	   
@@ -140,16 +140,16 @@
 		   
 		   
 		   // 게시글 내용만 보여주는 태그	
-		   										// id=c1,c2,c3.....
+		   	/* 									// id=c1,c2,c3.....
 	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
 	         bList += "<td>내용</td>"; 
 	         bList += "<td colspan='4'>";
 	         bList += "<div class='form-control form-board' style='height: auto;'  row='7' id='nc" + obj.idx + "'>" + obj.content + "</div>";
-	         
+	          */
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
 	         if("${loginMember.memId}" == obj.memId) {
-	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></div>";
+	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></button>";
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
 	         }else{
@@ -165,18 +165,19 @@
 		   
 	   });// each 끝
 	   
-	   
 	   bList +="<tr>";
-	   bList +="<td colspan='5'>";
+	   
+	   if("${loginMember.memId}" == 'admin') {
+	   bList += "<td colspan='5'>";
 	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";
 	   bList +="</tr>";
+	   }
 	   
 	   bList += "</table>";
-	   
 	   $("#list").html(bList);
 	   
-	   
+	  
 	   
 	   
    }// callBack함수 끝
@@ -273,37 +274,32 @@
   
    
    
-   function cview(idx) {
-	   // c+idx c1,c2......
-	   // 만약에 c1이 none상태면~ table-row
-	   // 만약에 c1이 table-row이면~ none
-	   if($("#c"+idx).css("display") == "none"){
-		   // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
-		   	$.ajax({
-		         url : "${cpath}/updateCount/"+idx, //PathVariable
-		         type : "get",
-		         //data : {"idx:idx"}, //보내주는 데이터가 있다면
-		         //dataType : "", // 받는 데이터가 있으면
-		         success : function(vo){
-		        	 console.log(vo.count);
-		        	 // vo.count의 값을 출력
-		        	 $("#count"+idx).text(vo.count);
-		        	 
-		         },
-		         error : function(){
-		        	 alert("조회수 올리기 실패!!")
-		         }
-		         
-		      }); // 조회수 ajax 끝
-		   
-		   $("#c"+idx).css("display", "table-row")
-		   
-	   }else{
-		   $("#c"+idx).css("display", "none")
-		   
-	   }  
-	   
-   } // cview 함수 끝!!
+    function cview(idx) {
+        // c+idx c1,c2......
+        // 만약에 c1이 none상태면~ table-row
+        // 만약에 c1이 table-row이면~ none
+        // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
+              $.ajax({
+                 url : "${cpath}/updateCount/"+idx, //PathVariable
+                 type : "get",
+                 //data : {"idx:idx"}, //보내주는 데이터가 있다면
+                 //dataType : "", // 받는 데이터가 있으면
+                 success : function(vo){
+                    console.log(vo.count);
+                    // vo.count의 값을 출력
+                    $("#count"+idx).text(vo.count);
+                    
+                 },
+                 error : function(){
+                    alert("조회수 올리기 실패!!")
+                 }
+                 
+              }); // 조회수 ajax 끝
+           
+           location.href = "${cpath}/adminboardview/"+idx;
+           
+        
+     } // cview 함수 끝!!
    
    function goDel(idx) {
 	   // 삭제 버튼을 눌렀을때 진짜로 삭제할건지 물어보고 삭제하기
@@ -312,7 +308,7 @@
 	   if(real){
 		   	   
 		   $.ajax({
-		         url : "${cpath}/board/"+idx, // PathVariable로 넘기기
+		         url : "${cpath}/admin/"+idx, // PathVariable로 넘기기
 		         type : "delete",
 		         // 보내주는 데이터 1개이면 직접 객체로 묶어서 보내줄 수 있음
 		         		// "idx" : parameter name값 --> idx=2
@@ -335,7 +331,7 @@
 	   var newContent = $("#nc"+idx).val();
 	   
 	   $.ajax({
-	         url : "${cpath}/board",
+	         url : "${cpath}/dog",
 	         type : "put",
 	         // idx, content를 보내줘야함 --> 여러개의 데이터를 보낼때
 	         // json형식으로 보내야함 --> contentType지정, JSON.stringify()로 형식도 바꿈

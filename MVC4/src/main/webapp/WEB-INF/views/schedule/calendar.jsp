@@ -620,7 +620,7 @@ a:hover {
                 <div class="col-lg-12">
                     <div class="nav-inner">
                         <!-- Start Navbar -->
-                        <nav class="navbar navbar-expand-lg">
+                        <nav class="navbar navbar-expand-lg" style="border-bottom:3px inset;">
                             <a class="navbar-brand style3" href="../Home.do">
                                 <img src="../resources/images/logo/logo7.png" alt="Logo">
                             </a>
@@ -1030,7 +1030,7 @@ a:hover {
         <!-- Start Footer Top -->
         <div class="footer-top">
             <div class="container">
-                <div class="row">
+                <div class="row" >
                     <div class="col-lg-4 col-md-4 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer f-about">
@@ -1039,7 +1039,7 @@ a:hover {
                                     <img src="../resources/images/logo/logo8.png" >
                                 </a>
                             </div>
-                            <p>Making the world a better place through constructing elegant hierarchies.</p>
+                            
                             <ul class="social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>

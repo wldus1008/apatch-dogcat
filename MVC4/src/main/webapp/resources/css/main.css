@@ -3363,7 +3363,7 @@ ol {
 }
 
 .single-service p {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: #888;
   line-height: 28px;
@@ -4350,7 +4350,7 @@ ol {
 }
 
 .footer .footer-top {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -4402,7 +4402,8 @@ ol {
 }
 
 .footer .single-footer.f-about .social {
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-left: 65px;
 }
 
 @media (max-width: 767px) {

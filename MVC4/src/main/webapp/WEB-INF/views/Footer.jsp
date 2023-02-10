@@ -12,7 +12,7 @@
                         <div class="single-footer f-about">
                             <div class="logo">
                                 <a href="Home.do">
-                                    <img src="resources/images/logo/logo8.png" >
+                                    <img src="${cpath}/resources/images/logo/logo8.png" style="margin-left: 38px;" >
                                 </a>
                             </div>
                             
@@ -23,6 +23,7 @@
                                 <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
                             </ul>
+                                <p style="padding-left: 13px;">Copyright &copy; 2023 ApatchDogCat All rights reserved.</p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
@@ -99,14 +100,14 @@
     </a>
 
     <!-- ========================= JS here ========================= -->
-    <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/wow.min.js"></script>
-    <script src="resources/js/tiny-slider.js"></script>
-    <script src="resources/js/glightbox.min.js"></script>
-    <script src="resources/js/count-up.min.js"></script>
-    <script src="resources/js/imagesloaded.min.js"></script>
-    <script src="resources/js/isotope.min.js"></script>
-    <script src="resources/js/main.js"></script>
+    <script src="${cpath}/resources/js/bootstrap.min.js"></script>
+    <script src="${cpath}/resources/js/wow.min.js"></script>
+    <script src="${cpath}/resources/js/tiny-slider.js"></script>
+    <script src="${cpath}/resources/js/glightbox.min.js"></script>
+    <script src="${cpath}/resources/js/count-up.min.js"></script>
+    <script src="${cpath}/resources/js/imagesloaded.min.js"></script>
+    <script src="${cpath}/resources/js/isotope.min.js"></script>
+    <script src="${cpath}/resources/js/main.js"></script>
     
 </body>
 </html>

@@ -107,9 +107,9 @@
                 <div class="col-lg-12">
                     <div class="nav-inner">
                         <!-- Start Navbar -->
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo7.png" alt="Logo">
+                        <nav class="navbar navbar-expand-lg" style="border-bottom: 3px inset;">
+                            <a class="navbar-brand style3" href="${cpath}/Home.do">
+                                <img src="${cpath}/resources/images/logo/logo10.png" alt="Logo" style="margin-top : 5px;">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -121,7 +121,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="Home.do" class="active" aria-label="Toggle navigation">Home</a>
+                                        <a href="${cpath}/Home.do" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
                             
                        
@@ -156,10 +156,10 @@
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">안구질환 확인</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
-                                            <li class="nav-item"><a href="goService.do">강아지 안구질환</a>
+                                            <li class="nav-item"><a href="${cpath}/goService.do">강아지 안구질환</a>
                                             </li>
 
-                                            <li class="nav-item"><a href="service-details.html">고양이 안구질환</a></li>
+                                            <li class="nav-item"><a href="#">고양이 안구질환</a></li>
                                           
                                         </ul>
                                     </li>
@@ -168,10 +168,10 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
-                                            <li class="nav-item"><a href="basic.do">게시판</a>
+                                            <li class="nav-item"><a href="${cpath}/basic.do">게시판</a>
                                             </li>
 
-                                            <li class="nav-item"><a href="adminboard.do">반려동물 지식정보</a>
+                                            <li class="nav-item"><a href="${cpath}/adminboard.do">반려동물 지식정보</a>
 
                                             <li class="nav-item"><a href="#">아직 없음</a>
 
@@ -187,8 +187,8 @@
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
-                                            <li class="nav-item"><a href="imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
+                                            <li class="nav-item"><a href="${cpath}/imgView.do">반려동물등록</a></li>
+                                            <li class="nav-item"><a href="${cpath}/calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
                                             <li class="nav-item"><a href="#">아직없음</a></li>
                                             
                                         </ul>
