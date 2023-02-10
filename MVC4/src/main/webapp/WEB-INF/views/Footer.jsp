@@ -12,7 +12,7 @@
                         <div class="single-footer f-about">
                             <div class="logo">
                                 <a href="Home.do">
-                                    <img src="resources/images/logo/logo8.png" style="margin-left: 38px;" >
+                                    <img src="${cpath}/resources/images/logo/logo8.png" style="margin-left: 38px;" >
                                 </a>
                             </div>
                             
@@ -100,14 +100,14 @@
     </a>
 
     <!-- ========================= JS here ========================= -->
-    <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/wow.min.js"></script>
-    <script src="resources/js/tiny-slider.js"></script>
-    <script src="resources/js/glightbox.min.js"></script>
-    <script src="resources/js/count-up.min.js"></script>
-    <script src="resources/js/imagesloaded.min.js"></script>
-    <script src="resources/js/isotope.min.js"></script>
-    <script src="resources/js/main.js"></script>
+    <script src="${cpath}/resources/js/bootstrap.min.js"></script>
+    <script src="${cpath}/resources/js/wow.min.js"></script>
+    <script src="${cpath}/resources/js/tiny-slider.js"></script>
+    <script src="${cpath}/resources/js/glightbox.min.js"></script>
+    <script src="${cpath}/resources/js/count-up.min.js"></script>
+    <script src="${cpath}/resources/js/imagesloaded.min.js"></script>
+    <script src="${cpath}/resources/js/isotope.min.js"></script>
+    <script src="${cpath}/resources/js/main.js"></script>
     
 </body>
 </html>

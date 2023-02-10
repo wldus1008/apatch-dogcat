@@ -140,12 +140,12 @@
 		   
 		   
 		   // 게시글 내용만 보여주는 태그	
-		   										// id=c1,c2,c3.....
+		   	/* 									// id=c1,c2,c3.....
 	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
 	         bList += "<td>내용</td>"; 
 	         bList += "<td colspan='4'>";
 	         bList += "<div class='form-control form-board' style='height: auto;'  row='7' id='nc" + obj.idx + "'>" + obj.content + "</div>";
-	         
+	          */
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
 	         if("${loginMember.memId}" == obj.memId) {
@@ -274,37 +274,32 @@
   
    
    
-   function cview(idx) {
-	   // c+idx c1,c2......
-	   // 만약에 c1이 none상태면~ table-row
-	   // 만약에 c1이 table-row이면~ none
-	   if($("#c"+idx).css("display") == "none"){
-		   // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
-		   	$.ajax({
-		         url : "${cpath}/adminboardCount/"+idx, //PathVariable
-		         type : "get",
-		         //data : {"idx:idx"}, //보내주는 데이터가 있다면
-		         //dataType : "", // 받는 데이터가 있으면
-		         success : function(vo){
-		        	 console.log(vo.count);
-		        	 // vo.count의 값을 출력
-		        	 $("#count"+idx).text(vo.count);
-		        	 
-		         },
-		         error : function(){
-		        	 alert("조회수 올리기 실패!!")
-		         }
-		         
-		      }); // 조회수 ajax 끝
-		   
-		   $("#c"+idx).css("display", "table-row")
-		   
-	   }else{
-		   $("#c"+idx).css("display", "none")
-		   
-	   }  
-	   
-   } // cview 함수 끝!!
+    function cview(idx) {
+        // c+idx c1,c2......
+        // 만약에 c1이 none상태면~ table-row
+        // 만약에 c1이 table-row이면~ none
+        // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
+              $.ajax({
+                 url : "${cpath}/updateCount/"+idx, //PathVariable
+                 type : "get",
+                 //data : {"idx:idx"}, //보내주는 데이터가 있다면
+                 //dataType : "", // 받는 데이터가 있으면
+                 success : function(vo){
+                    console.log(vo.count);
+                    // vo.count의 값을 출력
+                    $("#count"+idx).text(vo.count);
+                    
+                 },
+                 error : function(){
+                    alert("조회수 올리기 실패!!")
+                 }
+                 
+              }); // 조회수 ajax 끝
+           
+           location.href = "${cpath}/adminboardview/"+idx;
+           
+        
+     } // cview 함수 끝!!
    
    function goDel(idx) {
 	   // 삭제 버튼을 눌렀을때 진짜로 삭제할건지 물어보고 삭제하기

@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +30,7 @@ import java.nio.ByteOrder;
 import kr.board.entity.Board;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
+import kr.board.entity.dog;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.imgMapper;
 
@@ -207,7 +209,23 @@ public class BoardController {
 		
 	}
 		
-	}
+	@RequestMapping("/adminboardview/{idx}")
+	   public String adminboardview(Model model ,@PathVariable int idx) {
+	      dog vo =  mapper.adminboardContent(idx);
+	      if(vo != null) {
+	         model.addAttribute("vo", vo);
+	      }
+	      return "adminboardview";
+	  }
+	
+
+	
+	
+	
+	
+	
+	
+}
 	
 
 	

@@ -109,7 +109,7 @@
                         <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg" style="border-bottom: 3px inset;">
                             <a class="navbar-brand style3" href="Home.do">
-                                <img src="resources/images/logo/logo10.png" alt="Logo" style="margin-top : 5px;">
+                                <img src="${cpath}/resources/images/logo/logo10.png" alt="Logo" style="margin-top : 5px;">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
