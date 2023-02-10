@@ -148,7 +148,7 @@
 	          */
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
-	         if("${loginMember.memId}" == obj.memId) {
+	         /* if("${loginMember.memId}" == obj.memId) {
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></button>";
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
@@ -158,7 +158,7 @@
 	        	 
 	         }
 	         bList += "</td>";
-	         bList += "<tr>";
+	         bList += "<tr>"; */
 		   
 	
 		   
@@ -333,7 +333,7 @@
 	   $.ajax({
 	         url : "${cpath}/dog",
 	         type : "put",
-	         // idx, content를 보내줘야함 --> 여러개의 데이터를 보낼때
+	         // idx, content를 보내줘야함  --> 여러개의 데이터를 보낼때
 	         // json형식으로 보내야함 --> contentType지정, JSON.stringify()로 형식도 바꿈
 	         contentType : "application/json;charset=utf-8",
 	         data : JSON.stringify({"idx":idx,"content":newContent}), //보내주는 데이터가 있다면

@@ -17,7 +17,7 @@
 <div style="text-align: center">
 <span id="title"> ${vo.title} </span>
 </div>
-<div style="margin-bottom: 50px;">
+<div style="margin-bottom: 50px;" id=nc>
 ${vo.content}
 </div>
 
@@ -25,7 +25,7 @@ ${vo.content}
 <c:choose>
 	<c:when test="${loginMember.memId eq 'admin'}">
 		<div class="button text-center">
-			<button class='btn' onclick="location.href='adminUpdate.do/${vo.idx}'">수정</button>
+			<button class='btn' onclick="">수정</button>
 			<button class='btn' onclick="goDel(idx)">삭제</button>
 		</div>
 	</c:when>
@@ -36,7 +36,15 @@ ${vo.content}
 
 
 
+
+
+
+
 <script type="text/javascript">
+
+
+
+
 
 function goDel(idx) {
 	   // 삭제 버튼을 눌렀을때 진짜로 삭제할건지 물어보고 삭제하기
@@ -84,3 +92,4 @@ function goDel(idx) {
 
 
 <%@include file="Footer.jsp" %>
+

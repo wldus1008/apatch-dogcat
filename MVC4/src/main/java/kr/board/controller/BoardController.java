@@ -218,7 +218,14 @@ public class BoardController {
 	      return "adminboardview";
 	  }
 	
-
+	@RequestMapping("/adminUpdate/{idx}")
+	   public String adminUpdate(Model model ,@PathVariable int idx) {
+	      dog vo =  mapper.adminboardContent(idx);
+	      if(vo != null) {
+	         model.addAttribute("vo", vo);
+	      }
+	      return "adminUpdate";
+	  }
 	
 	
 	
