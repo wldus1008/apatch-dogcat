@@ -15,7 +15,6 @@
   
 	
 	
-	<h5 style = "text-align: center;">반려동물 지식정보</h5>
     <div class="panel-body" id="list" style="display:block">Panel Content</div>
     <div class="panel-body" id="wform" style="display:none">
          <form class="form-horizontal"  id="frm">
@@ -148,7 +147,7 @@
 	          */
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
-	         if("${loginMember.memId}" == obj.memId) {
+	         /* if("${loginMember.memId}" == obj.memId) {
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></button>";
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
@@ -158,7 +157,7 @@
 	        	 
 	         }
 	         bList += "</td>";
-	         bList += "<tr>";
+	         bList += "<tr>"; */
 		   
 	
 		   
