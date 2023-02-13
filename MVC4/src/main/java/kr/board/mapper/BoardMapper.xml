@@ -50,7 +50,8 @@
 	</insert>
 
 	<select id="dogList" resultType="kr.board.entity.dog">
-		select * from adminboard
+		select idx,title,content,writer,date_format(indate,"%Y/%m/%d") as indate ,count,memId
+		from adminboard
 	</select>
   
     <delete id="adminDelete" parameterType="int">
