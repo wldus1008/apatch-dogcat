@@ -7,7 +7,8 @@
   
   <!-- 태그의 d는 mapper 인터페이스의 메소드 이름으로 한다.  -->
   <select id="boardList" resultType="kr.board.entity.Board">
-    select * from board
+    select idx,title,content,writer,date_format(indate,"%Y/%m/%d") as indate ,count,memId
+    from board
   </select>
   
   <insert id="boardInsert" parameterType="kr.board.entity.Board">
