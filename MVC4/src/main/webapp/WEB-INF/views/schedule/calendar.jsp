@@ -1049,11 +1049,11 @@ a:hover {
                         <!-- Single Widget -->
                         <div class="single-footer f-about">
                             <ul class="social small" >
-	                                <li><a href="javascript:void(0)" style="padding-top:10px;"><i class="lni lni-facebook-filled"></i></a></li>
-	                                <li><a href="javascript:void(0)" style="padding-top:10px;"><i class="lni lni-twitter-original"></i></a></li>
-	                                <li><a href="javascript:void(0)" style="padding-top:10px;"><i class="lni lni-instagram"></i></a></li>
-	                                <li><a href="javascript:void(0)" style="padding-top:10px;"><i class="lni lni-linkedin-original"></i></a></li>
-	                                <li><a href="javascript:void(0)" style="padding-top:10px;"><i class="lni lni-youtube"></i></a></li>
+	                                <li><a href="javascript:void(0)" style="padding:10px;"><i class="lni lni-facebook-filled" ></i></a></li>
+	                                <li><a href="javascript:void(0)" style="padding:10px;"><i class="lni lni-twitter-original"></i></a></li>
+	                                <li><a href="javascript:void(0)" style="padding:10px;"><i class="lni lni-instagram"></i></a></li>
+	                                <li><a href="javascript:void(0)" style="padding:10px;" ><i class="lni lni-linkedin-original"></i></a></li>
+	                                <li><a href="javascript:void(0)" style="padding:10px;" ><i class="lni lni-youtube" ></i></a></li>
 	                       </ul>
                             <div class="logo">
                                 <a href="Home.do">

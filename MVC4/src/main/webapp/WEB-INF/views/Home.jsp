@@ -210,17 +210,16 @@
                     <div class="download">
                         <div class="title">
                             <h3>
-                                <span>Get Pro Version!</span>
-                                Currently You are using free<br>
-                                Lite version of Appmeet
+                               
+                                	생각<br>
+                              		생각
                             </h3>
-                            <p>Please, purchase full version of the template to get all pages,
-                                features and commercial license.</p>
+                            <p>생각</p>
                         </div>
                         <ul class="download-link">
-                            <li><a href="https://graygrids.com/templates/appmeet-startup-app-saas-html-template/"
+                            <li><a href="#"
                                     target="_blank" style="padding:18px 40px;width: auto; text-align: center;">
-                                    <span class="main-text">Purchase Now</span>
+                                    <span class="main-text">생각생각</span>
                                 </a>
                             </li>
                         </ul>

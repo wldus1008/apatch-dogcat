@@ -4394,18 +4394,18 @@ ol {
 }
 
 .footer .single-footer.f-about .logo img {
-  width: 80%;
+  width: 60%;
 }
 
 .footer .single-footer.f-about p {
   color: #fff;
-  margin: 0px 0px 0px 35px;
+  
   font-size: 10px;
   font-weight: 600;
 }
 
 .footer .single-footer.f-about .social {
-   margin:90px 90px 0px 0px;
+   margin: 70px 90px 0px 0px;
    float : right;
 }
 
