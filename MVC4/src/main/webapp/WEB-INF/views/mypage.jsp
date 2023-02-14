@@ -15,30 +15,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center;">
-                    	
-                    	<c:choose>
-								<c:when test="${empty loginMember or empty fileName}">
-
-									<img src="resources/images/hero/dog1.jpg" alt="#">
-
-								</c:when>
-								<c:otherwise>
-									
-									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>"/>
-
-								</c:otherwise>
-
-
-							</c:choose>
-                    	
-                        
+                                       										
+						<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:3px solid #3b9a9c;"/>
+			                              
                     </div>
                 </div>
                 
-                
-                
-                
-                
+               
                 
     <div class="col-lg-6 col-md-12 col-12">
       <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
