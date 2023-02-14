@@ -91,18 +91,16 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                        <h1>Get things done by great remote team</h1>
-                        <p>We share common trends and strategies for
-                            improving your rental income and making sure you stay in high demand.</p>
+                        <h1>프로필 정보</h1>
+                        <p>프로필정보</p>
                         <form action="#" method="get" target="_blank" class="trial-form">
                             <input name="email" type="email" placeholder="Your email address">
                             <div class="button">
                                 <button type="submit" class="btn">Get Started</button>
                             </div>
                         </form>
-                        <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                            class="glightbox video-button"><i class="lni lni-play"></i><span class="text">Watch our
-                                intro video.</span></a>
+                        <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
+                        <span class="text">Watch our intro video.</span></a>
                     </div>
                 </div>
             </div>
