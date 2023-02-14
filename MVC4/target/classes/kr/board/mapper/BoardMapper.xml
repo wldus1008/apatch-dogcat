@@ -7,7 +7,8 @@
   
   <!-- 태그의 d는 mapper 인터페이스의 메소드 이름으로 한다.  -->
   <select id="boardList" resultType="kr.board.entity.Board">
-    select * from board
+    select idx,title,content,writer,date_format(indate,"%Y/%m/%d") as indate ,count,memId
+    from board
   </select>
   
   <select id="commentList" parameterType="int" resultType="kr.board.entity.Board">
@@ -54,7 +55,8 @@
 	</insert>
 
 	<select id="dogList" resultType="kr.board.entity.dog">
-		select * from adminboard
+		select idx,title,content,writer,date_format(indate,"%Y/%m/%d") as indate ,count,memId
+		from adminboard
 	</select>
   
     <delete id="adminDelete" parameterType="int">
