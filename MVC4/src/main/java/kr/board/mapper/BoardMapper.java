@@ -64,6 +64,16 @@ public interface BoardMapper  {
 	@Update("update adminboard set count=count+1 where idx=#{idx}")
 	public void adminboardCount(int idx);
 
+	public Board boardView(int idx);
+
+	public List<Board> commentList(int idx);
+
+	public void commentInsert(Board vo);
+
+	public void comment_Delete(int com_idx);
+
+	public void commentUpdate(Board vo);
+
 	
 	
 	// SQL문을 관리하는 XML만들 때 주의할 점!!!

@@ -13,6 +13,9 @@ public class Board {
 	private String indate;
 	private int count;
 	private String memId;
+	private String comment;
+	private String filename;     //저장할 파일
+	private int com_idx;
 	
 	
 	// 스프링에서는 생성자 만들 필요 없이
@@ -21,6 +24,7 @@ public class Board {
 	// getter, setter만 만들기
 	
 	
+
 	public String getMemId() {
 		return memId;
 	}
@@ -63,7 +67,24 @@ public class Board {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public int getCom_idx() {
+		return com_idx;
+	}
+	public void setCom_idx(int com_idx) {
+		this.com_idx = com_idx;
+	}
 	
 	
 	

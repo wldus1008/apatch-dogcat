@@ -3111,14 +3111,14 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd
+    color: 	#fef4a9;
+    background-color: #3b9a9c;
+    border-color: #3b9a9c;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #0b5ed7;
+    background-color: #3b9a9c;
     border-color: #3b9a9c
 }
 
@@ -7096,7 +7096,9 @@ fieldset:disabled .btn {
 }
 
 .d-flex {
-    display: flex !important
+	display: flex !important;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 .d-inline-flex {

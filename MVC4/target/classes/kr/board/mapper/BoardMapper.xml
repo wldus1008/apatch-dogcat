@@ -10,6 +10,10 @@
     select * from board
   </select>
   
+  <select id="commentList" parameterType="int" resultType="kr.board.entity.Board">
+    select * from com_tb c join files f where c.memId = f.memId and idx = #{idx} order by com_idx
+  </select>
+  
   <insert id="boardInsert" parameterType="kr.board.entity.Board">
       insert into board(title,content,writer,memId)
       values (#{title},#{content},#{writer},#{memId})
@@ -71,5 +75,24 @@
        <update id="adminboardContentUpdate" parameterType="kr.board.entity.dog">
       update adminboard set title=#{title}, content=#{content} where idx=#{idx}
    </update>
+   
+       <select id="boardView" parameterType="int" resultType="kr.board.entity.Board">
+     select * from board where idx=#{idx}  
+       
+   </select>
+     
+	<insert id="commentInsert" parameterType="kr.board.entity.Board">
+		insert into com_tb(memId, idx, comment) values (#{memId},#{idx},#{comment})
+	</insert>
+	
+	<delete id="comment_Delete" parameterType="int">
+       delete from com_tb where com_idx = #{com_idx}
+   </delete>
+   
+	<update id="commentUpdate" parameterType="kr.board.entity.Board">
+       update com_tb set comment=#{comment}
+       where com_idx=#{com_idx}
+   </update>
+       
   
 </mapper>

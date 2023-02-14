@@ -72,31 +72,6 @@
 		   bList += "<td id='count" + obj.idx + "'>" + obj.count + "</td>";		   
 		   bList += "</tr>";
 		   
-		   
-		   // 게시글 내용만 보여주는 태그	
-		   										// id=c1,c2,c3.....
-	         bList += "<tr style='display:none' id='c" + obj.idx + "'>";
-	         bList += "<td>내용</td>"; 
-	         bList += "<td colspan='4' >";
-	         bList += "<textarea class='form-control form-board' style='height: 250px;'  row='7' id='nc" + obj.idx + "'>" +  obj.content + "</textarea>";
-	         
-	         
-	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
-	         if("${loginMember.memId}" == obj.memId) {
-	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px; ' onclick='goUpdate(" + obj.idx + ")'>수정</div></div>";
-	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px; ' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
-	        	
-	         }else{
-	        	 bList += "<button disabled  class='btn'  onclick='goUpdate(" + obj.idx + ")'></button>";
-		         bList += "<button disabled  class='btn'  onclick='goDel(" + obj.idx + ")'></button>";
-	        	 
-	         }
-	         bList += "</td>";
-	         bList += "<tr>";
-		   
-	
-		   
-		   
 	   });// each 끝
 	   
 	   
@@ -184,7 +159,6 @@
 	   // c+idx c1,c2......
 	   // 만약에 c1이 none상태면~ table-row
 	   // 만약에 c1이 table-row이면~ none
-	   if($("#c"+idx).css("display") == "none"){
 		   // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
 		   	$.ajax({
 		         url : "${cpath}/updateCount/"+idx, //PathVariable
@@ -202,61 +176,10 @@
 		         }
 		         
 		      }); // 조회수 ajax 끝
-		   
-		   $("#c"+idx).css("display", "table-row")
-		   
-	   }else{
-		   $("#c"+idx).css("display", "none")
-		   
-	   }  
-	   
+
+	   		location.href = "boardContent/"+idx;
    } // cview 함수 끝!!
    
-   function goDel(idx) {
-	   // 삭제 버튼을 눌렀을때 진짜로 삭제할건지 물어보고 삭제하기
-	   // console.log, alert, confirm
-	    var real = confirm("정말 삭제하시겠습니까?????????????")
-	   if(real){
-		   	   
-		   $.ajax({
-		         url : "${cpath}/board/"+idx, // PathVariable로 넘기기
-		         type : "delete",
-		         // 보내주는 데이터 1개이면 직접 객체로 묶어서 보내줄 수 있음
-		         		// "idx" : parameter name값 --> idx=2
-		         //data : {"idx" : idx}, //보내주는 데이터가 있다면
-		         //dataType : "", // 받는 데이터가 있으면
-		         success : boardList,
-		         error : function(){
-		        	 alert("글삭제 실패!!")
-		         }
-		         
-		      });
-		   
-	   }
-	
-   }// goDel 함수 끝!!
-   
-   function goUpdate(idx) {
-	   // textarea의 내용 가져오기
-	   // nc1,nc2... 선택자를 이용
-	   var newContent = $("#nc"+idx).val();
-	   
-	   $.ajax({
-	         url : "${cpath}/board",
-	         type : "put",
-	         // idx, content를 보내줘야함 --> 여러개의 데이터를 보낼때
-	         // json형식으로 보내야함 --> contentType지정, JSON.stringify()로 형식도 바꿈
-	         contentType : "application/json;charset=utf-8",
-	         data : JSON.stringify({"idx":idx,"content":newContent}), //보내주는 데이터가 있다면
-	         //dataType : "", // 받는 데이터가 있으면
-	         success : boardList,
-	         error : function(){
-	        	 alert("글수정 실패!!")
-	         }
-	         
-	      });
-
-   }
 
     
   

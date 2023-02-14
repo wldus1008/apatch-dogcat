@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -225,6 +226,45 @@ public class BoardController {
 		}
 		return "adminUpdate";
 	}
+	
+	@RequestMapping("/boardContent/{idx}")
+	public String boardView(Model model ,@PathVariable int idx) {
+		Board vo =  mapper.boardView(idx);
+		model.addAttribute("vo", vo);
+		
+		return "boardView";
+	}
+	
+	@RequestMapping("/boardDelete/{idx}")
+	public String boardDelete(@PathVariable int idx) {
+		mapper.boardDelete(idx);
+
+		return "basic";
+	}
+	
+	@PostMapping("/boardUpdate")
+	public String boardUpdate(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("idx") int idx, Board vo) {
+		vo.setTitle(title);
+		vo.setContent(content);
+		vo.setIdx(idx);
+		mapper.boardUpdate(vo);
+
+		return "redirect:/boardContent/"+vo.getIdx();
+	}
+	
+	@RequestMapping("/commentInsert")
+	public String commentInsert(@RequestParam("comment") String comment, @RequestParam("memId") String memId, @RequestParam("idx") int idx, Board vo) {
+		System.out.println("memId : " + memId);
+		System.out.println("comment : " + comment);
+		System.out.println("idx : " + idx);
+		vo.setMemId(memId);
+		vo.setComment(comment);
+		vo.setIdx(idx);
+		mapper.commentInsert(vo);
+
+		return "redirect:/boardContent/"+vo.getIdx();
+	}
+	
 	
 	
 	

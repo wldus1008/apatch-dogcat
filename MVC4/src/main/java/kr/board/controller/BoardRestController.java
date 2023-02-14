@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -59,6 +60,16 @@ public class BoardRestController {
 		
 	}
 	
+	@GetMapping("/comment/{idx}")
+	public List<Board> commentajaxList(@PathVariable int idx) {
+		
+		List<Board> list = mapper.commentList(idx);
+		
+		return list;
+		
+		
+	}
+	
 	// title= ____&content=______&writer=_____
 	// 파라미터 수집을 해줘야하는데 Board객체에 알아서 바구니처럼 가지고 다닐 수 있음
 	@PostMapping("/board")
@@ -67,28 +78,6 @@ public class BoardRestController {
 		
 	}
 	
-	
-	
-	
-	
-	
-	@DeleteMapping("/board/{idx}")
-	public void boardAjaxDelete(@PathVariable int idx) {
-		
-		mapper.boardDelete(idx);
-		
-	}
-	
-	
-	// idx,content를 json형식으로 보내오고 있기 때문에
-	// 객체(Board)로 묶여있는게 아니기 때문에 @RequestBody
-	@PutMapping("/board")
-	public void boardAjaxUpdate(@RequestBody Board vo) {
-		// 전에는 title,content,writer 등등 여러개 수정하는 메소드를 만듦
-		// 이제는 content만 바꾸는 메소드를 새로 만들어야함
-		
-		mapper.boardContentUpdate(vo);
-	}
 	
 	@GetMapping("/updateCount/{idx}")
 	public Board updateCount(@PathVariable int idx) {
@@ -126,15 +115,6 @@ public class BoardRestController {
 		
 			
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	@GetMapping("/admin")
 	public List<dog> adminajaxList() {
@@ -181,7 +161,18 @@ public class BoardRestController {
 		
 		mapper.adminboardContentUpdate(vo);
 		
-		
 	}
+	
+	@RequestMapping(value="/commentDelete/{com_idx}", method=RequestMethod.GET)
+	public void commentDelete(@PathVariable int com_idx) {
+		System.out.println("com_idx : " + com_idx);
+		mapper.comment_Delete(com_idx);
+	}
+	
+	@RequestMapping(value="/commentUpdate", method=RequestMethod.GET)
+	public void commentUpdate(Board vo) {
+		mapper.commentUpdate(vo);
+	}
+	
 	
 }
