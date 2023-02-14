@@ -130,7 +130,7 @@
 								<c:when test="${empty loginMember}">
 
 									 <li class="nav-item HH">
-										<a href="${cpath}/login.do" class="btn">로그인</a>
+										<a href="${cpath}/login" class="btn">로그인</a>
 									 </li>
 									 <li class="nav-item HH">
 										<a href="${cpath}/register.do" class="btn">회원가입</a>
