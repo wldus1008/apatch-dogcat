@@ -129,7 +129,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">01</span>
                             <h3><a href="service-details.html">강아지 안구질환</a></h3>
-                            <p> 강아지 눈 사진을 인공지능으로 분석, 안구질환을 확인 할 수 있습니다.</p>
+                            <p> 강아지 눈 사진으로 안구질환을 확인합니다</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -139,7 +139,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <span class="serial">02</span>
                             <h3><a href="service-details.html">고양이 안구질환</a></h3>
-                            <p> 고양이 눈 사진을 인공지능으로 분석, 안구질환을 확인 할 수 있습니다.</p>
+                            <p> 고양이 눈 사진으로 안구질환을 확인합니다</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -149,7 +149,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">03</span>
                             <h3><a href="service-details.html">커뮤니티</a></h3>
-                            <p> 커뮤니티 게시판과 반려동물 지식정보를 확인 할 수 있습니다.</p>
+                            <p> 회원들과 소통하는 커뮤니티 게시판입니다</p>
                             <div class="button">
                                 <a href="basic.do" class="btn">자세히보기</a>
                             </div>
@@ -159,7 +159,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
                             <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p> 현재위치를 확인 후 근처 동물병원을 알려줍니다.</p>
+                            <p> 현재위치를 확인 후 근처 동물병원을 알려줍니다</p>
                             <div class="button">
                                 <a href="map.do" class="btn">자세히보기</a>
                             </div>
@@ -170,7 +170,7 @@
                             <span class="serial">05</span>
                             
                             <h3><a>반려동물 등록하기</a></h3>	
-                            <p > 로그인 후 사용가능</p>
+                            <p> 로그인 후 사용가능</p>
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
@@ -183,10 +183,10 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">06</span>
-                            <h3><a href="service-details.html">반려동물 보험</a></h3>
-                            <p> 반려동물 보험을 추천해줍니다.</p>
+                            <h3><a href="admindoard.do">반려동물 지식정보</a></h3>
+                            <p> 반려동물 지식정보를 알려줍니다</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="admindoard.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
