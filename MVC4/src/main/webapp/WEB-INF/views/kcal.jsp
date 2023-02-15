@@ -25,7 +25,7 @@
         <div class="row">
         
 		
-		<div class="col-12 mb-3">
+	<div class="col-12 mb-3">
 	<h5 style=" text-align : center;">반려동물 권장 칼로리 계산</h5>
 	<br><br>
 	<div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center;">
@@ -82,71 +82,76 @@
 		
 		
 		
-		var num1 = $('#weight').val();
-		var num2 = document.getElementById("select1").value;
+		var weight = $('#weight').val();
+		var select1 = document.getElementById("select1").value;
+		
 		var result;
-		console.log(num1);
-		console.log(num2);
-		if(parseFloat(num1) < 2){
+		console.log(weight);
+		console.log(select1);
+		if(parseFloat(weight) < 2){
 			
-		var gicho =  70 * (parseFloat(num1)*0.75);
+		var gicho =  70 * (parseFloat(weight)*0.75);
 		}else{
-			gicho =  30 * parseFloat(num1) + 70;
+			gicho =  30 * parseFloat(weight) + 70;
 		} 
 		
 		
-		if((parseFloat(num1) < 2) && (parseFloat(num2) == 1.6)){
+		if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.6)){
 			result = parseFloat(gicho) * 1.6;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 1.8)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.8)){
 			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 1)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1)){
 			result = parseFloat(gicho) * 1;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 1.7)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.7)){
 			result = parseFloat(gicho) * 1.7;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 2)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 2)){
 			result = parseFloat(gicho) * 2;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 3)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 3)){
 			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 4)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 4)){
 			result = parseFloat(gicho) * 4;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 1.8)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.8)){
 			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 3)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 3)){
 			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 3)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 3)){
 			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(num1) < 2) && (parseFloat(num2) == 2)){
+		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 2)){
 			result = parseFloat(gicho) * 2;
 		}
 		
 					
 		
-		if((parseFloat(num1) >= 2) && (parseFloat(num2) == 1.6)){
+		if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.6)){
 			result = parseFloat(gicho) * 1.6;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 1.8)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.8)){
 			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 1)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1)){
 			result = parseFloat(gicho) * 1;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 1.7)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.7)){
 			result = parseFloat(gicho) * 1.7;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 2)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 2)){
 			result = parseFloat(gicho) * 2;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 3)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 3)){
 			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 4)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 4)){
 			result = parseFloat(gicho) * 4;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 1.8)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.8)){
 			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 3)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 3)){
 			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 3)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 3)){
 			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(num1) >= 2) && (parseFloat(num2) == 2)){
+		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 2)){
 			result = parseFloat(gicho) * 2;
 		}
 		console.log(result);
 		$("#result").text("1일 권장 칼로리 : "+result+"kcal");
 		$("#gicho").text("1일 기초 대사량 : "+gicho+"kcal");
+		
+	
+		
+		
 		
 		
 	}
