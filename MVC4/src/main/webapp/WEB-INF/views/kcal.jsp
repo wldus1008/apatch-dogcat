@@ -83,7 +83,7 @@
 		
 		
 		var weight = $('#weight').val();
-		var select1 = document.getElementById("select1").value;
+		var select = document.getElementById("select1").value;
 		
 		var result;
 		console.log(weight);
