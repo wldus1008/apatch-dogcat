@@ -96,56 +96,78 @@
 		} 
 		
 		
-		if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.6)){
-			result = parseFloat(gicho) * 1.6;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.8)){
-			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1)){
-			result = parseFloat(gicho) * 1;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.7)){
-			result = parseFloat(gicho) * 1.7;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 2)){
-			result = parseFloat(gicho) * 2;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 3)){
-			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 4)){
-			result = parseFloat(gicho) * 4;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 1.8)){
-			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 3)){
-			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 3)){
-			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(weight) < 2) && (parseFloat(select1) == 2)){
-			result = parseFloat(gicho) * 2;
+		if(parseFloat(weight) < 2){
+			if(parseFloat(select1) == 1.6){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 1){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}else if(parseFloat(select1) == 1.7){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 2){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 3){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 4){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 3){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 3){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else{
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+		}else{
+			if(parseFloat(select1) == 1.6){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 1){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}else if(parseFloat(select1) == 1.7){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 2){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 3){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 4){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 3){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else if(parseFloat(select1) == 3){
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
+			else{
+				result = parseFloat(gicho) * parseFloat(select1);
+			}
 		}
 		
+		
+	
 					
-		
-		if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.6)){
-			result = parseFloat(gicho) * 1.6;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.8)){
-			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1)){
-			result = parseFloat(gicho) * 1;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.7)){
-			result = parseFloat(gicho) * 1.7;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 2)){
-			result = parseFloat(gicho) * 2;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 3)){
-			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 4)){
-			result = parseFloat(gicho) * 4;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 1.8)){
-			result = parseFloat(gicho) * 1.8;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 3)){
-			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 3)){
-			result = parseFloat(gicho) * 3;
-		}else if((parseFloat(weight) >= 2) && (parseFloat(select1) == 2)){
-			result = parseFloat(gicho) * 2;
-		}
-		console.log(result);
+	console.log(result);
 		$("#result").text("1일 권장 칼로리 : "+result+"kcal");
 		$("#gicho").text("1일 기초 대사량 : "+gicho+"kcal");
 		

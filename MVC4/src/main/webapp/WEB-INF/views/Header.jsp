@@ -133,7 +133,7 @@
 										<a href="${cpath}/login" class="btn">로그인</a>
 									 </li>
 									 <li class="nav-item HH">
-										<a href="${cpath}/register.do" class="btn">회원가입</a>
+										<a href="#" class="btn">회원가입</a>
 									 </li>
 
 								</c:when>
@@ -215,7 +215,7 @@
 										<a href="${cpath}/login.do" class="btn">로그인</a>
 									</div>
 									<div class="button add-list-button">
-										<a href="${cpath}/register.do" class="btn">회원가입</a>
+										<a href="#" class="btn">회원가입</a>
 									</div>
 
 								</c:when>
