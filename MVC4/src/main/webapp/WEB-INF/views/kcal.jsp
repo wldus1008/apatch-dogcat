@@ -167,7 +167,7 @@
 		
 	
 					
-	console.log(result);
+		console.log(result);
 		$("#result").text("1일 권장 칼로리 : "+result+"kcal");
 		$("#gicho").text("1일 기초 대사량 : "+gicho+"kcal");
 		
