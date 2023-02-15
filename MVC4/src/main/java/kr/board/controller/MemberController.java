@@ -25,17 +25,6 @@ public class MemberController {
 	private MemberMapper mmapper;
 	
 	
-	//회원가입
-		@PostMapping("/join.do")
-		public String register(Member vo){
-			
-			// 회원가입 서비스 실행
-			mmapper.memberJoin(vo);
-			
-			return "Home";
-			
-		}
-	
 	
 	
 	

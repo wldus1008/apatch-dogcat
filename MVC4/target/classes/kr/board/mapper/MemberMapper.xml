@@ -7,10 +7,7 @@
     
     
     
-    <insert id="memberJoin" parameterType="kr.board.entity.Member">
-  		insert into member(memid,memPw,memName) values(#{memId}, #{memPw}, #{memName} )
-
-  	</insert>
+    
    
     
     <update id="memUpdate" parameterType="kr.board.entity.Member">
