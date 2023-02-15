@@ -97,70 +97,70 @@
 		
 		
 		if(parseFloat(weight) < 2){
-			if(parseFloat(select1) == 1.6){
-				result = parseFloat(gicho) * parseFloat(select1);
+			if(parseFloat(select) == 1.6){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 1.8){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 1){
-				result = parseFloat(gicho) * parseFloat(select1);
-			}else if(parseFloat(select1) == 1.7){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 1){
+				result = parseFloat(gicho) * parseFloat(select);
+			}else if(parseFloat(select) == 1.7){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 2){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 2){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 3){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 3){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 4){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 4){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 1.8){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 3){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 3){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 3){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 3){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
 			else{
-				result = parseFloat(gicho) * parseFloat(select1);
+				result = parseFloat(gicho) * parseFloat(select);
 			}
 		}else{
-			if(parseFloat(select1) == 1.6){
-				result = parseFloat(gicho) * parseFloat(select1);
+			if(parseFloat(select) == 1.6){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 1.8){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 1){
-				result = parseFloat(gicho) * parseFloat(select1);
-			}else if(parseFloat(select1) == 1.7){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 1){
+				result = parseFloat(gicho) * parseFloat(select);
+			}else if(parseFloat(select) == 1.7){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 2){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 2){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 3){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 3){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 4){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 4){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 1.8){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 1.8){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 3){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 3){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
-			else if(parseFloat(select1) == 3){
-				result = parseFloat(gicho) * parseFloat(select1);
+			else if(parseFloat(select) == 3){
+				result = parseFloat(gicho) * parseFloat(select);
 			}
 			else{
-				result = parseFloat(gicho) * parseFloat(select1);
+				result = parseFloat(gicho) * parseFloat(select);
 			}
 		}
 		
