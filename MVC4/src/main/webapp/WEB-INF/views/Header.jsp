@@ -200,7 +200,7 @@
                                         <a href="map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" aria-label="Toggle navigation">아직 없음</a>
+                                        <a href="kcal.do" aria-label="Toggle navigation">권장 칼로리 계산기</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->

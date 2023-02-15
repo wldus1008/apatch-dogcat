@@ -93,12 +93,13 @@ select {
   cursor: default;
   margin: 0em;
   font: 500 14px;
-  border-radius: 0px;
+  border-radius: 20px;
   border-width: 1px;
   border-style: solid;
   border-color: -internal-light-dark(#767676, #858585);
   -o-border-image: initial;
      border-image: initial;
+  width: 100%;   
 }
 
 span,
@@ -4563,4 +4564,11 @@ ol {
 	.big{
 		display: block;
 	}
+}
+.daligi{
+	border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #3b9a9c;
+	
 }

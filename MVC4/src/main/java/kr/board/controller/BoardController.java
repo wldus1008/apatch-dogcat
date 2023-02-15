@@ -227,7 +227,15 @@ public class BoardController {
 	}
 	
 	
+	@RequestMapping("/kcal.do")
+	public String kcal() {
+		
 	
+		
+		return "kcal";
+		
+	}
+
 	
 	
 	
