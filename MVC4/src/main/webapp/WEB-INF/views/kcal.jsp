@@ -32,7 +32,8 @@
 	<img class="daligi" src="resources/images/hero/dog3.gif" >
 	</div>
 	<br><br>
-	<select size="1" name="select1" id ="select1" >
+	<h6>반려동물 상태</h6>
+	<select size="1" name="select1" id ="select1"  style="margin-top:10px;">
 	    <option value="0" selected>선택하세요</option>
 	    <option value="1.6">중성화 된 성견(보통 활동량)</option>
 	    <option value="1.8">중성화 되지 않은 성견(보통 활동량)</option>
