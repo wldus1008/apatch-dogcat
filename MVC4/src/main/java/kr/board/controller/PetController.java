@@ -1,5 +1,8 @@
 package kr.board.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +19,7 @@ public class PetController {
 	private PetMapper petmapper;
 	
 	@RequestMapping("petinfo")
-	public void register(Petinfo vo){
+	public void register(Petinfo vo,HttpServletRequest request){
 		System.out.println("[petinfo Controller 들어옴]");
 		
 		Petinfo update = petmapper.checkId(vo.getMemId());
@@ -25,8 +28,6 @@ public class PetController {
         }else {
         	petmapper.petJoin(vo);		        	
         }
-		
-		
 		
 	}
 }

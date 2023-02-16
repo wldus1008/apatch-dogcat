@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.board.entity.Member;
 import kr.board.entity.Petinfo;
 import kr.board.mapper.BoardMapper;
+import kr.board.mapper.PetMapper;
 
 @Controller
 public class MemberController {
@@ -20,7 +21,7 @@ public class MemberController {
 	
 	
 	@Autowired
-	private BoardMapper petmapper;
+	private PetMapper petmapper;
 	
 	@Autowired
 	private BoardMapper mapper;
@@ -56,7 +57,7 @@ public class MemberController {
 		 }
 		 
 					
-		 Petinfo loginPet = petmapper.petinfo(mvo.getMemId());
+		 Petinfo loginPet = petmapper.checkId(mvo.getMemId());
 		 if(loginPet != null) {
 			 HttpSession session = request.getSession();
 			 session.setAttribute("loginPet", loginPet);

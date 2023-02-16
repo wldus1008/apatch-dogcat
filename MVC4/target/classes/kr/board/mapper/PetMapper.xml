@@ -12,7 +12,7 @@
     VALUES (#{petName},#{petAge},#{petgender},#{memId})
   	</insert>
     
-    <select id="checkId" parameterType="kr.board.entity.Petinfo" resultType="kr.board.entity.Petinfo">
+    <select id="checkId" parameterType="String" resultType="kr.board.entity.Petinfo">
  	    select *
  	    from Petinfo
  	    where memId = #{memId}

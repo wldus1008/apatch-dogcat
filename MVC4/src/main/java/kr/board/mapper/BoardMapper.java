@@ -54,7 +54,6 @@ public interface BoardMapper  {
 	
 	public Member memberLogin(Member mvo);
 	
-	public Petinfo petinfo(String string);
 	
 	// 만약에 sql문을 xml로 관리를 안하는 경우
 	// sql구문 종류별로 주석을 달아서 sql문 직접 입력\
