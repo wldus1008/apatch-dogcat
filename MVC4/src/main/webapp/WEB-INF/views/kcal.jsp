@@ -46,7 +46,7 @@
     color: #fff8c2;
     font-size: 14px;
     width: 120px;
-    height: 145px;
+    height: 145px; 
 }
 </style>
  
