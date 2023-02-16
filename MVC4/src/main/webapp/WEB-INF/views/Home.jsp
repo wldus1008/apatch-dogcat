@@ -52,9 +52,9 @@
         		
         
                         <li class="nav-block">
-                        <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
-                            <span id="nav-text">반려동물 보험</span>
+                        <a class="main-icon"  href="kcal.do" id="product-lab">
+                            <img src="resources/images/icon/petfood1.png" alt="권장칼로리 계산기" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
+                            <span id="nav-text">권장칼로리 계산기</span>
                         </a>
                        </li>
                 </ul>
@@ -148,7 +148,7 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">03</span>
-                            <h3><a href="service-details.html">커뮤니티</a></h3>
+                            <h3><a href="basic.do">커뮤니티</a></h3>
                             <p> 회원들과 소통하는 커뮤니티 게시판입니다</p>
                             <div class="button">
                                 <a href="basic.do" class="btn">자세히보기</a>
