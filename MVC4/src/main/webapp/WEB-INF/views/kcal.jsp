@@ -78,7 +78,7 @@
 	<h6>반려동물 상태</h6>
 	
 	<select size="1" name="select" id ="select"  style="margin-top:10px;">
-	    <option value="0" selected>선택하세요</option>	   
+	    <option value="0" selected>반려동물을 선택하세요</option>	   
 	</select>
 	
 	
@@ -117,6 +117,7 @@
 	     var pet = this.value;
 	     var list ="";             
 	     if(pet == "dog"){//강아지 경우
+	         list += '<option value="0" selected>상태를 선택하세요</option>'
 	         list += '<option value="1.6">중성화 된 성견(보통 활동량)</option>'
 	         list += '<option value="1.8">중성화 되지 않은 성견(보통 활동량)</option>'
 	         list += '<option value="1">체중 감량 필요</option>'
@@ -133,6 +134,7 @@
 	        
 	     }else if(pet=="cat"){//고양이 경우
 	         // cat 일때 dog hide
+	    	 list += '<option value="0" selected>상태를 선택하세요</option>'
 	    	 list += '<option value="3">4개월 미만</option>'
 	    	 list += '<option value="2.5">4~6 개월</option>'
 	    	 list += '<option value="2">7~12 개월</option>'
@@ -236,7 +238,8 @@
 			}
 		}
 		
-		
+		result = parseFloat(result.toFixed(2));
+		gicho = parseFloat(gicho.toFixed(2));
 	
 					
 		console.log(result);
