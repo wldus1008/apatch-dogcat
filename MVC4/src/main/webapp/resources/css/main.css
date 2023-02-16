@@ -2321,15 +2321,15 @@ ol {
 ========================================*/
 .hero-area {
   position: relative;
-  padding: 130px 0 120px 0;
+  padding: 50px 0 120px 0;
   background: #fff;
 }
 
 .hero-area.style1 .hero-image img {
   
   border-radius: 50%;
-  width : 300px;
-  height: 300px;
+  width : 360px;
+  height: 360px;
 }
 
 .hero-area.style2 {
@@ -2829,7 +2829,7 @@ ol {
   position: relative;
   z-index: 1;
   text-align: left;
-  padding-right: 90px;
+  padding : 0px 0px 0px 35px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2858,14 +2858,14 @@ ol {
 }
 
 .hero-area .hero-content p {
-  margin-top: 30px;
+ /*  margin-top: 30px; */
   font-size: 16px;
   font-weight: 600;
 }
 
 .hero-area .hero-content .trial-form {
   display: inline-block;
-  margin-top: 45px;
+  margin-top: 10px;
 }
 
 @media (max-width: 767px) {

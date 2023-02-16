@@ -64,7 +64,7 @@
 	<div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center;">
 	<img class="daligi" src="resources/images/hero/dog3.gif" >
 	</div>
-	<br><br>
+	<br>
 	
 	<div class="text-center">
 
@@ -84,7 +84,7 @@
 	
 	
 	</div>
-	<br><br>
+	<br>
 	<div class="col-12 mb-3">
 	<input id="weight" class="form-control" name="weight" type="number" placeholder="몸무게를 입력해 주세요.">
 	</div>
@@ -163,10 +163,9 @@
 		console.log(weight);
 		console.log(select);
 		if(parseFloat(weight) < 2){
-			
-		var gicho =  70 * (parseFloat(weight)*0.75);
+					var gicho =  70 * (parseFloat(weight)*0.75);
 		}else{
-			gicho =  30 * parseFloat(weight) + 70;
+					var gicho =  30 * parseFloat(weight) + 70;
 		} 
 		
 		

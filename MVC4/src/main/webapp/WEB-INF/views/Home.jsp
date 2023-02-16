@@ -91,16 +91,22 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                        <h1>프로필 정보</h1>
-                        <p>프로필정보</p>
-                        <form action="#" method="get" target="_blank" class="trial-form">
+                       
+                       
+                        <br><br><br>
+                        <h5>이름</h5><p>이름정보</p><br>
+                        <h5>나이</h5><p>나이정보</p><br>
+                        <h5>성별</h5><p>성별정보</p><br>
+                        <h5>품종</h5><p>품종정보</p><br>
+                        
+                   <form action="#" method="get" target="_blank" class="trial-form">
                             <input name="email" type="email" placeholder="Your email address">
                             <div class="button">
                                 <button type="submit" class="btn">Get Started</button>
                             </div>
                         </form>
-                        <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
-                        <span class="text">Watch our intro video.</span></a>
+                       <!--  <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
+                        <span class="text">Watch our intro video.</span></a> -->
                     </div>
                 </div>
             </div>
