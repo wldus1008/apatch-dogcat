@@ -3,38 +3,29 @@ package kr.board.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.board.entity.Member;
+import kr.board.entity.Petinfo;
 import kr.board.mapper.BoardMapper;
-import kr.board.mapper.MemberMapper;
-import kr.board.mapper.imgMapper;
 
 @Controller
 public class MemberController {
 	
+	
+	
 	@Autowired
-	private MemberMapper mmapper;
-	
-	
-	
-	
-	
-	
-	
+	private BoardMapper petmapper;
 	
 	@Autowired
 	private BoardMapper mapper;
 	
-	// private MemberMapper mmapper;
+	
 	@GetMapping("/login")
 	public String loginForm(HttpServletRequest request, Model model) {
 	    
@@ -53,6 +44,8 @@ public class MemberController {
 	@PostMapping("/Login.do")
 	public String Login(Member mvo, HttpServletRequest request) {
 		// 로그인 기능 - 해당 아이디, 비밀번호 일치하는 회원의 정보 세션에 저장
+	
+		
 		 Member loginMember = mapper.memberLogin(mvo);
 		 // 만약에 로그인 정보가 있으면 -> 세션에 정보를 저장
 		 if(loginMember != null) {
@@ -62,7 +55,16 @@ public class MemberController {
 			 session.setAttribute("loginMember", loginMember);
 		 }
 		 
-		// basic.jsp로 이동
+					
+		 Petinfo loginPet = petmapper.petinfo(mvo.getMemId());
+		 if(loginPet != null) {
+			 HttpSession session = request.getSession();
+			 session.setAttribute("loginPet", loginPet);
+			 
+		 } 
+		 
+		 
+		 
 		 // 다른 컨트롤러에 있는 메소드 실행
 		return "redirect:/";
 	}

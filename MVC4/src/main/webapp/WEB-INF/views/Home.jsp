@@ -94,9 +94,9 @@
                        
                        
                         <br><br><br>
-                        <h5>이름</h5><p>이름정보</p><br>
-                        <h5>나이</h5><p>나이정보</p><br>
-                        <h5>성별</h5><p>성별정보</p><br>
+                        <h5>이름</h5><p>${loginPet.petName}</p><br>
+                        <h5>나이</h5><p>${loginPet.petAge}</p><br>
+                        <h5>성별</h5><p>${loginPet.petgender}</p><br>
                         <h5>품종</h5><p>품종정보</p><br>
                         
                    <form action="#" method="get" target="_blank" class="trial-form">

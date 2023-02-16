@@ -73,5 +73,15 @@
        <update id="adminboardContentUpdate" parameterType="kr.board.entity.dog">
       update adminboard set title=#{title}, content=#{content} where idx=#{idx}
    </update>
+   
+       <select id="petinfo" parameterType="String" resultType="kr.board.entity.Petinfo">
+       
+       select * from Petinfo where memId=#{memId}
+       
+   </select>
+       
+       
+       
+       
   
 </mapper>

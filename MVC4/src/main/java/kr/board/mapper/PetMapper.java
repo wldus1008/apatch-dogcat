@@ -9,6 +9,8 @@ public interface PetMapper {
 	Petinfo checkId(String memId);
 
 	void update(Petinfo vo);
+	
+	
 
 	
 	
