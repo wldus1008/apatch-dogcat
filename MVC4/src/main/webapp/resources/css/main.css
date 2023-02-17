@@ -2821,8 +2821,12 @@ ol {
 @media (max-width: 767px) {
   .hero-area .hero-image {
     display: block;
+   
   }
 }
+
+
+
 
 .hero-area .hero-content {
   border-radius: 0;
@@ -4562,7 +4566,7 @@ ol {
 		display: none;
 	}
 	.big{
-		display: block;
+		display: block; 
 	}
 }
 .daligi{
@@ -4572,3 +4576,18 @@ ol {
     border: 3px solid #3b9a9c;
 	
 }
+
+
+@media(min-width:750px){
+	#mainimg{
+	padding-left: 80px;
+	}
+	
+}
+
+/* @media(min-width:750px){
+	#mainimg{
+	padding-left: 80px;
+	}
+	
+} */
