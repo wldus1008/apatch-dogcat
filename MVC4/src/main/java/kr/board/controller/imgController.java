@@ -26,8 +26,7 @@ public class imgController {
 	
 	@Autowired
 	private imgMapper mapper;
-	@Autowired
-	private PetMapper petmapper;
+	
 	
 	@RequestMapping("upload")
 	public String fileinsert(HttpServletRequest request, @RequestPart MultipartFile files , @RequestParam("memId")String memId) throws Exception{
@@ -53,15 +52,12 @@ public class imgController {
 		        file.setFileurl(fileUrl+destinationFileName);
 		        Files update = mapper.checkId(memId);
 		        
-		        if(update != null) {
-		        	mapper.update(file);
-		        }else {
-		        	mapper.imgupload(file);		        	
-		        }
+				/*
+				 * if(update != null) { mapper.update(file); }else { } mapper.imgupload(file);
+				 */		        	
+		        mapper.imgupload(file);
 		        
-		        Petinfo updatePetinfo = petmapper.checkId(memId);
-		        HttpSession session = request.getSession();
-		        session.setAttribute("loginPet", updatePetinfo);
+		        
 		        
 		        
 		        
