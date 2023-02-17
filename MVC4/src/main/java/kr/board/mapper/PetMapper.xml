@@ -24,5 +24,12 @@
  	    where memId=#{memId}
  	    
  	</update>
+ 	<select id="pet_profile" parameterType="String" resultType="kr.board.entity.Pet_profile">
+ 	    select p.petName, p.petAge, p.petgender, p.memId, p.petNo,
+ 	    		f.fno, f.filename, f.fileOriname, f.fileurl
+ 	    from Petinfo p , files f
+ 	    where p.memId = f.memId and p.memId = #{memId}
+ 	</select>
+ 	
     
 </mapper>    

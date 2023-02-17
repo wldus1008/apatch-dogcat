@@ -68,52 +68,63 @@
 
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-image wow fadeInRight" id="mainimg" data-wow-delay=".4s" style="text-align: center; ">
-                    	
+
                     	<c:choose>
-								<c:when test="${empty loginMember or empty fileName}">
+								<c:when test="${empty loginMember or empty img}">
 
 									<img src="resources/images/hero/dog1.jpg" alt="#" style="border:3px solid #3b9a9c;">
-
+									     	<br><br><br>
+					                        <h5>이름</h5><p>이름정보</p><br>
+					                        <h5>나이</h5><p>나이정보</p><br>
+					                        <h5>성별</h5><p>성별정보</p><br>
+					                        <h5>품종</h5><p>품종정보</p><br>
 								</c:when>
 								<c:otherwise>
+									<div class="swiper-container">
+										<div class="swiper-wrapper">
+											<c:forEach items="${petprofile}" var="petProfile">
+												<div class="swiper-slide">
+													<img alt="프로필 사진" src="/resources/fimages/${petProfile.filename}" style="border:3px solid #3b9a9c;"/>
+													<div>
+								                        <h5>이름</h5><p>${petProfile.petName}</p><br>
+								                        <h5>나이</h5><p>${petProfile.petAge}</p><br>
+								                        <h5>성별</h5><p>${petProfile.petgender}</p><br>
+								                        <h5>품종</h5><p>품종정보</p><br>
+							                     	</div>
+							                     </div>   
+									     		</c:forEach>
+								   		</div>
+								   		<!-- 네비게이션 -->
+										<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+										<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
 									
-									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:3px solid #3b9a9c;"/>
-
+										<!-- 페이징 -->
+										<div class="swiper-pagination"></div>
+								   		
+<%-- 
+										<!-- 네비게이션 -->
+										<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+										<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+									
+										<!-- 페이징 -->
+										<div class="swiper-pagination"></div>
+--%>									   
+									</div>
 								</c:otherwise>
 
 
 							</c:choose>
                     	
                         
+<<<<<<< HEAD
                     </div>
                
+=======
+                 
+>>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
                 </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                    
-             <c:choose>
-				<c:when test="${empty loginMember}">
-                       	
-                       	<br><br><br>
-                        <h5>이름</h5><p>이름정보</p><br>
-                        <h5>나이</h5><p>나이정보</p><br>
-                        <h5>성별</h5><p>성별정보</p><br>
-                        <h5>품종</h5><p>품종정보</p><br>
-                       	
-                </c:when>
-				<c:otherwise>
-				     
-                        <br><br><br>
-                        <h5>이름</h5><p>${loginPet.petName}</p><br>
-                        <h5>나이</h5><p>${loginPet.petAge}</p><br>
-                        <h5>성별</h5><p>${loginPet.petgender}</p><br>
-                        <h5>품종</h5><p>품종정보</p><br>
-                        
-                </c:otherwise>
-            </c:choose>
-                       
+            </div>           
+<%-- 
                    <form action="#" method="get" target="_blank" class="trial-form">
                             <input name="email" type="email" placeholder="Your email address">
                             <div class="button">
@@ -122,10 +133,7 @@
                         </form>
                        <!--  <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
                         <span class="text">Watch our intro video.</span></a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
+--%>
 
     </section>
     <!-- End Hero Area -->

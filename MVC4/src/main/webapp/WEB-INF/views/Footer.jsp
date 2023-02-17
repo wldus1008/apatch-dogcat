@@ -58,6 +58,7 @@
     </a>
 
     <!-- ========================= JS here ========================= -->
+    <script src="${cpath}/resources/js/newSwiper.js"></script>
     <script src="${cpath}/resources/js/bootstrap.min.js"></script>
     <script src="${cpath}/resources/js/wow.min.js"></script>
     <script src="${cpath}/resources/js/tiny-slider.js"></script>

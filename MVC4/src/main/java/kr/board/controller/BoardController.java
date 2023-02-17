@@ -29,8 +29,11 @@ import java.nio.ByteOrder;
 import kr.board.entity.Board;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
+import kr.board.entity.Pet_profile;
+import kr.board.entity.Petinfo;
 import kr.board.entity.dog;
 import kr.board.mapper.BoardMapper;
+import kr.board.mapper.PetMapper;
 import kr.board.mapper.imgMapper;
 
 // POJO라는걸 알려주는 주석(어노테이션)
@@ -45,6 +48,8 @@ public class BoardController {
 	private BoardMapper mapper;
 	@Autowired
 	private imgMapper imgMapper;
+	@Autowired
+	private PetMapper petmapper;
 	
 	// url 가져오는 방식에 따라 get방식으로 넘어오면
 	// 맵핑을 get으로
@@ -86,12 +91,16 @@ public class BoardController {
 			Member loginMember = (Member) session.getAttribute("loginMember");
 			System.out.println("id : " + loginMember.getMemId());
 
-			Files img = imgMapper.getImg(loginMember.getMemId());
+			List<Files> img = imgMapper.getImgList(loginMember.getMemId());
 			if(img != null) {
-				String fileName = img.getFilename();
-				model.addAttribute("fileName", fileName);
+				model.addAttribute("img", img);
 			}
 			
+			List<Petinfo> updatePetinfo = petmapper.checkId(loginMember.getMemId());
+	        session.setAttribute("loginPet", updatePetinfo);
+			
+	        List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMemId());
+	        session.setAttribute("petprofile", pet_profile);
 		}
 		
 		return "Home";

@@ -13,10 +13,14 @@
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
 
+	<!-- 이 예제에서는 필요한 js, css 를 링크걸어 사용 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>	
+
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
+
 
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
@@ -26,8 +30,7 @@
     <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="/resources/css/main.css" />
 	<script src="/resources/smarteditor/js/HuskyEZCreator.js" ></script>
-
-	
+	<link rel="stylesheet" href="/resources/css/swiper.css"/>
 	
 
 

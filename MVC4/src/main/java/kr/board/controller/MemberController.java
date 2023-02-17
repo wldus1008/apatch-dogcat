@@ -57,17 +57,12 @@ public class MemberController {
 		 }
 		 
 					
-		 Petinfo loginPet = petmapper.checkId(mvo.getMemId());
-		 if(loginPet != null) {
-			 HttpSession session = request.getSession();
-			 session.setAttribute("loginPet", loginPet);
-			 
-		 } 
+		
 		 
 		 
 		 
 		 // 다른 컨트롤러에 있는 메소드 실행
-		return "redirect:/";
+		return "redirect:/Home.do";
 	}
 	
 	@RequestMapping("/Logout.do")
