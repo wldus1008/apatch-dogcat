@@ -68,8 +68,7 @@
 
         <div class="container">
             <div class="row align-items-center">
-              
-                    <div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center; padding-left: 80px;">
+
                     	<c:choose>
 								<c:when test="${empty loginMember or empty img}">
 
@@ -130,7 +129,6 @@
                        <!--  <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
                         <span class="text">Watch our intro video.</span></a> -->
 --%>
-      </div>
 
     </section>
     <!-- End Hero Area -->
