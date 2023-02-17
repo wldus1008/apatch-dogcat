@@ -100,7 +100,7 @@
 								                        <h5>이름</h5><p>${petProfile.petName}</p><br>
 								                        <h5>나이</h5><p>${petProfile.petAge}</p><br>
 								                        <h5>성별</h5><p>${petProfile.petgender}</p><br>
-								                        <h5>품종</h5><p>품종정보</p><br>								                     <   
+								                        <h5>품종</h5><p>품종정보</p><br>         
 							                     	</div>
 							                     </div>   
 									     		</c:forEach>
