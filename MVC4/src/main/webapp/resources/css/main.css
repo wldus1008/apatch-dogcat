@@ -4551,7 +4551,7 @@ ol {
 	margin-bottom: 100px;
 	
 }
-@media(max-width:750px){
+@media(max-width:767px){
 	.big{
 		display: none;
 	}
@@ -4561,7 +4561,7 @@ ol {
 		margin:5px!important;
 	}
 }
-@media(min-width :750px){
+@media(min-width :767px){
 	.small{
 		display: none;
 	}
@@ -4578,16 +4578,29 @@ ol {
 }
 
 
-@media(min-width:750px){
+@media(min-width:767px){
 	#mainimg{
 	padding-left: 80px;
 	}
+	
+	.hero-area.style1 .hero-image img {
+  
+  border-radius: 50%;
+  width : 360px;
+  height: 360px;
+}
+	
+	
+	
 	
 }
 
-/* @media(min-width:750px){
-	#mainimg{
-	padding-left: 80px;
-	}
+ @media(max-width:767px){
+	.hero-area.style1 .hero-image img {
+  
+	  border-radius: 50%;
+	  width : 200px;
+	  height: 200px;
+}
 	
-} */
+}
