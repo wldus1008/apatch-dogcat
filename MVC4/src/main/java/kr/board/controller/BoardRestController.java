@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.board.entity.Board;
 import kr.board.entity.Member;
 
-import kr.board.entity.dog;
+import kr.board.entity.Adminboard;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.MemberMapper;
 
@@ -104,7 +104,7 @@ public class BoardRestController {
 	}
 	
 	@RequestMapping(value="/dog", method=RequestMethod.POST)
-	public void dog(@RequestBody dog vo ) {
+	public void dog(@RequestBody Adminboard vo ) {
 		// 전에는 title,content,writer 등등 여러개 수정하는 메소드를 만듦
 		// 이제는 content만 바꾸는 메소드를 새로 만들어야함
 		System.out.println("123 컨트롤러는 들어옴");
@@ -115,16 +115,16 @@ public class BoardRestController {
 	}
 	
 	@GetMapping("/admin")
-	public List<dog> adminajaxList() {
+	public List<Adminboard> adminajaxList() {
 	
-		List<dog> list = mapper.dogList();
+		List<Adminboard> list = mapper.dogList();
 		return list;
 		
 		
 	}
 	
 	@PostMapping("/adminInsert")
-	public void adminInsert(dog vo) {
+	public void adminInsert(Adminboard vo) {
 
 		
 		mapper.adminboardInsert(vo);
@@ -143,19 +143,19 @@ public class BoardRestController {
 
 	
 	@GetMapping("/adminboardCount/{idx}")
-	public dog adminboardCount(@PathVariable int idx) {
+	public Adminboard adminboardCount(@PathVariable int idx) {
 		
 		mapper.adminboardCount(idx);
 		
 		// 해당 idx를 가지는 게시글 내용
-		dog vo = mapper.adminboardContent(idx);
+		Adminboard vo = mapper.adminboardContent(idx);
 		
 		// 새로 +1된 조회수를 출력하기 위해서 데이터 보냄
 		return vo;
 	}
 	
 	@RequestMapping(value="/adminboardUpdate" ,method=RequestMethod.POST)
-	public void adminboardUpdate(dog vo) {
+	public void adminboardUpdate(Adminboard vo) {
 		
 		mapper.adminboardContentUpdate(vo);
 		

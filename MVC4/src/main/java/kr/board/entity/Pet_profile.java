@@ -5,77 +5,83 @@ import lombok.Data;
 @Data
 public class Pet_profile {
 	
-	private String petName;
-	private String petAge;
-	private String petgender;
-	private String memId;
-	private int petNo;
-    private int fno;
-    private String filename;     //저장할 파일
-    private String fileOriName;  //실제 파일
-    private String fileurl;
-	public String getPetName() {
-		return petName;
+	private String pet_name; // 펫 이름
+	private int pet_age; // 펫 나이
+	private String pet_gender; // 펫 성별
+	private String mem_id; // 회원 아이디
+	private int pet_seq; // 펫 순번
+	private String pet_kind; // 펫 품종
+	private int file_seq; // 파일 순번
+	private String file_name; // 파일 이름
+	private String file_real_name; // 파일 실제명
+	private int arrange_order; // 사진 순번
+	
+	
+	
+	
+// Getter, Setter
+	public String getPet_name() {
+		return pet_name;
 	}
-	public void setPetName(String petName) {
-		this.petName = petName;
+	public void setPet_name(String pet_name) {
+		this.pet_name = pet_name;
 	}
-	public String getPetAge() {
-		return petAge;
+	public int getPet_age() {
+		return pet_age;
 	}
-	public void setPetAge(String petAge) {
-		this.petAge = petAge;
+	public void setPet_age(int pet_age) {
+		this.pet_age = pet_age;
 	}
-	public String getPetgender() {
-		return petgender;
+	public String getPet_gender() {
+		return pet_gender;
 	}
-	public void setPetgender(String petgender) {
-		this.petgender = petgender;
+	public void setPet_gender(String pet_gender) {
+		this.pet_gender = pet_gender;
 	}
-	public String getMemId() {
-		return memId;
+	public String getMem_id() {
+		return mem_id;
 	}
-	public void setMemId(String memId) {
-		this.memId = memId;
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
-	public int getPetNo() {
-		return petNo;
+	public int getPet_seq() {
+		return pet_seq;
 	}
-	public void setPetNo(int petNo) {
-		this.petNo = petNo;
+	public void setPet_seq(int pet_seq) {
+		this.pet_seq = pet_seq;
 	}
-	public int getFno() {
-		return fno;
+	public String getPet_kind() {
+		return pet_kind;
 	}
-	public void setFno(int fno) {
-		this.fno = fno;
+	public void setPet_kind(String pet_kind) {
+		this.pet_kind = pet_kind;
 	}
-	public String getFilename() {
-		return filename;
+	public int getFile_seq() {
+		return file_seq;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setFile_seq(int file_seq) {
+		this.file_seq = file_seq;
 	}
-	public String getFileOriName() {
-		return fileOriName;
+	public String getFile_name() {
+		return file_name;
 	}
-	public void setFileOriName(String fileOriName) {
-		this.fileOriName = fileOriName;
+	public void setFile_name(String file_name) {
+		this.file_name = file_name;
 	}
-	public String getFileurl() {
-		return fileurl;
+	public String getFile_real_name() {
+		return file_real_name;
 	}
-	public void setFileurl(String fileurl) {
-		this.fileurl = fileurl;
+	public void setFile_real_name(String file_real_name) {
+		this.file_real_name = file_real_name;
 	}
-	@Override
-	public String toString() {
-		return "Pet_profile [petName=" + petName + ", petAge=" + petAge + ", petgender=" + petgender + ", memId="
-				+ memId + ", petNo=" + petNo + ", fno=" + fno + ", filename=" + filename + ", fileOriName="
-				+ fileOriName + ", fileurl=" + fileurl + "]";
+	public int getArrange_order() {
+		return arrange_order;
+	}
+	public void setArrange_order(int arrange_order) {
+		this.arrange_order = arrange_order;
 	}
     
-    
+
     
     
 }

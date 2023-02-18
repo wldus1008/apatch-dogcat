@@ -13,6 +13,9 @@ public interface MemberMapper {
 
 	// 회원정보 수정
 	public void memUpdate(Member vo);
+
+
+	public void member_register(Member vo);
 	
 	
 	    

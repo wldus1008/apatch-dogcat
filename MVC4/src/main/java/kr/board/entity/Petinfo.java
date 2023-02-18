@@ -9,40 +9,54 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Petinfo {
 
-	private String petName;
-	private String petAge;
-	private String petgender;
-	private String memId;
-	private int petNo;
-	public int getPetNo() {
-		return petNo;
+	private String pet_name; // 펫 이름
+	private int pet_age; // 펫 나이
+	private String pet_gender; // 펫 성별
+	private String mem_id; // 회원 아이디
+	private int pet_seq; // 펫 순번
+	private String pet_kind; // 펫 품종
+	
+	
+// Getter, Setter
+	public String getPet_name() {
+		return pet_name;
 	}
-	public void setPetNo(int petNo) {
-		this.petNo = petNo;
+	public void setPet_name(String pet_name) {
+		this.pet_name = pet_name;
 	}
-	public String getPetName() {
-		return petName;
+	public int getPet_age() {
+		return pet_age;
 	}
-	public void setPetName(String petName) {
-		this.petName = petName;
+	public void setPet_age(int pet_age) {
+		this.pet_age = pet_age;
 	}
-	public String getPetAge() {
-		return petAge;
+	public String getPet_gender() {
+		return pet_gender;
 	}
-	public void setPetAge(String petAge) {
-		this.petAge = petAge;
+	public void setPet_gender(String pet_gender) {
+		this.pet_gender = pet_gender;
 	}
-	public String getPetgender() {
-		return petgender;
+	public String getMem_id() {
+		return mem_id;
 	}
-	public void setPetgender(String petgender) {
-		this.petgender = petgender;
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
-	public String getMemId() {
-		return memId;
+	public int getPet_seq() {
+		return pet_seq;
 	}
-	public void setMemId(String memId) {
-		this.memId = memId;
+	public void setPet_seq(int pet_seq) {
+		this.pet_seq = pet_seq;
 	}
+	
+	public String getPet_kind() {
+		return pet_kind;
+	}
+	public void setPet_kind(String pet_kind) {
+		this.pet_kind = pet_kind;
+	}
+	
+	
+	
 	
 }

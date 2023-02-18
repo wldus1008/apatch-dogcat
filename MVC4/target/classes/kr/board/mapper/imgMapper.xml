@@ -7,28 +7,34 @@
   
   <!-- 태그의 d는 mapper 인터페이스의 메소드 이름으로 한다.  -->
  <insert id="imgupload" parameterType="kr.board.entity.Files">
-      INSERT INTO files (memId, filename, fileOriName, fileurl)
-    VALUES (#{memId},#{filename},#{fileOriName},#{fileurl})
+      INSERT INTO tb_file (pet_seq, file_name, file_real_name)
+    VALUES (#{pet_seq},#{file_name},#{file_real_name})
 </insert>
 
- 	<select id="getImg" parameterType="String" resultType="kr.board.entity.Files">
- 	    select * from files where memId = #{id};
+ 	<select id="getImg" parameterType="int" resultType="kr.board.entity.Files">
+ 	    select * from files where pet_seq = #{pet_seq};
    </select>
    
- 	<select id="checkId" parameterType="String" resultType="kr.board.entity.Files">
+ 	<select id="checkId" parameterType="int" resultType="kr.board.entity.Files">
  	    select *
  	    from files
- 	    where memId = #{memId}
+ 	    where pet_seq = #{pet_seq}
  	</select>
  	
  	<update id="update" parameterType="kr.board.entity.Files">
- 	    update files
- 	    set filename=#{filename} , fileOriName=#{fileOriName}, fileurl=#{fileurl}
- 	    where memId=#{memId}
+ 	    update tb_file
+ 	    set file_name=#{file_name} , file_real_name=#{file_real_name}
+ 	    where pet_seq=#{pet_seq}
  	    
  	</update>
- 	<select id="getImgList" parameterType="String" resultType="kr.board.entity.Files">
- 	    select * from files where memId = #{id};
+<!--  	<select id="getImgList" parameterType="int" resultType="kr.board.entity.Files">
+ 	    select * from files where me = #{pet_seq};
    </select>
-
+ -->
+ 
+ 	 <select id="select_pet" parameterType="int" resultType="string">
+ 	    select file_seq
+ 	    from tb_file
+ 	    where pet_seq = #{pet_seq}
+ 	</select>
 </mapper>

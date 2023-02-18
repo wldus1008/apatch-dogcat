@@ -11,22 +11,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.board.entity.Member;
-import kr.board.entity.Petinfo;
 import kr.board.mapper.BoardMapper;
-import kr.board.mapper.PetMapper;
+import kr.board.mapper.MemberMapper;
 
 @Controller
 public class MemberController {
 	
 	
 	
-	@Autowired
-	private PetMapper petmapper;
 	
 	@Autowired
 	private BoardMapper mapper;
+	@Autowired
+	private MemberMapper mmapper;
+	// 회원가입
+	
+	@RequestMapping("/member_register.do")
+	public String member_register(Member vo){
+		mmapper.member_register(vo);
+		return "redirect:/Home.do";
+	}
 	
 	
+	
+	// 로그인 
 	@GetMapping("/login")
 	public String loginForm(HttpServletRequest request, Model model) {
 	    

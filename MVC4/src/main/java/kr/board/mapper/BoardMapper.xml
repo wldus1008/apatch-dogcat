@@ -70,12 +70,12 @@
   <!-- 여기 부터 수정  --> 
 	
 	<insert id="adminboardInsert"
-		parameterType="kr.board.entity.dog">
+		parameterType="kr.board.entity.Adminboard">
 		insert into adminboard(title,content,writer,memId)
 		values (#{title},#{content},#{writer},#{memId})
 	</insert>
 
-	<select id="dogList" resultType="kr.board.entity.dog">
+	<select id="dogList" resultType="kr.board.entity.Adminboard">
 		select idx,title,content,writer,date_format(indate,"%Y/%m/%d") as indate ,count,memId
 		from adminboard
 	</select>
@@ -85,17 +85,17 @@
        
    </delete>
    
-    <select id="adminboardContent" parameterType="int" resultType="kr.board.entity.dog">
+    <select id="adminboardContent" parameterType="int" resultType="kr.board.entity.Adminboard">
      select * from adminboard where idx=#{idx}  
        
    </select>
     
-     <update id="adminboardUpdate" parameterType="kr.board.entity.dog">
+     <update id="adminboardUpdate" parameterType="kr.board.entity.Adminboard">
        update adminboard set title=#{title}, content=#{content}
        where idx=#{idx}
        
    </update>
-       <update id="adminboardContentUpdate" parameterType="kr.board.entity.dog">
+       <update id="adminboardContentUpdate" parameterType="kr.board.entity.Adminboard">
       update adminboard set title=#{title}, content=#{content} where idx=#{idx}
    </update>
    

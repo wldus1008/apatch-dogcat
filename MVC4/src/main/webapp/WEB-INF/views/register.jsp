@@ -4,12 +4,11 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" /> 
 <!DOCTYPE html>
 <html lang="ko">
-<html>
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Appmeet - Startup, App & SaaS HTML Template.</title>
+    <title>ApatchDogcat</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
@@ -101,18 +100,21 @@
 
       <div class="row mb-5 justify-content-center">
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="${cpath}/join.do" class="form-box" method="post">
+          <form action="${cpath}/member_register.do" class="form-box" method="post">
             <div class="row">
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" name="memId" placeholder="ID" id="memId">
+                <input type="text" class="form-control" name="mem_id" placeholder="ID" id="memId">
               </div>
               <div class="col-12 mb-3">
-                <input type="password" class="form-control" name="memPw" placeholder="PW" id="memPw">
+                <input type="password" class="form-control" name="mem_pw" placeholder="PW" id="memPw">
               </div>
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" name="memName" placeholder="이름을 입력해 주세요."  id="memName">
+                <input type="text" class="form-control" name="mem_name" placeholder="이름을 입력해 주세요."  id="memName">
               </div>
-              
+              <div class="col-12 mb-3">
+              	<input type="radio"  name="mem_type" value="Admin">관리자
+              	<input type="radio"  name="mem_type" value="일반회원">일반회원
+              </div>
 
            
 

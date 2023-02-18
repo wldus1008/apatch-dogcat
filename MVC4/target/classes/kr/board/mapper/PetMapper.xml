@@ -8,28 +8,32 @@
     
     
     <insert id="petJoin" parameterType="kr.board.entity.Petinfo">
-  		 INSERT INTO tb_pet (pet_name, pet_age, pet_gender , mem_id)
-    VALUES (#{petName},#{petAge},#{petgender},#{memId})
+  		 INSERT INTO tb_pet(pet_name, pet_age, pet_gender,mem_id,pet_kind)
+    VALUES (#{pet_name},#{pet_age},#{pet_gender},#{mem_id},#{pet_kind})
   	</insert>
     
-    <select id="checkId" parameterType="String" resultType="kr.board.entity.Petinfo">
- 	    select *
+    <select id="get_seq" parameterType="kr.board.entity.Petinfo" resultType="kr.board.entity.Petinfo">
+ 	    select * 
  	    from tb_pet
- 	    where mem_id = #{memId}
+ 	    where pet_seq in ( select pet_seq
+ 	    				  from tb_pet
+ 	    				  where mem_id = #{mem_id} and pet_name=#{pet_name} and pet_age = #{pet_age})
  	</select>
  	
  	<update id="update" parameterType="kr.board.entity.Petinfo">
  	    update tb_pet
- 	    set pet_name=#{petName} , pet_age=#{petAge}, pet_gender=#{petgender}
- 	    where mem_Id=#{memId}
+ 	    set pet_name=#{pet_name} , pet_age=#{pet_age}, pet_gender=#{pet_gender} ,pet_kind=#{pet_kind}
+ 	    where pet_seq=#{pet_seq}
  	    
  	</update>
  	<select id="pet_profile" parameterType="String" resultType="kr.board.entity.Pet_profile">
- 	    select p.pet_name, p.pet_age, p.pet_gender, p.mem_id, p.pet_seq,
- 	    		f.fno, f.filename, f.fileOriname, f.fileurl
- 	    from tb_pet p , files f
- 	    where p.mem_id = f.memId and p.mem_id = #{memId}
+ 	    select p.pet_name, p.pet_age, p.pet_gender,p.pet_kind, p.mem_id, p.pet_seq,
+ 	    		f.file_seq, f.file_name, f.file_real_name
+ 	    from tb_pet p , tb_file f
+ 	    where p.pet_seq = f.pet_seq and p.mem_id = #{mem_id}
  	</select>
+ 	
+
  	
     
 </mapper>    

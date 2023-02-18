@@ -9,11 +9,17 @@ public interface PetMapper {
 
 	void petJoin(Petinfo vo);
 
-	List<Petinfo> checkId(String memId);
-
+	Petinfo get_seq(Petinfo vo);
+	
 	void update(Petinfo vo);
 
 	List<Pet_profile> pet_profile(String memId);
+
+
+	
+
+	
+
 	
 	
 

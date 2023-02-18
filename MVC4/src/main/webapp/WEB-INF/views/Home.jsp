@@ -70,8 +70,8 @@
             <div class="row align-items-center">
             
                     	<c:choose>
-							<c:when test="${empty loginMember or empty img}">
-	             		<div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
+							<c:when test="${empty loginMember or empty pet_profile}">
+	             			<div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
 		               		<div class="hero-image wow fadeInRight" id="emlogimg" data-wow-delay=".4s" style="text-align: center; ">
 											<img src="resources/images/hero/dog1.jpg" alt="#" style="border:3px solid #3b9a9c;">
 									</div>									
@@ -89,19 +89,19 @@
 								<c:otherwise>
 									<div class="swiper-container">
 										<div class="swiper-wrapper">
-											<c:forEach items="${petprofile}" var="petProfile">
+											<c:forEach items="${pet_profile}" var="petProfile">
 												<div class="swiper-slide">
 													 <div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
 													 <div class="hero-image wow fadeInRight"  data-wow-delay=".4s" style="text-align: center; ">
-														<img alt="프로필 사진" src="/resources/fimages/${petProfile.filename}" style="border:3px solid #3b9a9c;"/>
+														<img alt="프로필 사진" src="/resources/fimages/${petProfile.file_name}" style="border:3px solid #3b9a9c;"/>
 													</div>	
 													</div>
 													 <div class="col-lg-6 col-md-12 col-12">
 													  <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-								                        <h5>이름</h5><p>${petProfile.petName}</p><br>
-								                        <h5>나이</h5><p>${petProfile.petAge}</p><br>
-								                        <h5>성별</h5><p>${petProfile.petgender}</p><br>
-								                        <h5>품종</h5><p>품종정보</p><br>  
+								                        <h5>이름</h5><p>${petProfile.pet_name}</p><br>
+								                        <h5>나이</h5><p>${petProfile.pet_age}</p><br>
+								                        <h5>성별</h5><p>${petProfile.pet_gender}</p><br>
+								                        <h5>품종</h5><p>${petProfile.pet_kind }</p><br>  
 								                        </div>       
 							                     	</div>
 							                     </div>   

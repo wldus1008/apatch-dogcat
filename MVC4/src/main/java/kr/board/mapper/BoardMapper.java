@@ -7,8 +7,7 @@ import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.Board;
 import kr.board.entity.Member;
-import kr.board.entity.Petinfo;
-import kr.board.entity.dog;
+import kr.board.entity.Adminboard;
 
 // 우리가 알고 있는 DAO와 같은 기능
 // Mapper라고 하는 역할임을 알려주는 주석
@@ -38,19 +37,19 @@ public interface BoardMapper  {
 
 	public void boardContentUpdate(Board vo);
 	
-	public List<dog> dogList();
+	public List<Adminboard> dogList();
 	
-	public void dog(dog vo);
+	public void dog(Adminboard vo);
 	
-	public void adminboardInsert(dog vo);
+	public void adminboardInsert(Adminboard vo);
 	
 	public void adminDelete(int idx);
 	
-	public void adminboardUpdate(dog vo);
+	public void adminboardUpdate(Adminboard vo);
 	
-	public dog adminboardContent(int theIdx);
+	public Adminboard adminboardContent(int theIdx);
 	
-	public void adminboardContentUpdate(dog vo);
+	public void adminboardContentUpdate(Adminboard vo);
 	
 	public Member memberLogin(Member mvo);
 	

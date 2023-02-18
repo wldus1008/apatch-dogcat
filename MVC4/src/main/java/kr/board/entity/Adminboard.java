@@ -7,7 +7,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class dog {
+public class Adminboard {
 	
 	private int idx;
 	private String title;

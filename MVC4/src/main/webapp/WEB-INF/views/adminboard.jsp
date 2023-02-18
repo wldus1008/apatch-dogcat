@@ -27,8 +27,8 @@
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="writer">작성자:</label>
 			    <div class="col-sm-10">
-			      <input type="text" readonly="readonly" class="form-control" name="writer" id="writer" value="${loginMember.memName}" >
-			      <input type="hidden" readonly="readonly" class="form-control" name="memId" id="memId" value="${loginMember.memId}" >
+			      <input type="text" readonly="readonly" class="form-control" name="writer" id="writer" value="${loginMember.mem_name}" >
+			      <input type="hidden" readonly="readonly" class="form-control" name="memId" id="memId" value="${loginMember.mem_id}" >
 			    </div>
 			 </div>
 			  <div class="form-group">
@@ -147,7 +147,7 @@
 	          */
 	         
 	         // 로그인 정보와, 데이터memId가 같으면 수정 삭제 가능~~
-	         /* if("${loginMember.memId}" == obj.memId) {
+	         /* if("${loginMember.mem_id}" == obj.memId) {
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goUpdate(" + obj.idx + ")'>수정</div></button>";
 	         	bList += "<div class ='button add-list-button'><div class='btn' style = 'font-size:15px; padding:10px 30px; margin:5px;' onclick='goDel(" + obj.idx + ")'>삭제</div></div>";
 	        	
@@ -166,7 +166,7 @@
 	   
 	   bList +="<tr>";
 	   
-	   if("${loginMember.memId}" == 'admin') {
+	   if("${loginMember.mem_id}" == 'admin') {
 	   bList += "<td colspan='5'>";
 	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";

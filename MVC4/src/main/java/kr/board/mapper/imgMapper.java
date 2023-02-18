@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.board.entity.Files;
-import kr.board.entity.Member;
 
 @Mapper
 public interface imgMapper {
@@ -17,12 +16,12 @@ public interface imgMapper {
 
 	public Files getImg(String id);
 
-	public Files checkId(String memId);
+	public Files checkId(int pet_seq);
 
 	public void update(Files file);
 
-	public List<Files> getImgList(String memId);
-
+	public List<Files> getImgList(String mem_id);
+	public String select_pet(int pet_seq);
 
 
 	

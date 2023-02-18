@@ -63,33 +63,31 @@
           <label for="formFile" class="form-label"><h5>반려동물 정보등록</h5></label>
             <div class="row">
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" name="petName" placeholder="이름을 입력해 주세요." id="petName">
+                <input type="text" class="form-control" name="pet_name" placeholder="이름을 입력해 주세요." id="petName">
               </div>
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" name="petAge" placeholder="나이를 입력해 주세요." id="petAge">
+                <input type="text" class="form-control" name="pet_age" placeholder="나이를 입력해 주세요." id="petAge">
+              </div>
+              <div class="col-12 mb-3">
+                <input type="text" class="form-control" name="pet_kind" placeholder="품종을 입력해 주세요." id="petkind">
               </div>
              
               
-              <div class="col-12 mb-3">
-                <!--   
-               <input type="radio"  name="petgender" value="♂" id="petgender">
-                <label for="male" style="margin-right: 20px">수컷</label>            
-                <input type="radio"  name="petgender" value="♀" id="petgender">
-                <label for="female">암컷</label> -->
+            <div class="col-12 mb-3">
 			<h5>성별선택</h5>
             <div class="text-left">
 				<div class="select">
-			     <input type="radio" id="male" name="petgender" value="♂">
+			     <input type="radio" id="male" name="pet_gender" value="♂">
 			     	<label for="male">
 			     		<img src="resources/images/icon/male.png" style="max-width:65%;"><br>
 			     		<span>남</span>
 			     	</label>
-			     <input type="radio" id="female" name="petgender" value="♀">
+			     <input type="radio" id="female" name="pet_gender" value="♀">
 			     	<label for="female">
 			     		<img src="resources/images/icon/female.png" style="max-width:65%;"><br>
 			     		<span>여</span>
 			     	</label>
-			     <input type="radio" id="neutering" name="petgender" value="중성화">
+			     <input type="radio" id="neutering" name="pet_gender" value="중성화">
 			     <label for="neutering">
 				     <img src="resources/images/icon/Neutering.png" style="max-width:65%;"><br>
 				     <span>중성화</span>
@@ -98,83 +96,106 @@
 					
 			</div>	  
                 
-            
+
             
                 
               </div>
-              <input type='hidden' name='memId' value='${loginMember.memId}'>
+              <input type='text' name='mem_id' value='${loginMember.mem_id}'>
           </div>            
           </form>
         
 				<!-- 반려동물 사진 등록 -->
-				<form action="${cpath}/upload" method="post"
-					enctype="multipart/form-data" name="imgUpload" id="imgUpload">
+				<form  method="post" enctype='multipart/form-data' action="${cpath}/upload"
+					 name="imgUpload" id="imgUpload">
 					<label for="formFile" class="form-label"><h5>반려동물 사진등록</h5></label>
-					<input type="file" name="files" onchange="readURL(this);"
+					<input type="file" name="files"  id="files"
 						class="form-control" >
 					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
-					<input type='hidden' name='memId' value='${loginMember.memId}'>
 					<div style="margin-top: 10px; margin-bottom: 10px">
 						<img id="preview" />
 					</div>
-					<div class="button text-center">
-						<button type="submit" class="btn" onClick="TwoSubmit()">등록하기 </button> 
-					</div>
 					
 				</form>
+				<div class="button text-center"  >
+					<button type="button" class="btn" onClick="TwoSubmit()">등록하기 </button> 
+				</div>
         </div>
       </div>
 
       
     </div>
-  
-				 
 
-		<script type="text/javascript">
-					
-					function readURL(input) {
-						  if (input.files && input.files[0]) {
-						    var reader = new FileReader();
-						    reader.onload = function(e) {
-						      document.getElementById('preview').src = e.target.result;
-						    };
-						    reader.readAsDataURL(input.files[0]);
-						  } else {
-						    document.getElementById('preview').src = "";
-						  }
-						}
-					
-					/* function TwoSubmit(){
-						$('#imgUpload').submit();
-						$('#petUpload').submit();
-					} */
-				    
-			         function TwoSubmit(){
 
-			        	
-			        	var petData = $('#petUpload').serialize();
-			        	$.ajax({
-			        		url : "${cpath}/petinfo",
-			        		type : "post",
-			        		data : petData,
-			        		success : function(){
-			        			console.log('데이터 전송 성공');
-			        			console.log(petData);
-			        		},
-			        		error : function(){
-			        			alert("펫 업로드 실패!")
-			        		}
-			        	});
-			        }
-			        	
-		</script>
-					
-					
-					
-					
- 	
 
- <%@include file="Footer.jsp"%>
+
+<script type="text/javascript">
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				document.getElementById('preview').src = e.target.result;
+			};
+			reader.readAsDataURL(input.files[0]);
+		} else {
+			document.getElementById('preview').src = "";
+		}
+	}
+
+	/* function TwoSubmit(){
+	 $('#imgUpload').submit();
+	 $('#petUpload').submit();
+	 } */
+
+	function TwoSubmit() {
+		
+		var petData = $('#petUpload').serialize();
+		$.ajax({
+			url : "${cpath}/petinfo",
+			type : "post",
+			data : petData,
+			success : function(data) {
+				
+				console.log('펫 데이터 전송 성공');
+				console.log(petData);
+				console.log(data);
+				
+				// 펫 데이터 전송 성공하면 img Upload 
+		        var form = $('#imgUpload')[0];
+		        var formData = new FormData(form);
+				$.ajax({
+			          url: "${cpath}/upload/"+data,
+			          type: 'POST',
+			          data: formData,
+			          success: function () {
+			        		console.log("이미지 전송 성공");
+			        		console.log(formData);
+			        		location.href = "${cpath}/Home.do"
+						
+			          },
+			          error: function (data) {
+			            alert("이미지 전송 실패");
+			          },
+			          cache: false,
+			          contentType: false,
+			          processData: false
+			        })
+				// 이미지 Upload 끝
+				
+			},
+			error : function() {
+				alert("펫 업로드 실패!")
+			}
+		});
+		
+		
+	}
+</script>
+
+
+
+
+
+<%@include file="Footer.jsp"%>
 			
 	
 					

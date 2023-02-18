@@ -26,8 +26,7 @@ import kr.board.entity.Board;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
 import kr.board.entity.Pet_profile;
-import kr.board.entity.Petinfo;
-import kr.board.entity.dog;
+import kr.board.entity.Adminboard;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.PetMapper;
 import kr.board.mapper.imgMapper;
@@ -87,16 +86,19 @@ public class BoardController {
 			Member loginMember = (Member) session.getAttribute("loginMember");
 			System.out.println("id : " + loginMember.getMem_id());
 
-			List<Files> img = imgMapper.getImgList(loginMember.getMem_id());
-			if(img != null) {
-				model.addAttribute("img", img);
-			}
+			/*
+			 * List<Files> img = imgMapper.getImgList(loginMember.getMem_id()); if(img !=
+			 * null) { model.addAttribute("img", img); }
+			 */
 			
-			List<Petinfo> updatePetinfo = petmapper.checkId(loginMember.getMem_id());
-	        session.setAttribute("loginPet", updatePetinfo);
+			/*
+			 * List<Petinfo> updatePetinfo = petmapper.checkId(loginMember.getMem_id());
+			 * session.setAttribute("loginPet", updatePetinfo)
+			 */;
 			
-	        List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMem_id());
-	        session.setAttribute("petprofile", pet_profile);
+			  List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMem_id());
+			  model.addAttribute("pet_profile", pet_profile);
+			 
 		}
 		
 		return "Home";
@@ -194,14 +196,11 @@ public class BoardController {
 
 			Files img = imgMapper.getImg(loginMember.getMem_id());
 			if(img != null) {
-				String fileName = img.getFilename();
+				String fileName = img.getFile_name();
 				model.addAttribute("fileName", fileName);
-			}
-			
+				}
 		}
-		
 		return "mypage";
-		
 	}
 	
 	@RequestMapping("/adminboard.do")
@@ -216,7 +215,7 @@ public class BoardController {
 	
 	@RequestMapping("/adminboardview/{idx}")
 	public String adminboardview(Model model ,@PathVariable int idx) {
-		dog vo =  mapper.adminboardContent(idx);
+		Adminboard vo =  mapper.adminboardContent(idx);
 		if(vo != null) {
 			model.addAttribute("vo", vo);
 		}
@@ -224,7 +223,7 @@ public class BoardController {
 	}
 	@RequestMapping("/adminUpdate.do/{idx}")
 	public String adminUpdate(Model model ,@PathVariable int idx) {
-		dog vo =  mapper.adminboardContent(idx);
+		Adminboard vo =  mapper.adminboardContent(idx);
 		if(vo != null) {
 			model.addAttribute("vo", vo);
 		}

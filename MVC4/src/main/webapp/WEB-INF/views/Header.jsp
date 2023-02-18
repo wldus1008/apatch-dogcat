@@ -136,7 +136,7 @@
 										<a href="${cpath}/login.do" class="btn">로그인</a>
 									 </li>
 									 <li class="nav-item HH">
-										<a href="#" class="btn">회원가입</a>
+										<a href="/register.do" class="btn">회원가입</a>
 									 </li>
 
 								</c:when>
@@ -191,7 +191,7 @@
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="${cpath}/imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="${cpath}/calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
+                                            <li class="nav-item"><a href="${cpath}/calendar.do/${loginMember.mem_id}">캘린더</a></li>
                                             <li class="nav-item"><a href="#">아직없음</a></li>
                                             
                                         </ul>
@@ -218,13 +218,13 @@
 										<a href="${cpath}/login.do" class="btn">로그인</a>
 									</div>
 									<div class="button add-list-button">
-										<a href="#" class="btn">회원가입</a>
+										<a href="/register.do" class="btn">회원가입</a>
 									</div>
 
 								</c:when>
 								<c:otherwise>
 									
-									<a href="${cpath}/mypage.do" style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</a> 
+									<a href="${cpath}/mypage.do" style="color:#3b9a9c;">${loginMember.mem_name}님 환영합니다</a> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>

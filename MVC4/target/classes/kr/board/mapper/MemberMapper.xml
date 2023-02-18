@@ -6,7 +6,12 @@
 <mapper namespace="kr.board.mapper.MemberMapper">
     
     
-    
+    <insert id="member_register" parameterType="kr.board.entity.Member">
+        insert into tb_member(mem_id,mem_pw,mem_name,mem_type,mem_joindate)
+        		values(#{mem_id},#{mem_pw},#{mem_name},mem_type,now());
+        
+        
+    </insert>
     
    
     
