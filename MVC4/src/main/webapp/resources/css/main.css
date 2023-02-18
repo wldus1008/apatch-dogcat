@@ -2833,7 +2833,7 @@ ol {
   position: relative;
   z-index: 1;
   text-align: left;
-  padding : 0px 0px 0px 35px;
+  padding : 0px 0px 0px 170px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2988,9 +2988,10 @@ ol {
 }
 
 @media (max-width: 767px) {
+  
   .hero-area .hero-content {
-    padding: 0 10px;
-    text-align: center;
+    padding: 0 65px;
+    /* text-align: center; */
   }
   .hero-area .hero-content h1 {
     font-size: 24px;
@@ -4579,12 +4580,8 @@ ol {
 
 
 @media(min-width:767px){
-	#mainimg{
-	padding-left: 80px;
-	}
-	
-	.hero-area.style1 .hero-image img {
-  
+/* 큰화면 */
+.hero-area.style1 .hero-image img {
   border-radius: 50%;
   width : 360px;
   height: 360px;
@@ -4592,15 +4589,22 @@ ol {
 	
 	
 	
-	
 }
 
  @media(max-width:767px){
+ /* 모바일화면 */
+ 
 	.hero-area.style1 .hero-image img {
   
 	  border-radius: 50%;
 	  width : 200px;
 	  height: 200px;
+	  margin: 0px -75px 0px 120px;
+	  
 }
+ 
+ #emlogimg, #emlogcontent{
+ 	display:none;
+ }
 	
 }

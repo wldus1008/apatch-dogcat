@@ -38,7 +38,7 @@
             <div class="row">
               <div class="col-12 mb-3">
               <label for="memId">아이디</label>
-                <input type="text" class="form-control" name="memId" id="memId" value="${loginMember.memId}" readonly>
+                <input type="text" class="form-control" name="mem_id" id="memId" value="${loginMember.memId}" readonly>
               </div>
               <div class="col-12 mb-3">
               <label for="memPw">비밀번호</label>
@@ -46,11 +46,11 @@
               </div>
               <div class="col-12 mb-3">
               <label for="memPw">새 비밀번호</label>
-                <input type="password" class="form-control" placeholder="새 비밀번호"  name="memPw" id="memPw">
+                <input type="password" class="form-control" placeholder="새 비밀번호"  name="mem_iw" id="memPw">
               </div>
               <div class="col-12 mb-3">
               <label for="memName">이름</label>
-                <input type="text" class="form-control" name="memName" value="${loginMember.memName}" name="memName"  id="memName" >
+                <input type="text" class="form-control" name="mem_name" value="${loginMember.memName}" id="memName" >
               </div>
               </div>
               
