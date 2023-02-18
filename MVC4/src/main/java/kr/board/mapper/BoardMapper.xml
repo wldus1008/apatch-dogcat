@@ -21,7 +21,7 @@
   </insert>
   
    <select id="boardContent" parameterType="int" resultType="kr.board.entity.Board">
-     select * from board where b_seq=#{b_seq}  
+     select * from tb_board where b_seq=#{b_seq}  
        
    </select>
    
@@ -48,6 +48,27 @@
    </select>
 
 
+
+   <select id="boardView" parameterType="int" resultType="kr.board.entity.Board">
+     select * from tb_board where b_seq=#{b_seq}  
+       
+   </select>
+     
+	<insert id="commentInsert" parameterType="kr.board.entity.Comment">
+		insert into tb_comment(mem_id,b_seq, cmt_content,cmt_date) values (#{mem_id},#{b_seq},#{cmt_content},now())
+	</insert>
+	
+	<delete id="comment_Delete" parameterType="int">
+       delete from tb_comment where com_cmt = #{com_seq}
+   </delete>
+   
+	<update id="commentUpdate" parameterType="kr.board.entity.Comment">
+       update tb_comment set cmt_content=#{cmt_content}
+       where cmt_seq=#{cmt_seq}
+   </update>
+   
+  <!-- 여기 부터 수정  --> 
+	
 	<insert id="adminboardInsert"
 		parameterType="kr.board.entity.dog">
 		insert into adminboard(title,content,writer,memId)
@@ -78,30 +99,7 @@
       update adminboard set title=#{title}, content=#{content} where idx=#{idx}
    </update>
    
-<<<<<<< HEAD
-       <select id="boardView" parameterType="int" resultType="kr.board.entity.Board">
-     select * from board where idx=#{idx}  
-       
-   </select>
-     
-	<insert id="commentInsert" parameterType="kr.board.entity.Board">
-		insert into com_tb(memId, idx, comment) values (#{memId},#{idx},#{comment})
-	</insert>
-	
-	<delete id="comment_Delete" parameterType="int">
-       delete from com_tb where com_idx = #{com_idx}
-   </delete>
-   
-	<update id="commentUpdate" parameterType="kr.board.entity.Board">
-       update com_tb set comment=#{comment}
-       where com_idx=#{com_idx}
-   </update>
-=======
 
-       
-       
-       
->>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
        
   
 </mapper>

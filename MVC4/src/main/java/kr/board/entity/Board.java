@@ -6,18 +6,7 @@ public class Board {
 
 	// 기왕이면 테이블 이름가 같게 짓는다.
 	// 필드명 = 속성 = 프로퍼티(property)
-<<<<<<< HEAD
-	private int idx;
-	private String title;
-	private String content;
-	private String writer;
-	private String indate;
-	private int count;
-	private String memId;
-	private String comment;
-	private String filename;     //저장할 파일
-	private int com_idx;
-=======
+
 	private int b_seq; // 글 순번
 	private String b_tilte; // 글 제목
 	private String b_content; // 글 내용
@@ -26,23 +15,12 @@ public class Board {
 	private int b_views; // 글 조회수
 	private int b_like; // 글 좋아요 수 
 	private String b_file; // 글 첨부파일
->>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
 	
 	
-	// 스프링에서는 생성자 만들 필요 없이
-	// Board 객체의 내용이면 담아줄 수 있다.
 	
-	// getter, setter만 만들기
-	
-	
-<<<<<<< HEAD
-
-	public String getMemId() {
-		return memId;
-=======
+// Getter , Setter	
 	public int getB_seq() {
 		return b_seq;
->>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
 	}
 	public void setB_seq(int b_seq) {
 		this.b_seq = b_seq;
@@ -89,28 +67,8 @@ public class Board {
 	public void setB_file(String b_file) {
 		this.b_file = b_file;
 	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	public int getCom_idx() {
-		return com_idx;
-	}
-	public void setCom_idx(int com_idx) {
-		this.com_idx = com_idx;
-	}
-	
 
-	
-	
-	
+
+
 	
 }

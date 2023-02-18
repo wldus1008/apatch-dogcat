@@ -1,22 +1,18 @@
 package kr.board.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import java.io.InputStream;
@@ -252,25 +248,26 @@ public class BoardController {
 	
 	@PostMapping("/boardUpdate")
 	public String boardUpdate(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("idx") int idx, Board vo) {
-		vo.setTitle(title);
-		vo.setContent(content);
-		vo.setIdx(idx);
+		vo.setB_tilte(title);;
+		vo.setB_content(content);;
+		vo.setB_seq(idx);;
 		mapper.boardUpdate(vo);
 
-		return "redirect:/boardContent/"+vo.getIdx();
+		return "redirect:/boardContent/"+vo.getB_seq();
 	}
 	
+	// 이거 나중에 할거 
 	@RequestMapping("/commentInsert")
 	public String commentInsert(@RequestParam("comment") String comment, @RequestParam("memId") String memId, @RequestParam("idx") int idx, Board vo) {
 		System.out.println("memId : " + memId);
 		System.out.println("comment : " + comment);
 		System.out.println("idx : " + idx);
-		vo.setMemId(memId);
-		vo.setComment(comment);
-		vo.setIdx(idx);
+		vo.setMem_id(memId);;
+		// vo.setB_comment(comment);
+		vo.setB_seq(idx);
 		mapper.commentInsert(vo);
 
-		return "redirect:/boardContent/"+vo.getIdx();
+		return "redirect:/boardContent/"+vo.getB_seq();
 	}
 	
 	
