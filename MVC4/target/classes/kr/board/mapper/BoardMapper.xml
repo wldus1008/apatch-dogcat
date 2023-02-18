@@ -7,8 +7,8 @@
   
   <!-- 태그의 d는 mapper 인터페이스의 메소드 이름으로 한다.  -->
   <select id="boardList" resultType="kr.board.entity.Board">
-    select idx,title,content,writer,date_format(indate,"%Y/%m/%d") as indate ,count,memId
-    from board
+    select b_seq,b_title,b_content,mem_id,date_format(indate,"%Y/%m/%d") as b_date ,b_views
+    from tb_board
   </select>
   
   <select id="commentList" parameterType="int" resultType="kr.board.entity.Board">
@@ -16,34 +16,34 @@
   </select>
   
   <insert id="boardInsert" parameterType="kr.board.entity.Board">
-      insert into board(title,content,writer,memId)
-      values (#{title},#{content},#{writer},#{memId})
+      insert into tb_board(b_title,b_content,mem_id)
+      values (#{b_title},#{b_content},#{mem_id})
   </insert>
   
    <select id="boardContent" parameterType="int" resultType="kr.board.entity.Board">
-     select * from board where idx=#{idx}  
+     select * from board where b_seq=#{b_seq}  
        
    </select>
    
    <update id="boardUpdate" parameterType="kr.board.entity.Board">
-       update board set title=#{title}, content=#{content}
-       where idx=#{idx}
+       update tb_board set b_title=#{b_title}, b_content=#{b_content}
+       where b_seq=#{b_seq}
        
    </update>
    
    <delete id="boardDelete" parameterType="int">
-       delete from board where idx=#{idx}
+       delete from tb_board where b_seq=#{b_seq}
        
    </delete>
    
    <update id="boardContentUpdate" parameterType="kr.board.entity.Board">
-       update board set content=#{content} where idx=#{idx}
+       update tb_board set b_content=#{b_content} where b_seq=#{b_seq}
        
    </update>
    
    <select id="memberLogin" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
        
-       select * from member where memId=#{memId} and memPw=#{memPw}
+       select * from tb_member where mem_id=#{mem_id} and mem_pw=#{mem_pw}
        
    </select>
 
@@ -78,6 +78,7 @@
       update adminboard set title=#{title}, content=#{content} where idx=#{idx}
    </update>
    
+<<<<<<< HEAD
        <select id="boardView" parameterType="int" resultType="kr.board.entity.Board">
      select * from board where idx=#{idx}  
        
@@ -95,6 +96,12 @@
        update com_tb set comment=#{comment}
        where com_idx=#{com_idx}
    </update>
+=======
+
+       
+       
+       
+>>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
        
   
 </mapper>

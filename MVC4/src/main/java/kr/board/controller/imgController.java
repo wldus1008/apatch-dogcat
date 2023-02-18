@@ -5,6 +5,7 @@ import java.io.File;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.board.entity.Files;
+import kr.board.entity.Petinfo;
+import kr.board.mapper.PetMapper;
 import kr.board.mapper.imgMapper;
 @Controller
 public class imgController {
@@ -23,6 +26,7 @@ public class imgController {
 	
 	@Autowired
 	private imgMapper mapper;
+	
 	
 	@RequestMapping("upload")
 	public String fileinsert(HttpServletRequest request, @RequestPart MultipartFile files , @RequestParam("memId")String memId) throws Exception{
@@ -47,11 +51,16 @@ public class imgController {
 		        file.setFileOriName(sourceFileName);
 		        file.setFileurl(fileUrl+destinationFileName);
 		        Files update = mapper.checkId(memId);
-		        if(update != null) {
-		        	mapper.update(file);
-		        }else {
-		        	mapper.imgupload(file);		        	
-		        }
+		        
+				/*
+				 * if(update != null) { mapper.update(file); }else { } mapper.imgupload(file);
+				 */		        	
+		        mapper.imgupload(file);
+		        
+		        
+		        
+		        
+		        
 		        return "redirect:/Home.do";
 		    }
 	

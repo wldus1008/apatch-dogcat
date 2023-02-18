@@ -5,7 +5,50 @@
 
  <%@include file="Header.jsp"%>
 
- 
+<style>
+
+.select {
+    padding: 15px 10px;
+}
+.select input[type=radio]{
+    display: none;
+}
+.select input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 90px;
+    
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:13px;
+}
+.select input[type=radio]+label{
+ 	background-color: #fff8c2;
+    text-align: center;
+    border-radius: 15px;
+    color: #286769;
+    font-size: 14px;
+    width: 95px;
+    height: 95px;
+    padding: 10px 0px 0px 5px;
+}
+.select input[type=radio]:checked+label{
+    background-color: #3b9a9c;
+    text-align: center;
+    border-radius: 15px;
+    color: #fff8c2;
+    font-size: 14px;
+    width: 95px;
+    height: 95px; 
+    padding: 10px 0px 0px 5px;
+    
+}
+
+</style> 
+
+
 
 
 
@@ -25,17 +68,44 @@
               <div class="col-12 mb-3">
                 <input type="text" class="form-control" name="petAge" placeholder="나이를 입력해 주세요." id="petAge">
               </div>
+             
+              
               <div class="col-12 mb-3">
-                <input type="radio"  name="petgender" value="male" id="petgender">
+                <!--   
+               <input type="radio"  name="petgender" value="♂" id="petgender">
                 <label for="male" style="margin-right: 20px">수컷</label>            
-                <input type="radio"  name="petgender" value="female" id="petgender">
-                <label for="female">암컷</label>
+                <input type="radio"  name="petgender" value="♀" id="petgender">
+                <label for="female">암컷</label> -->
+			<h5>성별선택</h5>
+            <div class="text-left">
+				<div class="select">
+			     <input type="radio" id="male" name="petgender" value="♂">
+			     	<label for="male">
+			     		<img src="resources/images/icon/male.png" style="max-width:65%;"><br>
+			     		<span>남</span>
+			     	</label>
+			     <input type="radio" id="female" name="petgender" value="♀">
+			     	<label for="female">
+			     		<img src="resources/images/icon/female.png" style="max-width:65%;"><br>
+			     		<span>여</span>
+			     	</label>
+			     <input type="radio" id="neutering" name="petgender" value="중성화">
+			     <label for="neutering">
+				     <img src="resources/images/icon/Neutering.png" style="max-width:65%;"><br>
+				     <span>중성화</span>
+			     </label>
+			   	</div>
+					
+			</div>	  
+                
+            
+            
+                
               </div>
               <input type='hidden' name='memId' value='${loginMember.memId}'>
-          
-            </div>
+          </div>            
           </form>
-          <br>
+        
 				<!-- 반려동물 사진 등록 -->
 				<form action="${cpath}/upload" method="post"
 					enctype="multipart/form-data" name="imgUpload" id="imgUpload">

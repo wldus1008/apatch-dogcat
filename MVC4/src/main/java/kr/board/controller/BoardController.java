@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -30,8 +29,11 @@ import java.nio.ByteOrder;
 import kr.board.entity.Board;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
+import kr.board.entity.Pet_profile;
+import kr.board.entity.Petinfo;
 import kr.board.entity.dog;
 import kr.board.mapper.BoardMapper;
+import kr.board.mapper.PetMapper;
 import kr.board.mapper.imgMapper;
 
 // POJO라는걸 알려주는 주석(어노테이션)
@@ -46,6 +48,8 @@ public class BoardController {
 	private BoardMapper mapper;
 	@Autowired
 	private imgMapper imgMapper;
+	@Autowired
+	private PetMapper petmapper;
 	
 	// url 가져오는 방식에 따라 get방식으로 넘어오면
 	// 맵핑을 get으로
@@ -85,14 +89,18 @@ public class BoardController {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginMember") != null) {
 			Member loginMember = (Member) session.getAttribute("loginMember");
-			System.out.println("id : " + loginMember.getMemId());
+			System.out.println("id : " + loginMember.getMem_id());
 
-			Files img = imgMapper.getImg(loginMember.getMemId());
+			List<Files> img = imgMapper.getImgList(loginMember.getMem_id());
 			if(img != null) {
-				String fileName = img.getFilename();
-				model.addAttribute("fileName", fileName);
+				model.addAttribute("img", img);
 			}
 			
+			List<Petinfo> updatePetinfo = petmapper.checkId(loginMember.getMem_id());
+	        session.setAttribute("loginPet", updatePetinfo);
+			
+	        List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMem_id());
+	        session.setAttribute("petprofile", pet_profile);
 		}
 		
 		return "Home";
@@ -186,9 +194,9 @@ public class BoardController {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginMember") != null) {
 			Member loginMember = (Member) session.getAttribute("loginMember");
-			System.out.println("id : " + loginMember.getMemId());
+			System.out.println("id : " + loginMember.getMem_id());
 
-			Files img = imgMapper.getImg(loginMember.getMemId());
+			Files img = imgMapper.getImg(loginMember.getMem_id());
 			if(img != null) {
 				String fileName = img.getFilename();
 				model.addAttribute("fileName", fileName);
@@ -267,7 +275,15 @@ public class BoardController {
 	
 	
 	
+	@RequestMapping("/kcal.do")
+	public String kcal() {
+		
 	
+		
+		return "kcal";
+		
+	}
+
 	
 	
 	

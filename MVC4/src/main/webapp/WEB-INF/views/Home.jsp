@@ -52,9 +52,9 @@
         		
         
                         <li class="nav-block">
-                        <a class="main-icon"  href="basic.do" id="product-lab">
-                            <img src="resources/images/icon/healthcare.png" alt="반려동물 보험" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
-                            <span id="nav-text">반려동물 보험</span>
+                        <a class="main-icon"  href="kcal.do" id="product-lab">
+                            <img src="resources/images/icon/petfood1.png" alt="권장칼로리 계산기" style="max-width: 60%; margin-top: 15px; margin-bottom:16px;">
+                            <span id="nav-text">권장칼로리 계산기</span>
                         </a>
                        </li>
                 </ul>
@@ -68,44 +68,82 @@
 
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-image wow fadeInRight" data-wow-delay=".4s" style="text-align: center;">
-                    	
+            
                     	<c:choose>
-								<c:when test="${empty loginMember or empty fileName}">
-
-									<img src="resources/images/hero/dog1.jpg" alt="#" style="border:3px solid #3b9a9c;">
-
-								</c:when>
+							<c:when test="${empty loginMember or empty img}">
+	             		<div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
+		               		<div class="hero-image wow fadeInRight" id="emlogimg" data-wow-delay=".4s" style="text-align: center; ">
+											<img src="resources/images/hero/dog1.jpg" alt="#" style="border:3px solid #3b9a9c;">
+									</div>									
+							</div>
+				                <div class="col-lg-6 col-md-12 col-12" >
+				                	  <div class="hero-content wow fadeInLeft" id="emlogcontent" data-wow-delay=".3s">
+			                        <h5>이름</h5><p>이름정보</p><br>
+			                        <h5>나이</h5><p>나이정보</p><br>
+			                        <h5>성별</h5><p>성별정보</p><br>
+			                        <h5>품종</h5><p>품종정보</p><br>
+			                        </div>
+				               </div>
+			                        
+							</c:when>
 								<c:otherwise>
+									<div class="swiper-container">
+										<div class="swiper-wrapper">
+											<c:forEach items="${petprofile}" var="petProfile">
+												<div class="swiper-slide">
+													 <div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
+													 <div class="hero-image wow fadeInRight"  data-wow-delay=".4s" style="text-align: center; ">
+														<img alt="프로필 사진" src="/resources/fimages/${petProfile.filename}" style="border:3px solid #3b9a9c;"/>
+													</div>	
+													</div>
+													 <div class="col-lg-6 col-md-12 col-12">
+													  <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
+								                        <h5>이름</h5><p>${petProfile.petName}</p><br>
+								                        <h5>나이</h5><p>${petProfile.petAge}</p><br>
+								                        <h5>성별</h5><p>${petProfile.petgender}</p><br>
+								                        <h5>품종</h5><p>품종정보</p><br>  
+								                        </div>       
+							                     	</div>
+							                     </div>   
+									     		</c:forEach>
+								   		</div>
+								   		<!-- 네비게이션 -->
+										<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+										<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
 									
-									<img alt="프로필 사진" src="<c:url value='/resources/fimages/${fileName}'/>" style="border:3px solid #3b9a9c;"/>
-
+										<!-- 페이징 -->
+										<div class="swiper-pagination"></div>
+								   		
+<%-- 
+										<!-- 네비게이션 -->
+										<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+										<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+									
+										<!-- 페이징 -->
+										<div class="swiper-pagination"></div>
+--%>									   
+									</div>
 								</c:otherwise>
 
 
 							</c:choose>
                     	
-                        
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div class="hero-content wow fadeInLeft" data-wow-delay=".3s">
-                        <h1>프로필 정보</h1>
-                        <p>프로필정보</p>
-                        <form action="#" method="get" target="_blank" class="trial-form">
+                       
+         
+<%-- 
+                   <form action="#" method="get" target="_blank" class="trial-form">
                             <input name="email" type="email" placeholder="Your email address">
                             <div class="button">
                                 <button type="submit" class="btn">Get Started</button>
                             </div>
                         </form>
-                        <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
-                        <span class="text">Watch our intro video.</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                       <!--  <a href="#"  class="glightbox video-button"><i class="lni lni-play"></i>
+                        <span class="text">Watch our intro video.</span></a> -->
+--%>
 
+
+		</div> <!-- <div class="container"> 끝 -->
+		</div>	<!-- <div class="row align-items-center"> 끝  -->
     </section>
     <!-- End Hero Area -->
 
@@ -129,7 +167,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">01</span>
                             <h3><a href="service-details.html">강아지 안구질환</a></h3>
-                            <p> 강아지 눈 사진을 인공지능으로 분석, 안구질환을 확인 할 수 있습니다.</p>
+                            <p> 강아지 눈 사진으로 안구질환을 확인합니다</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -139,7 +177,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <span class="serial">02</span>
                             <h3><a href="service-details.html">고양이 안구질환</a></h3>
-                            <p> 고양이 눈 사진을 인공지능으로 분석, 안구질환을 확인 할 수 있습니다.</p>
+                            <p> 고양이 눈 사진으로 안구질환을 확인합니다</p>
                             <div class="button">
                                 <a href="service-details.html" class="btn">자세히보기</a>
                             </div>
@@ -148,8 +186,8 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">03</span>
-                            <h3><a href="service-details.html">커뮤니티</a></h3>
-                            <p> 커뮤니티 게시판과 반려동물 지식정보를 확인 할 수 있습니다.</p>
+                            <h3><a href="basic.do">커뮤니티</a></h3>
+                            <p> 회원들과 소통하는 커뮤니티 게시판입니다</p>
                             <div class="button">
                                 <a href="basic.do" class="btn">자세히보기</a>
                             </div>
@@ -159,7 +197,7 @@
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">04</span>
                             <h3><a href="map.do">동물병원찾기</a></h3>
-                            <p> 현재위치를 확인 후 근처 동물병원을 알려줍니다.</p>
+                            <p> 현재위치를 확인 후 근처 동물병원을 알려줍니다</p>
                             <div class="button">
                                 <a href="map.do" class="btn">자세히보기</a>
                             </div>
@@ -170,7 +208,7 @@
                             <span class="serial">05</span>
                             
                             <h3><a>반려동물 등록하기</a></h3>	
-                            <p > 로그인 후 사용가능</p>
+                            <p> 로그인 후 사용가능</p>
                             <c:choose>
                             <c:when test="${not empty loginMember}">
                              <div class="button">
@@ -183,10 +221,10 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <span class="serial">06</span>
-                            <h3><a href="service-details.html">반려동물 보험</a></h3>
-                            <p> 반려동물 보험을 추천해줍니다.</p>
+                            <h3><a href="admindoard.do">반려동물 지식정보</a></h3>
+                            <p> 반려동물 지식정보를 알려줍니다</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="admindoard.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>

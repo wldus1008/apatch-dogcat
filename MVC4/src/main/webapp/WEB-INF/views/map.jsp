@@ -39,13 +39,15 @@
 		        
 		    	
 		       
-							var markerImageUrl = 'https://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_p.png', // 이거 바꾸면 마커 이미지 변경
-								markerImageSize = new kakao.maps.Size(40, 42), // 마커 이미지의 크기
+							var markerImageUrl = '${cpath}/resources/images/icon/지도마커.png', // 이거 바꾸면 마커 이미지 변경
+								markerImageSize = new kakao.maps.Size(45, 38), // 마커 이미지의 크기
 							markerImageOptions = {
-								offset : new kakao.maps.Point(12, 13)
+								offset : new kakao.maps.Point(12, 18)
 							// 마커 좌표에 일치시킬 이미지 안의 좌표
 							};
-
+							
+							
+						    
 							// 마커 이미지를 생성한다
 							var markerImage = new kakao.maps.MarkerImage(
 									markerImageUrl, markerImageSize,
@@ -65,8 +67,8 @@
 										content : '<div style="padding:0 5px;background:#fff;">내위치</div>',
 										position : new kakao.maps.LatLng(lat,
 												lon), // 커스텀 오버레이를 표시할 좌표
-										xAnchor : 0.5, // 컨텐츠의 x 위치
-										yAnchor : 1.6
+										xAnchor : 0.3, // 컨텐츠의 x 위치
+										yAnchor : 1.8
 									// 컨텐츠의 y 위치
 									});
 

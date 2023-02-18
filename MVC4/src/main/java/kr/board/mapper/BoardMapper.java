@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.Board;
 import kr.board.entity.Member;
+import kr.board.entity.Petinfo;
 import kr.board.entity.dog;
 
 // 우리가 알고 있는 DAO와 같은 기능
@@ -51,13 +52,15 @@ public interface BoardMapper  {
 	
 	public void adminboardContentUpdate(dog vo);
 	
+	public Member memberLogin(Member mvo);
+	
+	
 	// 만약에 sql문을 xml로 관리를 안하는 경우
 	// sql구문 종류별로 주석을 달아서 sql문 직접 입력\
 	// parameterType, resultType 지정하지 않아도 인식
 	@Update("update board set count=count+1 where idx=#{idx}")
 	public void updateCount(int idx);
 
-	public Member memberLogin(Member mvo);
 
 	
 	

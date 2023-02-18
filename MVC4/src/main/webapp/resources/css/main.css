@@ -93,12 +93,13 @@ select {
   cursor: default;
   margin: 0em;
   font: 500 14px;
-  border-radius: 0px;
+  border-radius: 20px;
   border-width: 1px;
   border-style: solid;
   border-color: -internal-light-dark(#767676, #858585);
   -o-border-image: initial;
      border-image: initial;
+  width: 100%;   
 }
 
 span,
@@ -2320,15 +2321,15 @@ ol {
 ========================================*/
 .hero-area {
   position: relative;
-  padding: 130px 0 120px 0;
+  padding: 50px 0 120px 0;
   background: #fff;
 }
 
 .hero-area.style1 .hero-image img {
   
   border-radius: 50%;
-  width : 300px;
-  height: 300px;
+  width : 360px;
+  height: 360px;
 }
 
 .hero-area.style2 {
@@ -2820,15 +2821,19 @@ ol {
 @media (max-width: 767px) {
   .hero-area .hero-image {
     display: block;
+   
   }
 }
+
+
+
 
 .hero-area .hero-content {
   border-radius: 0;
   position: relative;
   z-index: 1;
   text-align: left;
-  padding-right: 90px;
+  padding : 0px 0px 0px 170px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2857,14 +2862,14 @@ ol {
 }
 
 .hero-area .hero-content p {
-  margin-top: 30px;
+ /*  margin-top: 30px; */
   font-size: 16px;
   font-weight: 600;
 }
 
 .hero-area .hero-content .trial-form {
   display: inline-block;
-  margin-top: 45px;
+  margin-top: 10px;
 }
 
 @media (max-width: 767px) {
@@ -2983,9 +2988,10 @@ ol {
 }
 
 @media (max-width: 767px) {
+  
   .hero-area .hero-content {
-    padding: 0 10px;
-    text-align: center;
+    padding: 0 65px;
+    /* text-align: center; */
   }
   .hero-area .hero-content h1 {
     font-size: 24px;
@@ -4546,7 +4552,7 @@ ol {
 	margin-bottom: 100px;
 	
 }
-@media(max-width:750px){
+@media(max-width:767px){
 	.big{
 		display: none;
 	}
@@ -4556,11 +4562,49 @@ ol {
 		margin:5px!important;
 	}
 }
-@media(min-width :750px){
+@media(min-width :767px){
 	.small{
 		display: none;
 	}
 	.big{
-		display: block;
+		display: block; 
 	}
+}
+.daligi{
+	border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #3b9a9c;
+	
+}
+
+
+@media(min-width:767px){
+/* 큰화면 */
+.hero-area.style1 .hero-image img {
+  border-radius: 50%;
+  width : 360px;
+  height: 360px;
+}
+	
+	
+	
+}
+
+ @media(max-width:767px){
+ /* 모바일화면 */
+ 
+	.hero-area.style1 .hero-image img {
+  
+	  border-radius: 50%;
+	  width : 200px;
+	  height: 200px;
+	  margin: 0px -75px 0px 120px;
+	  
+}
+ 
+ #emlogimg, #emlogcontent{
+ 	display:none;
+ }
+	
 }

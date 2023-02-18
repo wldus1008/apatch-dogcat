@@ -9,7 +9,6 @@ public interface MemberMapper {
 
 	
 	
-	public void memberJoin(Member Membervo);
 
 
 	// 회원정보 수정

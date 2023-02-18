@@ -1424,6 +1424,7 @@ progress {
     .col-lg-6 {
         flex: 0 0 auto;
         width: 50%
+        
     }
 
     .col-lg-7 {
@@ -2242,7 +2243,7 @@ progress {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: .25rem;
+    border-radius: 1.25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 

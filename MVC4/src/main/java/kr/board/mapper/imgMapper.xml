@@ -27,5 +27,8 @@
  	    where memId=#{memId}
  	    
  	</update>
+ 	<select id="getImgList" parameterType="String" resultType="kr.board.entity.Files">
+ 	    select * from files where memId = #{id};
+   </select>
 
 </mapper>

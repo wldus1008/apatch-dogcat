@@ -1,15 +1,18 @@
 package kr.board.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Petinfo {
 
 	private String petName;
 	private String petAge;
 	private String petgender;
 	private String memId;
-	
 	private int petNo;
 	public int getPetNo() {
 		return petNo;

@@ -1,6 +1,8 @@
 package kr.board.mapper;
 
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.board.entity.Files;
@@ -18,6 +20,8 @@ public interface imgMapper {
 	public Files checkId(String memId);
 
 	public void update(Files file);
+
+	public List<Files> getImgList(String memId);
 
 
 

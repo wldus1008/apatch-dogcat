@@ -76,10 +76,10 @@
 		          <form action="${cpath}/Login.do" class="form-box" method="post">
 		            <div class="row">
 		              <div class="col-12 mb-3">
-		                <input type="text" class="form-control" placeholder="ID" name="memId">
+		                <input type="text" class="form-control" placeholder="ID" name="mem_id">
 		              </div>
 		              <div class="col-12 mb-3">
-		                <input type="password" class="form-control" placeholder="Password" name="memPw">
+		                <input type="password" class="form-control" placeholder="Password" name="mem_pw">
 		              </div>
 		
 		             

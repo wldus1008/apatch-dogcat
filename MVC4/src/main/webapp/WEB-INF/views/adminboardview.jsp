@@ -28,15 +28,19 @@
 			<div class="button text-center">
 				<button class="btn"
 					onclick="location.href='${cpath}/adminUpdate.do/${vo.idx}'">수정</button>
-				<button class="btn" onclick="">삭제</button>
-
+				<button class="btn" onclick="goDel(idx)">삭제</button>
+				<button class="btn"
+					onclick="location.href='${cpath}/adminboard.do'">뒤로가기</button>
 			</div>
-
 		</c:when>
-
-
+		<c:otherwise>
+		<div class="button text-center">
+				<button class="btn"
+					onclick="location.href='${cpath}/adminboard.do'">뒤로가기</button>
+			</div>
+		</c:otherwise>
 	</c:choose>
-
+	
 </div>
 
 
