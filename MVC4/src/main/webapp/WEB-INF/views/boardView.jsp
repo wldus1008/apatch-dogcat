@@ -121,14 +121,15 @@ pageEncoding="UTF-8"%>
 			   bList += "<div class='ms-3'>"
                bList += "<div class='fw-bold' ><strong><big>" + obj.memId + "</big></strong></div>";
                bList += "<div style='width:1044px;float:left;margin-top: 10px;' id='userComment" + obj.com_idx + "'>" + obj.comment + "</div>";
-               bList += "<input type='hidden' value='" + obj.comment + "' id='hiddenComment" + obj.com_idx + "' >"
+               bList += "<input type='hidden' value='" + obj.comment + "' id='hiddenComment" + obj.com_idx + "' >";
                if(obj.memId == '${loginMember.memId}'){
-            	   bList += "<div style='width:5%; float:left;' id='userComDel" + obj.com_idx + "'><button class='btn btn-primary' style='height: 35px;' onclick='comUpdate(" + obj.com_idx + ")'>수정</button></div>"
-            	   bList += "<div style='width:5%; float:left;'><button class='btn btn-primary' style='height: 35px;' onclick='comDelete(" + obj.com_idx + ")'>삭제</button></div>"
+            	   bList += "<div style='width:5%; float:left;' id='userComDel" + obj.com_idx + "'><button class='btn btn-primary' style='height: -1px;' onclick='comUpdate(" + obj.com_idx + ")'>수정</button></div>";
+            	   bList += "<div style='width:5%; float:left;'><button class='btn btn-primary' style='height: -1px;' onclick='comDelete(" + obj.com_idx + ")'>삭제</button></div>";
                }
-			   bList += "</div>"               
-			   bList += "</div>"               
-			   bList += "</div>"               
+			   bList += "</div>";          
+			   bList += "</div>";               
+			   bList += "</div>";
+			   bList += "<br>";
 		   });// each 끝
 		   
 		 $(".comment-body").append(bList);
@@ -167,7 +168,7 @@ pageEncoding="UTF-8"%>
 		      bList += "<input type='text' name='updateCom' id='updateCom' value='" + hidden + "' style='width: 100%;height: 1em;border: none;resize: none;background-color: #f9fafb;'>";
 		      
 		      var bList2 = "";
-		      bList2 += "<button class='btn btn-primary' style='height: 35px;' onclick='update2(" + idx + ")'>수정</button>";
+		      bList2 += "<button class='btn btn-primary' style='height: -1px;' onclick='update2(" + idx + ")'>수정</button>";
 		      
 		     $("#userComDel" + idx).html(bList2)
 		     $("#userComment" + idx).html(bList);
@@ -274,10 +275,10 @@ pageEncoding="UTF-8"%>
 		<div class="card-body">
 		<form class="mb-4" action="/commentInsert">
 			<div>
-			<div style="width:95%; float:left;"><textarea class="form-control" name="comment" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></div>
+			<div style="width:95%; float:left;"><input type="text" class="form-control" name="comment" placeholder="Join the discussion and leave a comment!"></div>
 			<input type="hidden" name="memId" id="memId" value="${loginMember.memId}">
 			<input type="hidden" name="idx" value="${vo.idx}">
-			<div style="width:5%; float:left;"><input class="btn btn-primary" type="submit" value="제출" style="height: 85px; width: 70px;"></div>
+			<div style="width:5%; float:left;"><input class="btn btn-primary" type="submit" value="제출" style="height: 35px; width: 70px;"></div>
 			</div>
 			
 		</form>
