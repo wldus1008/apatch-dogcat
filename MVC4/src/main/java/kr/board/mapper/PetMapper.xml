@@ -8,27 +8,27 @@
     
     
     <insert id="petJoin" parameterType="kr.board.entity.Petinfo">
-  		 INSERT INTO Petinfo (petName, petAge, petgender , memId)
+  		 INSERT INTO tb_pet (pet_name, pet_age, pet_gender , mem_id)
     VALUES (#{petName},#{petAge},#{petgender},#{memId})
   	</insert>
     
     <select id="checkId" parameterType="String" resultType="kr.board.entity.Petinfo">
  	    select *
- 	    from Petinfo
- 	    where memId = #{memId}
+ 	    from tb_pet
+ 	    where mem_id = #{memId}
  	</select>
  	
  	<update id="update" parameterType="kr.board.entity.Petinfo">
- 	    update Petinfo
- 	    set petName=#{petName} , petAge=#{petAge}, petgender=#{petgender}
- 	    where memId=#{memId}
+ 	    update tb_pet
+ 	    set pet_name=#{petName} , pet_age=#{petAge}, pet_gender=#{petgender}
+ 	    where mem_Id=#{memId}
  	    
  	</update>
  	<select id="pet_profile" parameterType="String" resultType="kr.board.entity.Pet_profile">
- 	    select p.petName, p.petAge, p.petgender, p.memId, p.petNo,
+ 	    select p.pet_name, p.pet_age, p.pet_gender, p.mem_id, p.pet_seq,
  	    		f.fno, f.filename, f.fileOriname, f.fileurl
- 	    from Petinfo p , files f
- 	    where p.memId = f.memId and p.memId = #{memId}
+ 	    from tb_pet p , files f
+ 	    where p.mem_id = f.memId and p.mem_id = #{memId}
  	</select>
  	
     

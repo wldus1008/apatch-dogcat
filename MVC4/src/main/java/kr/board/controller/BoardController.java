@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -89,17 +88,17 @@ public class BoardController {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginMember") != null) {
 			Member loginMember = (Member) session.getAttribute("loginMember");
-			System.out.println("id : " + loginMember.getMemId());
+			System.out.println("id : " + loginMember.getMem_id());
 
-			List<Files> img = imgMapper.getImgList(loginMember.getMemId());
+			List<Files> img = imgMapper.getImgList(loginMember.getMem_id());
 			if(img != null) {
 				model.addAttribute("img", img);
 			}
 			
-			List<Petinfo> updatePetinfo = petmapper.checkId(loginMember.getMemId());
+			List<Petinfo> updatePetinfo = petmapper.checkId(loginMember.getMem_id());
 	        session.setAttribute("loginPet", updatePetinfo);
 			
-	        List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMemId());
+	        List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMem_id());
 	        session.setAttribute("petprofile", pet_profile);
 		}
 		
@@ -194,9 +193,9 @@ public class BoardController {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginMember") != null) {
 			Member loginMember = (Member) session.getAttribute("loginMember");
-			System.out.println("id : " + loginMember.getMemId());
+			System.out.println("id : " + loginMember.getMem_id());
 
-			Files img = imgMapper.getImg(loginMember.getMemId());
+			Files img = imgMapper.getImg(loginMember.getMem_id());
 			if(img != null) {
 				String fileName = img.getFilename();
 				model.addAttribute("fileName", fileName);

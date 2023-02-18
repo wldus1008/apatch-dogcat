@@ -11,10 +11,10 @@
    
     
     <update id="memUpdate" parameterType="kr.board.entity.Member">
-		UPDATE member SET 
-		memPw = #{memPw},
-		memName = #{memName}
-		WHERE memId = #{memId}
+		UPDATE tb_member SET 
+		mem_pw = #{mem_pw},
+		mem_name = #{mem_name}
+		WHERE mem_id = #{mem_Id}
 	</update>
     
 </mapper>    
