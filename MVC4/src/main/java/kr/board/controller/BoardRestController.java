@@ -62,9 +62,9 @@ public class BoardRestController {
 	@GetMapping("/comment/{cmt_seq}")
 	public List<Comment> commentajaxList(@PathVariable int cmt_seq) {
 		
-		List<Comment> list = mapper.commentList(cmt_seq);
+		List<Comment> com_list = mapper.commentList(cmt_seq);
 		
-		return list;
+		return com_list;
 		
 		
 	}

@@ -4587,9 +4587,36 @@ ol {
   height: 360px;
 }
 	
+ #dg{
+ 
+ 	 margin-left: 110px;
+ 	 margin-right: 110px;
+ 
+ }	
+ 
+#dgsize{
 	
+	width:90%; 
+	float:left;
+	margin:7px 15px 0px 0px ;
+} 
+
+
+
+#detailView{
+	
+	text-align: center; 
+	table-layout:fixed;
+	word-break:break-all;
+	height:auto; 
+	padding:15px 100px 15px 100px;
 	
 }
+	
+}
+
+
+
 
  @media(max-width:767px){
  /* 모바일화면 */
@@ -4601,10 +4628,22 @@ ol {
 	  height: 200px;
 	  margin: 0px -75px 0px 120px;
 	  
-}
+	}
  
- #emlogimg, #emlogcontent{
- 	display:none;
- }
-	
-}
+	 #emlogimg, #emlogcontent{
+	 	display:none;
+	 }
+
+	#dgsize{
+		
+		width:80%; 
+		float:left;
+		margin:7px 15px 0px 0px ;
+	}  
+	#datatable-scroller th{
+		font-size: 5px;
+	}
+} /* @media(max-width:767px) 끝 */
+#datatable-scroller th{
+	width: 15%;
+}	
