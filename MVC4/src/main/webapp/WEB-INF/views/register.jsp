@@ -112,8 +112,8 @@
                 <input type="text" class="form-control" name="mem_name" placeholder="이름을 입력해 주세요."  id="memName">
               </div>
               <div class="col-12 mb-3">
-              	<input type="radio"  name="mem_type" value="Admin">관리자
-              	<input type="radio"  name="mem_type" value="일반회원">일반회원
+              	<input type="radio"  name="mem_type" value="A">관리자
+              	<input type="radio"  name="mem_type" value="U">일반회원
               </div>
 
            
