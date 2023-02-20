@@ -30,7 +30,7 @@ public class PetController {
 			vo.setPet_seq(get_seq.getPet_seq());
 			petmapper.update(vo); // 있으면 Update
 		}
-		
+		get_seq = petmapper.get_seq(vo);
 		System.out.println(get_seq.getPet_seq());
 		System.out.println("pet info 성공");
 		get_seq = petmapper.get_seq(vo); // mem_id 반려동물 조회

@@ -149,6 +149,7 @@
 	function TwoSubmit() {
 		
 		var petData = $('#petUpload').serialize();
+		console.log("petData 내용 : ", petData);
 		$.ajax({
 			url : "${cpath}/petinfo",
 			type : "post",
@@ -160,7 +161,6 @@
 				console.log(data);
 				
 				// 펫 데이터 전송 성공하면 img Upload
-				// 오류가 연속으로 할 경우 return pet_seq가 안들어오는 듯??
 		        var form = $('#imgUpload')[0];
 		        var formData = new FormData(form);
 				$.ajax({
