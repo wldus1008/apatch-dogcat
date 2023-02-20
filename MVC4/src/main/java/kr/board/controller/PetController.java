@@ -23,7 +23,7 @@ public class PetController {
 		System.out.println("mem_id : "+vo.getMem_id());
 		System.out.println("pet_kind : "+vo.getPet_kind());
 		
-		Petinfo get_seq = petmapper.get_seq(vo); // mem_id 반려동물 조회
+		Petinfo get_seq = petmapper.get_seq(vo); // pet_seq 조회
 		if(get_seq == null) {
 			petmapper.petJoin(vo);  // 없으면 등록
 		}else {
