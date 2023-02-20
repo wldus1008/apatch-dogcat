@@ -166,7 +166,7 @@
 	   
 	   bList +="<tr>";
 	   
-	   if("${loginMember.mem_id}" == 'admin') {
+	   if("${loginMember.mem_type}" == 'A') {
 	   bList += "<td colspan='5'>";
 	   bList +="<div class ='button'><div class='btn' onclick='goForm()'>글쓰기</div></div>";
 	   bList +="</td>";

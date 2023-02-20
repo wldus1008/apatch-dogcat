@@ -24,7 +24,7 @@
 	
 
 	<c:choose>
-		<c:when test="${loginMember.mem_id eq 'admin'}">
+		<c:when test="${loginMember.mem_type eq 'A'}">
 			<div class="button text-center">
 				<button class="btn"
 					onclick="location.href='${cpath}/adminUpdate.do/${vo.idx}'">수정</button>
