@@ -6,12 +6,9 @@ pageEncoding="UTF-8"%>
 
 <%@include file="Header.jsp"%>
 
-<div class="row" style="margin-bottom:50px; margin-left:300px;">
-<div class="col-lg-12">
-</div>
-</div>
+<div class="container content">
 
-<div id="detailView" class="panel" style="margin-left:300px;margin-right:300px" style="display:block;">
+<div id="detailView" class="table table-hover table-bordered">
 <div id="contAreaBox">
 <div class="panel">
 <div class="panel-body">
@@ -25,19 +22,20 @@ pageEncoding="UTF-8"%>
 	</colgroup>
 	<tbody>
 		<tr>
-			<th class="active" width="100px">작성자</th>
-			<td class="activeT" width="400px">
-			${vo.mem_id}
-			</td>
-			<th class="active" width="100px">조회수</th>
-			<td class="activeT" width="400px">
-			${vo.b_views}
-			</td>
-		</tr>
-		<tr>
 			<th class="active">제목</th>
 			<td class="activeT">
 			${vo.b_title}
+			</td>
+			<th class="active" >작성자</th>
+			<td class="activeT" >
+			${vo.mem_id}
+			</td>
+			
+		</tr>
+		<tr>
+			<th class="active" >조회수</th>
+			<td class="activeT" >
+			${vo.b_views}
 			</td>
 			<th class="active">작성날짜</th>
 			<td class="activeT">
@@ -45,36 +43,35 @@ pageEncoding="UTF-8"%>
 			</td>
 		</tr>
 		<tr>
-			<td style="border-right: none;">내용</td>
-			<td colspan='4' style="border-left: none;"></td>
+			<th class="active">내용</th>
+			<td colspan='4' align='left'>
+				
+				<div style="margin-bottom: 150px;margin-left: 105px;margin-top: 30px; ">${vo.b_content}</div>
+			</td>
+			
 
 		</tr>
-		<tr>
-			<td colspan='4' align='left'>
-				<div class="container" style="padding: auto;">
-				<div style="margin-bottom: 150px;margin-left: 105px;margin-top: 30px;">${vo.b_content}</div>
-			</td>
-		</tr>
+		
 		
 		
 	</tbody>
 </table>
 </div>
-<div class="button text-center" style="margin-bottom: 30px;">
+<div class="button text-center" >
 	<c:choose>
 		<c:when test="${loginMember.mem_id eq vo.mem_id}">
-			<a href="/boardDelete/${vo.b_seq}" class="btn btn-primary">삭제</a>
-			<a href="#" class="btn btn-primary" onclick="update()">수정</a>
+			<a href="/boardDelete/${vo.b_seq}" class="btn">삭제</a>
+			<a href="#" class="btn" onclick="update()">수정</a>
 		</c:when>
 	</c:choose>
 
-<a href="/basic.do" class="btn btn-primary">목록</a>
+<a href="/basic.do" class="btn">목록</a>
 </div>
 </div>
 </div>
 </div>
 </div>
-
+</div>
 <script type="text/javascript">
 		$(document).ready(function(){
 			  // boardList라고 하는 함수 실행!
@@ -123,8 +120,10 @@ pageEncoding="UTF-8"%>
                bList += "<div style='width:1044px;float:left;margin-top: 10px;' id='userComment" + obj.cmt_seq + "'>" + obj.cmt_content + "</div>";
                bList += "<input type='hidden' value='" + obj.cmt_content + "' id='hiddenComment" + obj.cmt_seq + "' >";
                if(obj.mem_id == '${loginMember.mem_id}'){
-            	   bList += "<div style='width:5%; float:left;' id='userComDel" + obj.cmt_seq + "'><button class='btn btn-primary' style='height: -1px;' onclick='comUpdate(" + obj.cmt_seq + ")'>수정</button></div>";
-            	   bList += "<div style='width:5%; float:left;'><button class='btn btn-primary' style='height: -1px;' onclick='comDelete(" + obj.cmt_seq + ")'>삭제</button></div>";
+            	   
+            	   bList += "<div class='button text-left'><button class='btn' onclick='comUpdate(" + obj.cmt_seq + ")'>수정</button><button class='btn' onclick='comDelete(" + obj.cmt_seq + ")'>삭제</button></div>";
+            	           	   
+            	   
                }
 			   bList += "</div>";          
 			   bList += "</div>";               
@@ -158,20 +157,20 @@ pageEncoding="UTF-8"%>
 		   }
 	   }
 	   
-	   function comUpdate(b_seq) {
+	   function comUpdate(cmt_seq) {
 		      // textarea의 내용 가져오기
 		      // nc1,nc2... 선택자를 이용
-		      var hidden = $("#hiddenComment" + b_seq).val();
+		      var hidden = $("#hiddenComment" + cmt_seq).val();
 		      console.log(hidden);
 		      
 		      var bList = "";
-		      bList += "<input type='text' name='updateCom' id='updateCom' value='" + hidden + "' style='width: 100%;height: 1em;border: none;resize: none;background-color: #f9fafb;'>";
+		      bList += "<input type='text' name='updateCom' id='updateCom' value='" + hidden + "' style='width: 90%;height: 1.5em;border: none; margin-bottom:10px;'>";
 		      
 		      var bList2 = "";
-		      bList2 += "<button class='btn btn-primary' style='height: -1px;' onclick='update2(" + b_seq + ")'>수정</button>";
+		      bList2 += "<div class='button text-left'><button class='btn' onclick='update2(" + cmt_seq + ")'>수정</button></div>";
 		      
-		     $("#userComDel" + b_seq).html(bList2)
-		     $("#userComment" + b_seq).html(bList);
+		     $("#userComment" + cmt_seq).html(bList);
+		     $("#userComDel" + cmt_seq).html(bList2);
 		     
 
 		   }
@@ -183,8 +182,8 @@ pageEncoding="UTF-8"%>
 				  url : "${cpath}/commentUpdate",
 				  type : "get",
 				  data : {
-					  "comment" : cmt_content,
-					  "com_idx" : cmt_seq
+					  "comment" : comment,
+					  "cmt_seq" : cmt_seq
 				  },
 				  success : function(){
 					  window.location.reload();
@@ -218,36 +217,38 @@ pageEncoding="UTF-8"%>
 	</colgroup>
 	<tbody>
 		<tr>
-			<th class="active" width="100px">작성자</th>
-			<td class="activeT" width="400px">
-			${vo.mem_id}
-			</td>
-			<th class="active" width="100px">조회수</th>
-			<td class="activeT" width="400px">
-			${vo.b_views}
-			</td>
-		</tr>
-		<tr>
 			<th class="active">제목</th>
 			<td class="activeT">
 			<input type="hidden" name="b_seq" id="idx" value="${vo.b_seq}">
 			<input type="text" name="b_title" id="title" value="${vo.b_title}" style="width: 100%;height: 1em;border: none;resize: none;text-align: center;">
 			</td>
+						
+			<th class="active" width="100px">작성자</th>
+			<td class="activeT" width="400px">
+			${vo.mem_id}
+			</td>
+			
+		</tr>
+		<tr>
+			<th class="active" width="100px">조회수</th>
+			<td class="activeT" width="400px">
+			${vo.b_views}
+			</td>
+			
 			<th class="active">작성날짜</th>
 			<td class="activeT">
 			${vo.b_date}
 			</td>
 		</tr>
 		<tr>
-			<td style="border-right: none;">내용</td>
-			<td colspan='4' style="border-left: none;"></td>
+			<th style="border-right: none;">내용</th>
+			<td colspan='4' align='left'>
+			<input type="text" name="b_content" id="content" value="${vo.b_content}" style="width: 100%;height: 6.25em;border: none;resize: none;">
+			</td>
 
 		</tr>
-		<tr>
-			<td colspan='4' align='left'>
-				<input type="text" name="b_content" id="content" value="${vo.b_content}" style="width: 100%;height: 6.25em;border: none;resize: none;">
-			</td>
-		</tr>
+		
+		
 		
 		
 	</tbody>
@@ -255,30 +256,30 @@ pageEncoding="UTF-8"%>
 </div>
 <div class="button text-center" style="margin-bottom: 30px;">
 
-		<input type="submit" class="btn btn-primary" val="수정하기">
-
-
-<a href="/basic.do" class="btn btn-primary">목록</a>
-
-
-
+<input type="submit" class="btn" value="수정하기">
+<a href="/basic.do" class="btn">목록</a>
 
 </div>
+
 </form>
 </div>
 </div>
 </div>
 </div>
-<div class="comment_section" style='margin-left: 300px;margin-right: 300px;'>
+
+<div class="container content">
+<div class="comment_section" id="dg">
 <section class="mb-5">
 		<div class="card bg-light">
 		<div class="card-body">
 		<form class="mb-4" action="/commentInsert">
 			<div>
-			<div style="width:95%; float:left;"><input type="text" class="form-control" name="cmt_content" placeholder="댓글을 입력하세요!"></div>
+			<div id="dgsize"><input type="text" class="form-control" name="cmt_content" placeholder="댓글을 입력하세요!"></div>
 			<input type="hidden" name="mem_id" id="mem_id" value="${loginMember.mem_id}">
 			<input type="hidden" name="b_seq" value="${vo.b_seq}">
-			<div style="width:5%; float:left;"><input class="btn btn-primary" type="submit" value="등록" style="height: 35px; width: 70px;"></div>
+			<div class="button" style="width:5%; float:left;">
+			<input class="btn" type="submit" value="등록" >
+			</div>
 			</div>
 			
 		</form>
@@ -288,6 +289,7 @@ pageEncoding="UTF-8"%>
 		
 </section>
 
+</div>
 </div>
 
  <%@include file="Footer.jsp"%>

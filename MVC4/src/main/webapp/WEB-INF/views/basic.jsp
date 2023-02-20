@@ -38,7 +38,7 @@
 	   
 	   
 	   var bList = "<table class = 'table table-hover table-bordered' style='text-align: center; table-layout:fixed;word-break:break-all;height:auto'>";
-	   bList += "<tr >";
+	   bList += "<tr>";
 	   bList += "<td style='width:50px;'>번호</td>";
 	   bList += "<td>제목</td>";
 	   bList += "<td>작성자</td>";
