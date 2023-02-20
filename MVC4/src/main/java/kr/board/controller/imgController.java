@@ -31,6 +31,7 @@ public class imgController {
 	public void fileinsert(HttpServletRequest request, @RequestPart MultipartFile files ,@PathVariable int pet_seq) throws Exception{
 		System.out.println("[Img Controller 들어옴!!]");
 		System.out.println("pet_seq : "+ pet_seq);
+		
 		Files file = new Files();
 		String sourceFileName = files.getOriginalFilename();
 		

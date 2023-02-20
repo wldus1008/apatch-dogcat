@@ -159,7 +159,8 @@
 				console.log(petData);
 				console.log(data);
 				
-				// 펫 데이터 전송 성공하면 img Upload 
+				// 펫 데이터 전송 성공하면 img Upload
+				// 오류가 연속으로 할 경우 return pet_seq가 안들어오는 듯??
 		        var form = $('#imgUpload')[0];
 		        var formData = new FormData(form);
 				$.ajax({
@@ -170,6 +171,7 @@
 			        		console.log("이미지 전송 성공");
 			        		console.log(formData);
 			        		location.href = "${cpath}/Home.do"
+			        		
 						
 			          },
 			          error: function (data) {

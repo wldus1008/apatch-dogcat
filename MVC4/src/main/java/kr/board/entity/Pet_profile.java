@@ -9,6 +9,7 @@ public class Pet_profile {
 	private int pet_age; // 펫 나이
 	private String pet_gender; // 펫 성별
 	private String mem_id; // 회원 아이디
+	
 	private int pet_seq; // 펫 순번
 	private String pet_kind; // 펫 품종
 	private int file_seq; // 파일 순번
