@@ -100,7 +100,7 @@
             
                 
               </div>
-              <input type='text' name='mem_id' value='${loginMember.mem_id}'>
+              <input type='hidden' name='mem_id' value='${loginMember.mem_id}'>
           </div>            
           </form>
         
