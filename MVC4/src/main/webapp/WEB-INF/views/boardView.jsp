@@ -27,21 +27,21 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th class="active" width="100px">작성자</th>
 			<td class="activeT" width="400px">
-			${vo.writer}
+			${vo.mem_id}
 			</td>
 			<th class="active" width="100px">조회수</th>
 			<td class="activeT" width="400px">
-			${vo.count}
+			${vo.b_views}
 			</td>
 		</tr>
 		<tr>
 			<th class="active">제목</th>
 			<td class="activeT">
-			${vo.title}
+			${vo.b_title}
 			</td>
 			<th class="active">작성날짜</th>
 			<td class="activeT">
-			${vo.indate}
+			${vo.b_date}
 			</td>
 		</tr>
 		<tr>
@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<td colspan='4' align='left'>
 				<div class="container" style="padding: auto;">
-				<div style="margin-bottom: 150px;margin-left: 105px;margin-top: 30px;">${vo.content}</div>
+				<div style="margin-bottom: 150px;margin-left: 105px;margin-top: 30px;">${vo.b_content}</div>
 			</td>
 		</tr>
 		
@@ -62,8 +62,8 @@ pageEncoding="UTF-8"%>
 </div>
 <div class="button text-center" style="margin-bottom: 30px;">
 	<c:choose>
-		<c:when test="${loginMember.memId eq vo.memId}">
-			<a href="/boardDelete/${vo.idx}" class="btn btn-primary">삭제</a>
+		<c:when test="${loginMember.mem_id eq vo.mem_id}">
+			<a href="/boardDelete/${vo.b_seq}" class="btn btn-primary">삭제</a>
 			<a href="#" class="btn btn-primary" onclick="update()">수정</a>
 		</c:when>
 	</c:choose>
@@ -80,7 +80,7 @@ pageEncoding="UTF-8"%>
 			  // boardList라고 하는 함수 실행!
 			  // 자바스크립트의 호이스팅
 			$("#updateView").css("display","none");
-			var data = ${vo.idx};
+			var data = ${vo.b_seq};
 			console.log("idx : ", data);
 			commentList(data);
 			  
@@ -117,14 +117,14 @@ pageEncoding="UTF-8"%>
 		   var bList = "";
 		   $.each(data, (index,obj)=>{
 			   bList += "<div class='d-flex'>";
-			   bList += "<div class='flex-shrink-0'><img class='rounded-circle' src='/resources/fimages/" + obj.filename + "' alt='...' style='width: 70px; height: 70px'/></div>";
+			   /* bList += "<div class='flex-shrink-0'><img class='rounded-circle' src='/resources/fimages/" + obj.b_file + "' alt='...' style='width: 70px; height: 70px'/></div>"; */
 			   bList += "<div class='ms-3'>"
-               bList += "<div class='fw-bold' ><strong><big>" + obj.memId + "</big></strong></div>";
-               bList += "<div style='width:1044px;float:left;margin-top: 10px;' id='userComment" + obj.com_idx + "'>" + obj.comment + "</div>";
-               bList += "<input type='hidden' value='" + obj.comment + "' id='hiddenComment" + obj.com_idx + "' >";
-               if(obj.memId == '${loginMember.memId}'){
-            	   bList += "<div style='width:5%; float:left;' id='userComDel" + obj.com_idx + "'><button class='btn btn-primary' style='height: -1px;' onclick='comUpdate(" + obj.com_idx + ")'>수정</button></div>";
-            	   bList += "<div style='width:5%; float:left;'><button class='btn btn-primary' style='height: -1px;' onclick='comDelete(" + obj.com_idx + ")'>삭제</button></div>";
+               bList += "<div class='fw-bold' ><strong><big>" + obj.mem_id + "</big></strong></div>";
+               bList += "<div style='width:1044px;float:left;margin-top: 10px;' id='userComment" + obj.cmt_seq + "'>" + obj.cmt_content + "</div>";
+               bList += "<input type='hidden' value='" + obj.cmt_content + "' id='hiddenComment" + obj.cmt_seq + "' >";
+               if(obj.mem_id == '${loginMember.mem_id}'){
+            	   bList += "<div style='width:5%; float:left;' id='userComDel" + obj.cmt_seq + "'><button class='btn btn-primary' style='height: -1px;' onclick='comUpdate(" + obj.cmt_seq + ")'>수정</button></div>";
+            	   bList += "<div style='width:5%; float:left;'><button class='btn btn-primary' style='height: -1px;' onclick='comDelete(" + obj.cmt_seq + ")'>삭제</button></div>";
                }
 			   bList += "</div>";          
 			   bList += "</div>";               
@@ -138,13 +138,13 @@ pageEncoding="UTF-8"%>
 		   
 	   }// callBack함수 끝
 	   
-	   function comDelete(com_idx){
+	   function comDelete(cmt_seq){
 		   var real = confirm("삭제하겠습니까??");
 		   
 		   if(real){
 			   console.log("real 통과");
 			   $.ajax({
-				  url : "${cpath}/commentDelete/" + com_idx,
+				  url : "${cpath}/commentDelete/" + cmt_seq,
 				  type : "get",
 				  success : function(){
 					  window.location.reload();
@@ -158,33 +158,33 @@ pageEncoding="UTF-8"%>
 		   }
 	   }
 	   
-	   function comUpdate(idx) {
+	   function comUpdate(b_seq) {
 		      // textarea의 내용 가져오기
 		      // nc1,nc2... 선택자를 이용
-		      var hidden = $("#hiddenComment" + idx).val();
+		      var hidden = $("#hiddenComment" + b_seq).val();
 		      console.log(hidden);
 		      
 		      var bList = "";
 		      bList += "<input type='text' name='updateCom' id='updateCom' value='" + hidden + "' style='width: 100%;height: 1em;border: none;resize: none;background-color: #f9fafb;'>";
 		      
 		      var bList2 = "";
-		      bList2 += "<button class='btn btn-primary' style='height: -1px;' onclick='update2(" + idx + ")'>수정</button>";
+		      bList2 += "<button class='btn btn-primary' style='height: -1px;' onclick='update2(" + b_seq + ")'>수정</button>";
 		      
-		     $("#userComDel" + idx).html(bList2)
-		     $("#userComment" + idx).html(bList);
+		     $("#userComDel" + b_seq).html(bList2)
+		     $("#userComment" + b_seq).html(bList);
 		     
 
 		   }
 	   
-	   function update2(com_idx){
+	   function update2(cmt_seq){
 		   var comment = $('#updateCom').val();
 		   
 		   $.ajax({
 				  url : "${cpath}/commentUpdate",
 				  type : "get",
 				  data : {
-					  "comment" : comment,
-					  "com_idx" : com_idx
+					  "comment" : cmt_content,
+					  "com_idx" : cmt_seq
 				  },
 				  success : function(){
 					  window.location.reload();
@@ -220,22 +220,22 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th class="active" width="100px">작성자</th>
 			<td class="activeT" width="400px">
-			${vo.writer}
+			${vo.mem_id}
 			</td>
 			<th class="active" width="100px">조회수</th>
 			<td class="activeT" width="400px">
-			${vo.count}
+			${vo.b_views}
 			</td>
 		</tr>
 		<tr>
 			<th class="active">제목</th>
 			<td class="activeT">
-			<input type="hidden" name="idx" id="idx" value="${vo.idx}">
-			<input type="text" name="title" id="title" value="${vo.title}" style="width: 100%;height: 1em;border: none;resize: none;text-align: center;">
+			<input type="hidden" name="b_seq" id="idx" value="${vo.b_seq}">
+			<input type="text" name="b_title" id="title" value="${vo.b_title}" style="width: 100%;height: 1em;border: none;resize: none;text-align: center;">
 			</td>
 			<th class="active">작성날짜</th>
 			<td class="activeT">
-			${vo.indate}
+			${vo.b_date}
 			</td>
 		</tr>
 		<tr>
@@ -245,7 +245,7 @@ pageEncoding="UTF-8"%>
 		</tr>
 		<tr>
 			<td colspan='4' align='left'>
-				<input type="text" name="content" id="content" value="${vo.content}" style="width: 100%;height: 6.25em;border: none;resize: none;">
+				<input type="text" name="b_content" id="content" value="${vo.b_content}" style="width: 100%;height: 6.25em;border: none;resize: none;">
 			</td>
 		</tr>
 		
@@ -275,10 +275,10 @@ pageEncoding="UTF-8"%>
 		<div class="card-body">
 		<form class="mb-4" action="/commentInsert">
 			<div>
-			<div style="width:95%; float:left;"><input type="text" class="form-control" name="comment" placeholder="Join the discussion and leave a comment!"></div>
-			<input type="hidden" name="memId" id="memId" value="${loginMember.memId}">
-			<input type="hidden" name="idx" value="${vo.idx}">
-			<div style="width:5%; float:left;"><input class="btn btn-primary" type="submit" value="제출" style="height: 35px; width: 70px;"></div>
+			<div style="width:95%; float:left;"><input type="text" class="form-control" name="cmt_content" placeholder="댓글을 입력하세요!"></div>
+			<input type="hidden" name="mem_id" id="mem_id" value="${loginMember.mem_id}">
+			<input type="hidden" name="b_seq" value="${vo.b_seq}">
+			<div style="width:5%; float:left;"><input class="btn btn-primary" type="submit" value="등록" style="height: 35px; width: 70px;"></div>
 			</div>
 			
 		</form>

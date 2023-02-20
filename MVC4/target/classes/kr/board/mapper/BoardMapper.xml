@@ -7,17 +7,17 @@
   
   <!-- 태그의 d는 mapper 인터페이스의 메소드 이름으로 한다.  -->
   <select id="boardList" resultType="kr.board.entity.Board">
-    select b_seq,b_title,b_content,mem_id,date_format(indate,"%Y/%m/%d") as b_date ,b_views
+    select b_seq,b_title,b_content,mem_id,date_format(b_date,"%Y/%m/%d") as b_date ,b_views
     from tb_board
   </select>
   
-  <select id="commentList" parameterType="int" resultType="kr.board.entity.Board">
-    select * from com_tb c join files f where c.memId = f.memId and idx = #{idx} order by com_idx
+  <select id="commentList" parameterType="int" resultType="kr.board.entity.Comment">
+    select * from tb_comment where b_seq = #{b_seq} order by cmt_seq
   </select>
   
   <insert id="boardInsert" parameterType="kr.board.entity.Board">
-      insert into tb_board(b_title,b_content,mem_id)
-      values (#{b_title},#{b_content},#{mem_id})
+      insert into tb_board(b_title,b_content,mem_id,b_date)
+      values (#{b_title},#{b_content},#{mem_id},now())
   </insert>
   
    <select id="boardContent" parameterType="int" resultType="kr.board.entity.Board">
@@ -59,7 +59,7 @@
 	</insert>
 	
 	<delete id="comment_Delete" parameterType="int">
-       delete from tb_comment where com_cmt = #{com_seq}
+       delete from tb_comment where cmt_seq = #{cmt_seq}
    </delete>
    
 	<update id="commentUpdate" parameterType="kr.board.entity.Comment">

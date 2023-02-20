@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.Board;
+import kr.board.entity.Comment;
 import kr.board.entity.Member;
 import kr.board.entity.Adminboard;
 
@@ -57,8 +58,8 @@ public interface BoardMapper  {
 	// 만약에 sql문을 xml로 관리를 안하는 경우
 	// sql구문 종류별로 주석을 달아서 sql문 직접 입력\
 	// parameterType, resultType 지정하지 않아도 인식
-	@Update("update board set count=count+1 where idx=#{idx}")
-	public void updateCount(int idx);
+	@Update("update tb_board set b_views=b_views+1 where b_seq=#{b_seq}")
+	public void updateCount(int b_seq);
 
 
 	
@@ -66,15 +67,15 @@ public interface BoardMapper  {
 	@Update("update adminboard set count=count+1 where idx=#{idx}")
 	public void adminboardCount(int idx);
 
-	public Board boardView(int idx);
+	public Board boardView(int b_seq);
 
-	public List<Board> commentList(int idx);
+	public List<Comment> commentList(int cmt_seq);
 
-	public void commentInsert(Board vo);
+	public void commentInsert(Comment vo);
 
-	public void comment_Delete(int com_idx);
+	public void comment_Delete(int cmt_seq);
 
-	public void commentUpdate(Board vo);
+	public void commentUpdate(Comment vo);
 
 	
 	

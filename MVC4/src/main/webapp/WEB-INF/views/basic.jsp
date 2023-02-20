@@ -60,16 +60,16 @@
 		   
 		   bList += "<tr>";
 		 
-		   bList += "<td>" + obj.idx + "</td>";
+		   bList += "<td>" + obj.b_seq + "</td>";
 		   // a태그를 누르면 href가 요청으로 가는게 아니라 js함수로 가도록 키워드
 		   // href="javascript:함수이름()"
 		   // 마치 button태그를 눌러서 onclick="함수이름()" 비슷한 효과
 		   // a태그 사용시 this 인식 불가
 		   // 글의 내용을 보여주는 함수를 만들때- 어떤글 내용을 보여줄지 게시글번호로 인식
-		   bList += "<td><a href='javascript:cview(" + obj.idx + ")'>" + obj.title + "</a></td>";
-		   bList += "<td>" + obj.writer + "</td>";
-		   bList += "<td>" + obj.indate + "</td>";
-		   bList += "<td id='count" + obj.idx + "'>" + obj.count + "</td>";		   
+		   bList += "<td><a href='javascript:cview(" + obj.b_seq + ")'>" + obj.b_title + "</a></td>";
+		   bList += "<td>" + obj.mem_id + "</td>";
+		   bList += "<td>" + obj.b_date + "</td>";
+		   bList += "<td id='count" + obj.b_seq + "'>" + obj.b_views + "</td>";		   
 		   bList += "</tr>";
 		   
 	   });// each 끝
@@ -155,20 +155,21 @@
   
    
    
-   function cview(idx) {
+   function cview(b_seq) {
 	   // c+idx c1,c2......
 	   // 만약에 c1이 none상태면~ table-row
 	   // 만약에 c1이 table-row이면~ none
 		   // 게시글 내용을 담은 tr을 보여주려고 할 때 조회수를 +1씩 
 		   	$.ajax({
-		         url : "${cpath}/updateCount/"+idx, //PathVariable
+		         url : "${cpath}/updateCount/"+b_seq, //PathVariable
 		         type : "get",
 		         //data : {"idx:idx"}, //보내주는 데이터가 있다면
 		         //dataType : "", // 받는 데이터가 있으면
 		         success : function(vo){
-		        	 console.log(vo.count);
+		        	 console.log(vo.b_views);
 		        	 // vo.count의 값을 출력
-		        	 $("#count"+idx).text(vo.count);
+		        	 $("#count"+b_seq).text(vo.b_views);
+			   		location.href = "boardContent/"+b_seq;
 		        	 
 		         },
 		         error : function(){
@@ -177,7 +178,6 @@
 		         
 		      }); // 조회수 ajax 끝
 
-	   		location.href = "boardContent/"+idx;
    } // cview 함수 끝!!
    
 
@@ -202,20 +202,19 @@
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="title">제목:</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력하세요">
+			      <input type="text" class="form-control" name="b_title" id="title" placeholder="제목을 입력하세요">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="content">내용:</label>
 			    <div class="col-sm-10">
-			      <textarea class="form-control" name="content" rows="10" id="content"></textarea>
+			      <textarea class="form-control" name="b_content" rows="10" id="content"></textarea>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="writer">작성자:</label>
 			    <div class="col-sm-10">
-			      <input type="text" readonly="readonly" class="form-control" name="writer" id="writer" value="${loginMember.memName}" >
-			      <input type="hidden" name="memId" value="${loginMember.memId}">	
+			      <input type="text" readonly="readonly" class="form-control" name="mem_id" id="writer" value="${loginMember.mem_id}" >
 			    </div>
 			 </div>
 			 

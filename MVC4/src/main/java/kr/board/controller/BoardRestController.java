@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import kr.board.entity.Board;
+import kr.board.entity.Comment;
 import kr.board.entity.Member;
 
 import kr.board.entity.Adminboard;
@@ -58,10 +59,10 @@ public class BoardRestController {
 		
 	}
 	
-	@GetMapping("/comment/{idx}")
-	public List<Board> commentajaxList(@PathVariable int idx) {
+	@GetMapping("/comment/{cmt_seq}")
+	public List<Comment> commentajaxList(@PathVariable int cmt_seq) {
 		
-		List<Board> list = mapper.commentList(idx);
+		List<Comment> list = mapper.commentList(cmt_seq);
 		
 		return list;
 		
@@ -77,13 +78,13 @@ public class BoardRestController {
 	}
 	
 	
-	@GetMapping("/updateCount/{idx}")
-	public Board updateCount(@PathVariable int idx) {
+	@GetMapping("/updateCount/{b_seq}")
+	public Board updateCount(@PathVariable int b_seq) {
 		
-		mapper.updateCount(idx);
+		mapper.updateCount(b_seq);
 		
 		// 해당 idx를 가지는 게시글 내용
-		Board vo = mapper.boardContent(idx);
+		Board vo = mapper.boardContent(b_seq);
 		
 		// 새로 +1된 조회수를 출력하기 위해서 데이터 보냄
 		return vo;
@@ -161,14 +162,16 @@ public class BoardRestController {
 		
 	}
 	
-	@RequestMapping(value="/commentDelete/{com_idx}", method=RequestMethod.GET)
-	public void commentDelete(@PathVariable int com_idx) {
-		System.out.println("com_idx : " + com_idx);
-		mapper.comment_Delete(com_idx);
+	
+	
+	@RequestMapping(value="/commentDelete/{cmt_seq}", method=RequestMethod.GET)
+	public void commentDelete(@PathVariable int cmt_seq) {
+		System.out.println("cmt_seq : " + cmt_seq);
+		mapper.comment_Delete(cmt_seq);
 	}
 	
 	@RequestMapping(value="/commentUpdate", method=RequestMethod.GET)
-	public void commentUpdate(Board vo) {
+	public void commentUpdate(Comment vo) {
 		mapper.commentUpdate(vo);
 	}
 	

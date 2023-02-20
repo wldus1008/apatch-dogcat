@@ -23,6 +23,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import kr.board.entity.Board;
+import kr.board.entity.Comment;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
 import kr.board.entity.Pet_profile;
@@ -230,26 +231,28 @@ public class BoardController {
 		return "adminUpdate";
 	}
 	
-	@RequestMapping("/boardContent/{idx}")
-	public String boardView(Model model ,@PathVariable int idx) {
-		Board vo =  mapper.boardView(idx);
+	@RequestMapping("/boardContent/{b_seq}")
+	public String boardView(Model model ,@PathVariable int b_seq) {
+		Board vo =  mapper.boardView(b_seq);
 		model.addAttribute("vo", vo);
 		
 		return "boardView";
 	}
 	
-	@RequestMapping("/boardDelete/{idx}")
-	public String boardDelete(@PathVariable int idx) {
-		mapper.boardDelete(idx);
+	@RequestMapping("/boardDelete/{b_seq}")
+	public String boardDelete(@PathVariable int b_seq) {
+		mapper.boardDelete(b_seq);
 
 		return "basic";
 	}
 	
+	
+	
 	@PostMapping("/boardUpdate")
-	public String boardUpdate(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("idx") int idx, Board vo) {
-		vo.setB_tilte(title);;
-		vo.setB_content(content);;
-		vo.setB_seq(idx);;
+	public String boardUpdate(@RequestParam("b_title") String b_title, @RequestParam("b_content") String b_content, @RequestParam("b_seq") int b_seq, Board vo) {
+		vo.setB_title(b_title);;
+		vo.setB_content(b_content);;
+		vo.setB_seq(b_seq);;
 		mapper.boardUpdate(vo);
 
 		return "redirect:/boardContent/"+vo.getB_seq();
@@ -257,13 +260,9 @@ public class BoardController {
 	
 	// 이거 나중에 할거 
 	@RequestMapping("/commentInsert")
-	public String commentInsert(@RequestParam("comment") String comment, @RequestParam("memId") String memId, @RequestParam("idx") int idx, Board vo) {
-		System.out.println("memId : " + memId);
-		System.out.println("comment : " + comment);
-		System.out.println("idx : " + idx);
-		vo.setMem_id(memId);;
+	public String commentInsert(Comment vo) {
+		
 		// vo.setB_comment(comment);
-		vo.setB_seq(idx);
 		mapper.commentInsert(vo);
 
 		return "redirect:/boardContent/"+vo.getB_seq();
@@ -280,7 +279,7 @@ public class BoardController {
 		
 	}
 
-	
+
 	
 	
 	

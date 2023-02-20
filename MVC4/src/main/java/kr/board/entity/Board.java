@@ -8,7 +8,7 @@ public class Board {
 	// 필드명 = 속성 = 프로퍼티(property)
 
 	private int b_seq; // 글 순번
-	private String b_tilte; // 글 제목
+	private String b_title; // 글 제목
 	private String b_content; // 글 내용
 	private String mem_id; // 글 작성자
 	private String b_date; // 글 작성일자
@@ -25,11 +25,11 @@ public class Board {
 	public void setB_seq(int b_seq) {
 		this.b_seq = b_seq;
 	}
-	public String getB_tilte() {
-		return b_tilte;
+	public String getB_title() {
+		return b_title;
 	}
-	public void setB_tilte(String b_tilte) {
-		this.b_tilte = b_tilte;
+	public void setB_title(String b_title) {
+		this.b_title = b_title;
 	}
 	public String getB_content() {
 		return b_content;
