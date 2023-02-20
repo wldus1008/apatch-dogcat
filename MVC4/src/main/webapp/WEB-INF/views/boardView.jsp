@@ -45,7 +45,6 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th class="active">내용</th>
 			<td colspan='4' align='left'>
-				
 				<div style="margin-bottom: 150px;margin-left: 105px;margin-top: 30px; ">${vo.b_content}</div>
 			</td>
 			
@@ -61,7 +60,7 @@ pageEncoding="UTF-8"%>
 	<c:choose>
 		<c:when test="${loginMember.mem_id eq vo.mem_id}">
 			<a href="/boardDelete/${vo.b_seq}" class="btn">삭제</a>
-			<a href="#" class="btn" onclick="update()">수정</a>
+			<button  class="btn" onclick="update()">수정</button>
 		</c:when>
 	</c:choose>
 
@@ -76,8 +75,7 @@ pageEncoding="UTF-8"%>
 		$(document).ready(function(){
 			  // boardList라고 하는 함수 실행!
 			  // 자바스크립트의 호이스팅
-			$("#updateView").css("display","none");
-			var data = ${vo.b_seq};
+			var data = ${vo.b_seq}
 			console.log("idx : ", data);
 			commentList(data);
 			  
@@ -100,12 +98,10 @@ pageEncoding="UTF-8"%>
 				   alert("error");
 			   }
 			   
-			   
-			   
 		   });//ajax 끝
 		   
 		   
-	   }// boardList 함수 끝!!
+	   }// commentList 함수 끝!!
 	  
 	   function callBack(data){
 		   //alert("데이터 통신 확인");
@@ -117,21 +113,22 @@ pageEncoding="UTF-8"%>
 			   /* bList += "<div class='flex-shrink-0'><img class='rounded-circle' src='/resources/fimages/" + obj.b_file + "' alt='...' style='width: 70px; height: 70px'/></div>"; */
 			   bList += "<div class='ms-3'>"
                bList += "<div class='fw-bold' ><strong><big>" + obj.mem_id + "</big></strong></div>";
-               bList += "<div style='width:1044px;float:left;margin-top: 10px;' id='userComment" + obj.cmt_seq + "'>" + obj.cmt_content + "</div>";
+               bList += "<div style='width:1044px;float:left;margin-top: 10px;' id='userComment" + obj.cmt_seq + "'>" + obj.cmt_content ;
                bList += "<input type='hidden' value='" + obj.cmt_content + "' id='hiddenComment" + obj.cmt_seq + "' >";
                if(obj.mem_id == '${loginMember.mem_id}'){
             	   
-            	   bList += "<div class='button text-left'><button class='btn' onclick='comUpdate(" + obj.cmt_seq + ")'>수정</button><button class='btn' onclick='comDelete(" + obj.cmt_seq + ")'>삭제</button></div>";
+            	   bList += "<div class='button text-left'><button class='btn button text-left' onclick='comUpdate(" + obj.cmt_seq + ")'>수정</button>"
+            	   bList += "<button class='btn' onclick='comDelete(" + obj.cmt_seq + ")'>삭제</button></div>";
             	           	   
             	   
                }
-			   bList += "</div>";          
+               bList += "</div>"
 			   bList += "</div>";               
 			   bList += "</div>";
 			   bList += "<br>";
 		   });// each 끝
 		   
-		 $(".comment-body").append(bList);
+		 $("#commentList").append(bList);
 		   
 		   
 		   
@@ -163,46 +160,39 @@ pageEncoding="UTF-8"%>
 		      var hidden = $("#hiddenComment" + cmt_seq).val();
 		      console.log(hidden);
 		      
-		      var bList = "";
-		      bList += "<input type='text' name='updateCom' id='updateCom' value='" + hidden + "' style='width: 90%;height: 1.5em;border: none; margin-bottom:10px;'>";
-		      
 		      var bList2 = "";
-		      bList2 += "<div class='button text-left'><button class='btn' onclick='update2(" + cmt_seq + ")'>수정</button></div>";
+		      bList2 += "<input type='text' name='updateCom' id='updateCom' value='" + hidden + "' style='width: 90%;height: 1.5em;border: none; margin-bottom:10px;'></input>";
+		      bList2 += "<div class='button text-left'><button class='btn' onclick='update2("+ cmt_seq+ ")'>수정</button>";
+		      bList2 += "<button class='btn' onclick='comDelete("+  cmt_seq  +")'>삭제</button></div>";
 		      
-		     $("#userComment" + cmt_seq).html(bList);
-		     $("#userComDel" + cmt_seq).html(bList2);
-		     
-
+		     $("#userComment" + cmt_seq).html(bList2);
 		   }
 	   
 	   function update2(cmt_seq){
 		   var comment = $('#updateCom').val();
-		   
+		   console.log("update2 : " , comment)
 		   $.ajax({
 				  url : "${cpath}/commentUpdate",
-				  type : "get",
+				  type : "POST",
 				  data : {
-					  "comment" : comment,
+					  "cmt_content" : comment,
 					  "cmt_seq" : cmt_seq
 				  },
 				  success : function(){
 					  window.location.reload();
 				  },
 				  error : function(){
-					 	console.log("삭제실패 ㅎㅎ");
+					 	console.log("수정실패 ㅎㅎ");
 				  }
 			   
 			   });
-		   
-		   
-	   }
+	   } 	// Update2 끝
 	   
 	   
 	
 </script>
 
-
-<div id="updateView" class="panel" style="margin-left:300px;margin-right:300px" style="display:none;">
+<div id="updateView" class="panel" style="margin-left:300px;margin-right:300px; display: none;">
 <div id="contAreaBox">
 <div class="panel">
 <div class="panel-body">
@@ -284,12 +274,13 @@ pageEncoding="UTF-8"%>
 			
 		</form>
 		</div>
-		<div class="comment-body"></div>	
+		<div class="comment-body" id="commentList"></div>	
 		</div>
 		
 </section>
 
 </div>
 </div>
+
 
  <%@include file="Footer.jsp"%>

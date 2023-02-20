@@ -59,10 +59,10 @@ public class BoardRestController {
 		
 	}
 	
-	@GetMapping("/comment/{cmt_seq}")
-	public List<Comment> commentajaxList(@PathVariable int cmt_seq) {
+	@GetMapping("/comment/{b_seq}")
+	public List<Comment> commentajaxList(@PathVariable int b_seq) {
 		
-		List<Comment> com_list = mapper.commentList(cmt_seq);
+		List<Comment> com_list = mapper.commentList(b_seq);
 		
 		return com_list;
 		
@@ -170,7 +170,7 @@ public class BoardRestController {
 		mapper.comment_Delete(cmt_seq);
 	}
 	
-	@RequestMapping(value="/commentUpdate", method=RequestMethod.GET)
+	@RequestMapping(value="/commentUpdate", method=RequestMethod.POST)
 	public void commentUpdate(Comment vo) {
 		mapper.commentUpdate(vo);
 	}
