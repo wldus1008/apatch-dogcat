@@ -769,7 +769,7 @@ a:hover {
 					href="/calendar.do/${loginMember.mem_id}?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
 					&lt;&lt; <!-- 이전해 -->
 				</a> <a class="before_after_month"
-					href="/calendar.do/${loginMember._mem_id}?year=${today_info.before_year}&month=${today_info.before_month}">
+					href="/calendar.do/${loginMember.mem_id}?year=${today_info.before_year}&month=${today_info.before_month}">
 					&lt; <!-- 이전달 -->
 				</a> <span class="this_month" style="color:#286769;"> &nbsp;${today_info.search_year}. <c:if
 						test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
