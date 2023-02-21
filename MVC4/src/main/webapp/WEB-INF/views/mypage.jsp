@@ -31,7 +31,7 @@
 								                        <h5>성별</h5><p>${petProfile.pet_gender}</p><br>
 								                        <h5>품종</h5><p>${petProfile.pet_kind }</p><br>  
 								                        <div class="button">
-								                        <a href="profile_update/${petProfile.pet_seq}" class="btn" style="height: 53px; width: 138px; ">프로필 수정</a>                               
+								                        <a href="profile_update/${petProfile.pet_seq}" class="btn" style="height: 53px; width: 150px; ">Pet 정보수정</a>                               
 							                            </div>
 								                        
 								                        </div>       
