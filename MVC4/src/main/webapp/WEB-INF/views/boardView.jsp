@@ -45,7 +45,7 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th class="active">내용</th>
 			<td colspan='4' align='left'>
-				<div style="margin-bottom: 150px;margin-left: 105px;margin-top: 30px; ">${vo.b_content}</div>
+				<div style="margin-bottom: 30px; margin-top: 30px; ">${vo.b_content}</div>
 			</td>
 			
 

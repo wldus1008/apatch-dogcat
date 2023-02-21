@@ -136,7 +136,7 @@
 										<a href="${cpath}/login.do" class="btn">로그인</a>
 									 </li>
 									 <li class="nav-item HH">
-										<a href="/register.do" class="btn">회원가입</a>
+										<a href="${cpath}/register.do" class="btn">회원가입</a>
 									 </li>
 
 								</c:when>
