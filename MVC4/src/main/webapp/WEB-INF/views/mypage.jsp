@@ -15,15 +15,13 @@
         <div class="container">
             <div class="row align-items-center">
             
-                    	<c:choose>
-							 <c:when test>
 									<div class="swiper-container">
 										<div class="swiper-wrapper">
 											<c:forEach items="${pet_profile}" var="petProfile">
 												<div class="swiper-slide">
 													 <div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
 													 <div class="hero-image wow fadeInRight"  data-wow-delay=".4s" style="text-align: center; ">
-														<img alt="프로필 사진" src="/resources/fimages/${petProfile.file_name}" style="border:3px solid #3b9a9c;"/>
+														<a  href="profile_update/${petProfile.pet_seq}"><img alt="프로필 사진" src="/resources/fimages/${petProfile.file_name}" style="border:3px solid #3b9a9c;"/></a>
 													</div>	
 													</div>
 													 <div class="col-lg-6 col-md-12 col-12">
@@ -47,8 +45,6 @@
 								   
 									</div>
 			                        
-							</c:when>
-						</c:choose>
     
 
 		</div> <!-- <div class="container"> 끝 -->
