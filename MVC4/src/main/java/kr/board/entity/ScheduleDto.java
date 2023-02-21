@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class ScheduleDto {
 	
-	int memNo;
+	String mem_id;
 	int schedule_idx;
 	int schedule_num;
 	String schedule_subject;
@@ -74,11 +74,11 @@ public class ScheduleDto {
 	}
 	
 	
-	public int getMemNo() {
-		return memNo;
+	public String getMem_id() {
+		return mem_id;
 	}
-	public void setMemNo(int memNo) {
-		this.memNo = memNo;
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
 	@Override
 	public String toString() {

@@ -19,7 +19,7 @@
 		UPDATE tb_member SET 
 		mem_pw = #{mem_pw},
 		mem_name = #{mem_name}
-		WHERE mem_id = #{mem_Id}
+		WHERE mem_id = #{mem_id}
 	</update>
     
 </mapper>    

@@ -2,9 +2,7 @@ package kr.board.mapper;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Service;
 
 import kr.board.entity.DateData;

@@ -5,16 +5,16 @@
 <mapper namespace="kr.board.mapper.ScheduleDao">
 	
 	<insert id="schedule_add">
-		insert into schedule(memNo, schedule_num, schedule_subject, schedule_desc, schedule_date, schedule_share, schedule_mycolor) values
-			(#{memNo}, #{schedule_num}, #{schedule_subject}, #{schedule_desc}, #{schedule_date}, #{schedule_share}, #{schedule_mycolor})
+		insert into schedule(mem_id, schedule_num, schedule_subject, schedule_desc, schedule_date, schedule_share, schedule_mycolor) values
+			(#{mem_id}, #{schedule_num}, #{schedule_subject}, #{schedule_desc}, #{schedule_date}, #{schedule_share}, #{schedule_mycolor})
 	</insert>
 
 	<select id="before_schedule_add_search" resultType="int">
-		select count(*) from schedule where schedule_date = #{schedule_date} and memNo = #{memNo}
+		select count(*) from schedule where schedule_date = #{schedule_date} and memNo = #{mem_id}
 	</select>
 	
    	<select id="schedule_list" resultType="kr.board.entity.ScheduleDto">
-		select * from schedule where schedule_date &gt;= #{db_startDate} and schedule_date &lt;= #{db_endDate} and memNo = #{memNo}
+		select * from schedule where schedule_date &gt;= #{db_startDate} and schedule_date &lt;= #{db_endDate} and mem_id = #{mem_id}
 		order by schedule_date, schedule_num, schedule_idx		
 	</select>
 	

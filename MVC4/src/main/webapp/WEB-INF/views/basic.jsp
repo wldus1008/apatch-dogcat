@@ -88,25 +88,57 @@
 	   
    }// callBack함수 끝
 
-    function goForm(){
-	   // 글쓰기 버튼을 눌렀을때
-	   // 리스트 목록은 없애고, 글쓰기 폼은 화면에 보여주기
-	   $("#list").css("display","none");
-	   $("#wform").css("display","block");
-	   
-   }
+   var oEditors = [];
+   var boolVal = true;
    
+	function goForm(){
+		
+		   // 글쓰기 버튼을 눌렀을때
+		   // 리스트 목록은 없애고, 글쓰기 폼은 화면에 보여주기
+		   
+		      $("#list").css("display","none");
+		      $("#wform").css("display","block");
+		      // 전역변수 
+			  
+				
+				// 스마트 에디터 프레임 생성
+			      console.log("Naver SmartEditor")
+			      if(boolVal){
+			    	  nhn.husky.EZCreator.createInIFrame({
+				           oAppRef: oEditors,
+				           elPlaceHolder: "content",
+				           sSkinURI: "${cpath}/resources/smarteditor/SmartEditor2Skin.html",
+				           fCreator: "createSEditor2",
+				           htParams : {
+				               bUseToolbar : true,                // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+				               bUseVerticalResizer : true,        // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+				               bUseModeChanger : true,            // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+				               bSkipXssFilter : true,        // client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
+				               //aAdditionalFontList : aAdditionalFontSet,        // 추가 글꼴 목록
+				               fOnBeforeUnload : function(){
+				                   //alert("완료!");
+				               }
+				           }
+				       }); //스마트 에디터 구현 끝	
+				       boolVal = false;
+
+			      } 
+			      
+			    
+		   
+		   }
    
    
    
    
    function insertFn() {
 	   
-	   // 1. form태그 안에 있는 input태그에 입력한 내용들 가져오기
-	   // var title = $("#title").val(); 와 같이 일일이 가져와야하는데
-	   // .serialize() - 직렬화(값들을 한번에 정리해서 객체로)
-	   var fData = $("#frm").serialize();
-	   console.log("폼태그 내용", fData);
+	   oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+		// var content = document.getElementById("content").value;
+	   	console.log("Naver SmartEditor")
+		// var title = $('#title').val();
+		// var writer = $('#writer').val();
+ 	  	var fData = $("#frm").serialize();
 	   
 	   // 2. 그 내용들을 ajax 통신으로 보내기
 	   $.ajax({
@@ -136,7 +168,8 @@
 	   //$("#title").val("");
 	   //$("#content").val("");
 	   //$("#writer").val("");
-	   
+	   $("#title").val("");
+		oEditors.getById["content"].exec("SET_IR", [""]);
 	   // 취소 버튼을 강제로 실행하는 js 코드
 	   /*  $("#reset").trigger("click");  */
     
@@ -206,17 +239,17 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label class="control-label col-sm-2" for="content">내용:</label>
-			    <div class="col-sm-10">
-			      <textarea class="form-control" name="b_content" rows="10" id="content"></textarea>
-			    </div>
-			  </div>
-			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="writer">작성자:</label>
 			    <div class="col-sm-10">
 			      <input type="text" readonly="readonly" class="form-control" name="mem_id" id="writer" value="${loginMember.mem_id}" >
 			    </div>
 			 </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="content">내용:</label>
+			    <div class="col-sm-10">
+			      <textarea class="form-control" name="b_content" rows="10" id="content" style="width: auto;height:auto;"></textarea>
+			    </div>
+			  </div>
 			 
 			  <div class="form-group" style="margin-top:15px">
 			  <!-- 부트스트랩은 한줄이 12 //  col-sm-10, col-sm-2 -->
