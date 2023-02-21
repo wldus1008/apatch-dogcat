@@ -12,7 +12,7 @@
 	
 	<section class = "hero-area style1">
 	
-        <div class="container">
+        <div class="container" style="">
             <div class="row align-items-center">
             
 									<div class="swiper-container">
@@ -21,7 +21,7 @@
 												<div class="swiper-slide">
 													 <div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
 													 <div class="hero-image wow fadeInRight"  data-wow-delay=".4s" style="text-align: center; ">
-														<a  href="profile_update/${petProfile.pet_seq}"><img alt="프로필 사진" src="/resources/fimages/${petProfile.file_name}" style="border:3px solid #3b9a9c;"/></a>
+														<img alt="프로필 사진" src="/resources/fimages/${petProfile.file_name}" style="border:3px solid #3b9a9c;"/>
 													</div>	
 													</div>
 													 <div class="col-lg-6 col-md-12 col-12">
@@ -30,6 +30,10 @@
 								                        <h5>나이</h5><p>${petProfile.pet_age}</p><br>
 								                        <h5>성별</h5><p>${petProfile.pet_gender}</p><br>
 								                        <h5>품종</h5><p>${petProfile.pet_kind }</p><br>  
+								                        <div class="button">
+								                        <a href="profile_update/${petProfile.pet_seq}" class="btn" style="height: 53px; width: 138px; ">프로필 수정</a>                               
+							                            </div>
+								                        
 								                        </div>       
 							                     	</div>
 							                     </div>   
@@ -53,7 +57,7 @@
                     
                     
                
-    <div class="container">
+    <div class="container" style="margin-top:30px;">
 
       <div class="row mb-5 justify-content-center">
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">

@@ -28,6 +28,7 @@ import kr.board.entity.Comment;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
 import kr.board.entity.Pet_profile;
+import kr.board.entity.Petinfo;
 import kr.board.entity.Adminboard;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.PetMapper;
@@ -289,8 +290,15 @@ public class BoardController {
 		return"petprofile"; 
 	}
 
-	
-	
+	@RequestMapping("/petupdate")
+	public String petupdate(Petinfo vo){
+		
+		petmapper.update(vo);
+		
+		return"redirect:/mypage.do";
+	}
+		
+		
 	
 }
 	

@@ -33,7 +33,6 @@
 
 
 
-<title>Insert title here</title>
 
 
 
@@ -119,7 +118,7 @@
            
 
               <div class="button text-center">
-                <button type="submit"  class="btn" id="submit">가입하기</button>
+                <button type="submit"  class="btn" id="submit">수정하기</button>
                 <a href="Home.do" class="btn">홈으로</a>
               </div>
             </div>
@@ -139,50 +138,6 @@
     <script src="resources/js/imagesloaded.min.js"></script>
     <script src="resources/js/isotope.min.js"></script>
     <script src="resources/js/main.js"></script>
-    <script type="text/javascript">
-        //======== tiny slider
-        tns({
-            container: '.client-logo-carousel',
-            autoplay: true,
-            autoplayButtonOutput: false,
-            mouseDrag: true,
-            gutter: 15,
-            nav: false,
-            controls: false,
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                540: {
-                    items: 2,
-                },
-                768: {
-                    items: 3,
-                },
-                992: {
-                    items: 5,
-                }
-            }
-        });
-
-        //========= glightbox
-        GLightbox({
-            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-            'type': 'video',
-            'source': 'youtube', //vimeo, youtube or local
-            'width': 900,
-            'autoplayVideos': true,
-        });
-
-        //====== counter up 
-        var cu = new counterUp({
-            start: 0,
-            duration: 2000,
-            intvalues: true,
-            interval: 100,
-            append: " ",
-        });
-        cu.start();
-    </script>
+   
 </body>
 </html>
