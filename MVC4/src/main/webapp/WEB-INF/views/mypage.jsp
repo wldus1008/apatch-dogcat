@@ -37,20 +37,20 @@
          <%--  <input type='hidden' name='memId' value='${loginMember.memId}'> --%>
             <div class="row">
               <div class="col-12 mb-3">
-              <label for="memId">아이디</label>
-                <input type="text" class="form-control" name="mem_id" id="memId" value="${loginMember.memId}" readonly>
+              <label for="mem_id">아이디</label>
+                <input type="text" class="form-control" name="mem_id" id="mem_id" value="${loginMember.mem_id}" readonly>
               </div>
               <div class="col-12 mb-3">
-              <label for="memPw">비밀번호</label>
-                <input type="password" class="form-control" placeholder="비밀번호" value="${loginMember.memPw}" readonly>
+              <label for="mem_pw">비밀번호</label>
+                <input type="password" class="form-control" placeholder="비밀번호" value="${loginMember.mem_pw}" readonly>
               </div>
               <div class="col-12 mb-3">
-              <label for="memPw">새 비밀번호</label>
-                <input type="password" class="form-control" placeholder="새 비밀번호"  name="mem_iw" id="memPw">
+              <label for="mem_pw">새 비밀번호</label>
+                <input type="password" class="form-control" placeholder="새 비밀번호"  name="mem_pw" id="mem_pw">
               </div>
               <div class="col-12 mb-3">
-              <label for="memName">이름</label>
-                <input type="text" class="form-control" name="mem_name" value="${loginMember.memName}" id="memName" >
+              <label for="mem_name">이름</label>
+                <input type="text" class="form-control" name="mem_name" value="${loginMember.mem_name}" id="mem_name" >
               </div>
               </div>
               
@@ -82,10 +82,10 @@
         
         function Update(){
      	  
-     	  var memId = $('#memId').val();
-     	  var memPw = $('#memPw').val();
+     	  var mem_id = $('#mem_id').val();
+     	  var mem_pw = $('#mem_pw').val();
      	  
-     	 var memName = $('#memName').val();
+     	 var mem_name = $('#mem_name').val();
      	 
      	 
      	
@@ -97,9 +97,9 @@
      	         // json형식으로 보내야함 --> contentType지정, JSON.stringify()로 형식도 바꿈
      	         contentType : "application/json;charset=utf-8",
      	         data :JSON.stringify({
-     	        	 "memId" : memId,
-     	        	 "memPw" : memPw,
-     	        	 "memName" : memName
+     	        	 "mem_id" : mem_id,
+     	        	 "mem_pw" : mem_pw,
+     	        	 "mem_name" : mem_name
      	         }), //보내주는 데이터가 있다면
      	         //dataType : "", // 받는 데이터가 있으면
      	         success : function(){
