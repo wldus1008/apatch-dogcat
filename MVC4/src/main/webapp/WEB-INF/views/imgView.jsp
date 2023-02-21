@@ -108,7 +108,7 @@
 				<form  method="post" enctype='multipart/form-data' action="${cpath}/upload"
 					 name="imgUpload" id="imgUpload">
 					<label for="formFile" class="form-label"><h5>반려동물 사진등록</h5></label>
-					<input type="file" name="files"  id="files"
+					<input type="file" name="files"  id="files" onchange="readURL(this);"
 						class="form-control" >
 					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
 					<div style="margin-top: 10px; margin-bottom: 10px">

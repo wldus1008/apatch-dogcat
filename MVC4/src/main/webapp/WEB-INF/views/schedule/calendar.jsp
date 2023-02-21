@@ -695,7 +695,7 @@ a:hover {
                                             aria-expanded="false" aria-label="Toggle navigation">마이펫</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="../imgView.do">반려동물등록</a></li>
-                                            <li class="nav-item"><a href="${path}/calendar.do/${loginMember.getMemNo()}">캘린더</a></li>
+                                            <li class="nav-item"><a href="${path}/calendar.do/${loginMember.mem_id}">캘린더</a></li>
                                             <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
@@ -728,7 +728,7 @@ a:hover {
 								</c:when>
 								<c:otherwise>
 									
-									<a href="${cpath}/mypage.do" style="color:#3b9a9c;">${loginMember.memName}님 환영합니다</a> 
+									<a href="${cpath}/mypage.do" style="color:#3b9a9c;">${loginMember.mem_name}님 환영합니다</a> 
 									<div class="button add-list-button">
 										<a href="${cpath}/Logout.do" class="btn">로그아웃</a>
 									</div>
@@ -766,24 +766,24 @@ a:hover {
 			<!--날짜 네비게이션  -->
 			<div class="navigation">
 				<a class="before_after_year"
-					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
+					href="/calendar.do/${loginMember.mem_id}?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
 					&lt;&lt; <!-- 이전해 -->
 				</a> <a class="before_after_month"
-					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.before_year}&month=${today_info.before_month}">
+					href="/calendar.do/${loginMember._mem_id}?year=${today_info.before_year}&month=${today_info.before_month}">
 					&lt; <!-- 이전달 -->
 				</a> <span class="this_month" style="color:#286769;"> &nbsp;${today_info.search_year}. <c:if
 						test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
 				</span> <a class="before_after_month"
-					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.after_year}&month=${today_info.after_month}">
+					href="/calendar.do/${loginMember.mem_id}?year=${today_info.after_year}&month=${today_info.after_month}">
 					<!-- 다음달 --> &gt;
 				</a> <a class="before_after_year"
-					href="/calendar.do/${loginMember.getMemNo()}?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
+					href="/calendar.do/${loginMember.mem_id}?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
 					<!-- 다음해 --> &gt;&gt;
 				</a>
 			</div>
 			<div class="today_button_div">
 				<button type="button" class="buttonstyle"
-					onclick="javascript:location.href='/calendar.do/${loginMember.getMemNo()}'"
+					onclick="javascript:location.href='/calendar.do/${loginMember.mem_id}'"
 					style="height: 30px; width: 80px;">Today</button>
 				<button type="button"
 					class="buttonstyle board_move openMask_board_move pointer"
@@ -866,7 +866,7 @@ a:hover {
 		<div class="bottom">
 			<div class="info">* 순번은 해당 날짜안에서 순서대로 입력이 됩니다.(하루에 최대 4개의 스케줄만
 				등록할 수 있습니다.)</div>
-			<form name="schedule_add" action="${cpath}/schedule_add.do/${loginMember.getMemNo() }">
+			<form name="schedule_add" action="${cpath}/schedule_add.do/${loginMember.mem_id }">
 				<input type="hidden" name="year" value="${today_info.search_year}" />
 				<input type="hidden" name="month"
 					value="${today_info.search_month-1}" />

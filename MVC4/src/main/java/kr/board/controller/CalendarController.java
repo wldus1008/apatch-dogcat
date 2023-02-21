@@ -28,15 +28,15 @@ import lombok.extern.log4j.Log4j;
  */
 @Controller
 @Log4j
-public class HomeController {
+public class CalendarController {
 
 	@Autowired
 	public ScheduleDao dao;
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CalendarController.class);
 
-	@RequestMapping(value = "calendar.do/{memNo}", method = RequestMethod.GET)
-	public String calendar(Model model, HttpServletRequest request, DateData dateData, @PathVariable("memNo")int memNo) {
+	@RequestMapping(value = "calendar.do/{mem_id}", method = RequestMethod.GET)
+	public String calendar(Model model, HttpServletRequest request, DateData dateData, @PathVariable("mem_id")String mem_id) {
 		
 		Calendar cal = Calendar.getInstance();
 		DateData calendarData;
@@ -48,7 +48,7 @@ public class HomeController {
 
 		Map<String, Integer> today_info = dateData.today_info(dateData);
 		List<DateData> dateList = new ArrayList<DateData>();
-		dateData.setMemNo(memNo);
+		dateData.setMem_id(mem_id);
 		// 검색 날짜 end
 		ArrayList<ScheduleDto> Schedule_list = dao.schedule_list(dateData);
 
@@ -117,9 +117,9 @@ public class HomeController {
 		return "schedule/calendar";
 	}
 
-	@RequestMapping(value = "schedule_add.do/{memNo}", method = RequestMethod.GET)
-	public String schedule_add(HttpServletRequest request, ScheduleDto scheduleDto, RedirectAttributes rttr, @PathVariable("memNo")int memNo) {
-		scheduleDto.setMemNo(memNo);
+	@RequestMapping(value = "schedule_add.do/{mem_id}", method = RequestMethod.GET)
+	public String schedule_add(HttpServletRequest request, ScheduleDto scheduleDto, RedirectAttributes rttr, @PathVariable("mem_id")String mem_id) {
+		scheduleDto.setMem_id(mem_id);
 		int count = dao.before_schedule_add_search(scheduleDto);
 		String message = "";
 
@@ -131,7 +131,7 @@ public class HomeController {
 		}
 
 		rttr.addFlashAttribute("message", message);
-		return "redirect:/calendar.do/" + scheduleDto.getMemNo();
+		return "redirect:/calendar.do/" + scheduleDto.getMem_id();
 	}
 
 		

@@ -1,6 +1,5 @@
 package kr.board.entity;
 
-import java.sql.Date;
 
 import lombok.Data;
 import lombok.ToString;
@@ -8,82 +7,58 @@ import lombok.ToString;
 @Data
 @ToString
 public class ScheduleDto {
-	
-	int memNo;
-	int schedule_idx;
-	int schedule_num;
-	String schedule_subject;
-	String schedule_desc;
-	Date schedule_date;
-	String schedule_share;
-	String schedule_mycolor;
-	
-	public int getSchedule_idx() {
-		return schedule_idx;
-	}
-	public void setSchedule_idx(int schedule_idx) {
-		this.schedule_idx = schedule_idx;
-	}
-	
-	public int getSchedule_num() {
-		return schedule_num;
-	}
-	public void setSchedule_num(int schedule_num) {
-		this.schedule_num = schedule_num;
-	}
+	private int sche_seq;
+	private String mem_id;
+	private String sche_title;
+	private String sche_content;
+	private String sche_s_date;
+	private String sche_e_date;
+	private String color;
 	
 	
-	public String getSchedule_subject() {
-		return schedule_subject;
+// Getter , Setter	
+	public int getSche_seq() {
+		return sche_seq;
 	}
-	public void setSchedule_subject(String schedule_subject) {
-		this.schedule_subject = schedule_subject;
+	public void setSche_seq(int sche_seq) {
+		this.sche_seq = sche_seq;
 	}
-	
-	
-	public String getSchedule_desc() {
-		return schedule_desc;
+	public String getMem_id() {
+		return mem_id;
 	}
-	public void setSchedule_desc(String schedule_desc) {
-		this.schedule_desc = schedule_desc;
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
-	
-	public Date getSchedule_date() {
-		return schedule_date;
+	public String getSche_title() {
+		return sche_title;
 	}
-	public void setSchedule_date(Date schedule_date) {
-		this.schedule_date = schedule_date;
+	public void setSche_title(String sche_title) {
+		this.sche_title = sche_title;
 	}
-	
-	/* 공유할 일정인지 아닌지 */
-	public String getSchedule_share() {
-		return schedule_share;
+	public String getSche_content() {
+		return sche_content;
 	}
-	
-	public void setSchedule_share(String schedule_share) {
-		this.schedule_share =schedule_share;
+	public void setSche_content(String sche_content) {
+		this.sche_content = sche_content;
 	}
-	
-	/* 일정 색상 입출력 */
-	public String getSchedule_mycolor() {
-		return schedule_mycolor;
+	public String getSche_s_date() {
+		return sche_s_date;
 	}
-	
-	public void setSchedule_mycolor(String schedule_mycolor) {
-		this.schedule_mycolor =schedule_mycolor;
+	public void setSche_s_date(String sche_s_date) {
+		this.sche_s_date = sche_s_date;
+	}
+	public String getSche_e_date() {
+		return sche_e_date;
+	}
+	public void setSche_e_date(String sche_e_date) {
+		this.sche_e_date = sche_e_date;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 	
-	public int getMemNo() {
-		return memNo;
-	}
-	public void setMemNo(int memNo) {
-		this.memNo = memNo;
-	}
-	@Override
-	public String toString() {
-		return "ScheduleDto [schedule_idx=" + schedule_idx + ", schedule_num=" + schedule_num + ", schedule_subject="
-				+ schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date + ", schedule_share="+schedule_share
-				+", schedule_mycolor="+schedule_mycolor +"]";
-	}
 }
