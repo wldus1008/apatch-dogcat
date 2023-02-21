@@ -15,6 +15,8 @@ public interface PetMapper {
 
 	List<Pet_profile> pet_profile(String memId);
 
+	Pet_profile selectPet(int pet_seq);
+
 
 	
 

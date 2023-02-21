@@ -33,7 +33,13 @@
  	    where p.pet_seq = f.pet_seq and p.mem_id = #{mem_id}
  	</select>
  	
-
+	<select id="selectPet" parameterType="int" resultType="kr.board.entity.Pet_profile">
+	    select p.pet_name, p.pet_age, p.pet_gender,p.pet_kind, p.mem_id, p.pet_seq,
+ 	    		f.file_seq, f.file_name, f.file_real_name
+ 	    from tb_pet p , tb_file f
+ 	    where p.pet_seq = f.pet_seq and p.pet_seq = #{pet_seq}
+	    
+	</select>
  	
     
 </mapper>    
