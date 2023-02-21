@@ -69,7 +69,7 @@
                 <input type="text" class="form-control" name="pet_age" placeholder="나이를 입력해 주세요." id="petAge">
               </div>
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" name="pet_kind" placeholder="품종을 입력해 주세요." id="petkind">
+                <input type="text" class="form-control" name="pet_kind" placeholder="품종을 입력해 주세요." id="petKind">
               </div>
              
               
@@ -129,6 +129,7 @@
 
 
 <script type="text/javascript">
+
 	function readURL(input) {
 		if (input.files && input.files[0]) {
 			var reader = new FileReader();
@@ -147,7 +148,26 @@
 	 } */
 
 	function TwoSubmit() {
-		
+		if($("#petName").val().length==0){
+			alert("이름을 입력해주세요!!");
+			$("#petName").focus();
+			return false;
+		}
+		if($("#petAge").val().length==0){
+			alert("나이을 입력해주세요!!");
+			$("#petAge").focus();
+			return false;
+		}
+		if($("#petKind").val().length==0){
+			alert("이름을 입력해주세요!!");
+			$("#petKind").focus();
+			return false;
+		}
+		if($('input[name="pet_gender"]:checked').val()==null){
+			alert("성별을 입력해주세요!!");
+			$('input[name="pet_gender"]:checked').focus();
+			return false;
+		}
 		var petData = $('#petUpload').serialize();
 		console.log("petData 내용 : ", petData);
 		$.ajax({
