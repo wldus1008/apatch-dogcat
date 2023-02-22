@@ -297,7 +297,28 @@ public class BoardController {
 		
 		return"redirect:/mypage.do";
 	}
+	
+	
+	
+	
+
+	@RequestMapping("/cateye.do")
+	public String cateye() {
 		
+	
+		
+		return "cateye";
+		
+	}
+	
+	@RequestMapping("/dogeye.do")
+	public String dogeye() {
+		
+	
+		
+		return "dogeye";
+		
+	}
 		
 	
 }
