@@ -159,10 +159,10 @@
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">안구질환 확인</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
-                                            <li class="nav-item"><a href="${cpath}/goService.do">강아지 안구질환</a>
+                                            <li class="nav-item"><a href="${cpath}/dogeye.do">강아지 안구질환</a>
                                             </li>
 
-                                            <li class="nav-item"><a href="#">고양이 안구질환</a></li>
+                                            <li class="nav-item"><a href="${cpath}/cateye.do">고양이 안구질환</a></li>
                                           
                                         </ul>
                                     </li>

@@ -112,7 +112,7 @@
 						class="form-control" >
 					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
 					<div style="margin-top: 10px; margin-bottom: 10px">
-						<img id="preview" />
+						<img id="preview" style="box-shadow: 0 4px 2px -2px rgba(0,0,0,0.7); position: relative; left: 35%;" >
 					</div>
 					
 				</form>

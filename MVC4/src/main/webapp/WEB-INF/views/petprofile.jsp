@@ -1,23 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="cpath" value="${pageContext.request.contextPath}" /> 
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
+<title>Apatch DogCat</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>ApatchDogcat</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Place favicon.ico in the root directory -->
+
+	<!-- 이 예제에서는 필요한 js, css 를 링크걸어 사용 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>	
 
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"  rel="stylesheet">
-    
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
@@ -26,24 +29,48 @@
     <link rel="stylesheet" href="/resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="/resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="/resources/css/main.css" />
+	<script src="/resources/smarteditor/js/HuskyEZCreator.js" ></script>
+	<link rel="stylesheet" href="/resources/css/swiper.css"/>
+
+<style type="text/css">
+
+ @media(max-width:767px){
+ /* 모바일화면 */
+ 
+	
+	#myimg{
+	
+	 margin: 55px 65px 0px 0px !important;
+	
+}
+	
+	
+	
+	
+	
+	
+} 
 
 
-
-
-
-
+</style>	
 
 
 
 
 </head>
 <body>
-	<div class="container">
+	
+ 
+
+
+<section class = "hero-area style1">
+
+ <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <a href = Home.do>
+              <a href = "${cpath}/Home.do">
               <img src="${cpath}/resources/images/logo/logo7.png" alt="Logo" width="400" height="100">
               </a>
               <hr>
@@ -57,12 +84,22 @@
 
 
 
+    <div class="container" style="margin-top: -65px;">
+		<div class="row align-items-center">
+		<div class="col-lg-6 col-md-12 col-12" style="padding-left: 80px;">
+			<div class="hero-image wow fadeInRight" data-wow-delay=".4s"
+				style="text-align: center;">
+				<img alt="프로필 사진" src="/resources/fimages/${profile.file_name}"
+					style="border: 3px solid #3b9a9c; " id="myimg" />
+			</div>
+		</div>
+	
 
-    <div class="container" style="margin-top:30px;">
 
-	      <div class="row mb-5 justify-content-center">
-	        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
+ 				<div class="col-lg-6 col-md-12 col-12" style="margin-top: 20px; padding: 0px 70px 0px 70px;">
+				<div class="hero-content wow fadeInLeft" data-wow-delay=".3s" style="padding: 50px;">
 				<form action="/petupdate" class="form-box" method="post">
+					<br><br>
 					<div class="row">
 						<div class="col-12 mb-3">
 							<label for="pet_name">이름</label>
@@ -91,7 +128,8 @@
 			</div>		
 		</div>		
 	</div>		
-
+</div>
+</section>
 
 <!-- ========================= JS here ========================= -->
     <script src="/resources/js/bootstrap.min.js"></script>
@@ -101,7 +139,7 @@
     <script src="/resources/js/count-up.min.js"></script>
     <script src="/resources/js/imagesloaded.min.js"></script>
     <script src="/resources/js/isotope.min.js"></script>
-    <script src="/resources/js/main.js"></script>		
+    <script src="${cpath}/resources/js/main.js"></script>		
 				
 </body>
 </html>
