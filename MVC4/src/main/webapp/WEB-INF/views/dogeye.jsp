@@ -103,9 +103,9 @@
     	var url = 'http://localhost:8000/dog';
     	var file = document.querySelector("#files").files[0];
         var formData = new FormData();
-        formData.append("file", file);
+        formData.append('file', file);
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", url,true);
+        xhr.open('POST', url,true);
         xhr.onload = function() {
           if (xhr.status === 200) {
             var imageURL = URL.createObjectURL(xhr.response);
