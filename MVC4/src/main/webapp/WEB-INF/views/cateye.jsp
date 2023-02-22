@@ -75,15 +75,11 @@
 				<td>전화번호</td>
 				<td>도로명주소</td>
 				<td>지번주소</td>
+				<td>거리</td>
 				</tr>
 			</thead>
 			<tbody id="jungbo">
-				<tr>
-				<td>${place_name}</td>
-				<td>${phone}</td>
-				<td>${road_address_name}</td>
-				<td>${address_name}</td>
-				</tr>
+				
 			</tbody>
 			
 		
@@ -236,6 +232,7 @@
 								+"<td>"+a.phone+"</td>"
 								+"<td>"+a.road_address_name+"</td>"
 								+"<td>"+a.address_name+"</td>"
+								+"<td>"+a.distance+"m</td>"
 								+"</tr>"
 						);
 						
