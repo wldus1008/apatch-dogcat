@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ import kr.board.entity.Comment;
 import kr.board.entity.Files;
 import kr.board.entity.Member;
 import kr.board.entity.Pet_profile;
+import kr.board.entity.Petinfo;
 import kr.board.entity.Adminboard;
 import kr.board.mapper.BoardMapper;
 import kr.board.mapper.PetMapper;
@@ -195,10 +197,10 @@ public class BoardController {
 			Member loginMember = (Member) session.getAttribute("loginMember");
 			System.out.println("id : " + loginMember.getMem_id());
 
-			Files img = imgMapper.getImg(loginMember.getMem_id());
-			if(img != null) {
-				String fileName = img.getFile_name();
-				model.addAttribute("fileName", fileName);
+			List<Pet_profile> pet_profile = petmapper.pet_profile(loginMember.getMem_id());
+			model.addAttribute("pet_profile", pet_profile);
+			if(pet_profile != null) {
+				model.addAttribute("pet_profile", pet_profile);
 				}
 		}
 		return "mypage";
@@ -278,10 +280,25 @@ public class BoardController {
 		return "kcal";
 		
 	}
-
-
 	
-	
+	@RequestMapping("/profile_update/{pet_seq}")
+	public String profileUpdate(@PathVariable int pet_seq, Model model) {
+		
+		Pet_profile profile = petmapper.selectPet(pet_seq);
+		model.addAttribute("profile", profile);
+		
+		return"petprofile"; 
+	}
+
+	@RequestMapping("/petupdate")
+	public String petupdate(Petinfo vo){
+		
+		petmapper.update(vo);
+		
+		return"redirect:/mypage.do";
+	}
+		
+		
 	
 }
 	

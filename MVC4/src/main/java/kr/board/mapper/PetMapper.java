@@ -12,8 +12,11 @@ public interface PetMapper {
 	Petinfo get_seq(Petinfo vo);
 	
 	void update(Petinfo vo);
+	
 
-	List<Pet_profile> pet_profile(String memId);
+	List<Pet_profile> pet_profile(String mem_id);
+
+	Pet_profile selectPet(int pet_seq);
 
 
 	

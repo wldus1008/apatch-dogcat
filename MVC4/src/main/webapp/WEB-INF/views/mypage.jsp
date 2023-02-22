@@ -12,11 +12,9 @@
 	
 	<section class = "hero-area style1">
 	
-        <div class="container">
+        <div class="container" style="">
             <div class="row align-items-center">
             
-                    	<c:choose>
-							 <c:when test>
 									<div class="swiper-container">
 										<div class="swiper-wrapper">
 											<c:forEach items="${pet_profile}" var="petProfile">
@@ -32,6 +30,10 @@
 								                        <h5>나이</h5><p>${petProfile.pet_age}</p><br>
 								                        <h5>성별</h5><p>${petProfile.pet_gender}</p><br>
 								                        <h5>품종</h5><p>${petProfile.pet_kind }</p><br>  
+								                        <div class="button">
+								                        <a href="profile_update/${petProfile.pet_seq}" class="btn" style="height: 53px; width: 150px; ">Pet 정보수정</a>                               
+							                            </div>
+								                        
 								                        </div>       
 							                     	</div>
 							                     </div>   
@@ -47,8 +49,6 @@
 								   
 									</div>
 			                        
-							</c:when>
-						</c:choose>
     
 
 		</div> <!-- <div class="container"> 끝 -->
@@ -57,7 +57,7 @@
                     
                     
                
-    <div class="container">
+    <div class="container" style="margin-top:30px;">
 
       <div class="row mb-5 justify-content-center">
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
