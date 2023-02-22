@@ -76,7 +76,7 @@
 				<td>지번주소</td>
 				</tr>
 			</thead>
-			<tbody id="q1">
+			<tbody id="jungbo">
 				<tr>
 				<td>${place_name}</td>
 				<td>${phone}</td>
@@ -227,10 +227,10 @@
 					map.setBounds(bounds);
 					console.log(data);
 					
-					$('#q1').empty();
+					$('#jungbo').empty();
 					data.forEach((a) => {
 										
-						$('#q1').append(
+						$('#jungbo').append(
 								"<tr><td>"+a.place_name+"</td>"
 								+"<td>"+a.phone+"</td>"
 								+"<td>"+a.road_address_name+"</td>"
