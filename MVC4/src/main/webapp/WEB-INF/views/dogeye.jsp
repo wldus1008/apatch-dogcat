@@ -26,8 +26,7 @@
 		 <div class="col-lg-5 col-md-12 col-12" style="padding-right: 50px;" >
 		
 
-			<form method="post" enctype='multipart/form-data' action="#"
-					 name="#" id="#">
+			<form method="post" enctype='multipart/form-data'>
 					<label for="formFile" class="form-label"><h5>사진등록</h5></label>
 					<input type="file" name="files"  id="files" onchange="readURL(this);"
 						class="form-control" >
@@ -39,7 +38,7 @@
 					
 				</form>
 				<div class="button text-center"  >
-					<button type="button" class="btn" >등록하기 </button> 
+					<button type="button" class="btn"  id="submit-button">등록하기 </button> 
 				</div>	
 			
 		</div>	
@@ -50,7 +49,7 @@
 				
 		<div class="col-lg-6 col-md-12 col-12" style="margin-top: 20px!important;" >
 				
-			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;">
+			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;" id="output">
 				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>
 			</div>
 			
@@ -98,7 +97,29 @@
 		}
 	}
 
-
+	
+    // 버튼을 클릭하면 POST 요청을 보냄
+    document.querySelector("#submit-button").addEventListener("click", function() {
+    	var url = 'http://localhost:8000/dog';
+    	var file = document.querySelector("#files").files[0];
+        var formData = new FormData();
+        formData.append("file", file);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url,true);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            var imageURL = URL.createObjectURL(xhr.response);
+            var img = new Image();
+            img.src = imageURL;
+            document.querySelector("#output").appendChild(imageURL);
+          }
+        };
+        xhr.responseType = "blob";
+        xhr.send(formData);
+      });
+  
+	
+	
 </script>
 
 
