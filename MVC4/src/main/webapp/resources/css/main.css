@@ -10,7 +10,6 @@ html {
 }
 
 
-
 	
 #preview{
 	max-width : 30%;
@@ -4643,7 +4642,15 @@ ol {
 	#datatable-scroller th{
 		font-size: 5px;
 	}
+	
+	
+
+	
+	
+	
+	
 } /* @media(max-width:767px) 끝 */
 #datatable-scroller th{
 	width: 15%;
 }	
+

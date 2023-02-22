@@ -11,7 +11,7 @@
                 <div class="nav-section">
                     <ul class="icons">
                         <li class="nav-block">
-                            <a class="main-icon" href="service.do" id="dog-lab">
+                            <a class="main-icon" href="dogeye.do" id="dog-lab">
                             <img src="resources/images/icon/dog02.png" alt="강아지 안구질환"style="max-width: 80%; margin-top: 5px; margin-bottom:2px;">
                                 
                             <span id="nav-text">강아지 안구질환</span>
@@ -19,7 +19,7 @@
                         </li>
         
                         <li class="nav-block">
-                            <a class="main-icon" href="/cat-lab/" id="cat-lab">
+                            <a class="main-icon" href="cateye.do" id="cat-lab">
                             <img src="resources/images/icon/cat02.png" alt="고양이 안구질환" style="max-width: 80%; margin-top: 5px; margin-bottom:2px;" >
                                 
                             <span id="nav-text">고양이 안구질환</span>
@@ -166,20 +166,20 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <span class="serial">01</span>
-                            <h3><a href="service-details.html">강아지 안구질환</a></h3>
+                            <h3><a href="dogeye.do">강아지 안구질환</a></h3>
                             <p> 강아지 눈 사진으로 안구질환을 확인합니다</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="dogeye.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <span class="serial">02</span>
-                            <h3><a href="service-details.html">고양이 안구질환</a></h3>
+                            <h3><a href="cateye.do">고양이 안구질환</a></h3>
                             <p> 고양이 눈 사진으로 안구질환을 확인합니다</p>
                             <div class="button">
-                                <a href="service-details.html" class="btn">자세히보기</a>
+                                <a href="cateye.do" class="btn">자세히보기</a>
                             </div>
                         </div>
                     </div>

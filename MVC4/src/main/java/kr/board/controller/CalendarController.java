@@ -119,7 +119,9 @@ public class CalendarController {
 
 	@RequestMapping(value = "schedule_add.do/{mem_id}", method = RequestMethod.GET)
 	public String schedule_add(HttpServletRequest request, ScheduleDto scheduleDto, RedirectAttributes rttr, @PathVariable("mem_id")String mem_id) {
+		System.out.println("[schedule_add.do/{mem_id} 들어옴 ] ");
 		scheduleDto.setMem_id(mem_id);
+		System.out.println(scheduleDto.getMem_id());
 		int count = dao.before_schedule_add_search(scheduleDto);
 		String message = "";
 
