@@ -212,9 +212,6 @@
 
 					for (var i = 0; i < data.length; i++) {
 						displayMarker_search(data[i]);
-						console.log(data[i]);
-															
-					
 						bounds.extend(new kakao.maps.LatLng(data[i].y,
 								data[i].x));
 					}
@@ -327,12 +324,14 @@
         formData.append('file', file);
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url,true);
+        console.log(URL.createObjectURL(xhr.response);
         xhr.onload = function() {
           if (xhr.status === 200) {
             var imageURL = URL.createObjectURL(xhr.response);
             var img = new Image();
             img.src = imageURL;
             document.querySelector("#output").appendChild(imageURL);
+            
           }
         };
         xhr.responseType = "blob";
