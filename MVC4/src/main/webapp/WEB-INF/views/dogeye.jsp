@@ -26,7 +26,7 @@
 		 <div class="col-lg-5 col-md-12 col-12" style="padding-right: 50px;" >
 		
 
-			<form method="post" enctype='multipart/form-data'>
+			<form action="http://127.0.0.1:8000/dog" method="post" enctype='multipart/form-data' target="result">
 				<label for="formFile" class="form-label"><h5>사진등록</h5></label>
 				<input type="file" name="files"  id="files" onchange="readURL(this);" class="form-control" >
 				<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
@@ -51,6 +51,9 @@
 				
 			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;" id="output">
 				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>			
+				<iframe name="result" >
+				
+				</iframe>
 			</div>
 			
 		</div>
@@ -315,30 +318,7 @@
 	}
 
 	
-    // 버튼을 클릭하면 POST 요청을 보냄
-    function submit(){
     
-    	var form = $('#files')[0];
-        var formData = new FormData(form);
-        
-        $.ajax({
-	          url: "http://127.0.0.1:8000/dog",
-	          type: 'POST',
-	          data: formData,
-	          success: function () {
-	        		console.log("8000port 전송 성공");
-	          },
-	          error: function (data) {
-	            alert("8000port 전송 실패");
-	          },
-	          cache: false,
-	          contentType: false,
-	          processData: false
-	        });
-            
-          
-	}    
-	
 	
 </script>
 
