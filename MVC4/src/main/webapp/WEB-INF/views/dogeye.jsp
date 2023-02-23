@@ -318,13 +318,12 @@
 	
     // 버튼을 클릭하면 POST 요청을 보냄
     document.querySelector("#submit-button").addEventListener("click", function() {
-    	var url = 'http://localhost:8000/dog';
+    	var url = 'http://172.30.1.1:8000/dog';
     	var file = document.querySelector("#files").files[0];
         var formData = new FormData();
         formData.append('file', file);
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url,true);
-        console.log(URL.createObjectURL(xhr.response);
         xhr.onload = function() {
           if (xhr.status === 200) {
             var imageURL = URL.createObjectURL(xhr.response);
