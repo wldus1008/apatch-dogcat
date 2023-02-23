@@ -318,7 +318,7 @@
     // 버튼을 클릭하면 POST 요청을 보냄
     function submit(){
     
-    	var file = $("#files").files[0];
+    	var file = $("#files")[0];
         var formData = new FormData(file);
         
         $.ajax({
