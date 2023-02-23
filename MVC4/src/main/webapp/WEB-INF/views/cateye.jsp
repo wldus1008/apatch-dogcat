@@ -224,7 +224,7 @@
 					map.setBounds(bounds);
 					console.log(data);
 					
-					$('#jungbo').empty();
+					
 					data.forEach((a) => {
 										
 						$('#jungbo').append(

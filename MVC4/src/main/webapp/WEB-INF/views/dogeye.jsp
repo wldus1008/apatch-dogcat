@@ -67,13 +67,14 @@
 		<div class="col-lg-12 col-md-12 col-12" style="margin-top: 20px!important;">
 		<h5 style="text-align: center;">병원 안내</h5><br><br>
 		<div class="row mb-5 justify-content-center" >
-		<table class = 'table table-hover table-bordered' style='text-align: center; table-layout:fixed;word-break:break-all;height:auto; width: auto;'>	
+		<table class = 'table table-hover table-bordered' style='text-align: center; table-layout:fixed;word-break:break-all;height:auto; width: auto; '>	
 			<thead>
 				<tr>
 				<td>병원이름</td>
 				<td>전화번호</td>
 				<td>도로명주소</td>
 				<td>지번주소</td>
+				<td>거리</td>
 				</tr>
 			</thead>
 			<tbody id="jungbo">
@@ -222,7 +223,7 @@
 					map.setBounds(bounds);
 					console.log(data);
 					
-					$('#jungbo').empty();
+					
 					data.forEach((a) => {
 										
 						$('#jungbo').append(
