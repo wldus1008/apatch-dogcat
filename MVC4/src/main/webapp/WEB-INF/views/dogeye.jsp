@@ -37,7 +37,7 @@
 					
 				</form>
 				<div class="button text-center"  >
-					<button type="button" class="btn"  id="submit-button" >등록하기</button> 
+					<button type="button" class="btn"  id="submit-button"  onclick="submit()">등록하기</button> 
 				</div>	
 			
 		</div>		
@@ -316,8 +316,9 @@
 
 	
     // 버튼을 클릭하면 POST 요청을 보냄
-    document.querySelector("#submit-button").addEventListener("click", function() {
-    	var file = document.querySelector("#files").files[0];
+    function submit(){
+    
+    	var file = $("#files").files[0];
         var formData = new FormData(file);
         
         $.ajax({
@@ -335,8 +336,8 @@
 	          processData: false
 	        });
             
-          });
-        
+          
+	}    
 	
 	
 </script>
