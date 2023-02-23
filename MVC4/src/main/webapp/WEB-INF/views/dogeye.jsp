@@ -28,8 +28,7 @@
 
 			<form method="post" enctype='multipart/form-data'>
 					<label for="formFile" class="form-label"><h5>사진등록</h5></label>
-					<input type="file" name="files"  id="files" onchange="readURL(this);"
-						class="form-control" >
+					<input type="file" name="files"  id="files" onchange="readURL(this);" class="form-control" >
 					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
 					<div style="margin-top: 20px; margin-bottom: 35px">
 						<img id="petpreview" 
@@ -38,7 +37,7 @@
 					
 				</form>
 				<div class="button text-center"  >
-					<button type="button" class="btn"  id="submit-button">등록하기 </button> 
+					<button type="button" class="btn"  id="submit-button" >등록하기</button> 
 				</div>	
 			
 		</div>		
@@ -318,25 +317,26 @@
 	
     // 버튼을 클릭하면 POST 요청을 보냄
     document.querySelector("#submit-button").addEventListener("click", function() {
-    	var url = 'http://172.30.1.1:8000/dog';
     	var file = document.querySelector("#files").files[0];
-        var formData = new FormData();
-        formData.append('file', file);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url,true);
-        xhr.onload = function() {
-          if (xhr.status === 200) {
-            var imageURL = URL.createObjectURL(xhr.response);
-            var img = new Image();
-            img.src = imageURL;
-            document.querySelector("#output").appendChild(imageURL);
+        var formData = new FormData(file);
+        
+        $.ajax({
+	          url: "http://localhost:8000/dog",
+	          type: 'POST',
+	          data: formData,
+	          success: function () {
+	        		console.log("8000port 전송 성공");
+	          },
+	          error: function (data) {
+	            alert("8000port 전송 실패");
+	          },
+	          cache: false,
+	          contentType: false,
+	          processData: false
+	        });
             
-          }
-        };
-        xhr.responseType = "blob";
-        xhr.send(formData);
-      });
-  
+          });
+        
 	
 	
 </script>
