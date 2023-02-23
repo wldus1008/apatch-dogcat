@@ -161,15 +161,9 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-1">
                                             <li class="nav-item"><a href="${cpath}/dogeye.do">강아지 안구질환</a>
                                             </li>
-<<<<<<< HEAD
-
-                                            <li class="nav-item"><a href="#">고양이 안구질환</a></li>
-                                          
-=======
-
                                             <li class="nav-item"><a href="${cpath}/cateye.do">고양이 안구질환</a></li>
                                           
->>>>>>> branch 'master' of https://github.com/wldus1008/apatch-dogcat.git
+
                                         </ul>
                                     </li>
                                     <li class="nav-item">
