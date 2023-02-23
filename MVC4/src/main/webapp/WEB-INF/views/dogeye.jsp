@@ -27,19 +27,19 @@
 		
 
 			<form method="post" enctype='multipart/form-data'>
-					<label for="formFile" class="form-label"><h5>사진등록</h5></label>
-					<input type="file" name="files"  id="files" onchange="readURL(this);" class="form-control" >
-					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
-					<div style="margin-top: 20px; margin-bottom: 35px">
-						<img id="petpreview" 
-						style=" box-shadow: 0 5px 18px -7px rgba(0,0,0,1); max-width : 60%; position: relative; left: 20%;">
-					</div>
-					
-				</form>
-				<div class="button text-center"  >
-					<button type="button" class="btn"  id="submit-button"  onclick="submit()">등록하기</button> 
-				</div>	
-			
+				<label for="formFile" class="form-label"><h5>사진등록</h5></label>
+				<input type="file" name="files"  id="files" onchange="readURL(this);" class="form-control" >
+				<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
+				<div style="margin-top: 20px; margin-bottom: 35px">
+					<img id="petpreview" 
+					style=" box-shadow: 0 5px 18px -7px rgba(0,0,0,1); max-width : 60%; position: relative; left: 20%;">
+				</div>
+				
+			<div class="button text-center"  >
+				<button type="button" class="btn"  id="submit-button"  onclick="submit()">등록하기</button> 
+			</div>	
+			</form>
+		
 		</div>		
 		
 		<div class="col-lg-1 col-md-12 col-12" >
@@ -318,11 +318,11 @@
     // 버튼을 클릭하면 POST 요청을 보냄
     function submit(){
     
-    	var file = $("#files")[0];
-        var formData = new FormData(file);
+    	var form = $('#files')[0];
+        var formData = new FormData(form);
         
         $.ajax({
-	          url: "http://localhost:8000/dog",
+	          url: "http://127.0.0.1:8000/dog",
 	          type: 'POST',
 	          data: formData,
 	          success: function () {
