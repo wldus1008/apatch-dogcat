@@ -15,9 +15,9 @@
     <select id="get_seq" parameterType="kr.board.entity.Petinfo" resultType="kr.board.entity.Petinfo">
  	    select * 
  	    from tb_pet
- 	    where pet_seq = ( select pet_seq
+ 	    where pet_seq in (select pet_seq
  	    				  from tb_pet
- 	    				  where mem_id = #{mem_id} and (pet_name=#{pet_name} and pet_age = #{pet_age})
+ 	    				  where mem_id = #{mem_id} and pet_name=#{pet_name} and pet_age = #{pet_age})
  	</select>
  	
  	<update id="update" parameterType="kr.board.entity.Petinfo">
