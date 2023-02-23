@@ -23,14 +23,14 @@ public class PetController {
 		System.out.println("mem_id : "+vo.getMem_id());
 		System.out.println("pet_kind : "+vo.getPet_kind());
 		
-		Petinfo get_seq = petmapper.get_seq(vo); // pet_seq 조회
+		Petinfo get_seq = petmapper.get_seq(vo); // Petinfo의 정보를 기준으로 존재 여부 조회
 		if(get_seq == null) {
 			petmapper.petJoin(vo);  // 없으면 등록
 		}else {
 			vo.setPet_seq(get_seq.getPet_seq());
 			petmapper.update(vo); // 있으면 Update
 		}
-		get_seq = petmapper.get_seq(vo);
+		get_seq = petmapper.get_seq(vo); // update 후 새로운 Petinfo 의 정보 저장
 		System.out.println(get_seq.getPet_seq());
 		System.out.println("pet info 성공");
 		get_seq = petmapper.get_seq(vo); // mem_id 반려동물 조회
