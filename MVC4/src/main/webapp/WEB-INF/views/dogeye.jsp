@@ -50,7 +50,7 @@
 		<div class="col-lg-6 col-md-12 col-12" style="margin-top: 20px!important;" >
 				
 			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;" id="output">
-				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>
+				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>			
 			</div>
 			
 		</div>
