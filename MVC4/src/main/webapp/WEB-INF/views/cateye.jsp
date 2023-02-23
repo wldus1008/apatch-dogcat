@@ -26,22 +26,19 @@
 		 <div class="col-lg-5 col-md-12 col-12" style="padding-right: 50px;" >
 		
 
-			<form method="post" enctype='multipart/form-data' action="#"
-					 name="#" id="#">
-					<label for="formFile" class="form-label"><h5>사진등록</h5></label>
-					<input type="file" name="files"  id="files" onchange="readURL(this);"
-						class="form-control" >
-					<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
-					<div style="margin-top: 20px; margin-bottom: 35px">
-						<img id="petpreview" 
-						style=" box-shadow: 0 5px 18px -7px rgba(0,0,0,1); max-width : 60%; position: relative; left: 20%;">
-					</div>
-					
-				</form>
-				<div class="button text-center"  >
-					<button type="button" class="btn" >등록하기 </button> 
-				</div>	
-			
+			<form action="http://localhost:8000/dog" method="post" enctype='multipart/form-data' target="result_cat">
+				<label for="formFile" class="form-label"><h5>사진등록</h5></label>
+				<input type="file" name="image"  id="files" onchange="readURL(this);" class="form-control" >
+				<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
+				<div style="margin-top: 20px; margin-bottom: 35px">
+					<img id="petpreview" 
+					style=" box-shadow: 0 5px 18px -7px rgba(0,0,0,1); max-width : 60%; position: relative; left: 20%;">
+				</div>
+				
+			<div class="button text-center"  >
+				<button type="button" class="btn"  id="submit-button"  onclick="submit()">등록하기</button> 
+			</div>	
+			</form>
 		</div>		
 		
 		<div class="col-lg-1 col-md-12 col-12" >
@@ -49,13 +46,12 @@
 		</div>
 			
 			
-		<div class="col-lg-6 col-md-12 col-12" style="margin-top: 20px!important;" >
+			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;" id="output">
+				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>			
+				<iframe name="result_cat" style="width: 400px;height:400px;margin: 30px 0 0 110px;" >
 				
-			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;">
-				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>
+				</iframe>
 			</div>
-			
-		</div>
 		
 		
 	</div><!--row align-items-center끝  -->
