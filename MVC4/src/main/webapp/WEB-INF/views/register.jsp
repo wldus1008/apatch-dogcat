@@ -118,7 +118,7 @@
            
 
               <div class="button text-center">
-                <button type="submit"  class="btn" id="submit">수정하기</button>
+                <button type="submit"  class="btn" id="submit">가입하기</button>
                 <a href="Home.do" class="btn">홈으로</a>
               </div>
             </div>
