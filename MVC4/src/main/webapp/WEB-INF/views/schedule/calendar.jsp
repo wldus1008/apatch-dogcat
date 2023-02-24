@@ -679,9 +679,9 @@ a:hover {
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">커뮤니티</a>
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-2">
-                                            <li class="nav-item"><a href="../basic.do">게시판1</a>
+                                            <li class="nav-item"><a href="../basic.do">게시판</a>
                                             </li>
-                                            <li class="nav-item"><a href="../adminboad.do">반려동물 지식정보</a>
+                                            <li class="nav-item"><a href="../adminboard.do">반려동물 지식정보</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -696,7 +696,6 @@ a:hover {
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="../imgView.do">반려동물등록</a></li>
                                             <li class="nav-item"><a href="${path}/calendar.do/${loginMember.mem_id}">캘린더</a></li>
-                                            <li class="nav-item"><a href="faq.html">메뉴생각</a></li>
                                             
                                         </ul>
                                     </li>
@@ -707,7 +706,7 @@ a:hover {
                                         <a href="../map.do" aria-label="Toggle navigation">동물병원찾기</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">반려동물 보험</a>
+                                         <a href="../kcal.do" aria-label="Toggle navigation">권장 칼로리 계산기</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
