@@ -238,33 +238,7 @@
 
    
 
-    <!-- Start Call Action Area -->
-    <section id="download" class="call-action style2">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
-                    <div class="download">
-                        <div class="title">
-                            <h3>
-                               
-                                	생각<br>
-                              		생각
-                            </h3>
-                            <p>생각</p>
-                        </div>
-                        <ul class="download-link">
-                            <li><a href="#"
-                                    target="_blank" style="padding:18px 40px;width: auto; text-align: center;">
-                                    <span class="main-text">생각생각</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Call Action Area -->
+   
 
 
   <%@ include file="Footer.jsp" %>

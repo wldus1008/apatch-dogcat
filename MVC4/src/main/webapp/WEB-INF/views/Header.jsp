@@ -176,8 +176,7 @@
 
                                             <li class="nav-item"><a href="${cpath}/adminboard.do">반려동물 지식정보</a>
 
-                                            <li class="nav-item"><a href="#">아직 없음</a>
-
+                                            
                                             </li>
                                         </ul>
                                     </li>
@@ -192,7 +191,7 @@
                                         <ul class="sub-menu collapse menu-left" id="submenu-1-3">
                                             <li class="nav-item"><a href="${cpath}/imgView.do">반려동물등록</a></li>
                                             <li class="nav-item"><a href="${cpath}/calendar.do/${loginMember.mem_id}">캘린더</a></li>
-                                            <li class="nav-item"><a href="#">아직없음</a></li>
+                                           
                                             
                                         </ul>
                                     </li>
