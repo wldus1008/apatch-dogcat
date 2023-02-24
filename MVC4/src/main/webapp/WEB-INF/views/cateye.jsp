@@ -49,7 +49,7 @@
 			
 			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;" id="output">
 				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>			
-				<iframe name="result_cat" style="width: 400px;height:400px;margin: 30px 0 0 110px;" >
+				<iframe name="result_cat" style="width: 400px;height:400px;margin: 30px 0 0 120px;" >
 				
 				</iframe>
 			</div>
