@@ -30,7 +30,7 @@ iframe{
 						<input type="text" readonly="readonly" class="form-control"
 							name="writer" id="writer" value="${vo.writer}">
 						<input type="hidden" readonly="readonly" class="form-control"
-							name="memId" id="memId" value="${loginMember.memId}">
+							name="memId" id="memId" value="${loginMember.mem_id}">
 					</div>
 				</div>
 				<div class="form-group">
