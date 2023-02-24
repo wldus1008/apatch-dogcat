@@ -26,7 +26,7 @@
 		 <div class="col-lg-5 col-md-12 col-12" style="padding-right: 50px;" >
 		
 
-			<form action="http://localhost:8000/dog" method="post" enctype='multipart/form-data' target="result_dog">
+			<form action="http://localhost:8000/dog" method="post" enctype='multipart/form-data' target="result">
 				<label for="formFile" class="form-label"><h5>사진등록</h5></label>
 				<input type="file" name="image"  id="files" onchange="readURL(this);" class="form-control" >
 				<!-- 여기서 files는 controller에 @RequestPart MultipartFile files -->
@@ -52,10 +52,12 @@
 			<div style="width:100%;height:500px; border: 1px solid#286769; border-radius: 30px;" id="output">
 				<h6 style="text-align: center; padding-top:15px;">결과확인</h6>			
 				
-				<iframe name="result_dog" style="width: 400px;height:400px; margin: 30px 0 0 120px;" >
-
-				
+				<iframe name="result" style="width: 400px;height:380px; margin: 30px 0 0 120px;" >
 				</iframe>
+			</div>
+			<div style="text-align: center;">
+				<h6>※ 위 사진의 글자는 질병 이름 과 확률을 나타냅니다</h6>
+				<h6>ex) 병명   ,  0.78 = 78% </h6>
 			</div>
 			
 		</div>
